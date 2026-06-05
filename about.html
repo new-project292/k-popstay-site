@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About K-POPSTAY | Wehome</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --purple: #761183;
+      --purple-light: #F0D9F4;
+      --purple-mid: #A645B5;
+      --purple-dark: #5A0D63;
+      --purple-xlight: #FAF2FC;
+      --bg: #F2F4F6;
+      --bg-soft: #FFFFFF;
+      --bg-card: #FFFFFF;
+      --text-900: #191F28;
+      --text-700: #333D4B;
+      --text-500: #4E5968;
+      --text-300: #8B95A1;
+      --border: #E5E8EB;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.03);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.05);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.08);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans KR', sans-serif;
+      background: var(--bg);
+      color: var(--text-900);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 66px;
+      background: rgba(255,255,255,0.93);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+    }
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .nav-logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--purple);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .kpop-lang-wrap { position: relative; }
+    .kpop-lang-btn {
+      display: flex; align-items: center; gap: 4px;
+      background: var(--purple-xlight); border: 1px solid var(--purple-light);
+      border-radius: 100px; padding: 5px 12px;
+      font-size: 0.78rem; font-weight: 600; color: var(--purple);
+      cursor: pointer; font-family: inherit; transition: all 0.2s; white-space: nowrap;
+    }
+    .kpop-lang-btn:hover { background: var(--purple-light); }
+    .kpop-lang-icon { width: 14px; height: 14px; fill: currentColor; flex-shrink: 0; }
+    .kpop-lang-arrow { width: 11px; height: 11px; fill: currentColor; opacity: .6; flex-shrink: 0; }
+    .kpop-lang-dropdown {
+      display: none; position: absolute; top: calc(100% + 6px); right: 0;
+      background: #fff; border: 1.5px solid var(--border);
+      border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,.10);
+      min-width: 130px; padding: 6px; z-index: 1100;
+    }
+    .kpop-lang-dropdown.open { display: block; }
+    .kpop-lang-item {
+      display: block; padding: 8px 12px; border-radius: 8px;
+      font-size: 0.82rem; font-weight: 600; color: var(--text-700);
+      transition: background .15s, color .15s; white-space: nowrap;
+      cursor: pointer; background: none; border: none;
+      font-family: inherit; width: 100%; text-align: left;
+    }
+    .kpop-lang-item:hover { background: var(--purple-xlight); color: var(--purple); }
+    .kpop-lang-item.active { color: var(--purple); font-weight: 700; }
+    .kpop-lang-item.active::before { content: '✓ '; font-size: 10px; }
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      background: var(--purple);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 9px 20px;
+      border-radius: 100px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { background: var(--purple-dark); }
+
+    /* HERO */
+    .hero {
+      padding: calc(66px + 80px) 24px 72px;
+      background: linear-gradient(160deg, #FAF2FC, #F0D9F4, #E8C4EE);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 60% at 70% 40%, rgba(118,17,131,0.1), transparent);
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--purple-dark);
+      background: rgba(255,255,255,0.7);
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--purple);
+      animation: pulse 1.6s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+    .hero-title {
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 800;
+      color: var(--text-900);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 16px;
+    }
+    .hero-title span { color: var(--purple); }
+    .hero-slogan {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 700;
+      color: var(--purple-dark);
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+    .hero-sub {
+      font-size: clamp(0.9rem, 1.8vw, 1rem);
+      color: var(--text-500);
+      line-height: 1.75;
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    /* SECTION */
+    section { padding: 80px 24px; }
+    .section-inner { max-width: 1000px; margin: 0 auto; }
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      background: var(--purple-xlight);
+      color: var(--purple);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 5px 14px;
+      border-radius: 100px;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 800;
+      color: var(--text-900);
+      line-height: 1.25;
+      letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+    .section-desc {
+      font-size: 0.97rem;
+      color: var(--text-500);
+      line-height: 1.75;
+      max-width: 680px;
+      margin-bottom: 48px;
+    }
+
+    /* FADE UP */
+    .fade-up { opacity: 0; transform: translateY(22px); transition: opacity .55s ease, transform .55s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+    /* ABOUT OVERVIEW */
+    #overview { background: var(--bg-soft); }
+    .overview-card {
+      background: var(--bg);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 16px;
+    }
+    .overview-card:last-child { margin-bottom: 0; }
+    .overview-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--purple);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .overview-card p {
+      font-size: 0.95rem;
+      color: var(--text-700);
+      line-height: 1.8;
+    }
+
+    /* THREE VALUES */
+    #values { background: var(--bg); }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .value-card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      padding: 36px 32px;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .value-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+    .value-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      background: var(--purple-xlight);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+    .value-type {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--purple);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .value-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-900);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .value-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .value-list li {
+      font-size: 0.875rem;
+      color: var(--text-700);
+      line-height: 1.65;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .value-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--purple);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* HOST TYPES */
+    #hosts { background: var(--bg-soft); }
+    .host-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .host-card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      box-shadow: var(--shadow-md);
+      padding: 32px;
+    }
+    .host-card.featured {
+      border: 2px solid var(--purple-light);
+      background: linear-gradient(135deg, #FAF2FC, #F5E8FB);
+    }
+    .host-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+    .host-badge.army { background: var(--purple-xlight); color: var(--purple); }
+    .host-badge.citizen { background: #EFF6FF; color: #1D4ED8; }
+    .host-badge.existing { background: #F0FDF4; color: #16A34A; }
+    .host-badge.project { background: var(--purple); color: #fff; }
+    .host-card-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-900);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .host-card p {
+      font-size: 0.875rem;
+      color: var(--text-500);
+      line-height: 1.75;
+    }
+    .host-qualify {
+      background: var(--bg);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-top: 20px;
+    }
+    .host-qualify-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--text-300);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .host-qualify p {
+      font-size: 0.875rem;
+      color: var(--text-700);
+      line-height: 1.7;
+    }
+
+    /* HOW IT WORKS */
+    #process { background: var(--bg); }
+    .process-list {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .process-list::before {
+      content: '';
+      position: absolute;
+      left: 22px;
+      top: 46px;
+      bottom: 46px;
+      width: 1.5px;
+      background: var(--border);
+    }
+    .process-step {
+      display: flex;
+      gap: 20px;
+      padding: 20px 0;
+    }
+    .step-num {
+      width: 46px; height: 46px;
+      background: var(--purple);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.88rem;
+      font-weight: 800;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 12px rgba(118,17,131,0.25);
+    }
+    .step-body { padding-top: 10px; }
+    .step-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-900);
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+    }
+    .step-desc {
+      font-size: 0.875rem;
+      color: var(--text-500);
+      line-height: 1.7;
+    }
+    .step-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 10px;
+      background: var(--purple-xlight);
+      color: var(--purple);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 8px;
+      line-height: 1.5;
+    }
+
+    /* CONTACT */
+    #contact { background: var(--bg-soft); padding: 72px 24px; }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .contact-card {
+      background: var(--bg-card);
+      border-radius: 18px;
+      box-shadow: var(--shadow-md);
+      padding: 32px;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .contact-card:hover { box-shadow: var(--shadow-lg); transform: translateY(-2px); }
+    .contact-icon {
+      width: 48px; height: 48px;
+      background: var(--purple-xlight);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin: 0 auto 16px;
+    }
+    .contact-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-900);
+      margin-bottom: 6px;
+    }
+    .contact-value {
+      font-size: 0.875rem;
+      color: var(--text-500);
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    .wehome-banner { background: #fff; border-top: 1px solid var(--border); }
+    .wehome-banner-link { display: flex; align-items: center; justify-content: center; gap: 16px; padding: 18px 24px; max-width: 1200px; margin: 0 auto; transition: opacity .2s; flex-wrap: wrap; }
+    .wehome-banner-link:hover { opacity: .7; }
+    .wehome-banner-logo { font-size: 0.95rem; font-weight: 800; color: var(--purple); letter-spacing: -0.02em; white-space: nowrap; }
+    .wehome-banner-divider { width: 1px; height: 16px; background: var(--border); flex-shrink: 0; }
+    .wehome-banner-text { font-size: 0.85rem; font-weight: 500; color: var(--text-500); white-space: nowrap; }
+    .wehome-banner-arrow { font-size: 0.85rem; color: var(--text-300); flex-shrink: 0; }
+    footer {
+      background: var(--text-900);
+      color: rgba(255,255,255,0.4);
+      font-size: 0.75rem;
+      line-height: 1.8;
+      text-align: center;
+      padding: 40px 24px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .values-grid { grid-template-columns: 1fr; }
+      .host-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 640px) {
+      .hero { padding: calc(66px + 56px) 20px 56px; }
+      section { padding: 64px 20px; }
+      .section-title { font-size: 1.4rem; }
+      .nav-link-sm { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">K-POPSTAY BUSAN</a>
+      <div class="nav-right">
+        <div class="kpop-lang-wrap" id="kpopLangWrap">
+          <button class="kpop-lang-btn" onclick="toggleKpopLang(event)" aria-expanded="false" aria-label="Language">
+            <svg class="kpop-lang-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18c-1.05 0-2.4-.9-3.4-3h6.8c-1 2.1-2.35 3-3.4 3zm-3.8-5c-.13-.64-.2-1.31-.2-2s.07-1.36.2-2h7.6c.13.64.2 1.31.2 2s-.07 1.36-.2 2H8.2zm-4.1-2c0-.68.1-1.35.27-2h3.25c-.1.65-.16 1.31-.16 2s.06 1.35.16 2H4.37A9.94 9.94 0 0 1 4.1 13zm11.5-6h-7.2C9.4 4.9 10.75 4 11.8 4c1.05 0 2.4.9 3.4 3h.4zm2.13 2h3.25A9.94 9.94 0 0 1 21.9 11h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2zm0 4h3.25c-.17.65-.27 1.32-.27 2s.1 1.35.27 2h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2z"/></svg>
+            <span id="kpopLangCurLabel">EN</span>
+            <svg class="kpop-lang-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </button>
+          <div class="kpop-lang-dropdown" id="kpopLangDropdown" role="listbox"></div>
+        </div>
+        <a href="/apply" class="nav-cta" id="navApplyCta">Apply Now ›</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">About K-POPSTAY</div>
+      <h1 class="hero-title">K-POPSTAY</h1>
+      <p class="hero-sub">A new kind of home sharing powered by K-POP — connecting fans from around the world with local hosts for a truly special stay.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT OVERVIEW -->
+  <section id="overview">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-eyebrow">About the Service</span>
+        <h2 class="section-title">What is K-POPSTAY?</h2>
+        <p class="section-desc">K-POPSTAY is a new kind of home sharing service by Wehome that connects global K-POP fans with local fans, solving accommodation challenges while creating meaningful cultural exchanges.</p>
+      </div>
+      <div class="fade-up">
+        <div class="overview-card">
+          <div class="overview-label">Purpose</div>
+          <p>K-POPSTAY was created to address the critical shortage of accommodation and price gouging that occurs during major K-POP concerts. Local fans, ordinary citizens, home sharing hosts, and local governments come together to provide a fair and community-driven alternative.</p>
+        </div>
+        <div class="overview-card">
+          <div class="overview-label">Wehome's Support</div>
+          <p>Wehome provides all platform services and matching at no cost for hosts who offer their homes for free — ensuring a zero-barrier experience for both hosts and guests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THREE CORE VALUES -->
+  <section id="values">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-eyebrow">Core Values</span>
+        <h2 class="section-title">Value for Guests, Hosts,<br>and Society</h2>
+        <p class="section-desc">K-POPSTAY goes beyond accommodation — it creates meaningful value for fans, local communities, and society at large.</p>
+      </div>
+      <div class="values-grid fade-up">
+        <div class="value-card">
+          <div class="value-icon">🎵</div>
+          <div class="value-type">Guest</div>
+          <div class="value-title">An Experience for Global K-POP Fans</div>
+          <ul class="value-list">
+            <li>Meet local fans and experience the K-lifestyle of BTS's hometown</li>
+            <li>Quality, legally-verified home sharing guaranteed by Wehome</li>
+            <li>Free or highly affordable accommodation costs</li>
+          </ul>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🏠</div>
+          <div class="value-type">Host</div>
+          <div class="value-title">A Special Opportunity for Hosts</div>
+          <ul class="value-list">
+            <li>A rare chance to meet and connect with global K-POP fans in person</li>
+            <li>Start home sharing safely with legal support (pilot program)</li>
+            <li>Contribute to spreading K-Lifestyle as a people-to-people cultural ambassador</li>
+          </ul>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌏</div>
+          <div class="value-type">Social</div>
+          <div class="value-title">Creating Social Value</div>
+          <ul class="value-list">
+            <li>Tackling price gouging at major events through community-driven alternatives</li>
+            <li>Fulfilling global travelers' demand for authentic K-Lifestyle experiences</li>
+            <li>Returning direct economic benefit to local residents while utilizing existing housing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOST TYPES -->
+  <section id="hosts">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-eyebrow">Host Participation</span>
+        <h2 class="section-title">Anyone Can Become a Host</h2>
+        <p class="section-desc">K-POP fans, local citizens, and existing Wehome hosts in the concert area are all welcome to participate.</p>
+      </div>
+      <div class="host-grid fade-up">
+        <div class="host-card">
+          <span class="host-badge army">Fan Host</span>
+          <div class="host-card-title">Fan Host</div>
+          <p>Any fan who wants to welcome global K-POP fans can apply. Hosts who provide their home for free do not require a separate home sharing registration. Guests pay a daily cost-of-living fee, which is fully settled to the host.</p>
+        </div>
+        <div class="host-card">
+          <span class="host-badge citizen">Citizen Host</span>
+          <div class="host-card-title">Citizen Host</div>
+          <p>Any resident of the concert city can participate as a host. Even without prior home sharing experience, Wehome's verification and support process ensures a safe and smooth start.</p>
+        </div>
+        <div class="host-card featured">
+          <span class="host-badge project">Special Project</span>
+          <div class="host-card-title">Busan Seagull Nest Project</div>
+          <p>As part of K-POPSTAY BUSAN 2026, Busan citizens open their homes to global K-POP fans free of charge — a project co-developed with the City of Busan.</p>
+        </div>
+        <div class="host-card">
+          <span class="host-badge existing">Existing Wehome Host</span>
+          <div class="host-card-title">Existing Wehome Host</div>
+          <p>Hosts already registered on Wehome are also eligible to participate. Selection considers existing listing ratings and pricing policies, and hosts may apply under the home sharing pilot program.</p>
+        </div>
+      </div>
+      <div class="host-qualify fade-up" style="margin-top: 20px;">
+        <div class="host-qualify-label">Eligibility</div>
+        <p>Applications are open to fan hosts offering free accommodation, or hosts registered under Wehome's home sharing pilot program. Existing hosts are selected based on listing evaluations and pricing policy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section id="process">
+    <div class="section-inner">
+      <div class="fade-up">
+        <span class="section-eyebrow">How It Works</span>
+        <h2 class="section-title">The Matching Process</h2>
+        <p class="section-desc">From application to checkout, Wehome supports every step of the way.</p>
+      </div>
+      <div class="process-list fade-up">
+        <div class="process-step">
+          <div class="step-num">1</div>
+          <div class="step-body">
+            <div class="step-title">Host Application & Selection</div>
+            <div class="step-desc">Once a host applies, Wehome reviews documents and conducts an on-site visit to evaluate safety, cleanliness, and legal compliance before selecting the listing.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">2</div>
+          <div class="step-body">
+            <div class="step-title">Guest Application</div>
+            <div class="step-desc">Guests apply in advance through the Wehome platform, specifying their preferred accommodation style and dates.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">3</div>
+          <div class="step-body">
+            <div class="step-title">Matching & Selection</div>
+            <div class="step-desc">Hosts can directly choose which guest they'd like to welcome from the pool of applicants.</div>
+            <div class="step-note">If delegated to Wehome, matching is done on a first-come, first-served basis or by lottery.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">4</div>
+          <div class="step-body">
+            <div class="step-title">Fan Host Operating Rules</div>
+            <div class="step-desc">Fan hosts who offer their space for free are not required to register as a formal home sharing business. However, guests must pay a daily cost-of-living fee, which is fully remitted to the host.</div>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="step-num">5</div>
+          <div class="step-body">
+            <div class="step-title">Pilot Program & Rate Cap</div>
+            <div class="step-desc">Wehome provides fast-track registration support for hosts who require enrollment in the non-resident home sharing pilot program.</div>
+            <div class="step-note">In this case, rates are capped at no more than 2× the comparable home sharing rate from the same period in the prior year.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="fade-up" style="text-align:center; margin-bottom:40px;">
+        <span class="section-eyebrow">Contact</span>
+        <h2 class="section-title">Have Questions?</h2>
+        <p class="section-desc" style="margin:0 auto;">Feel free to reach out anytime about host applications or how the service works.</p>
+      </div>
+      <div class="contact-grid fade-up">
+        <div class="contact-card" onclick="window.ChannelIO && window.ChannelIO('show')">
+          <div class="contact-icon">💬</div>
+          <div class="contact-name">Live Chat</div>
+          <div class="contact-value">Chat with us directly<br>via the Wehome website</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div class="contact-name">Phone</div>
+          <div class="contact-value">1544-5665<br>Mon–Fri 10:00–18:00 KST<br><span style="font-size:0.78rem;color:var(--text-300)">(Excl. lunch 12:00–13:00 / Closed weekends & holidays)</span></div>
+        </div>
+      </div>
+      <div class="fade-up" style="text-align:center; margin-top:48px;">
+        <a href="/" style="display:inline-flex;align-items:center;gap:8px;font-size:0.88rem;font-weight:600;color:var(--purple);padding:10px 24px;border-radius:100px;border:1.5px solid var(--purple-light);background:var(--purple-xlight);transition:background .2s;">← Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WEHOME BANNER -->
+  <div class="wehome-banner">
+    <a href="https://www.wehome.me" target="_blank" rel="noopener" class="wehome-banner-link">
+      <span class="wehome-banner-logo">Wehome.me</span>
+      <span class="wehome-banner-divider"></span>
+      <span class="wehome-banner-text">Korea's Only Government-Authorized Home Sharing</span>
+      <span class="wehome-banner-arrow">↗</span>
+    </a>
+  </div>
+
+  <footer>
+    Wehome Inc. | CEO: Cho San-gu | Privacy Officer: Kim Seok-jin | Reg. No.: 467-81-01292<br />
+    SVCS 507, 136 Yanghwa-ro, Mapo-gu, Seoul | Customer Service: 1544-5665 | Mon–Fri 10:00–12:00, 13:00–18:00<br />
+    © 2026 Wehome Inc. All rights reserved.
+  </footer>
+
+  <script>
+    const fades = document.querySelectorAll('.fade-up');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    fades.forEach(el => io.observe(el));
+
+    (function() {
+      var w = window;
+      if (w.ChannelIO) { return; }
+      var ch = function() { ch.c(arguments); };
+      ch.q = []; ch.c = function(args) { ch.q.push(args); };
+      w.ChannelIO = ch;
+      function l() {
+        if (w.ChannelIOInitialized) { return; }
+        w.ChannelIOInitialized = true;
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = 'https://cdn.channel.io/plugin/ch-plugin-web.js';
+        document.head.appendChild(s);
+      }
+      if (document.readyState === 'complete') { l(); }
+      else { w.addEventListener('DOMContentLoaded', l); w.addEventListener('load', l); }
+    })();
+    ChannelIO('boot', { pluginKey: '5d85db83-13e7-44dd-a0e1-3036e03e3e25' });
+  </script>
+  <script src="/kpop-i18n.js?v=20260604"></script>
+  <script>
+  (function(){
+    function renderLangDropdown(){
+      var labels   = window.KPOP_LANG_LABELS || {};
+      var supported = window.KPOP_SUPPORTED  || [];
+      var cur      = window.KPOP_LANG || 'en';
+      var lbl = document.getElementById('kpopLangCurLabel');
+      if(lbl) lbl.textContent = labels[cur] || 'EN';
+      var dd = document.getElementById('kpopLangDropdown');
+      if(!dd) return;
+      dd.innerHTML = '';
+      supported.forEach(function(code){
+        var btn = document.createElement('button');
+        btn.className = 'kpop-lang-item' + (code===cur?' active':'');
+        btn.setAttribute('role','option');
+        btn.textContent = labels[code] || code;
+        btn.onclick = function(e){ e.stopPropagation(); window.kpopSetLang(code); };
+        dd.appendChild(btn);
+      });
+    }
+    if(document.readyState==='loading'){
+      document.addEventListener('DOMContentLoaded', renderLangDropdown);
+    } else {
+      renderLangDropdown();
+    }
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>K-POPSTAY BUSAN 2026 — For ARMY | Powered by Wehome</title>
+<meta property="og:title" content="K-POPSTAY BUSAN 2026">
+<meta property="og:description" content="A Purple Welcome for Global Fans, Hosted by Busan Citizens">
+<meta property="og:image" content="https://www.wehome.me/assets/images/kpopstay/thumbnail-en.png?v=8">
+<meta name="description" content="K-POPSTAY BUSAN 2026 - A Purple Welcome for Global Fans, Hosted by Busan Citizens. Powered by Wehome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#761183;--purple-light:#F5DDFC;--purple-mid:#9C27B0;--purple-dark:#5A0D63;
+  --purple-xlight:#FBF3FE;--bg:#F9FAFB;--bg-soft:#FFFFFF;--bg-section:#F9FAFB;
+  --bg-card:#FFFFFF;--text-900:#191F28;--text-700:#333D4B;--text-500:#4E5968;
+  --text-300:#8B95A1;--border:#E5E8EB;--border-focus:#761183;
+  --shadow-sm:0 1px 4px rgba(0,0,0,0.04);--shadow-md:0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg:0 8px 32px rgba(0,0,0,0.08);--text-primary:#191F28;
+  --text-secondary:#333D4B;--text-muted:#4E5968;--purple-300:#CE7CE5;
+  --purple-400:#A645B5;--purple-500:#761183;--purple-200:#E1AAEF;--white:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--bg);
+  color:var(--text-700);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
+  background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:60px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-logo-text{font-size:1rem;font-weight:800;color:var(--text-900);letter-spacing:-0.03em}
+.nav-badge{background:var(--purple);color:#fff;font-size:0.6rem;font-weight:700;
+  padding:2px 8px;border-radius:100px;letter-spacing:0.02em}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{font-size:0.875rem;font-weight:500;color:var(--text-500);padding:8px 12px;
+  border-radius:8px;transition:color 0.2s,background 0.2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--purple);background:var(--purple-xlight)}
+.btn-apply-nav{background:var(--purple);color:#fff;
+  font-size:0.875rem;font-weight:700;padding:8px 18px;border-radius:8px;
+  transition:all 0.2s;white-space:nowrap}
+.btn-apply-nav:hover{background:var(--purple-dark);transform:translateY(-1px)}
+.btn-host-nav{background:#fff;color:var(--text-700);font-size:0.82rem;
+  font-weight:600;padding:8px 14px;border-radius:8px;border:1.5px solid var(--border);
+  transition:all 0.2s;white-space:nowrap}
+.btn-host-nav:hover{border-color:var(--purple);color:var(--purple)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-700);
+  border-radius:2px;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;
+  border-top:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:8px;
+  z-index:999;box-shadow:var(--shadow-md)}
+.mobile-menu.open{display:flex}
+.mobile-link{font-size:0.95rem;font-weight:500;color:var(--text-700);padding:12px 16px;
+  border-radius:10px;transition:background 0.2s,color 0.2s}
+.mobile-link:hover{background:var(--purple-xlight);color:var(--purple)}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;background:#ffffff;padding-top:60px}
+.hero-bg{display:none}
+.hero-glow,.hero-glow-2,.hero-glow-3{display:none}
+.hero-content{position:relative;z-index:1;text-align:center;padding:100px 24px 80px;
+  max-width:820px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--purple-xlight);
+  color:var(--purple);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;
+  padding:5px 14px;border-radius:6px;margin-bottom:24px;text-transform:uppercase}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--purple);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.hero-kpop-sub{font-size:0.8rem;font-weight:700;color:var(--text-300);letter-spacing:0.15em;
+  text-transform:uppercase;margin-bottom:16px}
+.hero-title{font-size:clamp(2.8rem,7vw,4.8rem);font-weight:900;color:var(--text-900);
+  line-height:1.1;letter-spacing:-0.04em;margin-bottom:20px}
+.hero-title .brand{color:var(--purple)}
+.hero-subtitle{font-size:1.2rem;font-weight:600;color:var(--text-500);line-height:1.6;
+  margin-bottom:32px;letter-spacing:-0.01em}
+.city-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg);
+  border:1.5px solid var(--border);color:var(--text-700);font-size:0.85rem;font-weight:600;
+  padding:8px 20px;border-radius:8px;margin-bottom:36px}
+.city-badge.active::before{content:'';width:8px;height:8px;border-radius:50%;
+  background:#22c55e;animation:pulse 1.5s infinite}
+.hero-cta-row{display:flex;align-items:center;justify-content:center;gap:12px;
+  flex-wrap:wrap;margin-bottom:20px}
+.btn-primary{display:inline-flex;align-items:center;gap:6px;background:var(--purple);
+  color:#fff;font-size:1rem;font-weight:700;padding:14px 28px;border-radius:10px;
+  border:none;cursor:pointer;transition:all 0.2s;letter-spacing:-0.01em}
+.btn-primary:hover{background:var(--purple-dark);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;
+  background:#fff;color:var(--text-700);font-size:1rem;font-weight:600;
+  padding:14px 24px;border-radius:10px;border:1.5px solid var(--border);cursor:pointer;transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--purple);color:var(--purple)}
+.hero-sub-links{display:flex;align-items:center;justify-content:center;gap:24px;
+  flex-wrap:wrap;margin-top:8px}
+.hero-sub-link{font-size:0.875rem;font-weight:600;color:var(--text-500);
+  text-decoration:underline;text-underline-offset:3px;transition:color 0.2s}
+.hero-sub-link:hover{color:var(--purple)}
+#scrollIndicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  color:var(--text-300);font-size:0.75rem;font-weight:500;transition:opacity 0.4s}
+#scrollIndicator .scroll-arrow{width:20px;height:20px;border-right:2px solid var(--border);
+  border-bottom:2px solid var(--border);transform:rotate(45deg);
+  animation:bounce 1.5s infinite}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
+
+/* FAB */
+#fabApply{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:990;
+  background:var(--purple);
+  color:#fff;font-size:0.9rem;font-weight:700;
+  padding:12px 24px;border-radius:10px;border:none;cursor:pointer;
+  white-space:normal;text-align:center;line-height:1.45;
+  max-width:calc(100vw - 40px);
+  opacity:0;pointer-events:none;
+  transition:opacity 0.3s,transform 0.3s;box-shadow:var(--shadow-lg)}
+@media(max-width:480px){#fabApply{font-size:0.82rem;padding:11px 20px}}
+#fabApply.visible{opacity:1;pointer-events:auto}
+#fabApply:hover{transform:translateX(-50%) translateY(-2px)}
+
+/* SECTIONS COMMON */
+section{padding:96px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section-eyebrow{display:inline-flex;background:var(--purple-xlight);color:var(--purple);
+  font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:6px;margin-bottom:16px}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--text-900);
+  line-height:1.2;letter-spacing:-0.03em;margin-bottom:16px}
+.section-desc{font-size:1rem;color:var(--text-500);line-height:1.7;max-width:600px}
+
+/* INTRODUCE */
+#introduce{background:#fff;border-top:1px solid var(--border)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.intro-tag{display:inline-flex;background:var(--purple-xlight);color:var(--purple);
+  font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
+  padding:4px 12px;border-radius:6px;margin-bottom:16px}
+.intro-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--text-900);
+  line-height:1.15;letter-spacing:-0.03em;margin-bottom:0}
+.intro-right h3{font-size:0.75rem;font-weight:700;color:var(--purple);margin-bottom:12px;
+  text-transform:uppercase;letter-spacing:0.06em}
+.intro-right p{font-size:0.95rem;color:var(--text-500);line-height:1.8}
+
+/* WHAT IS */
+#whatis{background:var(--bg)}
+.whatis-header{text-align:center;margin-bottom:48px}
+.whatis-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.whatis-card{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:36px;
+  transition:all 0.2s}
+.whatis-card:hover{border-color:var(--purple-200);box-shadow:var(--shadow-md)}
+.card-num{font-size:0.72rem;font-weight:700;color:var(--purple);letter-spacing:0.1em;
+  margin-bottom:12px}
+.card-title{font-size:1.3rem;font-weight:800;color:var(--text-900);
+  margin-bottom:12px;letter-spacing:-0.02em}
+.card-desc{font-size:0.9rem;color:var(--text-500);line-height:1.7}
+
+/* ABOUT */
+#about{background:#fff;border-top:1px solid var(--border)}
+.about-header{text-align:center;margin-bottom:20px}
+.about-desc{text-align:center;font-size:1rem;color:var(--text-500);
+  line-height:1.7;max-width:600px;margin:0 auto 48px}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.about-card{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:32px;
+  transition:all 0.2s}
+.about-card:hover{border-color:var(--purple-200);box-shadow:var(--shadow-md)}
+.card-icon{width:44px;height:44px;border-radius:10px;background:var(--purple-xlight);
+  display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  font-size:1.2rem}
+.about-card h3{font-size:1rem;font-weight:700;color:var(--text-900);
+  margin-bottom:10px;letter-spacing:-0.02em}
+.about-card p{font-size:0.875rem;color:var(--text-500);line-height:1.7}
+
+/* GUIDEBOOK */
+#guidebook{background:var(--bg)}
+.guidebook-header{text-align:center;margin-bottom:48px}
+.guidebook-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.guide-block{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:36px}
+.guide-block h3{font-size:1.05rem;font-weight:700;color:var(--text-900);
+  margin-bottom:8px;letter-spacing:-0.02em}
+.guide-label{display:inline-block;background:var(--purple-xlight);color:var(--purple);
+  font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:6px;margin-bottom:12px}
+.guide-cost{font-size:1.5rem;font-weight:800;color:var(--text-900);
+  margin-bottom:8px;letter-spacing:-0.03em}
+.guide-block p{font-size:0.875rem;color:var(--text-500);line-height:1.7;margin-bottom:12px}
+.guide-highlight{background:var(--bg);border-left:3px solid var(--purple);
+  border-radius:0 8px 8px 0;padding:14px 16px;font-size:0.875rem;color:var(--text-700);
+  font-weight:500;line-height:1.6}
+.perk-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.perk-item{display:flex;align-items:flex-start;gap:12px;font-size:0.875rem;
+  color:var(--text-700);line-height:1.6}
+.perk-icon{width:28px;height:28px;min-width:28px;border-radius:7px;
+  background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;
+  font-size:0.8rem}
+
+/* PARTNERS */
+#partners{background:#fff;padding:80px 0;border-top:1px solid var(--border)}
+.partners-header{text-align:center;margin-bottom:48px}
+.partner-logos{display:flex;flex-wrap:nowrap;justify-content:center;max-width:1100px;margin:0 auto;border:1.5px solid var(--border);border-radius:16px;overflow:hidden}
+.partner-logo-item{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;padding:24px 16px;border-right:1px solid var(--border);transition:background 0.2s;text-decoration:none}
+.partner-logo-item:last-child{border-right:none}
+.partner-logo-item:hover{background:var(--bg)}
+.partner-logo-img-wrap{height:52px;display:flex;align-items:center;justify-content:center}
+.partner-logo-item img{max-height:32px;max-width:100px;object-fit:contain;filter:grayscale(100%);opacity:0.6;transition:all 0.2s}
+.partner-logo-item:hover img{filter:grayscale(0%);opacity:1}
+.partner-logo-idden .partner-logo-img-wrap img{filter:invert(1);opacity:0.6;max-height:52px !important;max-width:130px !important;transition:all 0.2s !important}
+.partner-logo-idden:hover .partner-logo-img-wrap img{filter:invert(1);opacity:1 !important}
+.partner-logo-teklaw .partner-logo-img-wrap img{filter:grayscale(100%) !important;opacity:0.6;max-height:36px !important;max-width:120px !important;transition:all 0.2s}
+.partner-logo-teklaw:hover .partner-logo-img-wrap img{filter:grayscale(0%) !important;opacity:1}
+.partner-logo-item span{font-size:0.68rem;font-weight:600;color:var(--text-300);text-align:center;line-height:1.4;white-space:nowrap}
+@media(max-width:640px){
+  .partner-logos{flex-wrap:wrap;border-radius:14px}
+  .partner-logo-item{flex:0 0 33.333%;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 8px;justify-content:center}
+  .partner-logo-item:nth-child(3n){border-right:none}
+  .partner-logo-item:last-child{border-bottom:none}
+  .partner-logo-item:nth-last-child(-n+3):nth-child(3n+1)~.partner-logo-item,.partner-logo-item:nth-last-child(-n+3):nth-child(3n+1){border-bottom:none}
+  .partner-logo-img-wrap{height:36px}
+  .partner-logo-item img{max-height:24px;max-width:64px}
+  .partner-logo-idden .partner-logo-img-wrap img{max-height:36px !important;max-width:80px !important}
+  .partner-logo-item span{font-size:0.58rem;white-space:normal;word-break:keep-all}
+}
+
+/* SCHEDULE */
+#schedule{background:var(--bg);border-top:1px solid var(--border)}
+.schedule-header{text-align:center;margin-bottom:16px}
+.schedule-desc{text-align:center;font-size:0.95rem;color:var(--text-500);
+  margin-bottom:40px}
+.schedule-desc a{color:var(--purple);font-weight:600}
+.tl-wrap{background:#fff;border:1.5px solid var(--border);border-radius:16px;
+  padding:8px;max-width:720px;margin:0 auto}
+.tl-item{display:flex;gap:20px;padding:20px 24px;border-radius:10px;transition:background 0.2s}
+.tl-item:hover{background:var(--bg)}
+.tl-item+.tl-item{border-top:1px solid var(--border)}
+.tl-node-col{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.tl-dot{width:12px;height:12px;min-width:12px;border-radius:50%;background:#fff;
+  border:2px solid var(--purple);transition:background 0.2s}
+.tl-item:hover .tl-dot{background:var(--purple)}
+.tl-date{font-size:0.78rem;font-weight:700;color:var(--purple);min-width:120px;
+  padding-top:3px;line-height:1.5}
+.tl-content h4{font-size:0.95rem;font-weight:700;color:var(--text-900);
+  margin-bottom:4px;line-height:1.4}
+.tl-content p{font-size:0.83rem;color:var(--text-500);line-height:1.6}
+.tl-badge-open{display:inline-flex;align-items:center;gap:5px;
+  background:var(--purple-xlight);color:var(--purple);font-size:0.68rem;font-weight:700;
+  padding:2px 8px;border-radius:6px;margin-top:4px}
+.tl-badge-open::before{content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--purple);animation:pulse 1.5s infinite}
+
+/* CONTACT */
+#contact{background:#fff;padding:72px 0;border-top:1px solid var(--border)}
+.contact-header{text-align:center;margin-bottom:40px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contact-card{background:var(--bg);border:1.5px solid var(--border);border-radius:16px;padding:28px;
+  text-align:center;transition:all 0.2s}
+.contact-card:hover{border-color:var(--purple-200);box-shadow:var(--shadow-md)}
+.contact-card .card-icon{margin:0 auto 14px}
+.contact-card h3{font-size:0.95rem;font-weight:700;color:var(--text-900);margin-bottom:6px}
+.contact-card p{font-size:0.85rem;color:var(--text-500);line-height:1.6}
+.contact-card a{color:var(--purple);font-weight:600}
+
+/* FOOTER */
+.wehome-banner{background:#fff;border-top:1px solid var(--border)}
+.wehome-banner-link{display:flex;align-items:center;justify-content:center;gap:16px;padding:18px 24px;max-width:1200px;margin:0 auto;transition:opacity .2s;flex-wrap:wrap}
+.wehome-banner-link:hover{opacity:.7}
+.wehome-banner-logo{font-size:0.95rem;font-weight:800;color:var(--purple);letter-spacing:-0.02em;white-space:nowrap}
+.wehome-banner-divider{width:1px;height:16px;background:var(--border);flex-shrink:0}
+.wehome-banner-text{font-size:0.85rem;font-weight:500;color:var(--text-500);white-space:nowrap}
+.wehome-banner-arrow{font-size:0.85rem;color:var(--text-300);flex-shrink:0}
+footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.footer-logo-text{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.footer-badge{background:var(--purple);color:#fff;font-size:0.6rem;font-weight:700;
+  padding:2px 7px;border-radius:4px;margin-left:8px}
+.footer-tagline{font-size:0.8rem;color:#6B7280;margin-top:6px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-link{font-size:0.85rem;color:#9CA3AF;transition:color 0.2s}
+.footer-link:hover{color:#fff}
+.footer-divider{border:none;border-top:1px solid #2D3748;margin-bottom:20px}
+.footer-company{font-size:0.78rem;color:#4B5563;line-height:1.8}
+
+/* FADE UP */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* LANGUAGE PICKER */
+.kpop-lang-wrap{position:relative}
+.kpop-lang-btn{
+  display:flex;align-items:center;gap:4px;
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:8px;padding:6px 10px;
+  font-size:0.8rem;font-weight:600;color:var(--text-700);
+  cursor:pointer;font-family:inherit;transition:all 0.2s;
+  white-space:nowrap;
+}
+.kpop-lang-btn:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-xlight)}
+.kpop-lang-icon{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+.kpop-lang-arrow{width:12px;height:12px;fill:currentColor;opacity:.55;flex-shrink:0}
+.kpop-lang-dropdown{
+  display:none;position:absolute;top:calc(100% + 8px);right:0;
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.10);
+  min-width:130px;padding:6px;z-index:1100;
+}
+.kpop-lang-dropdown.open{display:block}
+.kpop-lang-item{
+  display:block;padding:8px 12px;border-radius:8px;
+  font-size:0.82rem;font-weight:600;color:var(--text-700);
+  transition:background 0.15s,color 0.15s;white-space:nowrap;
+  text-decoration:none;cursor:pointer;background:none;border:none;
+  font-family:inherit;width:100%;text-align:left;
+}
+.kpop-lang-item:hover{background:var(--purple-xlight);color:var(--purple)}
+.kpop-lang-item.active{color:var(--purple);font-weight:700}
+.kpop-lang-item.active::before{content:'✓ ';font-size:10px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .intro-grid{grid-template-columns:1fr;gap:32px}
+  .whatis-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .guidebook-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+}
+@media(max-width:640px){
+  .hero-title{font-size:2.5rem}
+  .hero-subtitle{font-size:1rem}
+  .about-grid{grid-template-columns:1fr}
+  .tl-item{flex-direction:column;gap:8px}
+  section{padding:64px 0}
+  .footer-top{flex-direction:column;gap:20px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <span class="nav-logo-text">K-POPSTAY BUSAN</span>
+      <span class="nav-badge">2026</span>
+    </a>
+    <div class="nav-links">
+      <a href="#home" class="nav-link active">HOME</a>
+      <a href="/about" class="nav-link">K-POPSTAY</a>
+      <a href="#guidebook" class="nav-link">Guest Guidebook</a>
+      <a href="/travel-guide" class="nav-link">Travel Guide</a>
+      <a href="apply.html" class="btn-apply-nav">Apply Now &rsaquo;</a>
+      <!-- k-popstay 전용 언어 선택기 — wehome.me 세션/쿠키 불개입 -->
+      <div class="kpop-lang-wrap" id="kpopLangWrap">
+        <button class="kpop-lang-btn" onclick="toggleKpopLang(event)" aria-expanded="false" aria-label="Language">
+          <svg class="kpop-lang-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18c-1.05 0-2.4-.9-3.4-3h6.8c-1 2.1-2.35 3-3.4 3zm-3.8-5c-.13-.64-.2-1.31-.2-2s.07-1.36.2-2h7.6c.13.64.2 1.31.2 2s-.07 1.36-.2 2H8.2zm-4.1-2c0-.68.1-1.35.27-2h3.25c-.1.65-.16 1.31-.16 2s.06 1.35.16 2H4.37A9.94 9.94 0 0 1 4.1 13zm11.5-6h-7.2C9.4 4.9 10.75 4 11.8 4c1.05 0 2.4.9 3.4 3h.4zm2.13 2h3.25A9.94 9.94 0 0 1 21.9 11h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2zm0 4h3.25c-.17.65-.27 1.32-.27 2s.1 1.35.27 2h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2z"/></svg>
+          <span id="kpopLangCurLabel">EN</span>
+          <svg class="kpop-lang-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="kpop-lang-dropdown" id="kpopLangDropdown" role="listbox"></div>
+      </div>
+      <a href="/host" class="btn-host-nav">Host Apply KR</a>
+    </div>
+    <div class="nav-hamburger" id="navHamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" class="mobile-link" onclick="toggleMenu()">HOME</a>
+  <a href="/about" class="mobile-link" onclick="toggleMenu()">K-POPSTAY</a>
+  <a href="#guidebook" class="mobile-link" onclick="toggleMenu()">Guest Guidebook</a>
+  <a href="/travel-guide" class="mobile-link" onclick="toggleMenu()">Travel Guide</a>
+  <a href="apply.html" class="mobile-link" style="color:var(--purple);font-weight:700">Apply Now &rsaquo;</a>
+  <div id="mobileLangList"></div>
+  <a href="/host" class="mobile-link">Host Apply KR</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up">K-POPSTAY BUSAN 2026</div>
+
+    <h1 class="hero-title fade-up"><span class="brand">Busan Seagull</span><br>Nest</h1>
+    <p class="hero-subtitle fade-up">A Purple Welcome for Global Fans,<br>Hosted by Busan Citizens.</p>
+    <div class="city-badge active fade-up">Busan &mdash; Jun 12&ndash;14</div>
+    <div class="hero-cta-row fade-up">
+      <a href="apply.html" class="btn-primary hero-apply-btn">Apply for Free 2-Night Stay (Global BTS ARMY First) &rsaquo;</a>
+      <button class="btn-secondary btn-share" onclick="sharePage()">Share</button>
+    </div>
+    <div class="hero-sub-links fade-up">
+      <a href="/host" class="hero-sub-link">Become a Busan Citizen Host &rsaquo;</a>
+      <a href="https://www.wehome.me/k-popstay-busan" class="hero-sub-link" target="_blank" rel="noopener">Book Wehome Busan Accommodations 10% Off &rsaquo;</a>
+    </div>
+  </div>
+  <div id="scrollIndicator">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- FAB -->
+<button id="fabApply" onclick="location.href='apply.html'">Apply for Free 2-Night Stay<br>(Global BTS ARMY First) &rsaquo;</button>
+
+<!-- INTRODUCE -->
+<section id="introduce">
+  <div class="container">
+    <div class="intro-grid fade-up">
+      <div>
+        <div class="intro-tag">Fair &amp; Community-Driven Civic Governance</div>
+        <h2 class="intro-title">Busan Seagull<br>Nest</h2>
+      </div>
+      <div class="intro-right">
+        <h3>About This Project</h3>
+        <p>When BTS announced their 2026 Busan comeback concerts, accommodation prices in Busan surged to extraordinary levels — with some listings reaching 10x normal rates. This kind of price gouging leaves ordinary fans with no choice but to pay or give up on attending.<br><br>
+        K-POPSTAY BUSAN is our answer: a civic initiative connecting ARMY fans with verified Busan citizen hosts who open their homes fairly, without exploiting the moment. Every stay is free of charge for guests, with a full deposit refund system to ensure trust on both sides.<br><br>
+        This is not charity — it is community. Busan citizens stepping forward to say: <em>"You are welcome here."</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section id="whatis">
+  <div class="container">
+    <div class="whatis-header fade-up">
+      <div class="section-eyebrow">K-POPSTAY BUSAN</div>
+      <h2 class="section-title">What is K-POPSTAY BUSAN?</h2>
+    </div>
+    <div class="whatis-grid">
+      <div class="whatis-card fade-up">
+        <div class="card-num">01</div>
+        <h3 class="card-title">Verified, Trustworthy Hosts</h3>
+        <p class="card-desc">Every host is a verified Busan citizen vetted through Wehome's platform. Guests can book with confidence knowing their host is genuine, accountable, and community-spirited.</p>
+      </div>
+      <div class="whatis-card fade-up">
+        <div class="card-num">02</div>
+        <h3 class="card-title">100% Refundable Security Deposit</h3>
+        <p class="card-desc">Selected ARMY guests are required to pay a security deposit of KRW 50,000 per person. Upon check-in, the full deposit amount will be refunded in the form of a Busan Tourism Gift Card. The Busan Tourism Gift Card can be used like cash at participating businesses throughout Busan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-header fade-up">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">A New Kind of Home Sharing<br>Powered by K-POP</h2>
+    </div>
+    <p class="about-desc fade-up">BTS's 2026 comeback concerts in Busan have inspired tens of thousands of fans worldwide to travel to Korea. K-POPSTAY is a first-of-its-kind civic program that turns fan passion into a community movement.</p>
+    <div class="about-grid">
+      <div class="about-card fade-up">
+        <div class="card-icon" style="color:var(--purple)">&#9733;</div>
+        <h3>For Guests</h3>
+        <p>International ARMY get a safe, verified, free place to stay during the concerts — hosted by a real Busan citizen who wants to share their city and culture.</p>
+      </div>
+      <div class="about-card fade-up">
+        <div class="card-icon" style="color:var(--purple)">&#9650;</div>
+        <h3>For Hosts</h3>
+        <p>Busan residents share their home, meet a global fan, and contribute to a community movement. Hosts receive recognition and support through Wehome's platform.</p>
+      </div>
+      <div class="about-card fade-up">
+        <div class="card-icon" style="color:var(--purple)">&#9679;</div>
+        <h3>For Society</h3>
+        <p>A new model for event tourism — one that prioritizes fairness, community, and cultural exchange over profit. A blueprint for future K-POP events worldwide.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDEBOOK -->
+<section id="guidebook">
+  <div class="container">
+    <div class="guidebook-header fade-up">
+      <div class="section-eyebrow">Guest Guidebook</div>
+      <h2 class="section-title">Everything You Need to Know</h2>
+    </div>
+    <div class="guidebook-grid">
+      <div class="guide-block fade-up">
+        <div class="guide-label">K-POPSTAY Busan Policy</div>
+        <h3>Stay Costs &amp; Deposit Policy</h3>
+        <div class="guide-cost">Guest Cost: KRW 0</div>
+        <p>Your stay is completely free of charge. K-POPSTAY BUSAN is a civic initiative — Busan citizen hosts voluntarily open their homes to global ARMY at no cost.</p>
+        <div class="guide-highlight">
+          Refundable Security Deposit: A small deposit is collected at booking to ensure mutual commitment. It is 100% refunded upon checkout with no conditions.
+        </div>
+      </div>
+      <div class="guide-block fade-up">
+        <h3>What's Included</h3>
+        <ul class="perk-list">
+          <li class="perk-item">
+            <div class="perk-icon" style="color:var(--purple)">&#10003;</div>
+            <div><strong>Verified Safety</strong><br>Every host is verified through Wehome's platform with real identity confirmation and safety screening.</div>
+          </li>
+          <li class="perk-item">
+            <div class="perk-icon" style="color:var(--purple)">&#10003;</div>
+            <div><strong>Trustworthy Citizens</strong><br>Hosts are real Busan residents who have volunteered to share their home — community-vetted and accountable.</div>
+          </li>
+          <li class="perk-item">
+            <div class="perk-icon" style="color:var(--purple)">&#10003;</div>
+            <div><strong>100% Deposit Refund</strong><br>Your deposit is fully refunded at checkout — no hidden fees, no partial withholding.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <div class="partners-header fade-up">
+      <div class="section-eyebrow">Partners &amp; Supporters</div>
+      <h2 class="section-title">Backed by Government &amp; Industry</h2>
+    </div>
+    <div class="partner-logos fade-up">
+      <a class="partner-logo-item" href="https://www.busan.go.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/busan.svg" alt="Busan Metropolitan City"></div>
+        <span>Busan Metropolitan City</span>
+      </a>
+      <a class="partner-logo-item" href="https://knto.or.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/kto.png" alt="Korea Tourism Organization"></div>
+        <span>Korea Tourism Organization</span>
+      </a>
+      <a class="partner-logo-item" href="https://bto.or.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/bto.png" alt="Busan Tourism Organization"></div>
+        <span>Busan Tourism Organization</span>
+      </a>
+      <a class="partner-logo-item" href="https://www.mcst.go.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/mcst.svg" alt="Ministry of Culture, Sports and Tourism"></div>
+        <span>Ministry of Culture</span>
+      </a>
+      <a class="partner-logo-item" href="https://www.msit.go.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/msit.png" alt="Ministry of Science and ICT"></div>
+        <span>Ministry of Science &amp; ICT</span>
+      </a>
+      <a class="partner-logo-item" href="https://genabelle.co.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/genabelle.png" alt="Genabelle"></div>
+        <span>Genabelle</span>
+      </a>
+      <a class="partner-logo-item partner-logo-idden" href="https://www.idden.co" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/idden.png" alt="Idden"></div>
+        <span>Idden</span>
+      </a>
+      <a class="partner-logo-item partner-logo-teklaw" href="https://www.teknlaw.com/home" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/teklaw.png" alt="TEK&amp;LAW VENTURES"></div>
+        <span>TEK&amp;LAW VENTURES</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="container">
+    <div class="schedule-header fade-up">
+      <div class="section-eyebrow">Schedule</div>
+      <h2 class="section-title">K-POPSTAY BUSAN Timeline</h2>
+    </div>
+    <p class="schedule-desc fade-up">Official guest program schedule. <a href="/host">View host schedule &rarr;</a></p>
+    <div class="tl-wrap fade-up">
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">May 29 2026</div>
+        <div class="tl-content">
+          <h4>Application Opens</h4>
+          <p>Guest applications officially open. Priority given to international ARMY.</p>
+          <span class="tl-badge-open">Now Open</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">Jun 6&ndash;7 2026</div>
+        <div class="tl-content">
+          <h4>Guest Selection &amp; Match Announcement</h4>
+          <p>Selected guests are notified and matched with a verified Busan citizen host.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">Jun 8 2026</div>
+        <div class="tl-content">
+          <h4>Match Results &amp; Itinerary Delivery</h4>
+          <p>Full stay details, host introduction, and itinerary delivered to confirmed guests.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">Jun 12&ndash;14 2026 &middot; 2 nights</div>
+        <div class="tl-content">
+          <h4>Stay Period &amp; Deposit Refund</h4>
+          <p>Guests stay with their Busan host family during the concert period. Full deposit refunded at checkout.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-header fade-up">
+      <div class="section-eyebrow">Contact Us</div>
+      <h2 class="section-title">Get in Touch</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>Channel Talk</h3>
+        <p>Chat with our support team in real-time through Channel Talk — fastest response.</p>
+      </div>
+      <div class="contact-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>Email</h3>
+        <p><a href="mailto:cs@wehome.me">cs@wehome.me</a></p>
+        <p>We respond within 1 business day.</p>
+      </div>
+      <div class="contact-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>Phone</h3>
+        <p><a href="tel:15445665">1544-5665</a></p>
+        <p>Weekdays 10:00&ndash;12:00, 13:00&ndash;18:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEHOME BANNER -->
+<div class="wehome-banner">
+  <a href="https://www.wehome.me" target="_blank" rel="noopener" class="wehome-banner-link">
+    <span class="wehome-banner-logo">Wehome.me</span>
+    <span class="wehome-banner-divider"></span>
+    <span class="wehome-banner-text">Korea's Only Government-Authorized Home Sharing</span>
+    <span class="wehome-banner-arrow">↗</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div>
+          <span class="footer-logo-text">K-POPSTAY BUSAN</span>
+          <span class="footer-badge">2026</span>
+        </div>
+        <div class="footer-tagline">Powered by Wehome.me &middot; 위홈이 만드는 새로운 공유숙박</div>
+      </div>
+      <div class="footer-links">
+        <a href="#home" class="footer-link">Home</a>
+        <a href="#guidebook" class="footer-link">Guidebook</a>
+        <a href="apply.html" class="footer-link">Apply Now</a>
+        <a href="/host" class="footer-link">호스트 신청</a>
+        <a href="mailto:cs@wehome.me" class="footer-link">Customer Support</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-company">
+      (주)위홈 | 대표이사: 조산구 | 개인정보 보호책임자: 김석진 | 사업자등록번호: 467-81-01292 / 서울 마포구 양화로 136 SVCS 507 | 고객센터: 1544-5665 | 평일 10:00&ndash;12:00, 13:00&ndash;18:00<br>
+      &copy; 2026 Wehome Inc. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="/kpop-i18n.js?v=20260604"></script>
+<script>
+// 언어 드롭다운 항목 렌더링
+(function(){
+  function render(){
+    var labels = window.KPOP_LANG_LABELS || {};
+    var supported = window.KPOP_SUPPORTED || [];
+    var cur = window.KPOP_LANG || 'en';
+
+    // 데스크톱 드롭다운
+    var dd = document.getElementById('kpopLangDropdown');
+    if(dd){
+      dd.innerHTML = '';
+      supported.forEach(function(code){
+        var btn = document.createElement('button');
+        btn.className = 'kpop-lang-item' + (code===cur?' active':'');
+        btn.setAttribute('role','option');
+        btn.setAttribute('aria-selected', code===cur?'true':'false');
+        btn.textContent = labels[code] || code;
+        btn.onclick = function(e){ e.stopPropagation(); window.kpopSetLang(code); };
+        dd.appendChild(btn);
+      });
+    }
+
+    // 현재 언어 라벨 표시
+    var lbl = document.getElementById('kpopLangCurLabel');
+    if(lbl) lbl.textContent = labels[cur] || 'EN';
+
+    // 모바일 메뉴 언어 버튼
+    var ml = document.getElementById('mobileLangList');
+    if(ml){
+      ml.innerHTML = '';
+      supported.forEach(function(code){
+        var a = document.createElement('a');
+        a.href = '#';
+        a.className = 'mobile-link' + (code===cur?' active':'');
+        if(code===cur) a.style.cssText = 'color:var(--purple);font-weight:700';
+        a.textContent = labels[code] || code;
+        a.onclick = function(e){ e.preventDefault(); window.kpopSetLang(code); };
+        ml.appendChild(a);
+      });
+    }
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', render);
+  } else {
+    render();
+  }
+})();
+
+// Channel IO
+(function(){var w=window;if(w.ChannelIO){return}var ch=function(){ch.c(arguments)};
+ch.q=[];ch.c=function(args){ch.q.push(args)};w.ChannelIO=ch;
+function l(){if(w.ChannelIOInitialized){return}w.ChannelIOInitialized=true;
+var s=document.createElement('script');s.type='text/javascript';s.async=true;
+s.src='https://cdn.channel.io/plugin/ch-plugin-web.js';
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x)}
+if(document.readyState==='complete'){l()}else{w.addEventListener('DOMContentLoaded',l);
+w.addEventListener('load',l)}})();
+ChannelIO('boot',{pluginKey:'5d85db83-13e7-44dd-a0e1-3036e03e3e25',hideChannelButtonOnBoot:true});
+
+// Share
+function sharePage(){
+  if(navigator.share){
+    navigator.share({title:'K-POPSTAY BUSAN 2026',
+      text:'A Purple Welcome for Global Fans, Hosted by Busan Citizens.',
+      url:window.location.href});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function(){
+      alert('Link copied!');
+    });
+  }
+}
+
+// Mobile menu
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+
+// FAB toggle
+var hero=document.getElementById('home');
+var fab=document.getElementById('fabApply');
+window.addEventListener('scroll',function(){
+  if(hero.getBoundingClientRect().bottom<0){
+    fab.classList.add('visible');
+  } else {
+    fab.classList.remove('visible');
+  }
+});
+
+// Scroll indicator
+var si=document.getElementById('scrollIndicator');
+window.addEventListener('scroll',function(){
+  if(window.scrollY>80){si.style.opacity='0';}
+  else{si.style.opacity='1';}
+},{passive:true});
+
+// Fade up
+var fadeEls=document.querySelectorAll('.fade-up');
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
+  });
+},{threshold:0.12});
+fadeEls.forEach(function(el){observer.observe(el);});
+</script>
+</body>
+</html>

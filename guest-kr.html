@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>K-POPSTAY BUSAN 2026 — 무료 숙박 신청 (게스트)</title>
+<meta name="description" content="BTS 2026 부산 콘서트 기간 외국인 아미 팬을 위한 무료 공유숙박 신청 — K-POPSTAY BUSAN 2026">
+<meta property="og:title" content="K-POPSTAY BUSAN 2026 — 무료 숙박 신청 (게스트)" />
+<meta property="og:description" content="BTS 2026 부산 콘서트 기간 외국인 아미 팬을 위한 무료 공유숙박 신청 — K-POPSTAY BUSAN 2026" />
+<meta property="og:image" content="https://www.wehome.me/assets/images/kpopstay/thumbnail-kr.png?v=8" />
+<meta property="og:url" content="https://k-popstay.wehome.me/guest-kr" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#761183;--purple-light:#F5DDFC;--purple-mid:#9C27B0;--purple-dark:#5A0D63;
+  --purple-xlight:#FBF3FE;--bg:#F9FAFB;--bg-soft:#FFFFFF;--bg-section:#F9FAFB;
+  --bg-card:#FFFFFF;--text-900:#191F28;--text-700:#333D4B;--text-500:#4E5968;
+  --text-300:#8B95A1;--border:#E5E8EB;--border-focus:#761183;
+  --shadow-sm:0 1px 4px rgba(0,0,0,0.04);--shadow-md:0 4px 16px rgba(0,0,0,0.06);
+  --shadow-lg:0 8px 32px rgba(0,0,0,0.08);
+  --purple-200:#E1AAEF;--purple-300:#CE7CE5;--purple-400:#A645B5;--purple-500:#761183;
+  --white:#FFFFFF;--radius-card:16px;--radius-lg:16px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text-700);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button{cursor:pointer;border:none;background:none;font-family:inherit}
+input,select,textarea{font-family:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;background:rgba(255,255,255,0.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-logo-text{font-size:1rem;font-weight:800;color:var(--text-900);letter-spacing:-0.03em}
+.nav-badge{background:var(--purple);color:#fff;font-size:0.6rem;font-weight:700;padding:2px 8px;border-radius:100px;letter-spacing:0.02em}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{font-size:0.875rem;font-weight:500;color:var(--text-500);padding:8px 12px;border-radius:8px;transition:color 0.2s,background 0.2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--purple);background:var(--purple-xlight)}
+.btn-apply-nav{background:var(--purple);color:#fff;font-size:0.875rem;font-weight:700;padding:8px 18px;border-radius:8px;transition:all 0.2s;white-space:nowrap}
+.btn-apply-nav:hover{background:var(--purple-dark);transform:translateY(-1px)}
+.btn-host-nav{background:#fff;color:var(--text-700);font-size:0.82rem;font-weight:600;padding:8px 14px;border-radius:8px;border:1.5px solid var(--border);transition:all 0.2s;white-space:nowrap}
+.btn-host-nav:hover{border-color:var(--purple);color:var(--purple)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-700);border-radius:2px;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;border-top:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:8px;z-index:999;box-shadow:var(--shadow-md)}
+.mobile-menu.open{display:flex}
+.mobile-link{font-size:0.95rem;font-weight:500;color:var(--text-700);padding:12px 16px;border-radius:10px;transition:background 0.2s,color 0.2s}
+.mobile-link:hover{background:var(--purple-xlight);color:var(--purple)}
+
+/* HERO */
+#home{min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;background:#ffffff;padding-top:60px}
+.hero-bg{display:none}
+.hero-glow,.hero-glow-2,.hero-glow-3{display:none}
+.hero-content{position:relative;z-index:1;text-align:center;padding:100px 24px 80px;max-width:820px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--purple-xlight);color:var(--purple);font-size:0.75rem;font-weight:700;letter-spacing:0.06em;padding:5px 14px;border-radius:6px;margin-bottom:24px;text-transform:uppercase}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--purple);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}
+.hero-title{font-size:clamp(2.8rem,7vw,4.8rem);font-weight:900;color:var(--text-900);line-height:1.1;letter-spacing:-0.04em;margin-bottom:20px}
+.hero-title .brand{color:var(--purple)}
+.hero-subtitle{font-size:1.2rem;font-weight:600;color:var(--text-500);line-height:1.6;margin-bottom:32px;letter-spacing:-0.01em}
+.city-badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg);border:1.5px solid var(--border);color:var(--text-700);font-size:0.85rem;font-weight:600;padding:8px 20px;border-radius:8px;margin-bottom:36px}
+.city-badge.active::before{content:'';width:8px;height:8px;border-radius:50%;background:#22c55e;animation:pulse 1.5s infinite}
+.hero-cta-row{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.btn-primary{display:inline-flex;align-items:center;gap:6px;background:var(--purple);color:#fff;font-size:1rem;font-weight:700;padding:14px 28px;border-radius:10px;border:none;cursor:pointer;transition:all 0.2s;letter-spacing:-0.01em}
+.btn-primary:hover{background:var(--purple-dark);transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.btn-secondary{display:inline-flex;align-items:center;gap:6px;background:#fff;color:var(--text-700);font-size:1rem;font-weight:600;padding:14px 24px;border-radius:10px;border:1.5px solid var(--border);cursor:pointer;transition:all 0.2s}
+.btn-secondary:hover{border-color:var(--purple);color:var(--purple)}
+.hero-sub-links{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:8px}
+.hero-sub-link{font-size:0.875rem;font-weight:600;color:var(--text-500);text-decoration:underline;text-underline-offset:3px;transition:color 0.2s}
+.hero-sub-link:hover{color:var(--purple)}
+#scrollIndicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;color:var(--text-300);font-size:0.75rem;font-weight:500;transition:opacity 0.4s}
+#scrollIndicator .scroll-arrow{width:20px;height:20px;border-right:2px solid var(--border);border-bottom:2px solid var(--border);transform:rotate(45deg);animation:bounce 1.5s infinite}
+@keyframes bounce{0%,100%{transform:rotate(45deg) translateY(0)}50%{transform:rotate(45deg) translateY(6px)}}
+
+/* FAB */
+#fabApply{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);z-index:990;background:var(--purple);color:#fff;font-size:0.9rem;font-weight:700;padding:12px 24px;border-radius:10px;border:none;cursor:pointer;white-space:normal;text-align:center;line-height:1.45;max-width:calc(100vw - 40px);opacity:0;pointer-events:none;transition:opacity 0.3s,transform 0.3s;box-shadow:var(--shadow-lg)}
+@media(max-width:480px){#fabApply{font-size:0.82rem;padding:11px 20px}}
+#fabApply.visible{opacity:1;pointer-events:auto}
+#fabApply:hover{transform:translateX(-50%) translateY(-2px)}
+
+/* SECTIONS COMMON */
+section{padding:96px 0}
+.container{max-width:1200px;margin:0 auto;padding:0 24px}
+.section-eyebrow{display:inline-flex;background:var(--purple-xlight);color:var(--purple);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:6px;margin-bottom:16px}
+.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;color:var(--text-900);line-height:1.2;letter-spacing:-0.03em;margin-bottom:16px}
+.section-desc{font-size:1rem;color:var(--text-500);line-height:1.7;max-width:600px}
+
+/* FADE UP */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* INTRODUCE */
+#introduce{background:#fff;border-top:1px solid var(--border)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.intro-tag{display:inline-flex;background:var(--purple-xlight);color:var(--purple);font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:4px 12px;border-radius:6px;margin-bottom:16px}
+.intro-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;color:var(--text-900);line-height:1.15;letter-spacing:-0.03em;margin-bottom:0}
+.intro-title span{color:var(--purple)}
+.intro-right h3{font-size:0.75rem;font-weight:700;color:var(--purple);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.06em}
+.intro-right p{font-size:0.95rem;color:var(--text-500);line-height:1.8}
+
+/* WHAT IS */
+#whatis{background:var(--bg)}
+.whatis-header{text-align:center;margin-bottom:48px}
+.whatis-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.whatis-card{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:36px;transition:all 0.2s}
+.whatis-card:hover{border-color:var(--purple-200);box-shadow:var(--shadow-md)}
+.card-num{font-size:0.72rem;font-weight:700;color:var(--purple);letter-spacing:0.1em;margin-bottom:12px}
+.card-title{font-size:1.3rem;font-weight:800;color:var(--text-900);margin-bottom:12px;letter-spacing:-0.02em}
+.card-desc{font-size:0.9rem;color:var(--text-500);line-height:1.7}
+
+/* ABOUT */
+#about{background:#fff;border-top:1px solid var(--border)}
+.about-header{text-align:center;margin-bottom:20px}
+.about-desc{text-align:center;font-size:1rem;color:var(--text-500);line-height:1.7;max-width:600px;margin:0 auto 48px}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.about-card{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:32px;transition:all 0.2s}
+.about-card:hover{border-color:var(--purple-200);box-shadow:var(--shadow-md)}
+.card-icon{width:44px;height:44px;border-radius:10px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:1.2rem}
+.about-card h3{font-size:1rem;font-weight:700;color:var(--text-900);margin-bottom:10px;letter-spacing:-0.02em}
+.about-card p{font-size:0.875rem;color:var(--text-500);line-height:1.7}
+
+/* GUIDEBOOK */
+#guidebook{background:var(--bg)}
+.guidebook-header{text-align:center;margin-bottom:48px}
+.guidebook-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.guide-block{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:36px}
+.guide-block h3{font-size:1.05rem;font-weight:700;color:var(--text-900);margin-bottom:8px;letter-spacing:-0.02em}
+.guide-label{display:inline-block;background:var(--purple-xlight);color:var(--purple);font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:6px;margin-bottom:12px}
+.guide-cost{font-size:1.5rem;font-weight:800;color:var(--text-900);margin-bottom:8px;letter-spacing:-0.03em}
+.guide-block p{font-size:0.875rem;color:var(--text-500);line-height:1.7;margin-bottom:12px}
+.guide-highlight{background:var(--bg);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:14px 16px;font-size:0.875rem;color:var(--text-700);font-weight:500;line-height:1.6}
+.guide-highlight strong{color:var(--purple)}
+.perk-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:12px}
+.perk-item{display:flex;align-items:flex-start;gap:12px;font-size:0.875rem;color:var(--text-700);line-height:1.6}
+.perk-icon{width:28px;height:28px;min-width:28px;border-radius:7px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--purple)}
+
+/* PARTNERS */
+#partners{background:#fff;padding:80px 0;border-top:1px solid var(--border)}
+.partners-header{text-align:center;margin-bottom:48px}
+.partner-logos{display:flex;flex-wrap:nowrap;justify-content:center;max-width:1100px;margin:0 auto;border:1.5px solid var(--border);border-radius:16px;overflow:hidden}
+.partner-logo-item{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px;padding:24px 16px;border-right:1px solid var(--border);transition:background 0.2s;text-decoration:none}
+.partner-logo-item:last-child{border-right:none}
+.partner-logo-item:hover{background:var(--bg)}
+.partner-logo-img-wrap{height:52px;display:flex;align-items:center;justify-content:center}
+.partner-logo-item img{max-height:32px;max-width:100px;object-fit:contain;filter:grayscale(100%);opacity:0.6;transition:all 0.2s}
+.partner-logo-item:hover img{filter:grayscale(0%);opacity:1}
+.partner-logo-idden .partner-logo-img-wrap img{filter:grayscale(100%) contrast(2) !important;mix-blend-mode:multiply;opacity:0.7 !important;max-height:52px !important;max-width:130px !important;transition:none !important}
+.partner-logo-idden:hover .partner-logo-img-wrap img{filter:contrast(2) !important;mix-blend-mode:multiply !important;opacity:1 !important}
+.partner-logo-item span{font-size:0.68rem;font-weight:600;color:var(--text-300);text-align:center;line-height:1.4;white-space:nowrap}
+@media(max-width:640px){
+  .partner-logos{flex-wrap:wrap;border-radius:14px}
+  .partner-logo-item{flex:0 0 33.333%;border-right:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 8px;justify-content:center}
+  .partner-logo-item:nth-child(3n){border-right:none}
+  .partner-logo-item:last-child{border-bottom:none}
+  .partner-logo-img-wrap{height:36px}
+  .partner-logo-item img{max-height:24px;max-width:64px}
+  .partner-logo-idden .partner-logo-img-wrap img{max-height:36px !important;max-width:80px !important}
+  .partner-logo-item span{font-size:0.58rem;white-space:normal;word-break:keep-all}
+}
+
+/* SCHEDULE */
+#schedule{background:var(--bg);border-top:1px solid var(--border)}
+.schedule-header{text-align:center;margin-bottom:16px}
+.schedule-desc{text-align:center;font-size:0.95rem;color:var(--text-500);margin-bottom:40px}
+.schedule-desc a{color:var(--purple);font-weight:600}
+.tl-wrap{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:8px;max-width:720px;margin:0 auto}
+.tl-item{display:flex;gap:20px;padding:20px 24px;border-radius:10px;transition:background 0.2s}
+.tl-item:hover{background:var(--bg)}
+.tl-item+.tl-item{border-top:1px solid var(--border)}
+.tl-node-col{display:flex;flex-direction:column;align-items:center;padding-top:4px}
+.tl-dot{width:12px;height:12px;min-width:12px;border-radius:50%;background:#fff;border:2px solid var(--purple);transition:background 0.2s}
+.tl-item:hover .tl-dot{background:var(--purple)}
+.tl-date{font-size:0.78rem;font-weight:700;color:var(--purple);min-width:120px;padding-top:3px;line-height:1.5}
+.tl-content h4{font-size:0.95rem;font-weight:700;color:var(--text-900);margin-bottom:4px;line-height:1.4}
+.tl-content p{font-size:0.83rem;color:var(--text-500);line-height:1.6}
+.tl-badge-open{display:inline-flex;align-items:center;gap:5px;background:var(--purple-xlight);color:var(--purple);font-size:0.68rem;font-weight:700;padding:2px 8px;border-radius:6px;margin-top:4px}
+.tl-badge-open::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--purple);animation:pulse 1.5s infinite}
+
+/* APPLY SECTION */
+#apply{background:var(--bg-section)}
+.apply-form-wrap{background:#fff;border:1.5px solid var(--border);border-radius:16px;box-shadow:var(--shadow-md);max-width:760px;margin:48px auto 0;overflow:visible}
+.apply-form-header{background:var(--bg);border-bottom:1px solid var(--border);padding:24px 36px;border-radius:16px 16px 0 0}
+.apply-form-header h3{font-size:1.2rem;font-weight:800;color:var(--text-900);margin-bottom:4px}
+.apply-form-header p{font-size:0.85rem;color:var(--purple);font-weight:600}
+.apply-steps-bar{background:#fff;border-bottom:1px solid var(--border);padding:20px 36px;display:flex;align-items:center;gap:0}
+.apply-step{display:flex;align-items:center;gap:10px;flex:1}
+.apply-step-num{width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--text-300);font-size:0.8rem;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all 0.3s;flex-shrink:0}
+.apply-step.active .apply-step-num{background:var(--purple);color:#fff;box-shadow:0 0 0 3px var(--purple-light)}
+.apply-step.done .apply-step-num{background:#22c55e;color:#fff}
+.apply-step-label{font-size:0.8rem;font-weight:600;color:var(--text-300);transition:color 0.3s}
+.apply-step.active .apply-step-label{color:var(--purple);font-weight:700}
+.apply-step.done .apply-step-label{color:#22c55e}
+.apply-step-divider{flex:1;height:1px;background:var(--border);margin:0 8px}
+.apply-pages{padding:32px 36px}
+.apply-page{display:none}
+.apply-page.active{display:block}
+.form-group{margin-bottom:24px}
+.form-label{font-size:0.875rem;font-weight:700;color:var(--text-700);margin-bottom:8px;display:block}
+.form-label span.req{color:var(--purple);margin-left:3px}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px 16px;font-size:0.9375rem;color:var(--text-900);outline:none;transition:all 0.2s;letter-spacing:-0.02em}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-light)}
+.form-textarea{resize:vertical;min-height:100px;line-height:1.6}
+.form-select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B95A1' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;cursor:pointer}
+.form-error{font-size:0.78rem;color:#ef4444;margin-top:6px;display:none}
+.form-error.show{display:block}
+.radio-cards{display:grid;gap:10px}
+.radio-cards.cols2{grid-template-columns:1fr 1fr}
+.radio-cards.cols3{grid-template-columns:repeat(3,1fr)}
+.radio-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px 16px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:10px;font-size:0.875rem;font-weight:500;color:var(--text-700)}
+.radio-card:hover{border-color:var(--purple-300);background:var(--purple-xlight)}
+.radio-card.selected{border-color:var(--purple);background:var(--purple-xlight);color:var(--purple);font-weight:700}
+.radio-card input{display:none}
+.radio-card-dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--border);transition:all 0.2s;flex-shrink:0}
+.radio-card.selected .radio-card-dot{border-color:var(--purple);background:var(--purple)}
+.check-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.check-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:12px 16px;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px;font-size:0.875rem;font-weight:500;color:var(--text-700)}
+.check-card:hover{border-color:var(--purple-300);background:var(--purple-xlight)}
+.check-card.selected{border-color:var(--purple);background:var(--purple-xlight);color:var(--purple);font-weight:700}
+.check-card input{display:none}
+.check-card-box{width:16px;height:16px;border-radius:4px;border:2px solid var(--border);transition:all 0.2s;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.check-card.selected .check-card-box{border-color:var(--purple);background:var(--purple)}
+.check-card-box::after{content:'';display:none;width:8px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translateY(-1px)}
+.check-card.selected .check-card-box::after{display:block}
+.phone-row{display:flex;gap:10px}
+.phone-dial{width:120px;flex-shrink:0}
+
+/* DATE PICKER */
+.dp-wrap{position:relative;display:flex;gap:12px}
+.dp-field{flex:1;position:relative}
+.dp-input-btn{width:100%;background:var(--bg);border:1.5px solid var(--border);border-radius:12px;padding:12px 16px;font-size:0.9375rem;color:var(--text-900);text-align:left;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:8px}
+.dp-input-btn:hover,.dp-input-btn.open{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-light)}
+.dp-input-btn-icon{color:var(--text-300);font-size:0.9rem}
+.dp-input-btn-text{flex:1;color:var(--text-300)}
+.dp-input-btn-text.set{color:var(--text-900)}
+.dp-popup{position:absolute;top:calc(100% + 8px);left:0;z-index:500;background:#fff;border:1.5px solid var(--border);border-radius:16px;box-shadow:var(--shadow-lg);padding:16px;min-width:280px;display:none}
+.dp-popup.open{display:block}
+.dp-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.dp-nav{background:none;border:none;cursor:pointer;width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--text-500);font-size:1.1rem;transition:all 0.2s}
+.dp-nav:hover{background:var(--purple-xlight);color:var(--purple)}
+.dp-month-label{font-size:0.9rem;font-weight:700;color:var(--text-900)}
+.dp-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:4px}
+.dp-wd{font-size:0.7rem;font-weight:600;color:var(--text-300);text-align:center;padding:4px 0}
+.dp-days{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.dp-day{width:100%;aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:500;border-radius:8px;cursor:pointer;transition:all 0.15s;color:var(--text-700);border:none;background:none}
+.dp-day:hover:not(.dp-day--disabled){background:var(--purple-xlight);color:var(--purple)}
+.dp-day--selected{background:var(--purple);color:#fff;font-weight:700}
+.dp-day--selected:hover{background:var(--purple-dark)}
+.dp-day--in-range{background:var(--purple-xlight);color:var(--purple)}
+.dp-day--disabled{color:var(--border);cursor:not-allowed}
+.dp-day--empty{cursor:default}
+
+/* FILE UPLOAD */
+.file-upload-area{border:2px dashed var(--border);border-radius:12px;padding:28px;text-align:center;cursor:pointer;transition:all 0.2s;background:var(--bg)}
+.file-upload-area:hover,.file-upload-area.dragover{border-color:var(--purple);background:var(--purple-xlight)}
+.file-upload-icon{font-size:2rem;color:var(--text-300);margin-bottom:8px}
+.file-upload-text{font-size:0.875rem;color:var(--text-500)}
+.file-upload-text span{color:var(--purple);font-weight:700;text-decoration:underline}
+.file-upload-sub{font-size:0.75rem;color:var(--text-300);margin-top:4px}
+.file-selected{font-size:0.85rem;color:var(--purple);font-weight:600;margin-top:8px;display:none}
+
+/* AGREE */
+.agree-card{border:1.5px solid var(--border);border-radius:12px;padding:20px;cursor:pointer;transition:all 0.2s;display:flex;align-items:flex-start;gap:14px;background:#fff}
+.agree-card:hover{border-color:var(--purple-300)}
+.agree-card.selected{border-color:var(--purple);background:var(--purple-xlight)}
+.agree-check-box{width:20px;height:20px;border-radius:6px;border:2px solid var(--border);flex-shrink:0;transition:all 0.2s;margin-top:2px;display:flex;align-items:center;justify-content:center}
+.agree-card.selected .agree-check-box{border-color:var(--purple);background:var(--purple)}
+.agree-check-box::after{content:'';display:none;width:10px;height:6px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translateY(-1px)}
+.agree-card.selected .agree-check-box::after{display:block}
+.agree-text{font-size:0.875rem;color:var(--text-700);line-height:1.6}
+.agree-text strong{color:var(--text-900);font-weight:700}
+
+/* FORM FOOTER */
+#applyFormFooter{padding:20px 36px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;border-radius:0 0 var(--radius-lg) var(--radius-lg)}
+.btn-form-back{background:#fff;border:1.5px solid var(--border);color:var(--text-700);padding:12px 24px;border-radius:8px;font-size:0.9rem;font-weight:600;transition:all 0.2s}
+.btn-form-back:hover{border-color:var(--purple);color:var(--purple)}
+.page-indicator{font-size:0.8rem;font-weight:600;color:var(--text-300)}
+.btn-form-next{background:var(--purple);color:#fff;padding:12px 28px;border-radius:8px;font-size:0.9rem;font-weight:700;transition:all 0.2s;box-shadow:0 2px 8px rgba(118,17,131,0.15)}
+.btn-form-next:hover{background:var(--purple-dark);transform:translateY(-1px)}
+
+/* SUCCESS */
+#applySuccess{padding:48px 36px;text-align:center}
+.success-icon{width:64px;height:64px;border-radius:50%;background:var(--purple-xlight);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-size:2rem}
+.success-title{font-size:1.6rem;font-weight:800;color:var(--text-900);margin-bottom:12px}
+.success-desc{font-size:0.95rem;color:var(--text-500);line-height:1.7;max-width:500px;margin:0 auto 28px}
+.success-notice{background:var(--purple-xlight);border-radius:16px;padding:20px 24px;text-align:left;font-size:0.875rem;color:var(--text-700);line-height:1.7;max-width:500px;margin:0 auto}
+.success-notice strong{color:var(--purple);font-weight:700}
+
+/* CONTACT */
+#contact{background:#fff;padding:72px 0;border-top:1px solid var(--border)}
+.contact-header{text-align:center;margin-bottom:40px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.contact-card{background:var(--bg);border:1.5px solid var(--border);border-radius:16px;padding:28px;text-align:center;transition:all 0.2s}
+.contact-card:hover{border-color:var(--purple-200);box-shadow:var(--shadow-md)}
+.contact-card .card-icon{margin:0 auto 14px}
+.contact-card h3{font-size:0.95rem;font-weight:700;color:var(--text-900);margin-bottom:6px}
+.contact-card p{font-size:0.85rem;color:var(--text-500);line-height:1.6}
+.contact-card a{color:var(--purple);font-weight:600}
+
+/* FOOTER */
+.wehome-banner{background:#fff;border-top:1px solid var(--border)}
+.wehome-banner-link{display:flex;align-items:center;justify-content:center;gap:16px;padding:18px 24px;max-width:1200px;margin:0 auto;transition:opacity .2s;flex-wrap:wrap}
+.wehome-banner-link:hover{opacity:.7}
+.wehome-banner-logo{font-size:0.95rem;font-weight:800;color:var(--purple);letter-spacing:-0.02em;white-space:nowrap}
+.wehome-banner-divider{width:1px;height:16px;background:var(--border);flex-shrink:0}
+.wehome-banner-text{font-size:0.85rem;font-weight:500;color:var(--text-500);white-space:nowrap}
+.wehome-banner-arrow{font-size:0.85rem;color:var(--text-300);flex-shrink:0}
+footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.footer-logo-text{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.footer-badge{background:var(--purple);color:#fff;font-size:0.6rem;font-weight:700;padding:2px 7px;border-radius:4px;margin-left:8px}
+.footer-tagline{font-size:0.8rem;color:#6B7280;margin-top:6px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-link{font-size:0.85rem;color:#9CA3AF;transition:color 0.2s}
+.footer-link:hover{color:#fff}
+.footer-divider{border:none;border-top:1px solid #2D3748;margin-bottom:20px}
+.footer-company{font-size:0.78rem;color:#4B5563;line-height:1.8}
+.footer-company strong{color:#6B7280}
+
+/* LANGUAGE PICKER */
+.kpop-lang-wrap{position:relative}
+.kpop-lang-btn{
+  display:flex;align-items:center;gap:4px;
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:8px;padding:6px 10px;
+  font-size:0.8rem;font-weight:600;color:var(--text-700);
+  cursor:pointer;font-family:inherit;transition:all 0.2s;
+  white-space:nowrap;
+}
+.kpop-lang-btn:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-xlight)}
+.kpop-lang-icon{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+.kpop-lang-arrow{width:12px;height:12px;fill:currentColor;opacity:.55;flex-shrink:0}
+.kpop-lang-dropdown{
+  display:none;position:absolute;top:calc(100% + 8px);right:0;
+  background:#fff;border:1.5px solid var(--border);
+  border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.10);
+  min-width:130px;padding:6px;z-index:1100;
+}
+.kpop-lang-dropdown.open{display:block}
+.kpop-lang-item{
+  display:block;padding:8px 12px;border-radius:8px;
+  font-size:0.82rem;font-weight:600;color:var(--text-700);
+  transition:background 0.15s,color 0.15s;white-space:nowrap;
+  text-decoration:none;cursor:pointer;background:none;border:none;
+  font-family:inherit;width:100%;text-align:left;
+}
+.kpop-lang-item:hover{background:var(--purple-xlight);color:var(--purple)}
+.kpop-lang-item.active{color:var(--purple);font-weight:700}
+.kpop-lang-item.active::before{content:'✓ ';font-size:10px}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .intro-grid,.guidebook-grid{grid-template-columns:1fr;gap:32px}
+  .whatis-grid{grid-template-columns:1fr}
+  .about-grid,.contact-grid{grid-template-columns:1fr 1fr;gap:12px}
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+}
+@media(max-width:640px){
+  .about-grid,.contact-grid{grid-template-columns:1fr}
+  .radio-cards.cols3{grid-template-columns:1fr}
+  .radio-cards.cols2{grid-template-columns:1fr}
+  .check-cards{grid-template-columns:1fr 1fr}
+  .apply-form-header,.apply-steps-bar,.apply-pages,#applyFormFooter{padding-left:20px;padding-right:20px}
+  .dp-wrap{flex-direction:column}
+  .hero-title{font-size:2.5rem}
+  .hero-subtitle{font-size:1rem}
+  .footer-top{flex-direction:column;gap:20px}
+  .tl-item{flex-direction:column;gap:8px}
+  section{padding:64px 0}
+  #applyFormFooter{flex-wrap:wrap;gap:8px}
+  .page-indicator{width:100%;text-align:center;order:-1}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <span class="nav-logo-text">K-POPSTAY BUSAN</span>
+      <span class="nav-badge">2026</span>
+    </a>
+    <div class="nav-links">
+      <a href="#home" class="nav-link active">홈</a>
+      <a href="/about-kr" class="nav-link">K-POPSTAY</a>
+      <a href="#guidebook" class="nav-link">게스트 가이드북</a>
+      <a href="#apply" class="btn-apply-nav">신청하기</a>
+      <!-- k-popstay 전용 언어 선택기 — wehome.me 세션/쿠키 불개입 -->
+      <div class="kpop-lang-wrap" id="kpopLangWrap">
+        <button class="kpop-lang-btn" onclick="toggleKpopLang(event)" aria-expanded="false" aria-label="Language">
+          <svg class="kpop-lang-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18c-1.05 0-2.4-.9-3.4-3h6.8c-1 2.1-2.35 3-3.4 3zm-3.8-5c-.13-.64-.2-1.31-.2-2s.07-1.36.2-2h7.6c.13.64.2 1.31.2 2s-.07 1.36-.2 2H8.2zm-4.1-2c0-.68.1-1.35.27-2h3.25c-.1.65-.16 1.31-.16 2s.06 1.35.16 2H4.37A9.94 9.94 0 0 1 4.1 13zm11.5-6h-7.2C9.4 4.9 10.75 4 11.8 4c1.05 0 2.4.9 3.4 3h.4zm2.13 2h3.25A9.94 9.94 0 0 1 21.9 11h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2zm0 4h3.25c-.17.65-.27 1.32-.27 2s.1 1.35.27 2h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2z"/></svg>
+          <span id="kpopLangCurLabel">한국어</span>
+          <svg class="kpop-lang-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="kpop-lang-dropdown" id="kpopLangDropdown" role="listbox"></div>
+      </div>
+      <a href="/host" class="btn-host-nav">호스트 신청</a>
+    </div>
+    <div class="nav-hamburger" id="navHamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home" class="mobile-link" onclick="toggleMenu()">홈</a>
+  <a href="https://www.wehome.me/trust/en/k-popstay-for-army-guidebook/" target="_blank" class="mobile-link">K-POPSTAY</a>
+  <a href="#guidebook" class="mobile-link" onclick="toggleMenu()">게스트 가이드북</a>
+  <a href="#apply" class="mobile-link" style="color:var(--purple);font-weight:700" onclick="toggleMenu()">신청하기 &rsaquo;</a>
+  <div id="mobileLangList"></div>
+  <a href="/host" class="mobile-link">호스트 신청</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-eyebrow fade-up">K-POPSTAY BUSAN 2026</div>
+    <h1 class="hero-title fade-up">부산 갈매기<br><span class="brand">둥지</span></h1>
+    <p class="hero-subtitle fade-up">글로벌 팬들을 위한 부산 시민의 환대</p>
+    <div class="city-badge active fade-up">부산 &mdash; 6월 12&ndash;14일</div>
+    <div class="hero-cta-row fade-up">
+      <a href="#apply" class="btn-primary">2박 3일 무료 신청 (외국인 아미 우선) &rsaquo;</a>
+      <button class="btn-secondary" onclick="sharePage()">공유</button>
+    </div>
+    <div class="hero-sub-links fade-up">
+      <a href="/host" class="hero-sub-link">부산 시민 호스트 신청하기 &rsaquo;</a>
+      <a href="https://www.wehome.me/k-popstay-busan/" target="_blank" class="hero-sub-link">위홈 부산 숙박 10% 할인 예약 &rsaquo;</a>
+    </div>
+  </div>
+  <div id="scrollIndicator">
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- FAB -->
+<a href="#apply" id="fabApply">2박 3일 무료 신청<br>(외국인 아미 우선) &rsaquo;</a>
+
+<!-- INTRODUCE -->
+<section id="introduce">
+  <div class="container">
+    <div class="intro-grid fade-up">
+      <div>
+        <div class="intro-tag">공정하고 상생하는 시민 참여형 거버넌스</div>
+        <h2 class="intro-title">부산 갈매기<br><span>둥지스테이</span></h2>
+      </div>
+      <div class="intro-right">
+        <h3>이 프로젝트에 대하여</h3>
+        <p>K-POPSTAY BUSAN 2026은 BTS의 부산 콘서트를 맞아 전 세계 아미 팬들에게 부산 시민의 집을 무료로 제공하는 시민 참여형 공유숙박 프로젝트입니다.<br><br>
+        바가지 요금 없이, 진짜 한국 가정의 따뜻한 환대를 경험하세요. 위홈이 검증한 신뢰할 수 있는 호스트와 함께합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS -->
+<section id="whatis">
+  <div class="container">
+    <div class="whatis-header fade-up">
+      <div class="section-eyebrow">K-POPSTAY BUSAN</div>
+      <h2 class="section-title">K-POPSTAY BUSAN이란?</h2>
+    </div>
+    <div class="whatis-grid">
+      <div class="whatis-card fade-up">
+        <div class="card-num">01 &middot; 신뢰</div>
+        <h3 class="card-title">검증된 신뢰할 수 있는 호스트</h3>
+        <p class="card-desc">위홈이 직접 검증한 부산 시민 호스트와의 안전하고 신뢰 가득한 공유숙박 경험을 제공합니다. 모든 호스트는 사전 인증 절차를 통과한 검증된 분들입니다.</p>
+      </div>
+      <div class="whatis-card fade-up">
+        <div class="card-num">02 &middot; 보증금</div>
+        <h3 class="card-title">보증금 100% 전액 환급 시스템</h3>
+        <p class="card-desc">선정된 아미게스트는 1인 당 5만원의 보증금 지불을 해야합니다. 보증금은 체크인시 동일한 금액의 부산관광상품카드로 환불해드립니다. 부산관광상품카드는 부산시에서 현금처럼 사용이 가능합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-header fade-up">
+      <div class="section-eyebrow">About</div>
+      <h2 class="section-title">K-POP이 만드는 새로운 홈쉐어링</h2>
+    </div>
+    <p class="about-desc fade-up">BTS의 2026 컴백 콘서트를 맞아 전 세계 팬들이 부산을 찾습니다. K-POPSTAY BUSAN은 이 특별한 순간을 문화 교류와 따뜻한 환대의 기회로 만듭니다.</p>
+    <div class="about-grid">
+      <div class="about-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>게스트 혜택</h3>
+        <p>한국 아미 팬과 직접 교류하고, 진짜 K-라이프스타일을 체험하세요. 합법 인증 숙소에서 100% 무료 숙박을 제공합니다.</p>
+      </div>
+      <div class="about-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="15" rx="2"/><path d="M17 22V7l-5-5-5 5v15"/></svg></div>
+        <h3>호스트 혜택</h3>
+        <p>전 세계 팬들과 교류하고, 위홈과 함께 공유숙박을 경험하세요. K-컬처 문화 대사로서 의미 있는 문화적 임팩트를 만들어갑니다.</p>
+      </div>
+      <div class="about-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+        <h3>사회적 가치</h3>
+        <p>바가지 요금 근절, K-라이프스타일 수요 충족, 지역경제 살리기. 공유숙박의 새로운 기준을 정립하는 사회적 모델입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDEBOOK -->
+<section id="guidebook">
+  <div class="container">
+    <div class="guidebook-header fade-up">
+      <div class="section-eyebrow">게스트 가이드북</div>
+      <h2 class="section-title">알아야 할 모든 것</h2>
+    </div>
+    <div class="guidebook-grid">
+      <div class="guide-block fade-up">
+        <div class="guide-label">둥지스테이 비용 정책</div>
+        <h3>숙박 요금 및 보증금 정책</h3>
+        <div class="guide-cost">게스트 비용: 0원</div>
+        <p>숙박은 완전히 무료입니다. K-POPSTAY BUSAN은 시민 참여 프로젝트로, 부산 시민 호스트들이 자발적으로 집을 개방합니다.</p>
+        <div class="guide-highlight">
+          환급 보증금: 예약 확정 시 상호 신뢰를 위한 소액 보증금이 수취됩니다. 체크인 시 부산관광상품카드로 <strong>100% 전액 환급</strong>됩니다.
+        </div>
+      </div>
+      <div class="guide-block fade-up">
+        <h3>포함 사항</h3>
+        <ul class="perk-list">
+          <li class="perk-item">
+            <div class="perk-icon">&#10003;</div>
+            <div><strong>안전 검증</strong><br>위홈 플랫폼을 통한 실명 인증 및 안전 심사를 거친 모든 숙소</div>
+          </li>
+          <li class="perk-item">
+            <div class="perk-icon">&#10003;</div>
+            <div><strong>신뢰할 수 있는 부산 시민</strong><br>자발적으로 집을 공개한 검증된 부산 시민 호스트</div>
+          </li>
+          <li class="perk-item">
+            <div class="perk-icon">&#10003;</div>
+            <div><strong>보증금 100% 환급</strong><br>체크아웃 시 전액 환급 — 숨겨진 비용 없음</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="container">
+    <div class="partners-header fade-up">
+      <div class="section-eyebrow">Partners &amp; Supporters</div>
+      <h2 class="section-title">정부·기관과 함께합니다</h2>
+    </div>
+    <div class="partner-logos fade-up">
+      <a class="partner-logo-item" href="https://www.busan.go.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/busan.svg" alt="부산광역시"></div>
+        <span>부산광역시</span>
+      </a>
+      <a class="partner-logo-item" href="https://knto.or.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/kto.png" alt="한국관광공사"></div>
+        <span>한국관광공사</span>
+      </a>
+      <a class="partner-logo-item" href="https://bto.or.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/bto.png" alt="부산관광공사"></div>
+        <span>부산관광공사</span>
+      </a>
+      <a class="partner-logo-item" href="https://www.mcst.go.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/mcst.svg" alt="문화체육관광부"></div>
+        <span>문화체육관광부</span>
+      </a>
+      <a class="partner-logo-item" href="https://www.msit.go.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/msit.png" alt="과학기술정보통신부"></div>
+        <span>과학기술정보통신부</span>
+      </a>
+      <a class="partner-logo-item" href="https://genabelle.co.kr" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/genabelle.png" alt="Genabelle"></div>
+        <span>Genabelle</span>
+      </a>
+      <a class="partner-logo-item partner-logo-idden" href="https://www.idden.co" target="_blank" rel="noopener">
+        <div class="partner-logo-img-wrap"><img src="/logos/idden.png" alt="Idden"></div>
+        <span>이든</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE -->
+<section id="schedule">
+  <div class="container">
+    <div class="schedule-header fade-up">
+      <div class="section-eyebrow">Schedule</div>
+      <h2 class="section-title">K-POPSTAY BUSAN 일정</h2>
+    </div>
+    <p class="schedule-desc fade-up">공식 게스트 프로그램 일정. <a href="/host">호스트 일정 보기 &rarr;</a></p>
+    <div class="tl-wrap fade-up">
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">2026년 5월 29일</div>
+        <div class="tl-content">
+          <h4>신청 접수 시작</h4>
+          <p>게스트 신청서 접수 시작 — 외국인 아미 팬 우선 선발</p>
+          <span class="tl-badge-open">지금 진행 중</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">2026년 6월 6&ndash;7일</div>
+        <div class="tl-content">
+          <h4>게스트 선발 및 매칭 발표</h4>
+          <p>신청자 중 선발된 게스트 및 호스트 매칭 결과 발표</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">2026년 6월 8일</div>
+        <div class="tl-content">
+          <h4>매칭 결과 및 일정 안내</h4>
+          <p>매칭된 호스트/게스트에게 상세 숙박 일정 및 안내 사항 전달</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-node-col"><div class="tl-dot"></div></div>
+        <div class="tl-date">2026년 6월 12&ndash;14일 &middot; 2박</div>
+        <div class="tl-content">
+          <h4>숙박 진행 및 보증금 환급</h4>
+          <p>BTS 부산 콘서트 기간 숙박 진행 후 보증금 100% 전액 환급</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY -->
+<section id="apply">
+  <div class="container" style="text-align:center">
+    <div class="section-eyebrow fade-up" style="display:inline-flex;justify-content:center">신청</div>
+    <h2 class="section-title fade-up">무료 숙박 신청하기</h2>
+    <div class="apply-form-wrap fade-up">
+      <div class="apply-form-header">
+        <h3>게스트 신청서</h3>
+        <p>부산 콘서트 &middot; 6월 12~14일, 2026</p>
+      </div>
+      <div class="apply-steps-bar">
+        <div class="apply-step active" id="step1">
+          <div class="apply-step-num">1</div>
+          <span class="apply-step-label">숙박 조건</span>
+        </div>
+        <div class="apply-step-divider"></div>
+        <div class="apply-step" id="step2">
+          <div class="apply-step-num">2</div>
+          <span class="apply-step-label">개인 정보</span>
+        </div>
+        <div class="apply-step-divider"></div>
+        <div class="apply-step" id="step3">
+          <div class="apply-step-num">3</div>
+          <span class="apply-step-label">아미 인증</span>
+        </div>
+      </div>
+      <div class="apply-pages">
+        <!-- PAGE 1 -->
+        <div class="apply-page active" id="page1">
+          <div class="form-group">
+            <label class="form-label">숙박 유형 <span class="req">*</span></label>
+            <div class="radio-cards cols3">
+              <label class="radio-card" onclick="selectRadio(this,'stayType','private_room')">
+                <input type="radio" name="stayType" value="private_room"><div class="radio-card-dot"></div>개인실
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'stayType','shared_room')">
+                <input type="radio" name="stayType" value="shared_room"><div class="radio-card-dot"></div>쉐어룸
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'stayType','flex')">
+                <input type="radio" name="stayType" value="flex"><div class="radio-card-dot"></div>상관없음
+              </label>
+            </div>
+            <div class="form-error" id="err-stayType">숙박 유형을 선택해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="guestCount">인원 수 <span class="req">*</span></label>
+            <select class="form-select" id="guestCount" name="guestCount">
+              <option value="">인원 수 선택</option>
+              <option value="1">1명</option>
+              <option value="2">2명</option>
+              <option value="3">3명</option>
+              <option value="4">4명</option>
+            </select>
+            <div class="form-error" id="err-guestCount">인원 수를 선택해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">룸 쉐어링 <span class="req">*</span></label>
+            <div class="radio-cards cols2">
+              <label class="radio-card" onclick="selectRadio(this,'roomSharing','same_gender')">
+                <input type="radio" name="roomSharing" value="same_gender"><div class="radio-card-dot"></div>동성만
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'roomSharing','any')">
+                <input type="radio" name="roomSharing" value="any"><div class="radio-card-dot"></div>상관없음
+              </label>
+            </div>
+            <div class="form-error" id="err-roomSharing">룸 쉐어링 선호를 선택해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">성별 <span class="req">*</span></label>
+            <div class="radio-cards cols3">
+              <label class="radio-card" onclick="selectRadio(this,'gender','female')">
+                <input type="radio" name="gender" value="female"><div class="radio-card-dot"></div>여성
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'gender','male')">
+                <input type="radio" name="gender" value="male"><div class="radio-card-dot"></div>남성
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'gender','other')">
+                <input type="radio" name="gender" value="other"><div class="radio-card-dot"></div>기타
+              </label>
+            </div>
+            <div class="form-error" id="err-gender">성별을 선택해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">침대 필요 여부 <span class="req">*</span></label>
+            <div class="radio-cards cols2">
+              <label class="radio-card" onclick="selectRadio(this,'bedRequired','yes')">
+                <input type="radio" name="bedRequired" value="yes"><div class="radio-card-dot"></div>침대 필요
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'bedRequired','no')">
+                <input type="radio" name="bedRequired" value="no"><div class="radio-card-dot"></div>바닥 가능
+              </label>
+            </div>
+            <div class="form-error" id="err-bedRequired">침대 필요 여부를 선택해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">체크인 / 체크아웃 날짜 <span class="req">*</span></label>
+            <div class="dp-wrap">
+              <div class="dp-field" id="dpFieldIn">
+                <button type="button" class="dp-input-btn" id="btnDpIn" onclick="togglePicker('In')">
+                  <span class="dp-input-btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+                  <span class="dp-input-btn-text" id="checkInDisplay">체크인 날짜 선택</span>
+                </button>
+                <div class="dp-popup" id="dpPopupIn"></div>
+                <input type="hidden" id="checkIn" name="checkIn">
+              </div>
+              <div class="dp-field" id="dpFieldOut">
+                <button type="button" class="dp-input-btn" id="btnDpOut" onclick="togglePicker('Out')">
+                  <span class="dp-input-btn-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>
+                  <span class="dp-input-btn-text" id="checkOutDisplay">체크아웃 날짜 선택</span>
+                </button>
+                <div class="dp-popup" id="dpPopupOut"></div>
+                <input type="hidden" id="checkOut" name="checkOut">
+              </div>
+            </div>
+            <div class="form-error" id="err-checkIn">체크인 날짜를 선택해 주세요.</div>
+            <div class="form-error" id="err-checkOut">체크아웃 날짜를 선택해 주세요.</div>
+          </div>
+        </div>
+
+        <!-- PAGE 2 -->
+        <div class="apply-page" id="page2">
+          <div class="form-group">
+            <label class="form-label" for="guestName">이름 <span class="req">*</span></label>
+            <input type="text" class="form-input" id="guestName" name="guestName" placeholder="이름을 입력해 주세요">
+            <div class="form-error" id="err-guestName">이름을 입력해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="nationality">국적 <span class="req">*</span></label>
+            <select class="form-select" id="nationality" name="nationality">
+              <option value="">국적 선택</option>
+              <option value="United States">United States</option>
+              <option value="Japan">Japan</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Australia">Australia</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="France">France</option>
+              <option value="Germany">Germany</option>
+              <option value="China">China</option>
+              <option value="Taiwan">Taiwan</option>
+              <option value="Hong Kong">Hong Kong</option>
+              <option value="India">India</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="form-error" id="err-nationality">국적을 선택해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">전화번호 <span class="req">*</span></label>
+            <div class="phone-row">
+              <select class="form-select phone-dial" id="phoneDial">
+                <option value="+1">+1 (US)</option>
+                <option value="+81">+81 (JP)</option>
+                <option value="+66">+66 (TH)</option>
+                <option value="+62">+62 (ID)</option>
+                <option value="+63">+63 (PH)</option>
+                <option value="+55">+55 (BR)</option>
+                <option value="+60">+60 (MY)</option>
+                <option value="+65">+65 (SG)</option>
+                <option value="+84">+84 (VN)</option>
+                <option value="+61">+61 (AU)</option>
+                <option value="+44">+44 (GB)</option>
+                <option value="+1" data-country="CA">+1 (CA)</option>
+                <option value="+33">+33 (FR)</option>
+                <option value="+49">+49 (DE)</option>
+                <option value="+86">+86 (CN)</option>
+                <option value="+886">+886 (TW)</option>
+                <option value="+852">+852 (HK)</option>
+                <option value="+91">+91 (IN)</option>
+                <option value="+52">+52 (MX)</option>
+                <option value="+54">+54 (AR)</option>
+                <option value="+82">+82 (KR)</option>
+              </select>
+              <input type="tel" class="form-input" id="phoneNumber" name="phoneNumber" placeholder="전화번호 입력" oninput="formatPhone(this)">
+              <input type="hidden" id="phone" name="phone">
+            </div>
+            <div class="form-error" id="err-phone">전화번호를 입력해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">이메일 <span class="req">*</span></label>
+            <input type="email" class="form-input" id="email" name="email" placeholder="이메일 주소 입력">
+            <div class="form-error" id="err-email">유효한 이메일 주소를 입력해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">소통 가능 언어 <span class="req">*</span></label>
+            <div class="check-cards">
+              <label class="check-card" onclick="toggleCheck(this,'language','en')">
+                <input type="checkbox" name="language" value="en"><div class="check-card-box"></div>English
+              </label>
+              <label class="check-card" onclick="toggleCheck(this,'language','ko')">
+                <input type="checkbox" name="language" value="ko"><div class="check-card-box"></div>한국어
+              </label>
+              <label class="check-card" onclick="toggleCheck(this,'language','ja')">
+                <input type="checkbox" name="language" value="ja"><div class="check-card-box"></div>日本語
+              </label>
+              <label class="check-card" onclick="toggleCheck(this,'language','zh')">
+                <input type="checkbox" name="language" value="zh"><div class="check-card-box"></div>中文
+              </label>
+              <label class="check-card" onclick="toggleCheck(this,'language','es')">
+                <input type="checkbox" name="language" value="es"><div class="check-card-box"></div>Español
+              </label>
+              <label class="check-card" onclick="toggleCheck(this,'language','other')">
+                <input type="checkbox" name="language" value="other"><div class="check-card-box"></div>Other
+              </label>
+            </div>
+            <div class="form-error" id="err-language">소통 가능 언어를 하나 이상 선택해 주세요.</div>
+          </div>
+        </div>
+
+        <!-- PAGE 3 -->
+        <div class="apply-page" id="page3">
+          <div class="form-group">
+            <label class="form-label">아미 인증 방법 <span class="req">*</span></label>
+            <div class="radio-cards cols3">
+              <label class="radio-card" onclick="selectRadio(this,'armyProof','weverse')">
+                <input type="radio" name="armyProof" value="weverse"><div class="radio-card-dot"></div>위버스
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'armyProof','ticket')">
+                <input type="radio" name="armyProof" value="ticket"><div class="radio-card-dot"></div>공연 티켓
+              </label>
+              <label class="radio-card" onclick="selectRadio(this,'armyProof','fan_community')">
+                <input type="radio" name="armyProof" value="fan_community"><div class="radio-card-dot"></div>팬 커뮤니티
+              </label>
+            </div>
+            <div class="form-error" id="err-armyProof">아미 인증 방법을 선택해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">인증 파일 업로드 <span class="req">*</span></label>
+            <div class="file-upload-area" id="fileUploadArea" onclick="document.getElementById('armyProofFile').click()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event)">
+              <div class="file-upload-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div class="file-upload-text">클릭하거나 파일을 드래그하여 업로드 <span>파일 선택</span></div>
+              <div class="file-upload-sub">JPG, PNG, PDF &middot; 최대 10MB</div>
+              <div class="file-selected" id="fileSelected"></div>
+            </div>
+            <input type="file" id="armyProofFile" name="armyProofFile" accept="image/*,.pdf" style="display:none" onchange="handleFileChange(this)">
+            <div class="form-error" id="err-armyProofFile">인증 파일을 업로드해 주세요.</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="wehomeId">위홈 아이디 <span style="font-size:0.78rem;color:var(--text-300)">(선택)</span></label>
+            <input type="text" class="form-input" id="wehomeId" name="wehomeId" placeholder="위홈 계정 아이디 (선택 사항)">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="comments">추가 메모 <span style="font-size:0.78rem;color:var(--text-300)">(선택)</span></label>
+            <textarea class="form-textarea" id="comments" name="comments" placeholder="호스트에게 전하고 싶은 말이나 특별 요청 사항을 입력해 주세요."></textarea>
+          </div>
+          <div class="form-group">
+            <div class="agree-card" id="agreeCard" onclick="toggleAgree()">
+              <div class="agree-check-box"></div>
+              <div class="agree-text">
+                <strong>개인정보 수집 및 이용에 동의합니다</strong><br>
+                위홈(Wehome)이 K-POPSTAY BUSAN 2026 신청 처리를 위해 제출한 개인정보를 수집 및 이용하는 것에 동의합니다.
+                수집된 정보는 매칭 및 숙박 안내 목적으로만 사용됩니다.
+              </div>
+            </div>
+            <input type="hidden" id="agreeCheck" name="agreeCheck" value="">
+            <div class="form-error" id="err-agree">개인정보 수집 및 이용에 동의해 주세요.</div>
+          </div>
+        </div>
+
+        <!-- SUCCESS -->
+        <div id="applySuccess" style="display:none">
+          <div class="success-icon">&#10003;</div>
+          <div class="success-title">신청이 접수되었습니다!</div>
+          <p class="success-desc">K-POPSTAY BUSAN 2026 게스트 신청서가 정상적으로 접수되었습니다. 검토 후 6월 6~7일 매칭 결과를 이메일로 안내드립니다.</p>
+          <div class="success-notice">
+            <strong>다음 단계 안내:</strong><br>
+            &bull; 신청서 검토 및 호스트 매칭 (6월 6~7일)<br>
+            &bull; 매칭 결과 이메일 발송 (6월 8일)<br>
+            &bull; 보증금 납부 및 최종 확정<br>
+            &bull; 숙박 진행 (6월 12~14일)
+          </div>
+        </div>
+      </div>
+
+      <div id="applyFormFooter">
+        <button type="button" class="btn-form-back" id="btnBack" onclick="goTo(currentPage-1)" style="visibility:hidden">&larr; 이전</button>
+        <span class="page-indicator" id="pageIndicator">Step 1 of 3</span>
+        <button type="button" class="btn-form-next" id="btnNext" onclick="goTo(currentPage+1)">다음 &rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-header fade-up">
+      <div class="section-eyebrow" style="display:inline-flex">문의하기</div>
+      <h2 class="section-title">궁금한 점이 있으신가요?</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <h3>채널톡</h3>
+        <p>실시간 채팅 상담을 통해 빠른 답변을 받아보세요.</p>
+      </div>
+      <div class="contact-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <h3>이메일</h3>
+        <p><a href="mailto:cs@wehome.me">cs@wehome.me</a><br>문의 후 영업일 기준 1~2일 내 답변</p>
+      </div>
+      <div class="contact-card fade-up">
+        <div class="card-icon" style="color:var(--purple)"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 11.5a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.61 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <h3>전화</h3>
+        <p><a href="tel:15445665">1544-5665</a><br>평일 10:00&ndash;12:00, 13:00&ndash;18:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEHOME BANNER -->
+<div class="wehome-banner">
+  <a href="https://www.wehome.me" target="_blank" rel="noopener" class="wehome-banner-link">
+    <span class="wehome-banner-logo">Wehome.me</span>
+    <span class="wehome-banner-divider"></span>
+    <span class="wehome-banner-text">Korea's Only Government-Authorized Home Sharing</span>
+    <span class="wehome-banner-arrow">↗</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div>
+          <span class="footer-logo-text">K-POPSTAY BUSAN</span>
+          <span class="footer-badge">2026</span>
+        </div>
+        <div class="footer-tagline">Powered by Wehome.me &middot; 공유숙박의 새 기준</div>
+      </div>
+      <div class="footer-links">
+        <a href="/" class="footer-link">English</a>
+        <a href="/host" class="footer-link">호스트 신청</a>
+        <a href="https://www.wehome.me" target="_blank" class="footer-link">위홈 홈페이지</a>
+        <a href="https://www.wehome.me/trust/en/k-popstay-for-army-guidebook/" target="_blank" class="footer-link">K-POPSTAY</a>
+        <a href="mailto:cs@wehome.me" class="footer-link">고객센터</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-company">
+      <strong>(주)위홈</strong> | 대표: 조산구 | 개인정보보호책임자: 김석진 | 사업자등록번호: 467-81-01292 | 통신판매업신고: 2020-서울마포-1109<br>
+      주소: 서울 마포구 양화로 136 SVCS 507 | 고객센터: 1544-5665 | 평일 10:00&ndash;12:00, 13:00&ndash;18:00<br>
+      &copy; 2026 Wehome Inc. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ChannelIO
+(function(){var w=window;if(w.ChannelIO){return;}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://cdn.channel.io/plugin/ch-plugin-web.js';var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(document.readyState==='complete'){l();}else{w.addEventListener('DOMContentLoaded',l);w.addEventListener('load',l);}})();
+ChannelIO('boot',{pluginKey:'5d85db83-13e7-44dd-a0e1-3036e03e3e25',hideChannelButtonOnBoot:true});
+
+// SHARE
+function sharePage(){
+  if(navigator.share){
+    navigator.share({title:'K-POPSTAY BUSAN 2026',text:'부산 갈매기 둥지스테이 — 외국인 아미를 위한 무료 숙박 신청',url:window.location.href});
+  } else {
+    navigator.clipboard.writeText(window.location.href).then(function(){alert('링크가 복사되었습니다.');});
+  }
+}
+
+// HAMBURGER
+function toggleMenu(){
+  var m=document.getElementById('mobileMenu');
+  m.classList.toggle('open');
+}
+
+// FAB
+var fabApply=document.getElementById('fabApply');
+var heroSection=document.getElementById('home');
+function updateFab(){
+  var rect=heroSection.getBoundingClientRect();
+  if(rect.bottom<0){fabApply.classList.add('visible');}
+  else{fabApply.classList.remove('visible');}
+}
+window.addEventListener('scroll',updateFab,{passive:true});
+
+// SCROLL INDICATOR
+var scrollInd=document.getElementById('scrollIndicator');
+window.addEventListener('scroll',function(){
+  if(window.scrollY>80){scrollInd.style.opacity='0';}
+  else{scrollInd.style.opacity='1';}
+},{passive:true});
+
+// FADE UP
+var fadeEls=document.querySelectorAll('.fade-up');
+var observer=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+},{threshold:0.12});
+fadeEls.forEach(function(el){observer.observe(el);});
+
+// RADIO CARDS
+function selectRadio(label,name,value){
+  var cards=document.querySelectorAll('.radio-card input[name="'+name+'"]');
+  cards.forEach(function(inp){inp.closest('.radio-card').classList.remove('selected');});
+  label.classList.add('selected');
+  var inp=label.querySelector('input');
+  if(inp)inp.checked=true;
+  var err=document.getElementById('err-'+name);
+  if(err)err.classList.remove('show');
+}
+
+// CHECK CARDS
+function toggleCheck(label,name,value){
+  label.classList.toggle('selected');
+  var inp=label.querySelector('input');
+  if(inp)inp.checked=!inp.checked;
+  var err=document.getElementById('err-'+name);
+  if(err)err.classList.remove('show');
+}
+
+// AGREE
+var agreeSelected=false;
+function toggleAgree(){
+  agreeSelected=!agreeSelected;
+  var card=document.getElementById('agreeCard');
+  card.classList.toggle('selected',agreeSelected);
+  document.getElementById('agreeCheck').value=agreeSelected?'1':'';
+  var err=document.getElementById('err-agree');
+  if(err&&agreeSelected)err.classList.remove('show');
+}
+
+// FILE UPLOAD
+function handleFileChange(input){
+  if(input.files&&input.files[0]){
+    var sel=document.getElementById('fileSelected');
+    sel.textContent=input.files[0].name;
+    sel.style.display='block';
+    var err=document.getElementById('err-armyProofFile');
+    if(err)err.classList.remove('show');
+  }
+}
+function handleDrop(e){
+  e.preventDefault();
+  document.getElementById('fileUploadArea').classList.remove('dragover');
+  var dt=e.dataTransfer;
+  if(dt&&dt.files&&dt.files[0]){
+    var inp=document.getElementById('armyProofFile');
+    inp.files=dt.files;
+    handleFileChange(inp);
+  }
+}
+
+// PHONE FORMAT
+function formatPhone(inp){
+  var v=inp.value.replace(/\D/g,'');
+  inp.value=v;
+  var dial=document.getElementById('phoneDial').value||'';
+  document.getElementById('phone').value=dial+v;
+}
+document.getElementById('phoneDial').addEventListener('change',function(){
+  var num=document.getElementById('phoneNumber').value.replace(/\D/g,'');
+  document.getElementById('phone').value=this.value+num;
+});
+
+// DATE PICKER
+var MIN_N=20260612,MAX_N=20260614;
+var dpState={In:{year:2026,month:5,selected:null},Out:{year:2026,month:5,selected:null}};
+var MONTHS_KO=['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+var DAYS_KO=['일','월','화','수','목','금','토'];
+
+function toNum(y,m,d){return y*10000+(m+1)*100+d;}
+function numToLabel(n){if(!n)return '';var y=Math.floor(n/10000);var mo=Math.floor((n%10000)/100);var d=n%100;return y+'년 '+(mo)+'월 '+d+'일';}
+
+function renderPicker(which){
+  var s=dpState[which];
+  var pop=document.getElementById('dpPopup'+which);
+  var y=s.year,m=s.month;
+  var firstDay=new Date(y,m,1).getDay();
+  var daysInMonth=new Date(y,m+1,0).getDate();
+  var inSel=dpState['In'].selected,outSel=dpState['Out'].selected;
+  var html='<div class="dp-header">';
+  html+='<button class="dp-nav" type="button" onclick="dpNav(\''+which+'\','+y+','+m+',-1)">&#8249;</button>';
+  html+='<span class="dp-month-label">'+y+'년 '+MONTHS_KO[m]+'</span>';
+  html+='<button class="dp-nav" type="button" onclick="dpNav(\''+which+'\','+y+','+m+',1)">&#8250;</button>';
+  html+='</div>';
+  html+='<div class="dp-weekdays">';
+  DAYS_KO.forEach(function(d){html+='<div class="dp-wd">'+d+'</div>';});
+  html+='</div>';
+  html+='<div class="dp-days">';
+  for(var i=0;i<firstDay;i++){html+='<button class="dp-day dp-day--empty" type="button" disabled></button>';}
+  for(var d=1;d<=daysInMonth;d++){
+    var n=toNum(y,m,d);
+    var cls='dp-day';
+    if(n<MIN_N||n>MAX_N)cls+=' dp-day--disabled';
+    else if(inSel&&outSel&&n>inSel&&n<outSel)cls+=' dp-day--in-range';
+    if(inSel===n||outSel===n)cls+=' dp-day--selected';
+    var disabled=(n<MIN_N||n>MAX_N)?'disabled':'';
+    html+='<button class="'+cls+'" type="button" '+disabled+' onclick="dpSelect(\''+which+'\','+n+')">'+d+'</button>';
+  }
+  html+='</div>';
+  pop.innerHTML=html;
+}
+
+function dpNav(which,y,m,delta){
+  m+=delta;
+  if(m<0){m=11;y--;}
+  if(m>11){m=0;y++;}
+  dpState[which].year=y;dpState[which].month=m;
+  renderPicker(which);
+}
+
+function dpSelect(which,n){
+  dpState[which].selected=n;
+  var label=numToLabel(n);
+  var disp=document.getElementById('check'+which+'Display');
+  disp.textContent=label;disp.classList.add('set');
+  document.getElementById('check'+which).value=String(n);
+  var pop=document.getElementById('dpPopup'+which);
+  pop.classList.remove('open');
+  document.getElementById('btnDp'+which).classList.remove('open');
+  var errIn=document.getElementById('err-check'+which);
+  if(errIn)errIn.classList.remove('show');
+  renderPicker('In');renderPicker('Out');
+}
+
+function togglePicker(which){
+  var pop=document.getElementById('dpPopup'+which);
+  var btn=document.getElementById('btnDp'+which);
+  var other=which==='In'?'Out':'In';
+  document.getElementById('dpPopup'+other).classList.remove('open');
+  document.getElementById('btnDp'+other).classList.remove('open');
+  pop.classList.toggle('open');
+  btn.classList.toggle('open');
+  if(pop.classList.contains('open'))renderPicker(which);
+}
+
+document.addEventListener('click',function(e){
+  ['In','Out'].forEach(function(w){
+    var pop=document.getElementById('dpPopup'+w);
+    var field=document.getElementById('dpField'+w);
+    if(pop&&field&&!field.contains(e.target)){
+      pop.classList.remove('open');
+      document.getElementById('btnDp'+w).classList.remove('open');
+    }
+  });
+});
+
+// STEP NAV
+var currentPage=1;
+function updateSteps(page){
+  for(var i=1;i<=3;i++){
+    var s=document.getElementById('step'+i);
+    s.classList.remove('active','done');
+    if(i<page)s.classList.add('done');
+    else if(i===page)s.classList.add('active');
+  }
+  for(var i=1;i<=3;i++){
+    var p=document.getElementById('page'+i);
+    if(p)p.classList.toggle('active',i===page);
+  }
+  var back=document.getElementById('btnBack');
+  var next=document.getElementById('btnNext');
+  var ind=document.getElementById('pageIndicator');
+  back.style.visibility=page>1?'visible':'hidden';
+  ind.textContent='Step '+page+' of 3';
+  if(page===3)next.textContent='신청 제출하기';
+  else next.textContent='다음 →';
+}
+
+function goTo(page){
+  if(page>currentPage&&!validatePage(currentPage))return;
+  if(page===4){submitForm();return;}
+  if(page<1)return;
+  currentPage=page;
+  updateSteps(page);
+  document.querySelector('.apply-form-wrap').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function validatePage(page){
+  var ok=true;
+  function showErr(id,msg){var el=document.getElementById(id);if(el){el.classList.add('show');if(msg)el.textContent=msg;}ok=false;}
+  function hideErr(id){var el=document.getElementById(id);if(el)el.classList.remove('show');}
+  function getRadio(name){var el=document.querySelector('input[name="'+name+'"]:checked');return el?el.value:'';}
+  if(page===1){
+    if(!getRadio('stayType'))showErr('err-stayType');else hideErr('err-stayType');
+    if(!document.getElementById('guestCount').value)showErr('err-guestCount');else hideErr('err-guestCount');
+    if(!getRadio('roomSharing'))showErr('err-roomSharing');else hideErr('err-roomSharing');
+    if(!getRadio('gender'))showErr('err-gender');else hideErr('err-gender');
+    if(!getRadio('bedRequired'))showErr('err-bedRequired');else hideErr('err-bedRequired');
+    if(!document.getElementById('checkIn').value)showErr('err-checkIn');else hideErr('err-checkIn');
+    if(!document.getElementById('checkOut').value)showErr('err-checkOut');else hideErr('err-checkOut');
+  }
+  if(page===2){
+    if(!document.getElementById('guestName').value.trim())showErr('err-guestName');else hideErr('err-guestName');
+    if(!document.getElementById('nationality').value)showErr('err-nationality');else hideErr('err-nationality');
+    if(!document.getElementById('phoneNumber').value.trim())showErr('err-phone');else hideErr('err-phone');
+    var em=document.getElementById('email').value.trim();
+    if(!em||!/^[^@]+@[^@]+\.[^@]+$/.test(em))showErr('err-email');else hideErr('err-email');
+    var langs=document.querySelectorAll('input[name="language"]:checked');
+    if(langs.length===0)showErr('err-language');else hideErr('err-language');
+  }
+  if(page===3){
+    if(!document.querySelector('input[name="armyProof"]:checked'))showErr('err-armyProof');else hideErr('err-armyProof');
+    if(!document.getElementById('armyProofFile').files||document.getElementById('armyProofFile').files.length===0)showErr('err-armyProofFile');else hideErr('err-armyProofFile');
+    if(!agreeSelected)showErr('err-agree');else hideErr('err-agree');
+  }
+  return ok;
+}
+
+function submitForm(){
+  if(!validatePage(3))return;
+  var btn=document.getElementById('btnNext');
+  btn.disabled=true;btn.textContent='제출 중...';
+  var fd=new FormData();
+  fd.append('type','guest');
+  var fields=['stayType','roomSharing','gender','bedRequired','guestName','nationality','email','wehomeId','comments','armyProof'];
+  fields.forEach(function(n){
+    var radio=document.querySelector('input[name="'+n+'"]:checked');
+    if(radio)fd.append(n,radio.value);
+    var inp=document.getElementById(n);
+    if(inp)fd.append(n,inp.value);
+  });
+  fd.append('guestCount',document.getElementById('guestCount').value);
+  fd.append('checkIn',document.getElementById('checkIn').value);
+  fd.append('checkOut',document.getElementById('checkOut').value);
+  fd.append('phone',document.getElementById('phone').value||document.getElementById('phoneDial').value+document.getElementById('phoneNumber').value);
+  var langs=[];document.querySelectorAll('input[name="language"]:checked').forEach(function(i){langs.push(i.value);});
+  fd.append('language',langs.join(','));
+  var file=document.getElementById('armyProofFile').files[0];
+  if(file)fd.append('armyProofFile',file);
+  fetch('/submit.php',{method:'POST',body:fd})
+    .then(function(r){return r.json();})
+    .then(function(data){showSuccess();})
+    .catch(function(){showSuccess();});
+}
+
+function showSuccess(){
+  document.querySelectorAll('.apply-page').forEach(function(p){p.style.display='none';});
+  document.querySelector('.apply-steps-bar').style.display='none';
+  document.getElementById('applyFormFooter').style.display='none';
+  document.getElementById('applySuccess').style.display='block';
+}
+</script>
+<script src="/kpop-i18n.js?v=20260604"></script>
+<script>
+// 언어 드롭다운 항목 렌더링 (guest-kr 페이지)
+(function(){
+  function render(){
+    var labels = window.KPOP_LANG_LABELS || {};
+    var supported = window.KPOP_SUPPORTED || [];
+    var cur = 'ko';
+
+    var dd = document.getElementById('kpopLangDropdown');
+    if(dd){
+      dd.innerHTML = '';
+      supported.forEach(function(code){
+        var btn = document.createElement('button');
+        btn.className = 'kpop-lang-item' + (code===cur?' active':'');
+        btn.setAttribute('role','option');
+        btn.setAttribute('aria-selected', code===cur?'true':'false');
+        btn.textContent = labels[code] || code;
+        btn.onclick = function(e){ e.stopPropagation(); window.kpopSetLang(code); };
+        dd.appendChild(btn);
+      });
+    }
+
+    var ml = document.getElementById('mobileLangList');
+    if(ml){
+      ml.innerHTML = '';
+      supported.forEach(function(code){
+        var a = document.createElement('a');
+        a.href = '#';
+        a.className = 'mobile-link' + (code===cur?' active':'');
+        if(code===cur) a.style.cssText = 'color:var(--purple);font-weight:700';
+        a.textContent = labels[code] || code;
+        a.onclick = function(e){ e.preventDefault(); window.kpopSetLang(code); };
+        ml.appendChild(a);
+      });
+    }
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', render);
+  } else {
+    render();
+  }
+})();
+</script>
+</body>
+</html>

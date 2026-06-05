@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-POPSTAY BUSAN 2026 호스트 신청 | 위홈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple:#761183; --purple-light:#F0D9F4; --purple-mid:#A645B5;
+  --purple-dark:#5A0D63; --purple-xlight:#FAF2FC;
+  --bg:#F2F4F6; --bg-soft:#FFFFFF; --bg-card:#FFFFFF;
+  --text-900:#191F28; --text-700:#333D4B; --text-500:#4E5968; --text-300:#8B95A1;
+  --border:#E5E8EB;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.03);
+  --shadow-md:0 8px 24px rgba(0,0,0,0.04);
+  --shadow-lg:0 16px 48px rgba(0,0,0,0.06);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--bg);color:var(--text-900);line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;height:66px;background:rgba(255,255,255,0.93);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);z-index:100;display:flex;align-items:center}
+.nav-inner{width:100%;max-width:1200px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:1.05rem;font-weight:800;color:var(--purple);letter-spacing:-.02em}
+.nav-back{font-size:.82rem;font-weight:600;color:var(--text-500);display:flex;align-items:center;gap:6px;padding:5px 14px;border-radius:100px;border:1px solid var(--border);transition:all .2s}
+.nav-back:hover{background:var(--bg);color:var(--text-700)}
+
+/* PAGE */
+.page-wrap{padding-top:calc(66px + 48px);padding-bottom:80px;background:var(--bg);min-height:100vh}
+.page-inner{max-width:760px;margin:0 auto;padding:0 24px}
+.page-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:800;color:var(--text-900);line-height:1.25;letter-spacing:-.02em;margin-bottom:10px}
+.page-desc{font-size:.92rem;color:var(--text-500);margin-bottom:40px;line-height:1.65}
+
+/* FORM WRAP */
+.host-form-wrap{background:#fff;border:none;border-radius:24px;box-shadow:var(--shadow-lg);max-width:720px;margin:0 auto;overflow:hidden}
+.form-section{padding:32px 36px;border-bottom:1px solid var(--border)}
+.form-section:last-of-type{border-bottom:none}
+.form-section-title{font-size:.82rem;font-weight:700;color:var(--purple);letter-spacing:.05em;text-transform:uppercase;margin-bottom:20px}
+
+/* FORM ELEMENTS */
+.form-group{display:flex;flex-direction:column;gap:6px;margin-bottom:0}
+.form-label{font-size:.82rem;font-weight:600;color:var(--text-700)}
+.req{color:var(--purple)}
+.form-input,.form-select,.form-textarea{background:#F2F4F6;border:1.5px solid var(--border);color:var(--text-900);border-radius:10px;padding:11px 14px;font-size:.88rem;font-family:inherit;width:100%;transition:border .2s,box-shadow .2s;outline:none;appearance:none;-webkit-appearance:none}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B95A1' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+.form-textarea{resize:vertical;min-height:90px}
+.form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-light)}
+.form-input::placeholder,.form-textarea::placeholder{color:var(--text-300)}
+
+/* FORM ROW */
+.form-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.form-row-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.form-row-full{display:grid;grid-template-columns:1fr;gap:16px}
+
+/* RADIO/CHECKBOX CARDS */
+.radio-card,.checkbox-card{background:#F2F4F6;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;cursor:pointer;transition:all .2s;display:flex;align-items:flex-start;gap:12px}
+.radio-card:hover,.checkbox-card:hover{border-color:var(--purple-mid);background:var(--purple-xlight)}
+.radio-card.selected,.checkbox-card.selected{border-color:var(--purple);background:var(--purple-xlight)}
+.radio-card input,.checkbox-card input{margin-top:2px;accent-color:var(--purple);flex-shrink:0}
+.radio-label,.checkbox-label{font-size:.88rem;font-weight:600;color:var(--text-700)}
+.radio-sub,.checkbox-sub{font-size:.78rem;color:var(--text-300);margin-top:2px}
+
+/* ROOM CARD */
+.room-card{background:#F2F4F6;border:1px solid var(--border);border-radius:12px;padding:20px 20px 16px}
+.room-cards{display:flex;flex-direction:column;gap:12px}
+
+/* ERROR */
+.form-err{font-size:.75rem;color:#ef4444;margin-top:4px;display:none}
+.form-err.show{display:block}
+
+/* SUCCESS */
+#hostSuccess{display:none;padding:56px 36px;text-align:center}
+.success-icon{width:64px;height:64px;background:var(--purple-xlight);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:1.8rem}
+.success-title{font-size:1.4rem;font-weight:800;color:var(--text-900);margin-bottom:10px}
+.success-desc{font-size:.9rem;color:var(--text-500);line-height:1.7;margin-bottom:28px}
+.success-steps{display:flex;flex-direction:column;gap:10px;text-align:left;max-width:360px;margin:0 auto}
+.success-step{display:flex;align-items:center;gap:12px;font-size:.85rem;color:var(--text-700)}
+.success-step-num{width:28px;height:28px;border-radius:50%;background:var(--purple);color:#fff;font-size:.72rem;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* FORM FOOTER */
+#hostFormFooter{display:flex;align-items:center;justify-content:space-between;padding:24px 36px;border-top:1px solid var(--border);gap:12px;flex-wrap:wrap}
+.btn-back{font-size:.85rem;font-weight:600;color:var(--text-500);display:flex;align-items:center;gap:5px;padding:10px 18px;border-radius:100px;border:1px solid var(--border);transition:all .2s;background:transparent;cursor:pointer}
+.btn-back:hover{background:var(--bg);color:var(--text-700)}
+.btn-submit{background:var(--purple);color:#fff;font-size:.92rem;font-weight:700;padding:13px 28px;border-radius:100px;border:none;cursor:pointer;transition:all .25s;box-shadow:0 4px 16px rgba(118,17,131,0.35);display:flex;align-items:center;gap:8px}
+.btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(118,17,131,0.45);background:var(--purple-dark)}
+
+/* SECTION EYEBROW */
+.section-eyebrow{display:inline-flex;align-items:center;background:var(--purple-xlight);color:var(--purple);font-size:.75rem;font-weight:700;padding:5px 14px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--text-900);line-height:1.25;margin-bottom:16px;letter-spacing:-.02em}
+
+/* FOOTER */
+footer{background:#191F28;color:rgba(255,255,255,0.7);padding:56px 24px 40px}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-logo{font-size:1rem;font-weight:800;color:#fff;margin-bottom:20px}
+.footer-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:28px}
+.footer-links a{font-size:.82rem;color:rgba(255,255,255,0.6);transition:color .2s}
+.footer-links a:hover{color:#fff}
+.footer-company{font-size:.75rem;color:rgba(255,255,255,0.35);line-height:1.8}
+
+@media(max-width:768px){
+  .form-row{grid-template-columns:1fr}
+  .form-row-2{grid-template-columns:1fr}
+  .form-section{padding:24px 20px}
+  #hostFormFooter{padding:20px}
+  .page-inner{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/host" class="nav-logo">K-POPSTAY BUSAN 2026</a>
+    <a href="/host" class="nav-back">&#8592; 호스트 안내로 돌아가기</a>
+  </div>
+</nav>
+
+<!-- PAGE -->
+<div class="page-wrap">
+  <div class="page-inner">
+    <h1 class="page-title">K-POPSTAY BUSAN 2026<br>부산 갈매기 둥지 호스트 신청서</h1>
+    <p class="page-desc">아래 양식을 작성해 주시면 담당자가 연락드립니다.</p>
+
+    <div class="host-form-wrap">
+      <div id="hostFormBody">
+
+        <!-- 1. 호스팅 유형 -->
+        <div class="form-section">
+          <div class="form-section-title">호스팅 유형</div>
+          <label class="radio-card selected" id="radioCardFree">
+            <input type="radio" name="hostType" value="free" checked>
+            <div>
+              <div class="radio-label">숙소를 무료로 제공하겠습니다.</div>
+              <div class="radio-sub">게스트 지불 비용 0원 — 위홈이 전 과정 지원</div>
+            </div>
+          </label>
+          <div class="form-err" id="err-hostType">호스팅 유형을 선택해 주세요.</div>
+        </div>
+
+        <!-- 2. 기본정보 -->
+        <div class="form-section">
+          <div class="form-section-title">기본 정보</div>
+          <div class="form-row-full" style="gap:16px">
+            <div class="form-group">
+              <label class="form-label" for="hostName">성함 <span class="req">*</span></label>
+              <input class="form-input" id="hostName" type="text" placeholder="홍길동">
+              <div class="form-err" id="err-hostName">성함을 입력해 주세요.</div>
+            </div>
+          </div>
+          <div class="form-row-2" style="gap:16px;margin-top:16px">
+            <div class="form-group">
+              <label class="form-label" for="isArmy">아미 여부 <span class="req">*</span></label>
+              <select class="form-select" id="isArmy">
+                <option value="" disabled selected>선택해 주세요</option>
+                <option value="yes">네, 아미입니다</option>
+                <option value="no">아미가 아닙니다</option>
+                <option value="family">아미 가족이 있습니다</option>
+              </select>
+              <div class="form-err" id="err-isArmy">아미 여부를 선택해 주세요.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="hostEmail">이메일 <span class="req">*</span></label>
+              <input class="form-input" id="hostEmail" type="email" placeholder="example@email.com">
+              <div class="form-err" id="err-hostEmail">이메일을 입력해 주세요.</div>
+            </div>
+          </div>
+          <div class="form-row-full" style="gap:16px;margin-top:16px">
+            <div class="form-group">
+              <label class="form-label" for="hostPhone">연락처 <span class="req">*</span></label>
+              <input class="form-input" id="hostPhone" type="tel" placeholder="010-0000-0000">
+              <div class="form-err" id="err-hostPhone">연락처를 입력해 주세요.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. 숙소 정보 -->
+        <div class="form-section">
+          <div class="form-section-title">숙소 정보</div>
+          <div class="form-group" style="margin-bottom:16px">
+            <label class="form-label" for="hostAddress">숙소 주소 <span class="req">*</span></label>
+            <input class="form-input" id="hostAddress" type="text" placeholder="부산광역시 해운대구 ...">
+            <div class="form-err" id="err-hostAddress">숙소 주소를 입력해 주세요.</div>
+          </div>
+          <div class="form-row-2" style="gap:16px;margin-bottom:16px">
+            <div class="form-group">
+              <label class="form-label" for="houseType">숙소 형태 <span class="req">*</span></label>
+              <select class="form-select" id="houseType">
+                <option value="" disabled selected>선택</option>
+                <option>아파트</option>
+                <option>단독주택</option>
+                <option>빌라/다세대</option>
+                <option>오피스텔</option>
+                <option>기타</option>
+              </select>
+              <div class="form-err" id="err-houseType">숙소 형태를 선택해 주세요.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="houseSize">숙소 평수 <span class="req">*</span></label>
+              <select class="form-select" id="houseSize">
+                <option value="" disabled selected>선택</option>
+                <option>10평 미만</option>
+                <option>10~20평</option>
+                <option>20~30평</option>
+                <option>30~40평</option>
+                <option>40평 이상</option>
+              </select>
+              <div class="form-err" id="err-houseSize">숙소 평수를 선택해 주세요.</div>
+            </div>
+          </div>
+          <div class="form-row-2" style="gap:16px;margin-bottom:16px">
+            <div class="form-group">
+              <label class="form-label" for="floor">층수 <span class="req">*</span></label>
+              <input class="form-input" id="floor" type="number" placeholder="예: 3" min="1">
+              <div class="form-err" id="err-floor">층수를 입력해 주세요.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="elevator">엘리베이터 <span class="req">*</span></label>
+              <select class="form-select" id="elevator">
+                <option value="" disabled selected>선택</option>
+                <option>있음</option>
+                <option>없음</option>
+              </select>
+              <div class="form-err" id="err-elevator">엘리베이터 여부를 선택해 주세요.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. 방 정보 -->
+        <div class="form-section">
+          <div class="form-section-title">방 정보</div>
+          <div class="form-group" style="margin-bottom:16px">
+            <label class="form-label" for="roomCount">방 수 <span class="req">*</span></label>
+            <select class="form-select" id="roomCount">
+              <option value="" disabled selected>선택</option>
+              <option value="1">1개</option>
+              <option value="2">2개</option>
+              <option value="3">3개</option>
+              <option value="4">4개</option>
+              <option value="5">5개</option>
+            </select>
+            <div class="form-err" id="err-roomCount">방 수를 선택해 주세요.</div>
+          </div>
+          <div id="roomDetailWrap" style="display:none">
+            <div class="form-group" style="margin-bottom:12px">
+              <label class="form-label">방별 상세 정보 <span class="req">*</span></label>
+              <div class="form-err" id="err-roomDetail">모든 방의 필수 정보를 입력해 주세요.</div>
+            </div>
+            <div class="room-cards" id="roomCards"></div>
+          </div>
+          <div class="form-row-2" style="gap:16px;margin-top:16px">
+            <div class="form-group">
+              <label class="form-label" for="bathroomCount">화장실 수 <span class="req">*</span></label>
+              <select class="form-select" id="bathroomCount">
+                <option value="" disabled selected>선택</option>
+                <option>1개</option>
+                <option>2개</option>
+                <option>3개 이상</option>
+              </select>
+              <div class="form-err" id="err-bathroomCount">화장실 수를 선택해 주세요.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="capacity">총 수용 인원 <span class="req">*</span></label>
+              <select class="form-select" id="capacity">
+                <option value="" disabled selected>선택</option>
+                <option>1명</option>
+                <option>2명</option>
+                <option>3명</option>
+                <option>4명</option>
+                <option>5명</option>
+                <option>6명</option>
+                <option>7명</option>
+                <option>8명</option>
+                <option>9명</option>
+                <option>10명 이상</option>
+              </select>
+              <div class="form-err" id="err-capacity">수용 인원을 선택해 주세요.</div>
+            </div>
+          </div>
+        </div>
+        <!-- 5. 숙박 일정 및 시설 -->
+        <div class="form-section">
+          <div class="form-section-title">숙박 일정 및 시설</div>
+          <div class="form-row-2" style="gap:16px;margin-bottom:16px">
+            <div class="form-group">
+              <label class="form-label" for="availFrom">숙박 가능 시작일 <span class="req">*</span></label>
+              <input class="form-input" id="availFrom" type="date" min="2026-06-11" max="2026-06-15">
+              <div class="form-err" id="err-availFrom">시작일을 선택해 주세요.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="availTo">숙박 가능 종료일 <span class="req">*</span></label>
+              <input class="form-input" id="availTo" type="date" min="2026-06-11" max="2026-06-15">
+              <div class="form-err" id="err-availTo">종료일을 선택해 주세요.</div>
+            </div>
+          </div>
+          <div class="form-row-2" style="gap:16px;margin-bottom:16px">
+            <div class="form-group">
+              <label class="form-label" for="fireExtinguisher">소화기 보유 <span class="req">*</span></label>
+              <select class="form-select" id="fireExtinguisher">
+                <option value="" disabled selected>선택</option>
+                <option>있음</option>
+                <option>없음</option>
+                <option>구입 예정</option>
+              </select>
+              <div class="form-err" id="err-fireExtinguisher">소화기 보유 여부를 선택해 주세요.</div>
+            </div>
+            <div class="form-group"></div>
+          </div>
+          <div class="form-row-2" style="gap:16px">
+            <div class="form-group">
+              <label class="form-label" for="hostPresence">호스트 거주 여부 <span class="req">*</span></label>
+              <select class="form-select" id="hostPresence">
+                <option value="" disabled selected>선택</option>
+                <option>함께 거주 (홈쉐어)</option>
+                <option>별도 거주 (전체 제공)</option>
+              </select>
+              <div class="form-err" id="err-hostPresence">호스트 거주 여부를 선택해 주세요.</div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="needRegistration">사업자 등록 도움 필요 <span class="req">*</span></label>
+              <select class="form-select" id="needRegistration">
+                <option value="" disabled selected>선택</option>
+                <option>필요 없음 (이미 등록됨)</option>
+                <option>도움 필요</option>
+                <option>잘 모르겠음</option>
+              </select>
+              <div class="form-err" id="err-needRegistration">등록 도움 여부를 선택해 주세요.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. 접근성 -->
+        <div class="form-section">
+          <div class="form-section-title">접근성 (선택)</div>
+          <div class="form-row-2" style="gap:16px;margin-bottom:16px">
+            <div class="form-group">
+              <label class="form-label" for="subwayStation">가장 가까운 지하철역</label>
+              <input class="form-input" id="subwayStation" type="text" placeholder="예: 해운대역">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="subwayDistance">지하철역까지 거리 (도보)</label>
+              <input class="form-input" id="subwayDistance" type="text" placeholder="예: 도보 5분 (약 400m)">
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. 추가 정보 -->
+        <div class="form-section">
+          <div class="form-section-title">추가 정보 (선택)</div>
+          <div class="form-group" style="margin-bottom:16px">
+            <label class="form-label" for="hostFeatures">숙소 특장점</label>
+            <textarea class="form-textarea" id="hostFeatures" placeholder="숙소의 특별한 점, 주변 관광지, 편의시설 등을 자유롭게 적어주세요."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="hostComment">건의사항</label>
+            <textarea class="form-textarea" id="hostComment" placeholder="담당자에게 전달할 내용이 있으시면 적어주세요."></textarea>
+          </div>
+        </div>
+
+        <!-- 8. 동의 -->
+        <div class="form-section">
+          <div class="form-section-title">개인정보 수집 및 이용 동의</div>
+          <label class="checkbox-card" id="hostAgreeCard">
+            <input type="checkbox" id="hostAgreeCheck">
+            <div>
+              <div class="checkbox-label">개인정보 수집 및 이용에 동의합니다. <span class="req">*</span></div>
+              <div class="checkbox-sub">수집 항목: 성명, 연락처, 이메일, 숙소 주소 / 이용 목적: K-POPSTAY BUSAN 2026 호스트 선정 및 운영 / 보유 기간: 행사 종료 후 6개월</div>
+            </div>
+          </label>
+          <div class="form-err" id="err-hostAgree">개인정보 수집 및 이용에 동의해 주세요.</div>
+        </div>
+
+      </div><!-- /hostFormBody -->
+
+      <!-- SUCCESS -->
+      <div id="hostSuccess">
+        <div class="success-icon">&#10003;</div>
+        <div class="success-title">신청이 접수되었습니다!</div>
+        <p class="success-desc">K-POPSTAY BUSAN 2026 호스트 신청이 완료되었습니다.<br>담당자가 영업일 기준 2~3일 내 연락드립니다.</p>
+        <div class="success-steps">
+          <div class="success-step"><span class="success-step-num">1</span>위홈 담당자 검토</div>
+          <div class="success-step"><span class="success-step-num">2</span>현장 방문 검증</div>
+          <div class="success-step"><span class="success-step-num">3</span>호스트 등록 완료</div>
+        </div>
+      </div>
+
+      <!-- FORM FOOTER -->
+      <div id="hostFormFooter">
+        <a href="/host" class="btn-back">&#8592; 호스트 안내 보기</a>
+        <button class="btn-submit" id="btnHostSubmit">호스트 신청 제출하기 &#8594;</button>
+      </div>
+
+    </div><!-- /host-form-wrap -->
+  </div><!-- /page-inner -->
+</div><!-- /page-wrap -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">K-POPSTAY BUSAN 2026</div>
+    <div class="footer-links">
+      <a href="/host#types">호스팅 방식</a>
+      <a href="/host#process">진행순서</a>
+      <a href="/host-apply">신청하기</a>
+      <a href="/">게스트 페이지 (EN)</a>
+      <a href="/host#contact">고객센터</a>
+    </div>
+    <div class="footer-company">
+      (주)위홈 | 대표: 조산구 | 개인정보보호책임자: 김석진 | 사업자등록번호: 467-81-01292 | 통신판매업신고: 2020-서울마포-1109<br>
+      서울 마포구 양화로 136 SVCS 507 | 고객센터: 1544-5665 | cs@wehome.me<br>
+      &copy; 2026 Wehome Inc. All rights reserved.
+    </div>
+  </div>
+</footer>
+<script>
+// Radio card toggle
+document.querySelectorAll('.radio-card').forEach(card=>{
+  card.addEventListener('click',function(){
+    document.querySelectorAll('.radio-card').forEach(c=>c.classList.remove('selected'));
+    this.classList.add('selected');
+    this.querySelector('input').checked=true;
+  });
+});
+
+// Checkbox card toggle
+document.querySelectorAll('.checkbox-card').forEach(card=>{
+  card.addEventListener('click',function(){
+    const cb=this.querySelector('input');
+    setTimeout(()=>{
+      this.classList.toggle('selected',cb.checked);
+    },0);
+  });
+});
+
+// Build room cards
+function buildRoomCards(count) {
+  const wrap = document.getElementById('roomDetailWrap');
+  const cards = document.getElementById('roomCards');
+  if (!count) { wrap.style.display='none'; cards.innerHTML=''; return; }
+  wrap.style.display = 'block'; cards.innerHTML = '';
+  for (let i=1; i<=count; i++) {
+    cards.insertAdjacentHTML('beforeend', `<div class="room-card">
+      <div class="room-card-title" style="font-size:.82rem;font-weight:700;color:var(--purple);margin-bottom:14px">방 ${i}</div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">방 크기 <span class="req">*</span></label>
+          <select class="form-select room-size" data-room="${i}"><option value="" disabled selected>선택</option>
+          <option>5평 미만</option><option>5~8평</option><option>8~10평</option><option>10평 이상</option></select></div>
+        <div class="form-group"><label class="form-label">최대 수용 인원 <span class="req">*</span></label>
+          <select class="form-select room-capacity" data-room="${i}"><option value="" disabled selected>선택</option>
+          <option>1명</option><option>2명</option><option>3명</option><option>4명</option><option>5명</option><option>6명 이상</option></select></div>
+        <div class="form-group"><label class="form-label">전용 화장실 <span class="req">*</span></label>
+          <select class="form-select room-bathroom" data-room="${i}"><option value="" disabled selected>선택</option>
+          <option>있음</option><option>없음 (공용)</option></select></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">침구 형태 <span class="req">*</span></label>
+          <select class="form-select room-bedtype" data-room="${i}"><option value="" disabled selected>선택</option>
+          <option>침대</option><option>바닥 이불</option><option>소파베드</option><option>혼합</option></select></div>
+        <div class="form-group"><label class="form-label">침대 수 <span class="req">*</span></label>
+          <select class="form-select room-beds" data-room="${i}"><option value="" disabled selected>선택</option>
+          <option>0</option><option>1</option><option>2</option><option>3 이상</option></select></div>
+        <div class="form-group"><label class="form-label">화재경보기 <span class="req">*</span></label>
+          <select class="form-select room-alarm" data-room="${i}"><option value="" disabled selected>선택</option>
+          <option>있음</option><option>없음</option></select></div>
+      </div></div>`);
+  }
+}
+document.getElementById('roomCount').addEventListener('change', function(){buildRoomCards(parseInt(this.value));});
+
+// Show error
+function showErr(id,show){
+  const el=document.getElementById(id);
+  if(el)el.classList.toggle('show',show);
+}
+function clearErrs(){
+  document.querySelectorAll('.form-err').forEach(e=>e.classList.remove('show'));
+}
+
+// Validate
+function validate(){
+  let ok=true;
+  clearErrs();
+  const v=(id,errId,check)=>{const val=document.getElementById(id)?.value;if(!check(val)){showErr(errId,true);ok=false;}};
+  const notEmpty=val=>val&&val.trim()!=='';
+  const notDefault=val=>val&&val!=='';
+  // hostType
+  if(!document.querySelector('input[name="hostType"]:checked')){showErr('err-hostType',true);ok=false;}
+  v('hostName','err-hostName',notEmpty);
+  v('isArmy','err-isArmy',notDefault);
+  v('hostEmail','err-hostEmail',val=>val&&/^[^@]+@[^@]+\.[^@]+$/.test(val));
+  v('hostPhone','err-hostPhone',notEmpty);
+  v('hostAddress','err-hostAddress',notEmpty);
+  v('houseType','err-houseType',notDefault);
+  v('houseSize','err-houseSize',notDefault);
+  v('floor','err-floor',notEmpty);
+  v('elevator','err-elevator',notDefault);
+  v('roomCount','err-roomCount',notDefault);
+  // room detail validation
+  const roomCount=parseInt(document.getElementById('roomCount').value)||0;
+  if(roomCount>0){
+    let roomOk=true;
+    document.querySelectorAll('.room-size,.room-capacity,.room-bathroom,.room-bedtype,.room-beds,.room-alarm').forEach(sel=>{
+      if(!sel.value){roomOk=false;}
+    });
+    if(!roomOk){showErr('err-roomDetail',true);ok=false;}
+  }
+  v('bathroomCount','err-bathroomCount',notDefault);
+  v('capacity','err-capacity',notDefault);
+  v('availFrom','err-availFrom',notEmpty);
+  v('availTo','err-availTo',notEmpty);
+  v('fireExtinguisher','err-fireExtinguisher',notDefault);
+  v('hostPresence','err-hostPresence',notDefault);
+  v('needRegistration','err-needRegistration',notDefault);
+  // agree
+  if(!document.getElementById('hostAgreeCheck').checked){showErr('err-hostAgree',true);ok=false;}
+  return ok;
+}
+
+// Collect rooms
+function collectRooms(){
+  const count=parseInt(document.getElementById('roomCount').value)||0;
+  const rooms=[];
+  for(let i=1;i<=count;i++){
+    rooms.push({
+      room:i,
+      size:document.querySelector(`.room-size[data-room="${i}"]`)?.value||'',
+      capacity:document.querySelector(`.room-capacity[data-room="${i}"]`)?.value||'',
+      bathroom:document.querySelector(`.room-bathroom[data-room="${i}"]`)?.value||'',
+      bedtype:document.querySelector(`.room-bedtype[data-room="${i}"]`)?.value||'',
+      beds:document.querySelector(`.room-beds[data-room="${i}"]`)?.value||'',
+      alarm:document.querySelector(`.room-alarm[data-room="${i}"]`)?.value||''
+    });
+  }
+  return rooms;
+}
+
+// Show success
+function showSuccess(){
+  document.getElementById('hostFormBody').style.display='none';
+  document.getElementById('hostFormFooter').style.display='none';
+  document.getElementById('hostSuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// Submit
+document.getElementById('btnHostSubmit').addEventListener('click',async function(){
+  if(!validate())return;
+  const fd=new FormData();
+  fd.append('type','host');
+  fd.append('hostType',document.querySelector('input[name="hostType"]:checked')?.value||'');
+  ['hostName','isArmy','hostEmail','hostPhone','hostAddress','houseType','houseSize','floor','elevator','roomCount','bathroomCount','capacity','availFrom','availTo','fireExtinguisher','hostPresence','needRegistration','subwayStation','subwayDistance','hostFeatures','hostComment'].forEach(id=>{
+    fd.append(id,document.getElementById(id)?.value||'');
+  });
+  fd.append('rooms',JSON.stringify(collectRooms()));
+  try{
+    const res=await fetch('/submit.php',{method:'POST',body:fd});
+    const d=await res.json();
+    if(d&&d.ok){showSuccess();}
+    else{alert(d.msg||'제출 중 오류가 발생했습니다. 다시 시도해주세요.');this.disabled=false;}
+  }catch(e){
+    alert('네트워크 오류가 발생했습니다. 다시 시도해주세요.');this.disabled=false;
+  }
+});
+
+// ChannelIO
+(function(){var w=window;if(w.ChannelIO){return;}var ch=function(){ch.c(arguments);};ch.q=[];ch.c=function(args){ch.q.push(args);};w.ChannelIO=ch;function l(){if(w.ChannelIOInitialized){return;}w.ChannelIOInitialized=true;var s=document.createElement('script');s.type='text/javascript';s.async=true;s.src='https://cdn.channel.io/plugin/ch-plugin-web.js';var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);}if(document.readyState==='complete'){l();}else{w.addEventListener('DOMContentLoaded',l);w.addEventListener('load',l);}})();
+ChannelIO('boot',{pluginKey:'5d85db83-13e7-44dd-a0e1-3036e03e3e25',hideChannelButtonOnBoot:true});
+</script>
+</body>
+</html>

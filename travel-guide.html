@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Busan Travel Guide 2026 — K-POPSTAY BUSAN</title>
+<meta name="description" content="BTS Busan Concert Travel Guide 2026 — Where to stay, how to get there, what to do. Everything ARMY needs to know before the concert.">
+<meta property="og:title" content="Busan Travel Guide 2026 — K-POPSTAY BUSAN">
+<meta property="og:description" content="BTS Busan Concert Travel Guide 2026. Venue, transport, stay areas, packing, tips and more.">
+<meta property="og:image" content="https://www.wehome.me/assets/images/kpopstay/thumbnail-en.png?v=8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#761183;--purple-light:#F0D9F4;--purple-dark:#5A0D63;
+  --purple-xlight:#FAF2FC;--purple-mid:#A645B5;
+  --bg:#F9FAFB;--bg-card:#FFFFFF;
+  --text-900:#191F28;--text-700:#333D4B;--text-500:#4E5968;--text-300:#8B95A1;
+  --border:#E5E8EB;--shadow-sm:0 1px 4px rgba(0,0,0,.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,.06);--shadow-lg:0 8px 32px rgba(0,0,0,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--bg);
+  color:var(--text-700);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(20px);
+  -webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 24px;height:60px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{font-size:1rem;font-weight:800;color:var(--text-900);letter-spacing:-.03em}
+.nav-logo span{color:var(--purple)}
+.nav-right{display:flex;align-items:center;gap:8px}
+.btn-back{font-size:.82rem;font-weight:600;color:var(--text-500);padding:7px 14px;
+  border-radius:8px;border:1.5px solid var(--border);background:#fff;transition:all .2s}
+.btn-back:hover{color:var(--purple);border-color:var(--purple)}
+.btn-apply{background:var(--purple);color:#fff;font-size:.82rem;font-weight:700;
+  padding:7px 16px;border-radius:8px;transition:all .2s}
+.btn-apply:hover{background:var(--purple-dark)}
+.kpop-lang-wrap{position:relative}
+.kpop-lang-btn{display:flex;align-items:center;gap:4px;background:var(--purple-xlight);
+  border:1.5px solid var(--purple-light);border-radius:8px;padding:6px 10px;
+  font-size:.8rem;font-weight:600;color:var(--purple);cursor:pointer;
+  font-family:inherit;transition:all .2s;white-space:nowrap}
+.kpop-lang-btn:hover{background:var(--purple-light)}
+.kpop-lang-icon{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+.kpop-lang-arrow{width:11px;height:11px;fill:currentColor;opacity:.6;flex-shrink:0}
+.kpop-lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;
+  background:#fff;border:1.5px solid var(--border);border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,.10);min-width:130px;padding:6px;z-index:1100}
+.kpop-lang-dropdown.open{display:block}
+.kpop-lang-item{display:block;padding:8px 12px;border-radius:8px;font-size:.82rem;
+  font-weight:600;color:var(--text-700);transition:background .15s,color .15s;
+  white-space:nowrap;cursor:pointer;background:none;border:none;
+  font-family:inherit;width:100%;text-align:left}
+.kpop-lang-item:hover{background:var(--purple-xlight);color:var(--purple)}
+.kpop-lang-item.active{color:var(--purple);font-weight:700}
+.kpop-lang-item.active::before{content:'✓ ';font-size:10px}
+
+/* HERO */
+.hero{padding:calc(60px + 64px) 24px 56px;background:linear-gradient(160deg,#FAF2FC,#F0D9F4,#e8c4ee);
+  text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 60% at 60% 40%,rgba(118,17,131,.08),transparent);
+  pointer-events:none}
+.hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;
+  background:rgba(255,255,255,.75);color:var(--purple-dark);
+  font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  padding:5px 16px;border-radius:100px;margin-bottom:20px}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--purple);animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+.hero-title{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--text-900);
+  line-height:1.2;letter-spacing:-.03em;margin-bottom:14px}
+.hero-title span{color:var(--purple)}
+.hero-sub{font-size:1rem;color:var(--text-500);line-height:1.75;max-width:520px;margin:0 auto 24px}
+.hero-meta{display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;
+  background:rgba(255,255,255,.8);border:1px solid var(--purple-light);
+  border-radius:12px;padding:12px 24px;font-size:.85rem;font-weight:600;color:var(--text-700)}
+.hero-meta-item{display:flex;align-items:center;gap:6px}
+.hero-meta-item .dot{width:7px;height:7px;border-radius:50%;background:var(--purple);flex-shrink:0}
+
+/* CONTENT LAYOUT */
+.content{max-width:1100px;margin:0 auto;padding:0 24px 80px}
+
+/* SECTION */
+.section{padding:56px 0 0}
+.section-eyebrow{display:inline-flex;background:var(--purple-xlight);color:var(--purple);
+  font-size:.7rem;font-weight:700;padding:4px 12px;border-radius:100px;
+  letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px}
+.section-title{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:800;color:var(--text-900);
+  line-height:1.25;letter-spacing:-.025em;margin-bottom:10px}
+.section-desc{font-size:.95rem;color:var(--text-500);line-height:1.75;margin-bottom:28px;
+  max-width:680px}
+
+/* CARDS GRID */
+.cards-grid{display:grid;gap:14px}
+.cards-grid-2{grid-template-columns:1fr 1fr}
+.cards-grid-3{grid-template-columns:repeat(3,1fr)}
+.card{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;
+  padding:28px;transition:all .2s}
+.card:hover{border-color:rgba(118,17,131,.25);box-shadow:var(--shadow-md)}
+.card-icon{width:44px;height:44px;border-radius:12px;background:var(--purple-xlight);
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px}
+.card-label{font-size:.68rem;font-weight:700;color:var(--purple);letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:6px}
+.card-title{font-size:1rem;font-weight:700;color:var(--text-900);margin-bottom:8px;
+  letter-spacing:-.02em}
+.card-desc{font-size:.875rem;color:var(--text-500);line-height:1.7}
+
+/* TABLE */
+.tbl-wrap{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;overflow:hidden}
+.tbl{width:100%;border-collapse:collapse;font-size:.88rem}
+.tbl th{background:var(--purple-xlight);padding:10px 16px;text-align:left;
+  font-size:.72rem;font-weight:700;color:var(--purple);letter-spacing:.05em;
+  text-transform:uppercase;border-bottom:1px solid var(--purple-light)}
+.tbl td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-700);
+  vertical-align:top}
+.tbl tr:last-child td{border-bottom:none}
+.tbl tr:hover td{background:#fafafa}
+.tbl td:first-child{font-weight:600;color:var(--text-900);white-space:nowrap}
+
+/* CONCERT INFO BANNER */
+.concert-banner{background:linear-gradient(135deg,var(--purple),var(--purple-mid));
+  border-radius:16px;padding:28px 32px;color:#fff;margin-bottom:0}
+.concert-banner h3{font-size:1.1rem;font-weight:800;margin-bottom:16px;letter-spacing:-.02em}
+.concert-banner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cb-item{background:rgba(255,255,255,.12);border-radius:10px;padding:12px 16px}
+.cb-item-label{font-size:.65rem;font-weight:700;opacity:.7;letter-spacing:.06em;
+  text-transform:uppercase;margin-bottom:4px}
+.cb-item-val{font-size:.92rem;font-weight:700}
+
+/* TIMELINE */
+.tl{display:flex;flex-direction:column;position:relative;max-width:700px}
+.tl::before{content:'';position:absolute;left:20px;top:46px;bottom:46px;
+  width:1.5px;background:var(--border)}
+.tl-item{display:flex;gap:20px;padding:18px 0}
+.tl-num{width:42px;height:42px;min-width:42px;background:var(--purple);color:#fff;
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;font-weight:800;position:relative;z-index:1;
+  box-shadow:0 4px 12px rgba(118,17,131,.25)}
+.tl-body{padding-top:10px}
+.tl-title{font-size:.95rem;font-weight:700;color:var(--text-900);margin-bottom:5px;
+  letter-spacing:-.01em}
+.tl-desc{font-size:.875rem;color:var(--text-500);line-height:1.7}
+.tl-note{display:inline-flex;align-items:center;gap:5px;margin-top:8px;
+  background:var(--purple-xlight);color:var(--purple);
+  font-size:.75rem;font-weight:600;padding:4px 10px;border-radius:7px;line-height:1.5}
+
+/* CHECKLIST */
+.checklist{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px;margin-top:4px}
+.checklist-item{display:flex;align-items:flex-start;gap:8px;font-size:.875rem;
+  color:var(--text-700);line-height:1.6}
+.checklist-item::before{content:'✓';color:var(--purple);font-weight:700;
+  font-size:.8rem;margin-top:2px;flex-shrink:0}
+
+/* HIGHLIGHT BOX */
+.highlight-box{background:var(--purple-xlight);border:1.5px solid var(--purple-light);
+  border-radius:12px;padding:16px 20px;font-size:.875rem;color:var(--text-700);
+  line-height:1.7;margin-top:16px}
+.highlight-box strong{color:var(--purple)}
+
+/* WARNING BOX */
+.warn-box{background:#fffbeb;border:1.5px solid #fcd34d;border-radius:12px;
+  padding:16px 20px;font-size:.875rem;color:#92400e;line-height:1.7;margin-top:16px;
+  display:flex;gap:12px;align-items:flex-start}
+.warn-icon{flex-shrink:0;margin-top:1px}
+
+/* DRONE HIGHLIGHT */
+.drone-banner{background:var(--text-900);color:#fff;border-radius:16px;
+  padding:24px 28px;display:flex;align-items:center;gap:20px;margin-top:16px}
+.drone-banner-icon{font-size:2rem;flex-shrink:0}
+.drone-banner-text h4{font-size:1rem;font-weight:700;margin-bottom:4px}
+.drone-banner-text p{font-size:.875rem;opacity:.7;line-height:1.6}
+
+/* ITINERARY */
+.itin-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:0}
+.itin-card{background:var(--bg-card);border:1.5px solid var(--border);border-radius:14px;
+  padding:22px;transition:border-color .2s}
+.itin-card:hover{border-color:rgba(118,17,131,.3)}
+.itin-day{font-size:.7rem;font-weight:700;color:var(--purple);letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:8px}
+.itin-title{font-size:.95rem;font-weight:700;color:var(--text-900);margin-bottom:10px}
+.itin-list{list-style:none;display:flex;flex-direction:column;gap:7px}
+.itin-list li{font-size:.83rem;color:var(--text-500);line-height:1.6;
+  display:flex;align-items:flex-start;gap:7px}
+.itin-list li::before{content:'';width:5px;height:5px;border-radius:50%;
+  background:var(--purple);flex-shrink:0;margin-top:6px}
+
+/* FADE UP */
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .55s ease,transform .55s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* FOOTER */
+.site-footer{background:var(--text-900);color:rgba(255,255,255,.4);font-size:.75rem;
+  line-height:1.8;text-align:center;padding:40px 24px}
+.site-footer a{color:rgba(255,255,255,.5);text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .cards-grid-2,.cards-grid-3{grid-template-columns:1fr}
+  .concert-banner-grid{grid-template-columns:1fr 1fr}
+  .itin-grid{grid-template-columns:1fr}
+  .checklist{grid-template-columns:1fr}
+  .tl::before{left:18px}
+}
+@media(max-width:480px){
+  .concert-banner-grid{grid-template-columns:1fr}
+  .hero-meta{flex-direction:column;gap:8px}
+  .drone-banner{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">K-POPSTAY <span>BUSAN</span></a>
+    <div class="nav-right">
+      <a href="/" class="btn-back" id="tgBtnBack">← Home</a>
+      <div class="kpop-lang-wrap" id="kpopLangWrap">
+        <button class="kpop-lang-btn" onclick="toggleKpopLang(event)" aria-expanded="false" aria-label="Language">
+          <svg class="kpop-lang-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18c-1.05 0-2.4-.9-3.4-3h6.8c-1 2.1-2.35 3-3.4 3zm-3.8-5c-.13-.64-.2-1.31-.2-2s.07-1.36.2-2h7.6c.13.64.2 1.31.2 2s-.07 1.36-.2 2H8.2zm-4.1-2c0-.68.1-1.35.27-2h3.25c-.1.65-.16 1.31-.16 2s.06 1.35.16 2H4.37A9.94 9.94 0 0 1 4.1 13zm11.5-6h-7.2C9.4 4.9 10.75 4 11.8 4c1.05 0 2.4.9 3.4 3h.4zm2.13 2h3.25A9.94 9.94 0 0 1 21.9 11h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2zm0 4h3.25c-.17.65-.27 1.32-.27 2s.1 1.35.27 2h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2z"/></svg>
+          <span id="kpopLangCurLabel">EN</span>
+          <svg class="kpop-lang-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="kpop-lang-dropdown" id="kpopLangDropdown" role="listbox"></div>
+      </div>
+      <a href="/apply" class="btn-apply" id="tgBtnApply">Apply Now ›</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner fade-up">
+    <div class="hero-eyebrow">Busan Travel Guide 2026</div>
+    <h1 class="hero-title">BTS Busan Concert<br><span>Travel Guide</span></h1>
+    <p class="hero-sub">Where to stay, how to get there, what to do — everything ARMY needs to know for Busan, June 2026.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><span class="dot"></span>Jun 12–13, 2026</div>
+      <div class="hero-meta-item"><span class="dot"></span>Busan Asiad Main Stadium</div>
+      <div class="hero-meta-item"><span class="dot"></span>7:00 PM KST</div>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+  <!-- CONCERT INFO -->
+  <div class="section fade-up">
+    <div class="concert-banner">
+      <h3>BTS WORLD TOUR 'ARIRANG' IN BUSAN — Key Details</h3>
+      <div class="concert-banner-grid">
+        <div class="cb-item">
+          <div class="cb-item-label">Dates</div>
+          <div class="cb-item-val">June 12–13, 2026</div>
+        </div>
+        <div class="cb-item">
+          <div class="cb-item-label">Time</div>
+          <div class="cb-item-val">7:00 PM KST</div>
+        </div>
+        <div class="cb-item">
+          <div class="cb-item-label">Venue</div>
+          <div class="cb-item-val">Busan Asiad Main Stadium</div>
+        </div>
+        <div class="cb-item">
+          <div class="cb-item-label">Ticket Seller</div>
+          <div class="cb-item-val">NOL Ticket (Official)</div>
+        </div>
+        <div class="cb-item">
+          <div class="cb-item-label">Streaming</div>
+          <div class="cb-item-val">Weverse Concerts</div>
+        </div>
+        <div class="cb-item">
+          <div class="cb-item-label">Age Limit</div>
+          <div class="cb-item-val">9 years and older</div>
+        </div>
+      </div>
+    </div>
+    <div class="warn-box" style="margin-top:14px">
+      <svg class="warn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#d97706"/></svg>
+      <div><strong>Ticketing Warning:</strong> Only purchase through <strong>NOL Ticket</strong> (official seller). Scams targeting international fans are common given high ticket demand. Verify all purchases via official BTS/Weverse channels.</div>
+    </div>
+  </div>
+
+  <!-- WHY BUSAN -->
+  <div class="section fade-up">
+    <span class="section-eyebrow">Why Busan</span>
+    <h2 class="section-title">More Than a Concert</h2>
+    <p class="section-desc">Busan is the hometown of Jimin and Jungkook. The city is planning large-scale entertainment tied to the tour, making it a festival-style destination beyond just the stadium.</p>
+    <div class="drone-banner">
+      <div class="drone-banner-icon">✨</div>
+      <div class="drone-banner-text">
+        <h4>BTS THE CITY ARIRANG Busan</h4>
+        <p>Citywide programming including a welcome center, stamp rally, landmark lighting, hotel packages, and a <strong>drone light show at Gwangandaegyo Bridge</strong> — June 12 &amp; 13 at 10:00 PM KST.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WHERE TO STAY -->
+  <div id="staySection" class="section fade-up">
+    <span class="section-eyebrow">Accommodation</span>
+    <h2 class="section-title">Best Areas to Stay</h2>
+    <p class="section-desc">Choose your base depending on your travel style. All areas below have good transport links to the stadium.</p>
+    <div class="cards-grid cards-grid-3">
+      <div class="card stay-card">
+        <div class="card-icon">🏙️</div>
+        <div class="card-label">First-timers</div>
+        <div class="card-title">Seomyeon</div>
+        <div class="card-desc">Central, convenient, great transport connections. Best for first-time visitors who want easy access to everything.</div>
+      </div>
+      <div class="card stay-card">
+        <div class="card-icon">🚄</div>
+        <div class="card-label">KTX Travelers</div>
+        <div class="card-title">Busan Station</div>
+        <div class="card-desc">Step off the KTX and you're already there. Ideal for those arriving from Seoul by train and prioritizing convenience.</div>
+      </div>
+      <div class="card stay-card">
+        <div class="card-icon">🏖️</div>
+        <div class="card-label">Beach &amp; Vacation Feel</div>
+        <div class="card-title">Haeundae</div>
+        <div class="card-desc">Korea's most famous beach. Great ocean views, upscale hotels, and a lively café scene. Perfect for a vacation atmosphere.</div>
+      </div>
+      <div class="card stay-card">
+        <div class="card-icon">🌉</div>
+        <div class="card-label">Night Views &amp; Photos</div>
+        <div class="card-title">Gwangalli</div>
+        <div class="card-desc">Stunning night views of Gwangan Bridge. Trendy cafés, restaurants, and great photo spots. Watch the drone show from the beach.</div>
+      </div>
+      <div class="card stay-card">
+        <div class="card-icon">🏟️</div>
+        <div class="card-label">Stadium Proximity</div>
+        <div class="card-title">Sajik / Sports Complex</div>
+        <div class="card-desc">Closest to the venue. Practical choice if minimising transit time on concert day is your top priority.</div>
+      </div>
+      <div class="card stay-card" style="background:var(--purple-xlight);border-color:var(--purple-light)">
+        <div class="card-icon" style="background:#fff">💜</div>
+        <div class="card-label" style="color:var(--purple-dark)">K-POPSTAY</div>
+        <div class="card-title">Stay with a Busan Citizen</div>
+        <div class="card-desc" style="color:var(--text-700)">Apply for a <strong>free 2-night stay</strong> with a verified Busan citizen host through K-POPSTAY BUSAN. <a href="/apply" style="color:var(--purple);font-weight:700">Apply now ›</a></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GETTING TO BUSAN -->
+  <div id="transportSection" class="section fade-up">
+    <span class="section-eyebrow">Getting There</span>
+    <h2 class="section-title">How to Get to Busan</h2>
+    <p class="section-desc">Three main options depending on where you're coming from.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Option</th><th>From</th><th>Duration</th><th>Notes</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>🚄 KTX</td>
+            <td>Seoul Station</td>
+            <td>~2.5–3 hrs</td>
+            <td>Most popular option. Book in advance — seats sell out fast during concert weekend.</td>
+          </tr>
+          <tr>
+            <td>✈️ Fly</td>
+            <td>Other Asian cities</td>
+            <td>Varies</td>
+            <td>Arrive at Gimhae International Airport. Good for international travelers coming directly to Busan.</td>
+          </tr>
+          <tr>
+            <td>🚌 Express Bus</td>
+            <td>Seoul &amp; other cities</td>
+            <td>4–5+ hrs</td>
+            <td>Cheapest option but significantly longer. Not recommended for concert weekend given time constraints.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="highlight-box" style="margin-top:14px">
+      <strong>Recommended plan:</strong> Arrive via Seoul → 1–3 days sightseeing → take KTX to Busan → stay for concert weekend → return to Seoul after. Avoid trying to return to Seoul immediately after the show — late finish + heavy crowds make this impractical.
+    </div>
+  </div>
+
+  <!-- STADIUM TRANSPORT -->
+  <div id="stadiumSection" class="section fade-up">
+    <span class="section-eyebrow">Concert Day Transport</span>
+    <h2 class="section-title">Getting to the Stadium</h2>
+    <p class="section-desc">Busan Asiad Main Stadium is in Yeonje-gu. Nearest subway stations are <strong>Sports Complex Station</strong> and <strong>Sajik Station</strong>.</p>
+    <div class="cards-grid cards-grid-2">
+      <div class="card stadium-card">
+        <div class="card-icon">🚇</div>
+        <div class="card-title">Take the Subway</div>
+        <div class="card-desc">Subway is strongly recommended over taxis on concert day. Traffic near the venue may be restricted. Plan for longer travel time than usual.</div>
+      </div>
+      <div class="card stadium-card">
+        <div class="card-icon">🚌</div>
+        <div class="card-title">Shuttle Buses</div>
+        <div class="card-desc">Round-trip shuttle buses available via platforms like Klook. Pickup from Busan Station, Seomyeon, and Haeundae. Book in advance.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONCERT DAY TIPS -->
+  <div id="tipsSection" class="section fade-up">
+    <span class="section-eyebrow">Preparation</span>
+    <h2 class="section-title">Concert Day Tips</h2>
+    <p class="section-desc">A 7:00 PM show means crowds build from early afternoon. Be prepared.</p>
+    <div class="card" style="padding:28px 32px">
+      <div class="checklist">
+        <div class="checklist-item">Arrive several hours before 7:00 PM</div>
+        <div class="checklist-item">Bring a portable charger — essential, not optional</div>
+        <div class="checklist-item">Prepare mobile data (eSIM recommended)</div>
+        <div class="checklist-item">Wear comfortable shoes</div>
+        <div class="checklist-item">Monitor Weverse, NOL Ticket, and BTS tour page</div>
+        <div class="checklist-item">Check bag/entry rules before the day</div>
+        <div class="checklist-item">Know the last subway departure time</div>
+        <div class="checklist-item">Save your hotel address in Korean</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUSAN ATTRACTIONS -->
+  <div id="attractSection" class="section fade-up">
+    <span class="section-eyebrow">Explore Busan</span>
+    <h2 class="section-title">Top Attractions</h2>
+    <p class="section-desc">Make the most of your time in Busan beyond the concert.</p>
+    <div class="tbl-wrap">
+      <table class="tbl">
+        <thead>
+          <tr><th>Place</th><th>Highlights</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>🏖️ Haeundae Beach</td><td>Ocean walks, upscale hotels, cafés, restaurants. Korea's most famous beach.</td></tr>
+          <tr><td>🌉 Gwangalli Beach</td><td>Night views of Gwangan Bridge, trendy spots, great for the drone show.</td></tr>
+          <tr><td>🎨 Gamcheon Culture Village</td><td>Colourful murals and alleys climbing up a hillside. Great photo spots.</td></tr>
+          <tr><td>🐟 Jagalchi Market</td><td>Korea's famous seafood market. Try live seafood fresh from the morning catch.</td></tr>
+          <tr><td>🍢 Nampo-dong / BIFF Square</td><td>Street food, local atmosphere, and the heart of old Busan.</td></tr>
+          <tr><td>🏯 Busan Tower / Yongdusan Park</td><td>Panoramic city views. Great for a relaxed morning before the show.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- 3-DAY ITINERARY -->
+  <div id="itinSection" class="section fade-up">
+    <span class="section-eyebrow">Suggested Plan</span>
+    <h2 class="section-title">Sample 3-Day Itinerary</h2>
+    <p class="section-desc">A practical structure for the concert weekend.</p>
+    <div class="itin-grid">
+      <div class="itin-card">
+        <div class="itin-day">Day 1</div>
+        <div class="itin-title">Arrive &amp; Settle In</div>
+        <ul class="itin-list">
+          <li>Check in to your accommodation</li>
+          <li>Light evening walk near your area</li>
+          <li>Explore: Seomyeon, Haeundae, Gwangalli, or Nampo-dong</li>
+          <li>Rest early — big day tomorrow</li>
+        </ul>
+      </div>
+      <div class="itin-card" style="border-color:var(--purple-light);background:var(--purple-xlight)">
+        <div class="itin-day">Day 2</div>
+        <div class="itin-title" style="color:var(--purple)">Concert Day 🎵</div>
+        <ul class="itin-list">
+          <li>Rest in the morning</li>
+          <li>Depart for stadium early (several hours before 7:00 PM)</li>
+          <li>Take the subway — avoid taxis</li>
+          <li>Attend BTS WORLD TOUR 'ARIRANG'</li>
+          <li>Optional: Gwangalli drone show at 10:00 PM</li>
+        </ul>
+      </div>
+      <div class="itin-card">
+        <div class="itin-day">Day 3</div>
+        <div class="itin-title">Explore Busan</div>
+        <ul class="itin-list">
+          <li>Relaxed morning sightseeing</li>
+          <li>Option A: Haeundae + Gwangalli</li>
+          <li>Option B: Gamcheon + Nampo-dong + Jagalchi</li>
+          <li>Head back to Seoul via KTX</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- PACKING LIST -->
+  <div id="packSection" class="section fade-up">
+    <span class="section-eyebrow">Packing</span>
+    <h2 class="section-title">What to Bring</h2>
+    <p class="section-desc">June in Korea is warm, humid, and rainy — check the weather daily and pack light.</p>
+    <div class="card" style="padding:28px 32px">
+      <div class="checklist pack-checklist">
+        <div class="checklist-item">Passport &amp; concert ticket</div>
+        <div class="checklist-item">Hotel booking confirmation</div>
+        <div class="checklist-item">eSIM or local SIM card</div>
+        <div class="checklist-item">Portable charger (essential)</div>
+        <div class="checklist-item">Comfortable shoes</div>
+        <div class="checklist-item">Light jacket / rain gear</div>
+        <div class="checklist-item">Small bag (venue-compliant size)</div>
+        <div class="checklist-item">Cash + credit card</div>
+        <div class="checklist-item">T-money transport card</div>
+        <div class="checklist-item">Translation app</div>
+        <div class="checklist-item">Personal medication if needed</div>
+        <div class="checklist-item">Optional: ear protection</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOLO TRAVELER SAFETY -->
+  <div id="safetySection" class="section fade-up">
+    <span class="section-eyebrow">Safety</span>
+    <h2 class="section-title">Solo Traveler Tips</h2>
+    <p class="section-desc">Busan is a safe city, but a little preparation goes a long way.</p>
+    <div class="cards-grid cards-grid-2">
+      <div class="card safety-card">
+        <div class="card-icon">📍</div>
+        <div class="card-title">Stay Connected</div>
+        <div class="card-desc">Share your hotel location with a trusted contact back home. Save your hotel address in Korean on your phone — it makes taxi rides and navigation much easier.</div>
+      </div>
+      <div class="card safety-card">
+        <div class="card-icon">🚕</div>
+        <div class="card-title">Getting Around Safely</div>
+        <div class="card-desc">Use official taxis or reliable ride apps. Avoid unofficial ticket and merchandise deals. Know the last subway departure time so you're not stranded.</div>
+      </div>
+      <div class="card safety-card">
+        <div class="card-icon">🛡️</div>
+        <div class="card-title">Travel Insurance</div>
+        <div class="card-desc">Consider travel insurance that covers flights, hotel, and medical expenses. Concert weekends can be unpredictable — it's worth the peace of mind.</div>
+      </div>
+      <div class="card safety-card">
+        <div class="card-icon">🎟️</div>
+        <div class="card-title">Avoid Ticket Scams</div>
+        <div class="card-desc">Only buy tickets through NOL Ticket (official seller). Scams targeting international fans are common. Verify all purchases via official BTS/Weverse channels.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div id="ctaSection" class="section fade-up" style="padding-bottom:0">
+    <div style="background:linear-gradient(135deg,var(--purple),var(--purple-mid));border-radius:20px;
+      padding:40px 36px;text-align:center;color:#fff;margin-top:8px">
+      <div data-cta="eyebrow" style="font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+        opacity:.75;margin-bottom:10px">K-POPSTAY BUSAN 2026</div>
+      <h2 data-cta="title" style="font-size:clamp(1.4rem,3vw,2rem);font-weight:800;line-height:1.2;
+        letter-spacing:-.03em;margin-bottom:12px">Need a Place to Stay in Busan?</h2>
+      <p data-cta="desc" style="font-size:.95rem;opacity:.85;line-height:1.7;max-width:480px;margin:0 auto 24px">
+        Apply for a <strong>free 2-night stay</strong> with a verified Busan citizen host through K-POPSTAY BUSAN. Priority given to international ARMY.
+      </p>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a href="/apply" data-cta="apply" style="background:#fff;color:var(--purple);font-size:.95rem;font-weight:700;
+          padding:12px 28px;border-radius:10px;transition:all .2s;display:inline-block">
+          Apply for Free Stay ›
+        </a>
+        <a href="/" data-cta="more" style="background:rgba(255,255,255,.15);color:#fff;font-size:.95rem;font-weight:600;
+          padding:12px 24px;border-radius:10px;border:1.5px solid rgba(255,255,255,.3);
+          transition:all .2s;display:inline-block">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<footer class="site-footer">
+  (주)위홈 | 대표이사: 조산구 | 사업자등록번호: 467-81-01292 | 서울 마포구 양화로 136 SVCS 507 | 고객센터: 1544-5665<br>
+  &copy; 2026 Wehome Inc. All rights reserved. &nbsp;·&nbsp;
+  <a href="https://koreareadyguide.com/https-koreareadyguide-com-bts-busan-concert-travel-guide-2026/" target="_blank" rel="noopener" data-footer-ref>Content reference: koreareadyguide.com</a>
+</footer>
+
+<script src="/kpop-i18n.js?v=20260604"></script>
+<script>
+(function(){
+  function renderLangDropdown(){
+    var labels   = window.KPOP_LANG_LABELS || {};
+    var supported = window.KPOP_SUPPORTED  || [];
+    var cur      = window.KPOP_LANG || 'en';
+    var lbl = document.getElementById('kpopLangCurLabel');
+    if(lbl) lbl.textContent = labels[cur] || 'EN';
+    var dd = document.getElementById('kpopLangDropdown');
+    if(!dd) return;
+    dd.innerHTML = '';
+    supported.forEach(function(code){
+      var btn = document.createElement('button');
+      btn.className = 'kpop-lang-item' + (code===cur?' active':'');
+      btn.setAttribute('role','option');
+      btn.textContent = labels[code] || code;
+      btn.onclick = function(e){ e.stopPropagation(); window.kpopSetLang(code); };
+      dd.appendChild(btn);
+    });
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', renderLangDropdown);
+  } else {
+    renderLangDropdown();
+  }
+})();
+</script>
+<script>
+var fadeEls = document.querySelectorAll('.fade-up');
+var io = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('visible'); io.unobserve(e.target); } });
+},{threshold:0.08});
+fadeEls.forEach(function(el){ io.observe(el); });
+
+(function(){var w=window;if(w.ChannelIO){return}var ch=function(){ch.c(arguments)};
+ch.q=[];ch.c=function(args){ch.q.push(args)};w.ChannelIO=ch;
+function l(){if(w.ChannelIOInitialized){return}w.ChannelIOInitialized=true;
+var s=document.createElement('script');s.type='text/javascript';s.async=true;
+s.src='https://cdn.channel.io/plugin/ch-plugin-web.js';
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x)}
+if(document.readyState==='complete'){l()}else{w.addEventListener('DOMContentLoaded',l);w.addEventListener('load',l)}})();
+ChannelIO('boot',{pluginKey:'5d85db83-13e7-44dd-a0e1-3036e03e3e25',hideChannelButtonOnBoot:true});
+</script>
+</body>
+</html>

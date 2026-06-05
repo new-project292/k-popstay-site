@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Apply — K-POPSTAY BUSAN 2026 | Wehome</title>
+<meta property="og:title" content="Apply — K-POPSTAY BUSAN 2026">
+<meta property="og:description" content="Apply for a free 3-day stay during BTS Busan concerts 2026. Priority for international ARMY.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#761183;--purple-light:#F0D9F4;--purple-mid:#A645B5;--purple-dark:#5A0D63;
+  --purple-xlight:#FAF2FC;--bg:#F2F4F6;--bg-soft:#FFFFFF;--bg-section:#F2F4F6;
+  --bg-card:#FFFFFF;--text-900:#191F28;--text-700:#333D4B;--text-500:#4E5968;
+  --text-300:#8B95A1;--border:#E5E8EB;--border-focus:#761183;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.03);--shadow-md:0 8px 24px rgba(0,0,0,0.04);
+  --shadow-lg:0 16px 48px rgba(0,0,0,0.06);--text-primary:#191F28;
+  --text-secondary:#333D4B;--text-muted:#4E5968;--purple-300:#C070D0;
+  --purple-400:#A645B5;--purple-500:#761183;--purple-200:#E8C4EE;--white:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--bg);
+  color:var(--text-700);letter-spacing:-0.02em;-webkit-font-smoothing:antialiased;
+  min-height:100vh}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:66px;
+  background:rgba(255,255,255,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  box-shadow:0 1px 0 rgba(0,0,0,0.03)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:66px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:10px}
+.nav-logo-text{font-size:1.05rem;font-weight:800;color:var(--text-900);letter-spacing:-0.03em}
+.nav-badge{background:var(--purple);color:#fff;font-size:0.65rem;font-weight:700;
+  padding:2px 8px;border-radius:100px;letter-spacing:0.02em}
+.nav-right{display:flex;align-items:center;gap:10px}
+.btn-back{font-size:0.875rem;font-weight:600;color:var(--text-500);padding:8px 14px;
+  border-radius:8px;border:1.5px solid var(--border);background:#fff;
+  transition:all 0.2s;cursor:pointer}
+.btn-back:hover{color:var(--purple);border-color:var(--purple)}
+.kpop-lang-wrap{position:relative}
+.kpop-lang-btn{display:flex;align-items:center;gap:4px;background:var(--purple-xlight);
+  border:1.5px solid var(--purple-light);border-radius:8px;padding:6px 10px;
+  font-size:0.8rem;font-weight:600;color:var(--purple);cursor:pointer;
+  font-family:inherit;transition:all 0.2s;white-space:nowrap}
+.kpop-lang-btn:hover{background:var(--purple-light)}
+.kpop-lang-icon{width:15px;height:15px;fill:currentColor;flex-shrink:0}
+.kpop-lang-arrow{width:11px;height:11px;fill:currentColor;opacity:.6;flex-shrink:0}
+.kpop-lang-dropdown{display:none;position:absolute;top:calc(100% + 6px);right:0;
+  background:#fff;border:1.5px solid var(--border);border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.10);min-width:130px;padding:6px;z-index:1100}
+.kpop-lang-dropdown.open{display:block}
+.kpop-lang-item{display:block;padding:8px 12px;border-radius:8px;font-size:0.82rem;
+  font-weight:600;color:var(--text-700);transition:background 0.15s,color 0.15s;
+  white-space:nowrap;cursor:pointer;background:none;border:none;
+  font-family:inherit;width:100%;text-align:left}
+.kpop-lang-item:hover{background:var(--purple-xlight);color:var(--purple)}
+.kpop-lang-item.active{color:var(--purple);font-weight:700}
+.kpop-lang-item.active::before{content:'✓ ';font-size:10px}
+
+/* PAGE HEADER */
+.page-header{background:var(--bg);padding-top:calc(66px + 48px);padding-bottom:48px;
+  text-align:center}
+.page-eyebrow{display:inline-flex;background:var(--purple-xlight);color:var(--purple);
+  font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  padding:5px 16px;border-radius:100px;margin-bottom:14px}
+.page-title{font-size:clamp(1.8rem,5vw,2.8rem);font-weight:800;color:var(--text-900);
+  letter-spacing:-0.03em;margin-bottom:10px}
+.page-sub{font-size:0.95rem;color:var(--text-500);line-height:1.6}
+
+/* FORM WRAP */
+.form-outer{background:var(--bg);padding:0 24px 80px;min-height:60vh}
+.apply-form-wrap{max-width:720px;margin:0 auto;background:#fff;border:none;
+  border-radius:24px;box-shadow:var(--shadow-lg);overflow:visible}
+
+/* FORM HEADER */
+.apply-form-header{background:var(--purple-xlight);border-bottom:1px solid var(--purple-light);
+  padding:24px 32px;border-radius:24px 24px 0 0}
+.apply-form-header h2{font-size:1.1rem;font-weight:800;color:var(--text-900);
+  margin-bottom:4px;letter-spacing:-0.02em}
+.apply-form-header p{font-size:0.82rem;color:var(--purple);font-weight:600}
+
+/* STEP INDICATOR */
+.steps-bar{background:#fff;border-bottom:1px solid var(--border);
+  padding:20px 32px;display:flex;align-items:center;gap:0}
+.apply-step{display:flex;align-items:center;gap:10px;flex:1}
+.apply-step-num{width:28px;height:28px;min-width:28px;border-radius:50%;
+  background:var(--border);color:var(--text-300);font-size:0.78rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+.apply-step.active .apply-step-num{background:var(--purple);color:#fff;
+  box-shadow:0 0 0 3px var(--purple-light)}
+.apply-step.done .apply-step-num{background:#22c55e;color:#fff}
+.apply-step-label{font-size:0.78rem;font-weight:600;color:var(--text-300);
+  transition:color 0.3s;white-space:nowrap}
+.apply-step.active .apply-step-label{color:var(--purple);font-weight:700}
+.apply-step.done .apply-step-label{color:#22c55e}
+.step-connector{flex:1;height:2px;background:var(--border);margin:0 8px;min-width:16px}
+
+/* FORM BODY */
+.form-body{padding:32px}
+.form-section-title{font-size:0.78rem;font-weight:700;color:var(--purple);
+  letter-spacing:0.06em;text-transform:uppercase;margin-bottom:20px}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:0.82rem;font-weight:700;color:var(--text-700);
+  margin-bottom:7px}
+.form-input,.form-select,.form-textarea{width:100%;background:var(--bg);
+  border:1.5px solid var(--border);color:var(--text-900);border-radius:12px;
+  font-size:0.9rem;font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;
+  padding:11px 14px;outline:none;transition:border 0.2s,box-shadow 0.2s;
+  -webkit-appearance:none;appearance:none}
+.form-input:focus,.form-select:focus,.form-textarea:focus{
+  border-color:var(--purple);box-shadow:0 0 0 3px var(--purple-light)}
+.form-textarea{resize:vertical;min-height:96px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.phone-row{display:grid;grid-template-columns:130px 1fr;gap:10px}
+
+/* RADIO CARDS */
+.radio-cards{display:grid;gap:10px}
+.radio-cards-3{grid-template-columns:repeat(3,1fr)}
+.radio-cards-2{grid-template-columns:repeat(2,1fr)}
+.radio-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;
+  padding:16px;cursor:pointer;transition:all 0.2s;position:relative}
+.radio-card:hover{background:var(--purple-xlight);border-color:var(--purple-light)}
+.radio-card.selected{border-color:var(--purple);background:var(--purple-xlight)}
+.radio-card input[type=radio]{position:absolute;opacity:0;width:0;height:0}
+.rc-title{font-size:0.88rem;font-weight:700;color:var(--text-900);margin-bottom:3px}
+.rc-desc{font-size:0.78rem;color:var(--text-500);line-height:1.4}
+.rc-check{position:absolute;top:12px;right:12px;width:20px;height:20px;
+  border-radius:50%;border:2px solid var(--border);background:#fff;
+  display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.radio-card.selected .rc-check{border-color:var(--purple);background:var(--purple)}
+.radio-card.selected .rc-check::after{content:'';width:8px;height:8px;
+  border-radius:50%;background:#fff}
+
+/* CHECKBOX CARDS */
+.checkbox-cards{display:flex;flex-wrap:wrap;gap:8px}
+.checkbox-card{background:#fff;border:1.5px solid var(--border);border-radius:10px;
+  padding:9px 16px;cursor:pointer;transition:all 0.2s;font-size:0.85rem;
+  font-weight:600;color:var(--text-700);position:relative;user-select:none}
+.checkbox-card:hover{background:var(--purple-xlight);border-color:var(--purple-light)}
+.checkbox-card.selected{border-color:var(--purple);background:var(--purple-xlight);
+  color:var(--purple)}
+.checkbox-card input[type=checkbox]{position:absolute;opacity:0;width:0;height:0}
+
+/* DATEPICKER */
+.dp-field{position:relative}
+.dp-trigger{display:flex;align-items:center;gap:8px;background:var(--bg);
+  border:1.5px solid var(--border);border-radius:12px;padding:11px 14px;
+  cursor:pointer;transition:border 0.2s;font-size:0.9rem;color:var(--text-900)}
+.dp-trigger:hover,.dp-trigger.open{border-color:var(--purple);
+  box-shadow:0 0 0 3px var(--purple-light)}
+.dp-trigger .placeholder{color:var(--text-300)}
+.dp-popup{position:absolute;top:calc(100% + 6px);left:0;z-index:500;
+  background:#fff;border:1.5px solid var(--border);border-radius:16px;
+  padding:16px;box-shadow:var(--shadow-lg);min-width:280px;display:none}
+.dp-popup.open{display:block}
+.dp-header{display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:12px}
+.dp-header h4{font-size:0.9rem;font-weight:700;color:var(--text-900)}
+.dp-nav{background:none;border:none;cursor:pointer;padding:4px 8px;
+  font-size:1rem;color:var(--text-500);border-radius:6px}
+.dp-nav:hover{background:var(--bg)}
+.dp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px}
+.dp-dow{font-size:0.7rem;font-weight:700;color:var(--text-300);
+  text-align:center;padding:4px 0}
+.dp-day{font-size:0.82rem;font-weight:500;color:var(--text-700);
+  text-align:center;padding:7px 4px;border-radius:8px;cursor:pointer;
+  transition:all 0.15s;border:none;background:none}
+.dp-day:hover{background:var(--purple-xlight);color:var(--purple)}
+.dp-day--selected{background:var(--purple);color:#fff;font-weight:700}
+.dp-day--in-range{background:var(--purple-xlight);color:var(--purple)}
+.dp-day--disabled{color:var(--text-300);pointer-events:none}
+.dp-day--other{color:var(--border)}
+
+/* FILE UPLOAD */
+.file-upload-area{border:2px dashed var(--border);border-radius:14px;
+  padding:28px 20px;text-align:center;cursor:pointer;transition:all 0.2s;
+  background:var(--bg)}
+.file-upload-area:hover,.file-upload-area.dragover{border-color:var(--purple);
+  background:var(--purple-xlight)}
+.file-upload-area p{font-size:0.85rem;color:var(--text-500);margin-top:6px}
+.file-upload-area .file-icon{font-size:1.8rem;margin-bottom:6px}
+.file-name{font-size:0.82rem;color:var(--purple);font-weight:600;margin-top:8px;
+  display:none}
+
+/* AGREE CARD */
+.agree-card{background:var(--bg);border:1.5px solid var(--border);border-radius:14px;
+  padding:18px;display:flex;align-items:flex-start;gap:14px;cursor:pointer;
+  transition:all 0.2s}
+.agree-card.selected{border-color:var(--purple);background:var(--purple-xlight)}
+.agree-check-box{width:22px;height:22px;min-width:22px;border-radius:6px;
+  border:2px solid var(--border);background:#fff;display:flex;align-items:center;
+  justify-content:center;transition:all 0.2s;margin-top:2px}
+.agree-card.selected .agree-check-box{background:var(--purple);border-color:var(--purple)}
+.agree-card.selected .agree-check-box::after{content:'';display:block;
+  width:10px;height:6px;border-left:2px solid #fff;border-bottom:2px solid #fff;
+  transform:rotate(-45deg) translateY(-2px)}
+.agree-text{font-size:0.85rem;color:var(--text-700);line-height:1.6}
+.agree-text a{color:var(--purple);font-weight:600}
+
+/* ERROR */
+.form-error{font-size:0.78rem;color:#ef4444;margin-top:5px;display:none}
+.form-error.visible{display:block}
+
+/* FORM FOOTER */
+.apply-form-footer{display:flex;align-items:center;justify-content:space-between;
+  padding:20px 32px;border-top:1px solid var(--border);background:#fff;gap:12px;border-radius:0 0 24px 24px}
+.btn-form-back{font-size:0.9rem;font-weight:600;color:var(--text-500);
+  padding:11px 20px;border-radius:12px;border:1.5px solid var(--border);
+  background:#fff;cursor:pointer;transition:all 0.2s}
+.btn-form-back:hover{border-color:var(--purple);color:var(--purple)}
+.btn-form-back:disabled{opacity:0.35;pointer-events:none}
+.page-indicator{font-size:0.82rem;font-weight:600;color:var(--text-300)}
+.btn-form-next{font-size:0.9rem;font-weight:700;color:#fff;
+  padding:11px 24px;border-radius:12px;border:none;background:var(--purple);
+  cursor:pointer;transition:all 0.2s}
+.btn-form-next:hover{transform:scale(1.02);box-shadow:0 4px 16px rgba(118,17,131,0.3)}
+
+/* SUCCESS */
+.apply-success{display:none;padding:56px 32px;text-align:center}
+.apply-success .success-box{background:#f0fdf4;border:1.5px solid #bbf7d0;
+  border-radius:20px;padding:40px 32px;max-width:480px;margin:0 auto}
+.success-icon{font-size:2.5rem;margin-bottom:16px}
+.success-title{font-size:1.4rem;font-weight:800;color:#166534;margin-bottom:10px;
+  letter-spacing:-0.02em}
+.success-desc{font-size:0.9rem;color:#166534;line-height:1.7}
+
+/* FOOTER */
+footer{background:#191F28;color:#9CA3AF;padding:48px 0 40px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.footer-logo-text{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-0.02em}
+.footer-badge{background:var(--purple);color:#fff;font-size:0.6rem;font-weight:700;
+  padding:2px 7px;border-radius:100px;margin-left:8px}
+.footer-tagline{font-size:0.8rem;color:#6B7280;margin-top:6px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-link{font-size:0.85rem;color:#9CA3AF;transition:color 0.2s}
+.footer-link:hover{color:#fff}
+.footer-divider{border:none;border-top:1px solid #2D3748;margin-bottom:20px}
+.footer-company{font-size:0.78rem;color:#4B5563;line-height:1.8}
+
+/* FADE UP */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .form-body{padding:20px}
+  .apply-form-header{padding:18px 20px}
+  .apply-form-footer{padding:16px 20px;flex-wrap:wrap}
+  .form-row{grid-template-columns:1fr}
+  .radio-cards-3{grid-template-columns:1fr}
+  .radio-cards-2{grid-template-columns:1fr}
+  .page-title{font-size:1.8rem}
+
+  /* nav 모바일 최적화 */
+  nav{height:52px}
+  .nav-inner{height:52px;padding:0 14px;gap:8px}
+  .nav-logo-text{font-size:0.82rem;white-space:nowrap}
+  .nav-badge{font-size:0.58rem;padding:2px 6px}
+  .nav-right{gap:6px}
+  .btn-back{font-size:0.75rem;padding:6px 10px;border-radius:7px}
+  .btn-lang{font-size:0.75rem;padding:6px 10px;border-radius:7px}
+  .page-header{padding-top:calc(52px + 32px);padding-bottom:32px}
+
+  /* steps-bar 모바일 최적화 */
+  .steps-bar{padding:12px 16px;gap:0;overflow:hidden}
+  .apply-step{flex-direction:column;align-items:center;gap:5px;flex:1;min-width:0}
+  .apply-step-label{font-size:0.65rem;white-space:normal;text-align:center;
+    line-height:1.2;word-break:keep-all}
+  .step-connector{margin:0 4px;flex:1;min-width:8px}
+  .apply-step.active .apply-step-num{width:30px;height:30px;min-width:30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-text">K-POPSTAY BUSAN</span>
+      <span class="nav-badge">2026</span>
+    </a>
+    <div class="nav-right">
+      <a href="/" class="btn-back">&larr; Back</a>
+      <div class="kpop-lang-wrap" id="kpopLangWrap">
+        <button class="kpop-lang-btn" onclick="toggleKpopLang(event)" aria-expanded="false" aria-label="Language">
+          <svg class="kpop-lang-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18c-1.05 0-2.4-.9-3.4-3h6.8c-1 2.1-2.35 3-3.4 3zm-3.8-5c-.13-.64-.2-1.31-.2-2s.07-1.36.2-2h7.6c.13.64.2 1.31.2 2s-.07 1.36-.2 2H8.2zm-4.1-2c0-.68.1-1.35.27-2h3.25c-.1.65-.16 1.31-.16 2s.06 1.35.16 2H4.37A9.94 9.94 0 0 1 4.1 13zm11.5-6h-7.2C9.4 4.9 10.75 4 11.8 4c1.05 0 2.4.9 3.4 3h.4zm2.13 2h3.25A9.94 9.94 0 0 1 21.9 11h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2zm0 4h3.25c-.17.65-.27 1.32-.27 2s.1 1.35.27 2h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2z"/></svg>
+          <span id="kpopLangCurLabel">EN</span>
+          <svg class="kpop-lang-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="kpop-lang-dropdown" id="kpopLangDropdown" role="listbox"></div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="page-header fade-up">
+  <div class="page-eyebrow">GUEST APPLICATION</div>
+  <h1 class="page-title">Apply for a Free Stay</h1>
+  <p class="page-sub">Priority for international ARMY. Jun 12&ndash;14, Busan.</p>
+</div>
+
+<div class="form-outer">
+  <div class="apply-form-wrap fade-up">
+    <div class="apply-form-header">
+      <h2>Guest Application Form</h2>
+      <p>Busan Concert &middot; Jun 12&ndash;14, 2026 &middot; Powered by Wehome</p>
+    </div>
+    <div class="steps-bar">
+      <div class="apply-step active" id="step1">
+        <div class="apply-step-num">1</div>
+        <div class="apply-step-label">Stay Preferences</div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="apply-step" id="step2">
+        <div class="apply-step-num">2</div>
+        <div class="apply-step-label">Personal Info</div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="apply-step" id="step3">
+        <div class="apply-step-num">3</div>
+        <div class="apply-step-label">ARMY Verification</div>
+      </div>
+    </div>
+
+    <!-- STEP 1 -->
+    <div id="page1" class="form-body">
+      <div class="form-section-title">Stay Preferences</div>
+
+      <div class="form-group">
+        <div class="form-label">Accommodation Type</div>
+        <div class="radio-cards radio-cards-3" id="rc-stayType">
+          <label class="radio-card" onclick="selectRadio(this,'stayType','private_room')">
+            <input type="radio" name="stayType" value="private_room">
+            <div class="rc-check"></div>
+            <div class="rc-title">Private Room</div>
+            <div class="rc-desc">Independent room</div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'stayType','shared_room')">
+            <input type="radio" name="stayType" value="shared_room">
+            <div class="rc-check"></div>
+            <div class="rc-title">Shared Room</div>
+            <div class="rc-desc">Share with guests</div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'stayType','flex')">
+            <input type="radio" name="stayType" value="flex">
+            <div class="rc-check"></div>
+            <div class="rc-title">Flexible</div>
+            <div class="rc-desc">No preference</div>
+          </label>
+        </div>
+        <div class="form-error" id="err-stayType">Please select accommodation type.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="guestCount">Number of Guests</label>
+        <select class="form-select" id="guestCount">
+          <option value="">Select number of guests</option>
+          <option value="1">1 person</option>
+          <option value="2">2 persons</option>
+          <option value="3">3 persons</option>
+          <option value="4">4 persons</option>
+        </select>
+        <div class="form-error" id="err-guestCount">Please select number of guests.</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Gender</div>
+        <div class="radio-cards radio-cards-3" id="rc-gender">
+          <label class="radio-card" onclick="selectRadio(this,'gender','female')">
+            <input type="radio" name="gender" value="female">
+            <div class="rc-check"></div>
+            <div class="rc-title">Female</div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'gender','male')">
+            <input type="radio" name="gender" value="male">
+            <div class="rc-check"></div>
+            <div class="rc-title">Male</div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'gender','other')">
+            <input type="radio" name="gender" value="other">
+            <div class="rc-check"></div>
+            <div class="rc-title">Other</div>
+          </label>
+        </div>
+        <div class="form-error" id="err-gender">Please select gender.</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Individual Bed Required?</div>
+        <div class="radio-cards radio-cards-2" id="rc-bedRequired">
+          <label class="radio-card" onclick="selectRadio(this,'bedRequired','yes')">
+            <input type="radio" name="bedRequired" value="yes">
+            <div class="rc-check"></div>
+            <div class="rc-title">Yes</div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'bedRequired','no')">
+            <input type="radio" name="bedRequired" value="no">
+            <div class="rc-check"></div>
+            <div class="rc-title">No</div>
+          </label>
+        </div>
+        <div class="form-error" id="err-bedRequired">Please select bed preference.</div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <div class="form-label">Check-in Date</div>
+          <div class="dp-field">
+            <div class="dp-trigger" id="dpTriggerIn" onclick="togglePicker('In')">
+              <span id="dpDisplayIn" class="placeholder">Select date</span>
+            </div>
+            <div class="dp-popup" id="dpPopupIn"></div>
+          </div>
+          <input type="hidden" id="checkIn">
+          <div class="form-error" id="err-checkIn">Please select check-in date.</div>
+        </div>
+        <div class="form-group">
+          <div class="form-label">Check-out Date</div>
+          <div class="dp-field">
+            <div class="dp-trigger" id="dpTriggerOut" onclick="togglePicker('Out')">
+              <span id="dpDisplayOut" class="placeholder">Select date</span>
+            </div>
+            <div class="dp-popup" id="dpPopupOut"></div>
+          </div>
+          <input type="hidden" id="checkOut">
+          <div class="form-error" id="err-checkOut">Please select check-out date.</div>
+        </div>
+      </div>
+      <p style="font-size:0.78rem;color:var(--text-300);margin-top:-10px;margin-bottom:4px;">
+        If you have special circumstances, you may adjust the dates.
+      </p>
+    </div>
+
+    <!-- STEP 2 -->
+    <div id="page2" class="form-body" style="display:none">
+      <div class="form-section-title">Personal Info</div>
+
+      <div class="form-group">
+        <label class="form-label" for="guestName">Full Name</label>
+        <input class="form-input" type="text" id="guestName" placeholder="Your full name">
+        <div class="form-error" id="err-guestName">Please enter your name.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="nationality">Country/Region <span class="required">*</span></label>
+        <select class="form-select" id="nationality">
+          <option value="">Select Country/Region</option>
+          <option>Afghanistan</option>
+          <option>Albania</option>
+          <option>Algeria</option>
+          <option>Andorra</option>
+          <option>Angola</option>
+          <option>Antigua and Barbuda</option>
+          <option>Argentina</option>
+          <option>Armenia</option>
+          <option>Australia</option>
+          <option>Austria</option>
+          <option>Azerbaijan</option>
+          <option>Bahamas</option>
+          <option>Bahrain</option>
+          <option>Bangladesh</option>
+          <option>Barbados</option>
+          <option>Belarus</option>
+          <option>Belgium</option>
+          <option>Belize</option>
+          <option>Benin</option>
+          <option>Bhutan</option>
+          <option>Bolivia</option>
+          <option>Bosnia and Herzegovina</option>
+          <option>Botswana</option>
+          <option>Brazil</option>
+          <option>Brunei</option>
+          <option>Bulgaria</option>
+          <option>Burkina Faso</option>
+          <option>Burundi</option>
+          <option>Cabo Verde</option>
+          <option>Cambodia</option>
+          <option>Cameroon</option>
+          <option>Canada</option>
+          <option>Central African Republic</option>
+          <option>Chad</option>
+          <option>Chile</option>
+          <option>China</option>
+          <option>Colombia</option>
+          <option>Comoros</option>
+          <option>Congo (Brazzaville)</option>
+          <option>Congo (Kinshasa)</option>
+          <option>Costa Rica</option>
+          <option>Croatia</option>
+          <option>Cuba</option>
+          <option>Cyprus</option>
+          <option>Czech Republic</option>
+          <option>Denmark</option>
+          <option>Djibouti</option>
+          <option>Dominica</option>
+          <option>Dominican Republic</option>
+          <option>Ecuador</option>
+          <option>Egypt</option>
+          <option>El Salvador</option>
+          <option>Equatorial Guinea</option>
+          <option>Eritrea</option>
+          <option>Estonia</option>
+          <option>Eswatini</option>
+          <option>Ethiopia</option>
+          <option>Fiji</option>
+          <option>Finland</option>
+          <option>France</option>
+          <option>Gabon</option>
+          <option>Gambia</option>
+          <option>Georgia</option>
+          <option>Germany</option>
+          <option>Ghana</option>
+          <option>Greece</option>
+          <option>Grenada</option>
+          <option>Guatemala</option>
+          <option>Guinea</option>
+          <option>Guinea-Bissau</option>
+          <option>Guyana</option>
+          <option>Haiti</option>
+          <option>Honduras</option>
+          <option>Hungary</option>
+          <option>Iceland</option>
+          <option>India</option>
+          <option>Indonesia</option>
+          <option>Iran</option>
+          <option>Iraq</option>
+          <option>Ireland</option>
+          <option>Israel</option>
+          <option>Italy</option>
+          <option>Ivory Coast</option>
+          <option>Jamaica</option>
+          <option>Japan</option>
+          <option>Jordan</option>
+          <option>Kazakhstan</option>
+          <option>Kenya</option>
+          <option>Kiribati</option>
+          <option>Kuwait</option>
+          <option>Kyrgyzstan</option>
+          <option>Laos</option>
+          <option>Latvia</option>
+          <option>Lebanon</option>
+          <option>Lesotho</option>
+          <option>Liberia</option>
+          <option>Libya</option>
+          <option>Liechtenstein</option>
+          <option>Lithuania</option>
+          <option>Luxembourg</option>
+          <option>Madagascar</option>
+          <option>Malawi</option>
+          <option>Malaysia</option>
+          <option>Maldives</option>
+          <option>Mali</option>
+          <option>Malta</option>
+          <option>Marshall Islands</option>
+          <option>Mauritania</option>
+          <option>Mauritius</option>
+          <option>Mexico</option>
+          <option>Micronesia</option>
+          <option>Moldova</option>
+          <option>Monaco</option>
+          <option>Mongolia</option>
+          <option>Montenegro</option>
+          <option>Morocco</option>
+          <option>Mozambique</option>
+          <option>Myanmar</option>
+          <option>Namibia</option>
+          <option>Nauru</option>
+          <option>Nepal</option>
+          <option>Netherlands</option>
+          <option>New Zealand</option>
+          <option>Nicaragua</option>
+          <option>Niger</option>
+          <option>Nigeria</option>
+          <option>North Korea</option>
+          <option>North Macedonia</option>
+          <option>Norway</option>
+          <option>Oman</option>
+          <option>Pakistan</option>
+          <option>Palau</option>
+          <option>Palestine</option>
+          <option>Panama</option>
+          <option>Papua New Guinea</option>
+          <option>Paraguay</option>
+          <option>Peru</option>
+          <option>Philippines</option>
+          <option>Poland</option>
+          <option>Portugal</option>
+          <option>Qatar</option>
+          <option>Romania</option>
+          <option>Russia</option>
+          <option>Rwanda</option>
+          <option>Saint Kitts and Nevis</option>
+          <option>Saint Lucia</option>
+          <option>Saint Vincent and the Grenadines</option>
+          <option>Samoa</option>
+          <option>San Marino</option>
+          <option>Sao Tome and Principe</option>
+          <option>Saudi Arabia</option>
+          <option>Senegal</option>
+          <option>Serbia</option>
+          <option>Seychelles</option>
+          <option>Sierra Leone</option>
+          <option>Singapore</option>
+          <option>Slovakia</option>
+          <option>Slovenia</option>
+          <option>Solomon Islands</option>
+          <option>Somalia</option>
+          <option>South Africa</option>
+          <option>South Korea</option>
+          <option>South Sudan</option>
+          <option>Spain</option>
+          <option>Sri Lanka</option>
+          <option>Sudan</option>
+          <option>Suriname</option>
+          <option>Sweden</option>
+          <option>Switzerland</option>
+          <option>Syria</option>
+          <option>Taiwan</option>
+          <option>Tajikistan</option>
+          <option>Tanzania</option>
+          <option>Thailand</option>
+          <option>Timor-Leste</option>
+          <option>Togo</option>
+          <option>Tonga</option>
+          <option>Trinidad and Tobago</option>
+          <option>Tunisia</option>
+          <option>Turkey</option>
+          <option>Turkmenistan</option>
+          <option>Tuvalu</option>
+          <option>Uganda</option>
+          <option>Ukraine</option>
+          <option>United Arab Emirates</option>
+          <option>United Kingdom</option>
+          <option>United States</option>
+          <option>Uruguay</option>
+          <option>Uzbekistan</option>
+          <option>Vanuatu</option>
+          <option>Vatican City</option>
+          <option>Venezuela</option>
+          <option>Vietnam</option>
+          <option>Yemen</option>
+          <option>Zambia</option>
+          <option>Zimbabwe</option>
+          <option>Other</option>
+        </select>
+        <div class="form-error" id="err-nationality">Please select nationality.</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Phone Number</div>
+        <div class="phone-row">
+          <select class="form-select" id="phoneDial">
+            <option value="+1">+1 (US/CA)</option>
+            <option value="+44">+44 (UK)</option>
+            <option value="+81">+81 (JP)</option>
+            <option value="+86">+86 (CN)</option>
+            <option value="+886">+886 (TW)</option>
+            <option value="+66">+66 (TH)</option>
+            <option value="+63">+63 (PH)</option>
+            <option value="+62">+62 (ID)</option>
+            <option value="+84">+84 (VN)</option>
+            <option value="+60">+60 (MY)</option>
+            <option value="+65">+65 (SG)</option>
+            <option value="+61">+61 (AU)</option>
+            <option value="+33">+33 (FR)</option>
+            <option value="+49">+49 (DE)</option>
+            <option value="+34">+34 (ES)</option>
+            <option value="+55">+55 (BR)</option>
+            <option value="+91">+91 (IN)</option>
+            <option value="+82">+82 (KR)</option>
+          </select>
+          <input class="form-input" type="tel" id="phoneNumber" placeholder="Phone number"
+            oninput="formatPhone()">
+        </div>
+        <input type="hidden" id="phone">
+        <div class="form-error" id="err-phone">Please enter phone number.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-input" type="email" id="email" placeholder="your@email.com">
+        <div class="form-error" id="err-email">Please enter a valid email.</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Preferred Language(s)</div>
+        <div class="checkbox-cards" id="cc-language">
+          <label class="checkbox-card" onclick="toggleCheck(this,'language','en')">
+            <input type="checkbox" name="language" value="en">English</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'language','ko')">
+            <input type="checkbox" name="language" value="ko">Korean</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'language','ja')">
+            <input type="checkbox" name="language" value="ja">Japanese</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'language','zh')">
+            <input type="checkbox" name="language" value="zh">Chinese</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'language','es')">
+            <input type="checkbox" name="language" value="es">Spanish</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'language','pt')">
+            <input type="checkbox" name="language" value="pt">Portuguese</label>
+        </div>
+        <div class="form-error" id="err-language">Please select at least one language.</div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div id="page3" class="form-body" style="display:none">
+      <div class="form-section-title">ARMY Verification</div>
+
+      <div class="form-group">
+        <div class="form-label">ARMY Proof Method</div>
+        <div class="radio-cards radio-cards-3" id="rc-armyProof">
+          <label class="radio-card" onclick="selectRadio(this,'armyProof','weverse')">
+            <input type="radio" name="armyProof" value="weverse">
+            <div class="rc-check"></div>
+            <div class="rc-title">Weverse</div>
+            <div class="rc-desc">Weverse membership screenshot</div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'armyProof','ticket')">
+            <input type="radio" name="armyProof" value="ticket">
+            <div class="rc-check"></div>
+            <div class="rc-title">Concert Ticket</div>
+            <div class="rc-desc">Purchase confirmation</div>
+          </label>
+          <label class="radio-card" onclick="selectRadio(this,'armyProof','fan_community')">
+            <input type="radio" name="armyProof" value="fan_community">
+            <div class="rc-check"></div>
+            <div class="rc-title">Fan Community</div>
+            <div class="rc-desc">Fan club / community post</div>
+          </label>
+        </div>
+        <div class="form-error" id="err-armyProof">Please select proof method.</div>
+      </div>
+
+      <div class="form-group">
+        <div class="form-label">Upload Proof File</div>
+        <div class="file-upload-area" id="fileUploadArea"
+          onclick="document.getElementById('armyProofFile').click()"
+          ondragover="handleDragOver(event)"
+          ondragleave="handleDragLeave(event)"
+          ondrop="handleDrop(event)">
+          <div class="file-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg></div>
+          <p>Click to upload or drag &amp; drop</p>
+          <p style="font-size:0.75rem;color:var(--text-300);margin-top:4px">PNG, JPG, PDF &mdash; max 10MB</p>
+          <div class="file-name" id="fileName"></div>
+        </div>
+        <input type="file" id="armyProofFile" accept="image/*,.pdf"
+          style="display:none" onchange="handleFileSelect(this)">
+        <div class="form-error" id="err-armyProofFile">Please upload proof file.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="wehomeId">Wehome ID (optional)</label>
+        <input class="form-input" type="text" id="wehomeId" placeholder="Your Wehome account ID (if any)">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="referralSource">How did you hear about K-POPSTAY? <span style="font-size:0.75rem;color:var(--text-300);font-weight:500">(optional)</span></label>
+        <div class="checkbox-cards" id="cc-referral">
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','wehome')">
+            <input type="checkbox" name="referral" value="wehome">Wehome</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','theqoo')">
+            <input type="checkbox" name="referral" value="theqoo">더쿠 (Theqoo)</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','naver')">
+            <input type="checkbox" name="referral" value="naver">Naver (블로그/카페)</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','visitkorea')">
+            <input type="checkbox" name="referral" value="visitkorea">VisitKorea</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','facebook')">
+            <input type="checkbox" name="referral" value="facebook">Facebook</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','threads')">
+            <input type="checkbox" name="referral" value="threads">Threads</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','instagram')">
+            <input type="checkbox" name="referral" value="instagram">Instagram</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','twitter_x')">
+            <input type="checkbox" name="referral" value="twitter_x">X (Twitter)</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','tiktok')">
+            <input type="checkbox" name="referral" value="tiktok">TikTok</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','youtube')">
+            <input type="checkbox" name="referral" value="youtube">YouTube</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','weverse')">
+            <input type="checkbox" name="referral" value="weverse">Weverse</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','baovanhoa')">
+            <input type="checkbox" name="referral" value="baovanhoa">Báo Văn Hóa (VN)</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','kmmbox')">
+            <input type="checkbox" name="referral" value="kmmbox">Korea.kr / KMMBOX</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','bing')">
+            <input type="checkbox" name="referral" value="bing">Bing</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','fan_community')">
+            <input type="checkbox" name="referral" value="fan_community">Fan Community</label>
+          <label class="checkbox-card" onclick="toggleCheck(this,'referral','friend')">
+            <input type="checkbox" name="referral" value="friend">Friend / Word of Mouth</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="comments">Additional Comments (optional)</label>
+        <textarea class="form-textarea" id="comments"
+          placeholder="Any special requests, accessibility needs, or messages to your host..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <!-- 보증금 안내 카드 -->
+        <div style="background:#fffbeb;border:1.5px solid #fcd34d;border-radius:14px;padding:16px 18px;margin-bottom:14px;display:flex;gap:12px;align-items:flex-start;">
+          <svg style="flex-shrink:0;margin-top:2px" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#d97706"/></svg>
+          <div style="font-size:0.82rem;color:#92400e;line-height:1.65;">
+            <strong style="display:block;margin-bottom:4px;font-size:0.85rem;color:#78350f;">Security Deposit Policy</strong>
+            Selected ARMY guests are required to pay a security deposit of <strong>KRW 50,000 per person</strong>. Upon check-in, the full deposit amount will be refunded in the form of a <strong>Busan Tourism Gift Card</strong>. The Busan Tourism Gift Card can be used like cash at participating businesses throughout Busan.
+          </div>
+        </div>
+        <!-- 프로젝트 확인 동의 -->
+        <div class="agree-card" id="agreeProjectCard" onclick="toggleAgreeProject()" style="margin-bottom:10px;">
+          <div class="agree-check-box" id="agreeProjectCheckBox"></div>
+          <input type="checkbox" id="agreeProjectCheck" style="display:none">
+          <div class="agree-text">
+            I hereby confirm that this is an application form for free accommodation provided through the <strong>Busan Seagull Nest Project of K-POPSTAY BUSAN 2026</strong>. Should my application be accepted, I understand and agree to the following.
+          </div>
+        </div>
+        <div class="form-error" id="err-agreeProject">Please confirm the above statement.</div>
+        <!-- 보증금 동의 -->
+        <div class="agree-card" id="agreeDepositCard" onclick="toggleAgreeDeposit()" style="margin-bottom:10px;margin-top:10px;">
+          <div class="agree-check-box" id="agreeDepositCheckBox"></div>
+          <input type="checkbox" id="agreeDepositCheck" style="display:none">
+          <div class="agree-text">
+            I understand and agree to the <strong>KRW 50,000 security deposit policy</strong>. I acknowledge that the deposit will be fully refunded as a Busan Tourism Gift Card upon check-in.
+          </div>
+        </div>
+        <div class="form-error" id="err-agreeDeposit">Please agree to the deposit policy.</div>
+        <!-- 이용약관 동의 -->
+        <div class="agree-card" id="agreeCard" onclick="toggleAgree()" style="margin-top:10px;">
+          <div class="agree-check-box" id="agreeCheckBox"></div>
+          <input type="checkbox" id="agreeCheck" style="display:none">
+          <div class="agree-text">
+            I agree to the <a href="#" onclick="return false">Terms of Service</a> and
+            <a href="#" onclick="return false">Privacy Policy</a>. I understand that my information will
+            be used to match me with a verified Busan host for the K-POPSTAY BUSAN 2026 program.
+          </div>
+        </div>
+        <div class="form-error" id="err-agree">Please agree to the terms.</div>
+      </div>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="applySuccess" class="apply-success">
+      <div class="success-box">
+        <div class="success-icon"><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+        <div class="success-title">Application Submitted!</div>
+        <div class="success-desc">
+          Thank you for applying to K-POPSTAY BUSAN 2026.<br>
+          We will review your application and notify you.<br><br>
+          Check your email for confirmation. Priority is given to international ARMY.
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM FOOTER -->
+    <div class="apply-form-footer" id="applyFormFooter">
+      <button class="btn-form-back" id="btnBack" onclick="goTo(currentPage-1)" disabled>&larr; Back</button>
+      <span class="page-indicator" id="pageIndicator">Step 1 of 3</span>
+      <button class="btn-form-next" id="btnNext" onclick="nextStep()">Continue &rarr;</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div>
+          <span class="footer-logo-text">K-POPSTAY BUSAN</span>
+          <span class="footer-badge">2026</span>
+        </div>
+        <div class="footer-tagline">Powered by Wehome.me &middot; 위홈이 만드는 새로운 공유숙박</div>
+      </div>
+      <div class="footer-links">
+        <a href="/" class="footer-link">Home</a>
+        <a href="/#guidebook" class="footer-link">Guidebook</a>
+        <a href="apply.html" class="footer-link">Apply Now</a>
+        <a href="/host" class="footer-link">호스트 신청</a>
+        <a href="mailto:cs@wehome.me" class="footer-link">Customer Support</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-company">
+      (주)위홈 | 대표이사: 조산구 | 개인정보 보호책임자: 김석진 | 사업자등록번호: 467-81-01292 / 서울 마포구 양화로 136 SVCS 507 | 고객센터: 1544-5665 | 평일 10:00&ndash;12:00, 13:00&ndash;18:00<br>
+      &copy; 2026 Wehome Inc. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+// ---- State ----
+var currentPage = 1;
+var MIN_N = 20260611, MAX_N = 20260615;
+var dpState = {In:{year:2026,month:5},Out:{year:2026,month:5}};
+
+// 날짜 기본값: 체크인 Jun 12, 체크아웃 Jun 14
+function setDefaultDates() {
+  document.getElementById('checkIn').value = '20260612';
+  var dispIn = document.getElementById('dpDisplayIn');
+  dispIn.textContent = 'Jun 12, 2026';
+  dispIn.classList.remove('placeholder');
+
+  document.getElementById('checkOut').value = '20260614';
+  var dispOut = document.getElementById('dpDisplayOut');
+  dispOut.textContent = 'Jun 14, 2026';
+  dispOut.classList.remove('placeholder');
+}
+setDefaultDates();
+
+// ---- Radio Cards ----
+function selectRadio(card, name, value) {
+  var cards = card.closest('.radio-cards').querySelectorAll('.radio-card');
+  cards.forEach(function(c){ c.classList.remove('selected'); });
+  card.classList.add('selected');
+  var inp = card.querySelector('input[type=radio]');
+  if(inp){ inp.checked = true; }
+  clearErr('err-'+name);
+}
+
+// ---- Checkbox Cards ----
+function toggleCheck(card, name, value) {
+  setTimeout(function() {
+    var inp = card.querySelector('input[type=checkbox]');
+    card.classList.toggle('selected', inp ? inp.checked : false);
+    if(inp && inp.checked) clearErr('err-' + name);
+  }, 0);
+}
+
+// ---- Agree ----
+function toggleAgree() {
+  var card = document.getElementById('agreeCard');
+  var chk = document.getElementById('agreeCheck');
+  card.classList.toggle('selected');
+  chk.checked = card.classList.contains('selected');
+  clearErr('err-agree');
+}
+function toggleAgreeProject() {
+  var card = document.getElementById('agreeProjectCard');
+  var chk = document.getElementById('agreeProjectCheck');
+  card.classList.toggle('selected');
+  chk.checked = card.classList.contains('selected');
+  clearErr('err-agreeProject');
+}
+function toggleAgreeDeposit() {
+  var card = document.getElementById('agreeDepositCard');
+  var chk = document.getElementById('agreeDepositCheck');
+  card.classList.toggle('selected');
+  chk.checked = card.classList.contains('selected');
+  clearErr('err-agreeDeposit');
+}
+
+// ---- Phone ----
+function formatPhone() {
+  var dial = document.getElementById('phoneDial').value;
+  var num = document.getElementById('phoneNumber').value;
+  document.getElementById('phone').value = dial + num;
+}
+
+// ---- File Upload ----
+function handleFileSelect(input) {
+  if(input.files && input.files[0]) {
+    var fn = document.getElementById('fileName');
+    fn.textContent = input.files[0].name;
+    fn.style.display = 'block';
+    clearErr('err-armyProofFile');
+  }
+}
+function handleDragOver(e) {
+  e.preventDefault();
+  document.getElementById('fileUploadArea').classList.add('dragover');
+}
+function handleDragLeave(e) {
+  document.getElementById('fileUploadArea').classList.remove('dragover');
+}
+function handleDrop(e) {
+  e.preventDefault();
+  document.getElementById('fileUploadArea').classList.remove('dragover');
+  var files = e.dataTransfer.files;
+  if(files && files[0]) {
+    document.getElementById('armyProofFile').files = files;
+    var fn = document.getElementById('fileName');
+    fn.textContent = files[0].name;
+    fn.style.display = 'block';
+    clearErr('err-armyProofFile');
+  }
+}
+
+// ---- Date Picker ----
+var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function toN(y,m,d){ return y*10000+(m+1)*100+d; }
+function makePicker(suffix) {
+  var popup = document.getElementById('dpPopup'+suffix);
+  var s = dpState[suffix];
+  var days = [];
+  var firstDay = new Date(s.year, s.month, 1).getDay();
+  var daysInMonth = new Date(s.year, s.month+1, 0).getDate();
+  var html = '<div class="dp-header">';
+  html += '<button class="dp-nav" onclick="pickerNav(\'' + suffix + '\',-1)">&#8249;</button>';
+  html += '<h4>'+MONTHS[s.month]+' '+s.year+'</h4>';
+  html += '<button class="dp-nav" onclick="pickerNav(\'' + suffix + '\',1)">&#8250;</button>';
+  html += '</div><div class="dp-grid">';
+  var dows = ['Su','Mo','Tu','We','Th','Fr','Sa'];
+  dows.forEach(function(d){ html += '<div class="dp-dow">'+d+'</div>'; });
+  for(var i=0;i<firstDay;i++) html += '<div class="dp-day dp-day--other"></div>';
+  for(var d=1;d<=daysInMonth;d++) {
+    var n = toN(s.year, s.month, d);
+    var cls = 'dp-day';
+    if(n < MIN_N || n > MAX_N) cls += ' dp-day--disabled';
+    var selIn = document.getElementById('checkIn').value;
+    var selOut = document.getElementById('checkOut').value;
+    if(selIn && String(n) === selIn) cls += ' dp-day--selected';
+    else if(selOut && String(n) === selOut) cls += ' dp-day--selected';
+    else if(selIn && selOut && n > Number(selIn) && n < Number(selOut)) cls += ' dp-day--in-range';
+    html += '<button class="'+cls+'" onclick="selectDay(\'' + suffix + '\',' + n + ',' + d + ')">' + d + '</button>';
+  }
+  html += '</div>';
+  popup.innerHTML = html;
+}
+function pickerNav(suffix, dir) {
+  var s = dpState[suffix];
+  s.month += dir;
+  if(s.month < 0){ s.month = 11; s.year--; }
+  if(s.month > 11){ s.month = 0; s.year++; }
+  makePicker(suffix);
+}
+function selectDay(suffix, n, d) {
+  var hiddenId = suffix === 'In' ? 'checkIn' : 'checkOut';
+  document.getElementById(hiddenId).value = String(n);
+  var display = document.getElementById('dpDisplay'+suffix);
+  var s = dpState[suffix];
+  display.textContent = MONTHS[s.month]+' '+d+', '+s.year;
+  display.classList.remove('placeholder');
+  document.getElementById('dpPopup'+suffix).classList.remove('open');
+  document.getElementById('dpTrigger'+suffix).classList.remove('open');
+  clearErr('err-'+hiddenId);
+  makePicker('In'); makePicker('Out');
+}
+function togglePicker(suffix) {
+  var popup = document.getElementById('dpPopup'+suffix);
+  var trigger = document.getElementById('dpTrigger'+suffix);
+  var other = suffix === 'In' ? 'Out' : 'In';
+  document.getElementById('dpPopup'+other).classList.remove('open');
+  document.getElementById('dpTrigger'+other).classList.remove('open');
+  popup.classList.toggle('open');
+  trigger.classList.toggle('open');
+  if(popup.classList.contains('open')) makePicker(suffix);
+}
+document.addEventListener('click', function(e) {
+  ['In','Out'].forEach(function(s) {
+    var popup = document.getElementById('dpPopup'+s);
+    var trigger = document.getElementById('dpTrigger'+s);
+    if(!popup.contains(e.target) && !trigger.contains(e.target)) {
+      popup.classList.remove('open');
+      trigger.classList.remove('open');
+    }
+  });
+});
+
+// ---- Validation ----
+function getRadio(name) {
+  var els = document.querySelectorAll('input[name="'+name+'"]:checked');
+  return els.length > 0 ? els[0].value : '';
+}
+function getChecked(name) {
+  var els = document.querySelectorAll('input[name="'+name+'"]:checked');
+  return Array.from(els).map(function(e){ return e.value; });
+}
+function showErr(id, msg) {
+  var el = document.getElementById(id);
+  if(el){ el.style.display='block'; if(msg) el.textContent=msg; }
+}
+function clearErr(id) {
+  var el = document.getElementById(id);
+  if(el){ el.style.display='none'; }
+}
+function validatePage(page) {
+  var ok = true;
+  if(page === 1) {
+    if(!getRadio('stayType')){ showErr('err-stayType'); ok=false; }
+    if(!document.getElementById('guestCount').value){ showErr('err-guestCount'); ok=false; }
+    if(!getRadio('gender')){ showErr('err-gender'); ok=false; }
+    if(!getRadio('bedRequired')){ showErr('err-bedRequired'); ok=false; }
+    if(!document.getElementById('checkIn').value){ showErr('err-checkIn'); ok=false; }
+    if(!document.getElementById('checkOut').value){ showErr('err-checkOut'); ok=false; }
+  }
+  if(page === 2) {
+    var name = document.getElementById('guestName').value.trim();
+    var nat = document.getElementById('nationality').value;
+    var phone = document.getElementById('phoneNumber').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var lang = getChecked('language');
+    if(!name){ showErr('err-guestName'); ok=false; }
+    if(!nat){ showErr('err-nationality'); ok=false; }
+    if(!phone){ showErr('err-phone'); ok=false; }
+    if(!email || !email.includes('@')){ showErr('err-email','Please enter a valid email.'); ok=false; }
+    if(!lang.length){ showErr('err-language'); ok=false; }
+    if(ok) formatPhone();
+  }
+  if(page === 3) {
+    if(!getRadio('armyProof')){ showErr('err-armyProof'); ok=false; }
+    var ff = document.getElementById('armyProofFile');
+    if(!ff.files || !ff.files.length){ showErr('err-armyProofFile'); ok=false; }
+    if(!document.getElementById('agreeProjectCheck').checked){ showErr('err-agreeProject'); ok=false; }
+    if(!document.getElementById('agreeDepositCheck').checked){ showErr('err-agreeDeposit'); ok=false; }
+    if(!document.getElementById('agreeCheck').checked){ showErr('err-agree'); ok=false; }
+  }
+  return ok;
+}
+
+// ---- Navigation ----
+function goTo(page) {
+  document.getElementById('page'+currentPage).style.display='none';
+  document.getElementById('page'+page).style.display='block';
+  var steps = ['step1','step2','step3'];
+  steps.forEach(function(id,i){
+    var el = document.getElementById(id);
+    el.classList.remove('active','done');
+    if(i+1 < page) el.classList.add('done');
+    else if(i+1 === page) el.classList.add('active');
+  });
+  currentPage = page;
+  document.getElementById('pageIndicator').textContent = 'Step '+page+' of 3';
+  document.getElementById('btnBack').disabled = (page === 1);
+  document.getElementById('btnNext').textContent = (page === 3) ? 'Submit Application' : 'Continue →';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function nextStep() {
+  if(!validatePage(currentPage)) return;
+  if(currentPage < 3) {
+    goTo(currentPage+1);
+  } else {
+    submitForm();
+  }
+}
+
+// ---- Submit ----
+function submitForm() {
+  var fd = new FormData();
+  fd.append('type','guest');
+  fd.append('stayType', getRadio('stayType'));
+  fd.append('guestCount', document.getElementById('guestCount').value);
+  fd.append('gender', getRadio('gender'));
+  fd.append('bedRequired', getRadio('bedRequired'));
+  fd.append('checkIn', document.getElementById('checkIn').value);
+  fd.append('checkOut', document.getElementById('checkOut').value);
+  fd.append('guestName', document.getElementById('guestName').value);
+  fd.append('nationality', document.getElementById('nationality').value);
+  fd.append('phone', document.getElementById('phone').value || (document.getElementById('phoneDial').value + document.getElementById('phoneNumber').value));
+  fd.append('email', document.getElementById('email').value);
+  fd.append('language', getChecked('language').join(','));
+  fd.append('armyProof', getRadio('armyProof'));
+  var ff = document.getElementById('armyProofFile');
+  if(ff.files && ff.files[0]) fd.append('armyProofFile', ff.files[0]);
+  fd.append('wehomeId', document.getElementById('wehomeId').value);
+  fd.append('referral', getChecked('referral').join(','));
+  fd.append('comments', document.getElementById('comments').value);
+  fd.append('agreeProject', '1');
+  fd.append('agreeDeposit', '1');
+  fd.append('agree', '1');
+
+  var btn = document.getElementById('btnNext');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  fetch('submit.php', {method:'POST', body:fd})
+    .then(function(r){ return r.json(); })
+    .then(function(d){
+      if(d && (d.ok || d.success)) showSuccess();
+      else { btn.textContent='Submit Application'; btn.disabled=false; alert(d.message||'Submission failed. Please try again.'); }
+    })
+    .catch(function(){
+      btn.textContent='Submit Application'; btn.disabled=false;
+      alert('Network error. Please try again.');
+    });
+}
+function showSuccess() {
+  document.getElementById('page3').style.display='none';
+  document.getElementById('applyFormFooter').style.display='none';
+  document.getElementById('applySuccess').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+// ---- Channel IO ----
+(function(){var w=window;if(w.ChannelIO){return}var ch=function(){ch.c(arguments)};
+ch.q=[];ch.c=function(args){ch.q.push(args)};w.ChannelIO=ch;
+function l(){if(w.ChannelIOInitialized){return}w.ChannelIOInitialized=true;
+var s=document.createElement('script');s.type='text/javascript';s.async=true;
+s.src='https://cdn.channel.io/plugin/ch-plugin-web.js';
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x)}
+if(document.readyState==='complete'){l()}else{w.addEventListener('DOMContentLoaded',l);
+w.addEventListener('load',l)}})();
+ChannelIO('boot',{pluginKey:'5d85db83-13e7-44dd-a0e1-3036e03e3e25',hideChannelButtonOnBoot:true});
+
+// ---- Fade Up ----
+var fadeEls = document.querySelectorAll('.fade-up');
+var observer = new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); }
+  });
+},{threshold:0.1});
+fadeEls.forEach(function(el){ observer.observe(el); });
+
+// goTo 래핑: 언어 버튼 텍스트 페이지 이동 후 갱신
+var _origGoTo = goTo;
+window._currentApplyPage = 1;
+goTo = function(page){
+  _origGoTo(page);
+  window._currentApplyPage = page;
+  var btnNext = document.getElementById('btnNext');
+  if(btnNext && window.kpopT){
+    btnNext.textContent = (page===3) ? window.kpopT('apply_btn_submit') : window.kpopT('apply_btn_continue');
+  }
+};
+</script>
+<script src="/kpop-i18n.js?v=20260604"></script>
+<script>
+(function(){
+  function renderLangDropdown(){
+    var labels = window.KPOP_LANG_LABELS || {};
+    var supported = window.KPOP_SUPPORTED || [];
+    var cur = window.KPOP_LANG || 'en';
+    var lbl = document.getElementById('kpopLangCurLabel');
+    if(lbl) lbl.textContent = labels[cur] || 'EN';
+    var dd = document.getElementById('kpopLangDropdown');
+    if(dd){
+      dd.innerHTML = '';
+      supported.forEach(function(code){
+        var btn = document.createElement('button');
+        btn.className = 'kpop-lang-item' + (code===cur?' active':'');
+        btn.setAttribute('role','option');
+        btn.textContent = labels[code] || code;
+        btn.onclick = function(e){ e.stopPropagation(); window.kpopSetLang(code); };
+        dd.appendChild(btn);
+      });
+    }
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded', renderLangDropdown);
+  } else {
+    renderLangDropdown();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+Options -Indexes
+RewriteEngine On
+
+# /host -> host.html
+RewriteRule ^host/?$ /host.html [L]
+
+# /about -> about.html
+RewriteRule ^about/?$ /about.html [L]
+
+# /about-kr -> about-kr.html
+RewriteRule ^about-kr/?$ /about-kr.html [L]
+
+# /guest-kr -> guest-kr.html
+RewriteRule ^guest-kr/?$ /guest-kr.html [L]
+
+# /apply -> apply.html
+RewriteRule ^apply/?$ /apply.html [L]
+
+# /travel-guide -> travel-guide.html
+RewriteRule ^travel-guide/?$ /travel-guide.html [L]
+
+# /host-apply -> host-apply.html
+RewriteRule ^host-apply/?$ /host-apply.html [L]
+
+# /about-kpopstay -> about-kpopstay.html
+RewriteRule ^about-kpopstay/?$ /about-kpopstay.html [L]
+
+# /travelguide -> travelguide.html
+RewriteRule ^travelguide/?$ /travelguide.html [L]
+
+# 업로드 파일: PHP 실행 차단 (이미지/PDF만 허용)
+<FilesMatch "\.php$">
+  <If "%{REQUEST_URI} =~ m|^/uploads/|">
+    Deny from all
+  </If>
+</FilesMatch>
