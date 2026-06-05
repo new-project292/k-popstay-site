@@ -232,34 +232,37 @@ if ($type === 'guest') {
         $armyProofFilePath = UPLOAD_URL . $safeName;
     }
 
+    $companion_gender = trim($_POST['companionGender'] ?? '');
+
     $stmt = $pdo->prepare("
         INSERT INTO kpopstay_guests
-            (stay_type, guest_count, gender, bed_required,
+            (stay_type, guest_count, gender, companion_gender, bed_required,
              check_in, check_out, guest_name, nationality, phone, email,
              languages, army_proof, army_proof_file, wehome_id, referral, comments, ip)
         VALUES
-            (:stay_type, :guest_count, :gender, :bed_required,
+            (:stay_type, :guest_count, :gender, :companion_gender, :bed_required,
              :check_in, :check_out, :guest_name, :nationality, :phone, :email,
              :languages, :army_proof, :army_proof_file, :wehome_id, :referral, :comments, :ip)
     ");
     $stmt->execute([
-        ':stay_type'        => clean($_POST['stayType']),
-        ':guest_count'      => (int)$_POST['guestCount'],
-        ':gender'           => clean($_POST['gender']),
-        ':bed_required'     => clean($_POST['bedRequired']),
-        ':check_in'         => $checkIn,
-        ':check_out'        => $checkOut,
-        ':guest_name'       => clean($_POST['guestName']),
-        ':nationality'      => clean($_POST['nationality']),
-        ':phone'            => clean($_POST['phone']),
-        ':email'            => clean($_POST['email']),
-        ':languages'        => clean($_POST['languages']),
-        ':army_proof'       => clean($_POST['armyProof']),
-        ':army_proof_file'  => $armyProofFilePath,
-        ':wehome_id'        => clean($_POST['wehomeId'] ?? ''),
-        ':referral'         => clean($_POST['referral'] ?? ''),
-        ':comments'         => clean($_POST['comments'] ?? ''),
-        ':ip'               => $ip,
+        ':stay_type'         => clean($_POST['stayType']),
+        ':guest_count'       => (int)$_POST['guestCount'],
+        ':gender'            => clean($_POST['gender']),
+        ':companion_gender'  => $companion_gender ?: null,
+        ':bed_required'      => clean($_POST['bedRequired']),
+        ':check_in'          => $checkIn,
+        ':check_out'         => $checkOut,
+        ':guest_name'        => clean($_POST['guestName']),
+        ':nationality'       => clean($_POST['nationality']),
+        ':phone'             => clean($_POST['phone']),
+        ':email'             => clean($_POST['email']),
+        ':languages'         => clean($_POST['languages']),
+        ':army_proof'        => clean($_POST['armyProof']),
+        ':army_proof_file'   => $armyProofFilePath,
+        ':wehome_id'         => clean($_POST['wehomeId'] ?? ''),
+        ':referral'          => clean($_POST['referral'] ?? ''),
+        ':comments'          => clean($_POST['comments'] ?? ''),
+        ':ip'                => $ip,
     ]);
 
     $new_id = $pdo->lastInsertId();
