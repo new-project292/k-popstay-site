@@ -59,6 +59,19 @@ a{text-decoration:none;color:inherit}
 .form-row-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
 .form-row-full{display:grid;grid-template-columns:1fr;gap:16px}
 
+/* PHOTO UPLOAD */
+.photo-upload-area{border:2px dashed var(--border);border-radius:12px;padding:24px;text-align:center;cursor:pointer;transition:all .2s;background:#F2F4F6}
+.photo-upload-area:hover{border-color:var(--purple-mid);background:var(--purple-xlight)}
+.photo-upload-area.dragover{border-color:var(--purple);background:var(--purple-xlight)}
+.photo-upload-icon{font-size:2rem;margin-bottom:8px;color:var(--text-300)}
+.photo-upload-text{font-size:.85rem;font-weight:600;color:var(--text-500);margin-bottom:4px}
+.photo-upload-sub{font-size:.75rem;color:var(--text-300)}
+.photo-previews{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.photo-preview-item{position:relative;width:88px;height:88px;border-radius:10px;overflow:hidden;border:1.5px solid var(--border)}
+.photo-preview-item img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-preview-remove{position:absolute;top:4px;right:4px;width:20px;height:20px;background:rgba(0,0,0,0.55);border:none;border-radius:50%;color:#fff;font-size:.7rem;cursor:pointer;display:flex;align-items:center;justify-content:center;line-height:1}
+.photo-count-note{font-size:.75rem;color:var(--text-300);margin-top:8px}
+
 /* RADIO/CHECKBOX CARDS */
 .radio-card,.checkbox-card{background:#F2F4F6;border:1.5px solid var(--border);border-radius:12px;padding:16px 18px;cursor:pointer;transition:all .2s;display:flex;align-items:flex-start;gap:12px}
 .radio-card:hover,.checkbox-card:hover{border-color:var(--purple-mid);background:var(--purple-xlight)}
@@ -166,6 +179,18 @@ footer{background:#191F28;color:rgba(255,255,255,0.7);padding:56px 24px 40px}
               <div class="form-err" id="err-isArmy">아미 여부를 선택해 주세요.</div>
             </div>
             <div class="form-group">
+              <label class="form-label" for="hostGender">성별 <span class="req">*</span></label>
+              <select class="form-select" id="hostGender">
+                <option value="" disabled selected>선택해 주세요</option>
+                <option value="female">여성</option>
+                <option value="male">남성</option>
+                <option value="prefer_not">답변 안함</option>
+              </select>
+              <div class="form-err" id="err-hostGender">성별을 선택해 주세요.</div>
+            </div>
+          </div>
+          <div class="form-row-full" style="gap:16px;margin-top:16px">
+            <div class="form-group">
               <label class="form-label" for="hostEmail">이메일 <span class="req">*</span></label>
               <input class="form-input" id="hostEmail" type="email" placeholder="example@email.com">
               <div class="form-err" id="err-hostEmail">이메일을 입력해 주세요.</div>
@@ -236,7 +261,7 @@ footer{background:#191F28;color:rgba(255,255,255,0.7);padding:56px 24px 40px}
         <div class="form-section">
           <div class="form-section-title">방 정보</div>
           <div class="form-group" style="margin-bottom:16px">
-            <label class="form-label" for="roomCount">방 수 <span class="req">*</span></label>
+            <label class="form-label" for="roomCount">게스트에게 내줄 수 있는 방 수 <span class="req">*</span></label>
             <select class="form-select" id="roomCount">
               <option value="" disabled selected>선택</option>
               <option value="1">1개</option>
@@ -357,6 +382,17 @@ footer{background:#191F28;color:rgba(255,255,255,0.7);padding:56px 24px 40px}
             <label class="form-label" for="hostFeatures">숙소 특장점</label>
             <textarea class="form-textarea" id="hostFeatures" placeholder="숙소의 특별한 점, 주변 관광지, 편의시설 등을 자유롭게 적어주세요."></textarea>
           </div>
+          <div class="form-group" style="margin-bottom:16px">
+            <label class="form-label">숙소 사진 <span style="color:var(--text-300);font-weight:500">(선택 · 최대 10장)</span></label>
+            <div class="photo-upload-area" id="photoUploadArea">
+              <div class="photo-upload-icon">&#128247;</div>
+              <div class="photo-upload-text">클릭하거나 사진을 끌어다 놓으세요</div>
+              <div class="photo-upload-sub">JPG, PNG, WEBP · 장당 최대 10MB · 최대 10장</div>
+              <input type="file" id="housePhotos" accept="image/jpeg,image/png,image/webp,image/gif" multiple style="display:none">
+            </div>
+            <div class="photo-previews" id="photoPreviews"></div>
+            <div class="photo-count-note" id="photoCountNote"></div>
+          </div>
           <div class="form-group">
             <label class="form-label" for="hostComment">건의사항</label>
             <textarea class="form-textarea" id="hostComment" placeholder="담당자에게 전달할 내용이 있으시면 적어주세요."></textarea>
@@ -419,6 +455,52 @@ footer{background:#191F28;color:rgba(255,255,255,0.7);padding:56px 24px 40px}
   </div>
 </footer>
 <script>
+// 사진 업로드
+const MAX_PHOTOS = 10;
+const MAX_PHOTO_SIZE = 10 * 1024 * 1024;
+let selectedPhotos = [];
+
+function updatePhotoPreviews() {
+  const container = document.getElementById('photoPreviews');
+  const note = document.getElementById('photoCountNote');
+  container.innerHTML = '';
+  selectedPhotos.forEach((file, idx) => {
+    const url = URL.createObjectURL(file);
+    container.insertAdjacentHTML('beforeend',
+      `<div class="photo-preview-item">
+        <img src="${url}" alt="숙소 사진 ${idx+1}">
+        <button type="button" class="photo-preview-remove" data-idx="${idx}" title="삭제">&#10005;</button>
+      </div>`);
+  });
+  note.textContent = selectedPhotos.length > 0 ? `${selectedPhotos.length}장 선택됨 (최대 ${MAX_PHOTOS}장)` : '';
+  container.querySelectorAll('.photo-preview-remove').forEach(btn=>{
+    btn.addEventListener('click',function(e){
+      e.stopPropagation();
+      selectedPhotos.splice(parseInt(this.dataset.idx),1);
+      updatePhotoPreviews();
+    });
+  });
+}
+
+function addPhotos(files) {
+  const allowed = ['image/jpeg','image/png','image/webp','image/gif'];
+  Array.from(files).forEach(file => {
+    if (selectedPhotos.length >= MAX_PHOTOS) return;
+    if (!allowed.includes(file.type)) { alert(`${file.name}: 이미지 파일(JPG/PNG/WEBP/GIF)만 업로드 가능합니다.`); return; }
+    if (file.size > MAX_PHOTO_SIZE) { alert(`${file.name}: 파일 크기가 10MB를 초과합니다.`); return; }
+    selectedPhotos.push(file);
+  });
+  updatePhotoPreviews();
+}
+
+const photoArea = document.getElementById('photoUploadArea');
+const photoInput = document.getElementById('housePhotos');
+photoArea.addEventListener('click', ()=>photoInput.click());
+photoInput.addEventListener('change', function(){ addPhotos(this.files); this.value=''; });
+photoArea.addEventListener('dragover', e=>{ e.preventDefault(); photoArea.classList.add('dragover'); });
+photoArea.addEventListener('dragleave', ()=>photoArea.classList.remove('dragover'));
+photoArea.addEventListener('drop', e=>{ e.preventDefault(); photoArea.classList.remove('dragover'); addPhotos(e.dataTransfer.files); });
+
 // Radio card toggle
 document.querySelectorAll('.radio-card').forEach(card=>{
   card.addEventListener('click',function(){
@@ -493,6 +575,7 @@ function validate(){
   if(!document.querySelector('input[name="hostType"]:checked')){showErr('err-hostType',true);ok=false;}
   v('hostName','err-hostName',notEmpty);
   v('isArmy','err-isArmy',notDefault);
+  v('hostGender','err-hostGender',notDefault);
   v('hostEmail','err-hostEmail',val=>val&&/^[^@]+@[^@]+\.[^@]+$/.test(val));
   v('hostPhone','err-hostPhone',notEmpty);
   v('hostAddress','err-hostAddress',notEmpty);
@@ -554,10 +637,12 @@ document.getElementById('btnHostSubmit').addEventListener('click',async function
   const fd=new FormData();
   fd.append('type','host');
   fd.append('hostType',document.querySelector('input[name="hostType"]:checked')?.value||'');
-  ['hostName','isArmy','hostEmail','hostPhone','hostAddress','houseType','houseSize','floor','elevator','roomCount','bathroomCount','capacity','availFrom','availTo','fireExtinguisher','hostPresence','needRegistration','subwayStation','subwayDistance','hostFeatures','hostComment'].forEach(id=>{
+  ['hostName','isArmy','hostGender','hostEmail','hostPhone','hostAddress','houseType','houseSize','floor','elevator','roomCount','bathroomCount','capacity','availFrom','availTo','fireExtinguisher','hostPresence','needRegistration','subwayStation','subwayDistance','hostFeatures','hostComment'].forEach(id=>{
     fd.append(id,document.getElementById(id)?.value||'');
   });
   fd.append('rooms',JSON.stringify(collectRooms()));
+  // 사진 파일 추가
+  selectedPhotos.forEach((file,i)=>fd.append('housePhotos[]',file));
   try{
     const res=await fetch('/submit.php',{method:'POST',body:fd});
     const d=await res.json();

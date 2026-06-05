@@ -8,6 +8,9 @@ define('DB_NAME', 'kozaza');
 define('UPLOAD_DIR', __DIR__ . '/uploads/army-proof/');
 define('UPLOAD_URL', '/uploads/army-proof/');
 define('MAX_FILE_SIZE', 5 * 1024 * 1024); // 5MB
+define('HOST_PHOTO_DIR', __DIR__ . '/uploads/host-photos/');
+define('HOST_PHOTO_URL', '/uploads/host-photos/');
+define('MAX_PHOTO_SIZE', 10 * 1024 * 1024); // 10MB
 
 function json_error($msg, $code = 400) {
     http_response_code($code);
@@ -296,6 +299,7 @@ if ($type === 'host') {
         $body['features']         = $_POST['hostFeatures']     ?? $_POST['features'] ?? null;
         $body['comment']          = $_POST['hostComment']      ?? $_POST['comment']  ?? null;
         $body['rooms']            = $_POST['rooms']            ?? null;
+        $body['hostGender']       = $_POST['hostGender']       ?? null;
     }
 
     $required = ['hostType','name','phone','address'];
@@ -310,19 +314,54 @@ if ($type === 'host') {
         $hostProfileId = clean($body['hostProfileId'] ?? '');
     }
 
+    // 사진 업로드 처리 (옵션)
+    $photoUrls = [];
+    if (!empty($_FILES['housePhotos'])) {
+        if (!is_dir(HOST_PHOTO_DIR)) {
+            mkdir(HOST_PHOTO_DIR, 0755, true);
+        }
+        $allowedMimes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif'];
+        $files = $_FILES['housePhotos'];
+        // 다중 파일: 배열 재구조화
+        $fileList = [];
+        if (is_array($files['name'])) {
+            for ($i = 0; $i < count($files['name']); $i++) {
+                if ($files['error'][$i] === UPLOAD_ERR_OK) {
+                    $fileList[] = [
+                        'name'     => $files['name'][$i],
+                        'tmp_name' => $files['tmp_name'][$i],
+                        'size'     => $files['size'][$i],
+                    ];
+                }
+            }
+        }
+        foreach (array_slice($fileList, 0, 10) as $file) {
+            $mime = mime_content_type($file['tmp_name']);
+            if (!in_array($mime, $allowedMimes)) continue;
+            if ($file['size'] > MAX_PHOTO_SIZE) continue;
+            $ext      = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION) ?: 'jpg');
+            $safeName = date('Ymd_His') . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
+            $dest     = HOST_PHOTO_DIR . $safeName;
+            if (move_uploaded_file($file['tmp_name'], $dest)) {
+                $photoUrls[] = HOST_PHOTO_URL . $safeName;
+            }
+        }
+    }
+    $photosJson = !empty($photoUrls) ? json_encode($photoUrls, JSON_UNESCAPED_UNICODE) : null;
+
     $stmt = $pdo->prepare("
         INSERT INTO kpopstay_hosts
-            (host_type, is_special, host_profile_id, name, email, is_army,
+            (host_type, is_special, host_profile_id, name, email, is_army, gender,
              phone, address, house_type, house_size, floor, elevator,
              room_count, bathroom_count, capacity, avail_from, avail_to,
              fire_extinguisher, host_presence, need_registration,
-             subway_station, subway_distance, features, comment, rooms, ip)
+             subway_station, subway_distance, features, comment, rooms, house_photos, ip)
         VALUES
-            (:host_type, :is_special, :host_profile_id, :name, :email, :is_army,
+            (:host_type, :is_special, :host_profile_id, :name, :email, :is_army, :gender,
              :phone, :address, :house_type, :house_size, :floor, :elevator,
              :room_count, :bathroom_count, :capacity, :avail_from, :avail_to,
              :fire_extinguisher, :host_presence, :need_registration,
-             :subway_station, :subway_distance, :features, :comment, :rooms, :ip)
+             :subway_station, :subway_distance, :features, :comment, :rooms, :house_photos, :ip)
     ");
     $stmt->execute([
         ':host_type'          => clean($body['hostType']),
@@ -331,6 +370,7 @@ if ($type === 'host') {
         ':name'               => clean($body['name']),
         ':email'              => clean($body['email'] ?? ''),
         ':is_army'            => clean($body['isArmy'] ?? ''),
+        ':gender'             => clean($body['hostGender'] ?? ''),
         ':phone'              => clean($body['phone']),
         ':address'            => clean($body['address']),
         ':house_type'         => clean($body['houseType'] ?? ''),
@@ -350,6 +390,7 @@ if ($type === 'host') {
         ':features'           => clean($body['features'] ?? ''),
         ':comment'            => clean($body['comment'] ?? ''),
         ':rooms'              => $body['rooms'] ?? null,
+        ':house_photos'       => $photosJson,
         ':ip'                 => $ip,
     ]);
 
