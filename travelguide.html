@@ -53,19 +53,21 @@ img{max-width:100%}
   pointer-events:none}
 .hero-inner{max-width:760px;margin:0 auto;position:relative;z-index:1}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;
-  background:rgba(255,255,255,.75);color:var(--purple-dark);
+  background:rgba(255,255,255,.18);color:#fff;
   font-size:.72rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
-  padding:5px 16px;border-radius:100px;margin-bottom:20px}
+  padding:5px 16px;border-radius:100px;margin-bottom:20px;
+  border:1px solid rgba(255,255,255,.3)}
 .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;
   background:var(--purple);animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
-.hero-title{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:var(--text-900);
-  line-height:1.2;letter-spacing:-.03em;margin-bottom:14px}
-.hero-title span{color:var(--purple)}
-.hero-sub{font-size:1rem;color:var(--text-500);line-height:1.75;max-width:520px;margin:0 auto 24px}
+.hero-title{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:800;color:#fff;
+  line-height:1.2;letter-spacing:-.03em;margin-bottom:14px;
+  text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.hero-title span{color:#e8b4f5}
+.hero-sub{font-size:1rem;color:rgba(255,255,255,.85);line-height:1.75;max-width:520px;margin:0 auto 24px}
 .hero-meta{display:inline-flex;align-items:center;gap:16px;flex-wrap:wrap;justify-content:center;
-  background:rgba(255,255,255,.8);border:1px solid var(--purple-light);
-  border-radius:12px;padding:12px 24px;font-size:.85rem;font-weight:600;color:var(--text-700)}
+  background:rgba(0,0,0,.30);border:1px solid rgba(255,255,255,.25);
+  border-radius:12px;padding:12px 24px;font-size:.85rem;font-weight:600;color:rgba(255,255,255,.9)}
 .hero-meta-item{display:flex;align-items:center;gap:6px}
 .hero-meta-item .dot{width:7px;height:7px;border-radius:50%;background:var(--purple);flex-shrink:0}
 
@@ -354,6 +356,24 @@ img{max-width:100%}
 .anchor-tab:hover{color:var(--purple)}
 .anchor-tab.active{color:var(--purple);border-bottom-color:var(--purple);font-weight:700}
 
+/* HERO BG IMAGE + OVERLAY */
+.hero{background-color:#3d0a47;background-size:cover;background-position:center}
+.hero-bg-overlay{position:absolute;inset:0;background:rgba(0,0,0,.40);pointer-events:none;z-index:0}
+.hero-inner{position:relative;z-index:1}
+
+/* HOLY SITE THUMBNAIL */
+.holy-thumb{width:100%;height:90px;border-radius:12px;object-fit:cover;
+  margin-bottom:10px;display:block;border:1.5px solid var(--purple-light)}
+
+/* FOOD PHOTO */
+.food-photo{width:100%;aspect-ratio:1/1;border-radius:12px;object-fit:cover;
+  display:block;margin-bottom:12px;border:1.5px solid var(--border)}
+
+@media(max-width:768px){
+  .holy-thumb{height:72px}
+  .food-photo{max-height:180px;aspect-ratio:auto;width:100%}
+}
+
 /* HOLY GRID */
 .holy-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .holy-card{background:var(--bg-card);border:1.5px solid var(--border);
@@ -456,7 +476,8 @@ img{max-width:100%}
 </nav>
 
 <!-- HERO -->
-<div class="hero">
+<div class="hero" style="background-image:url('https://images.unsplash.com/photo-1620311718012-70b97cfb7294?auto=format&fit=crop&w=1200&q=80')">
+  <div class="hero-bg-overlay"></div>
   <div class="hero-inner fade-up">
     <div class="hero-eyebrow">K-POPSTAY BUSAN · Guest Guide 2026</div>
     <h1 class="hero-title">Welcome to Busan,<br><span>ARMY.</span></h1>
@@ -626,6 +647,7 @@ img{max-width:100%}
       </div>
 
       <div class="holy-card">
+        <img class="holy-thumb" src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?auto=format&fit=crop&w=600&q=80" alt="Busan Citizens Park">
         <div class="holy-card-header">
           <div class="holy-card-badge">🌿</div>
           <div class="holy-card-member">V (태형) · Late Afternoon · Busanjin-gu</div>
@@ -656,6 +678,7 @@ img{max-width:100%}
       </div>
 
       <div class="holy-card bonus" style="grid-column:1/-1">
+        <img class="holy-thumb" src="https://images.unsplash.com/photo-1598007217926-25895786a9d1?auto=format&fit=crop&w=600&q=80" alt="Gamcheon Culture Village" style="height:110px">
         <div class="holy-card-header">
           <div class="holy-card-badge">🎨</div>
           <div class="holy-card-member">Bonus · Any Day · Saha-gu</div>
@@ -676,6 +699,7 @@ img{max-width:100%}
 
     <div class="food-grid">
       <div class="food-card">
+        <img class="food-photo" src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=500&q=80" alt="Dwaeji Gukbap">
         <div class="food-icon">🍲</div>
         <div class="food-cat">Busan's Soul Food</div>
         <div class="food-name">Dwaeji Gukbap</div>
@@ -697,6 +721,7 @@ img{max-width:100%}
         <div class="food-kr">어묵 · eo-muk · around Nampo-dong (남포동)</div>
       </div>
       <div class="food-card">
+        <img class="food-photo" src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=500&q=80" alt="Korean Fried Chicken Chimaek">
         <div class="food-icon">🍗</div>
         <div class="food-cat">Late Night</div>
         <div class="food-name">Fried Chicken (Chimaek)</div>
@@ -711,6 +736,7 @@ img{max-width:100%}
         <div class="food-kr">밀면 · mil-myeon</div>
       </div>
       <div class="food-card">
+        <img class="food-photo" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=500&q=80" alt="Korean Cafe Bingsu Desserts">
         <div class="food-icon">🧁</div>
         <div class="food-cat">Café Culture</div>
         <div class="food-name">Bingsu &amp; Korean Desserts</div>
