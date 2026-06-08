@@ -91,10 +91,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;height:66px;background:rgba(
 .guide-full-item{display:flex;align-items:flex-start;gap:10px;font-size:0.87rem;color:var(--text-700);line-height:1.65}
 
 /* SUPPORT */
-.guide-support{background:var(--purple-xlight);border:1.5px solid var(--purple-light);border-radius:16px;padding:28px 32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:20px}
+.guide-support{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
 @media(max-width:640px){.guide-support{grid-template-columns:1fr}}
-.guide-support-item{font-size:0.87rem;color:var(--text-700);line-height:1.7}
-.guide-support-item strong{display:block;font-size:0.88rem;color:var(--purple);margin-bottom:4px}
+.guide-support-item{background:var(--purple-xlight);border:1.5px solid var(--purple-light);border-radius:16px;padding:20px 22px;font-size:0.87rem;color:var(--text-700);line-height:1.75}
+.guide-support-item strong{display:block;font-size:0.88rem;color:var(--purple);margin-bottom:6px;font-weight:700}
+.guide-support-emergency{grid-column:1/-1;background:#fff;border:2px solid var(--purple);border-radius:16px;padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.guide-support-emergency-text strong{display:block;font-size:0.95rem;color:var(--purple);font-weight:800;margin-bottom:4px}
+.guide-support-emergency-text p{font-size:0.85rem;color:var(--text-500);line-height:1.6;margin:0}
+.btn-emergency{display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-size:0.9rem;font-weight:800;padding:12px 24px;border-radius:100px;text-decoration:none;white-space:nowrap;box-shadow:0 4px 16px rgba(118,17,131,0.3);transition:all 0.2s;flex-shrink:0}
+.btn-emergency:hover{background:#5a0d63;transform:translateY(-1px);box-shadow:0 6px 20px rgba(118,17,131,0.4)}
+@media(max-width:640px){.guide-support-emergency{flex-direction:column;align-items:flex-start}.btn-emergency{width:100%;justify-content:center}}
 
 /* FADE UP */
 .fade-up{opacity:0;transform:translateY(18px);transition:opacity 0.55s ease,transform 0.55s ease}
@@ -317,7 +323,7 @@ footer{background:#191F28;color:#9CA3AF;padding:40px 0 32px}
   </div>
 
   <!-- 안전 관리 및 고객 지원 -->
-  <div class="guide-support fade-up" style="grid-template-columns:1fr 1fr 1fr 1fr">
+  <div class="guide-support fade-up">
     <div class="guide-support-item">
       <strong>안전 관리</strong>
       이벤트 책임 보험 가입 및 안전 관리 시스템 구축 운영
@@ -329,13 +335,15 @@ footer{background:#191F28;color:#9CA3AF;padding:40px 0 32px}
     <div class="guide-support-item">
       <strong>이메일 · 전화</strong>
       cs@wehome.me<br>
-      1544-5665 (평일 10–18시)
+      1544-5665 (평일 10–18시)<br>
+      <span style="font-size:0.8rem;color:var(--text-300)">부산시민단체협의회: 051-809-2629<br>시청 경제정책과: 051-888-4751</span>
     </div>
-    <div class="guide-support-item">
-      <strong>긴급 · 기타 문의</strong>
-      <a href="https://k-popstay.wehome.me/guest-emergency" style="display:inline-flex;align-items:center;gap:6px;background:#761183;color:#fff;font-size:0.85rem;font-weight:700;padding:9px 18px;border-radius:100px;text-decoration:none;margin:8px 0 6px;box-shadow:0 4px 14px rgba(118,17,131,0.3);transition:all 0.2s;" onmouseover="this.style.background='#5a0d63'" onmouseout="this.style.background='#761183'">&#9888; 긴급 지원 요청하기</a><br>
-      부산시민단체협의회: 051-809-2629<br>
-      시청 경제정책과: 051-888-4751, 4752, 4757, 2143
+    <div class="guide-support-emergency">
+      <div class="guide-support-emergency-text">
+        <strong>긴급 상황 발생 시</strong>
+        <p>호스트와 연락이 닿지 않거나 현장에서 긴급 상황이 발생한 경우,<br>아래 버튼을 눌러 위홈 대표 및 부산시 담당자에게 즉시 지원 요청하세요.</p>
+      </div>
+      <a href="https://www.wehome.me/guest-emergency" class="btn-emergency">&#9888;&#xFE0E; 긴급 지원 요청하기</a>
     </div>
   </div>
 
