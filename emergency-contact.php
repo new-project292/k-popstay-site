@@ -20,10 +20,9 @@ function clean($v) {
 
 $hostName  = clean($body['hostName']  ?? '');
 $hostPhone = clean($body['hostPhone'] ?? '');
-$address   = clean($body['address']   ?? '');
 $situation = clean($body['situation'] ?? '');
 
-if (!$hostName || !$hostPhone || !$address || !$situation) {
+if (!$hostName || !$hostPhone || !$situation) {
     http_response_code(400);
     echo json_encode(['ok' => false, 'msg' => '필수 항목을 모두 입력해 주세요.']);
     exit;
@@ -37,7 +36,7 @@ $recipients = [
 
 // SMS 메시지
 $now = date('m/d H:i');
-$msg = "[K-POPSTAY 긴급요청] {$now}\n호스트: {$hostName} ({$hostPhone})\n주소: {$address}\n상황: {$situation}";
+$msg = "[K-POPSTAY 긴급요청] {$now}\n호스트: {$hostName} ({$hostPhone})\n상황: {$situation}";
 
 // NHN Toast SMS API
 $sms_appkey  = 'RxJXel5A8F25a6UO';
@@ -83,7 +82,7 @@ try {
         INSERT INTO kpopstay_emergency_requests
             (host_name, host_phone, address, situation, sms_response, ip, created_at)
         VALUES (?, ?, ?, ?, ?, ?, NOW())
-    ")->execute([$hostName, $hostPhone, $address, $situation, $response, $_SERVER['REMOTE_ADDR'] ?? '']);
+    ")->execute([$hostName, $hostPhone, '', $situation, $response, $_SERVER['REMOTE_ADDR'] ?? '']);
 } catch (Exception $e) {
     // DB 저장 실패해도 SMS 발송 결과로 응답
     error_log('[kpopstay emergency] DB error: ' . $e->getMessage());

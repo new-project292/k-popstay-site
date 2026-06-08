@@ -82,10 +82,6 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f7;color:#1d1d1f;min-
         <input class="form-input" id="hostPhone" type="tel" placeholder="010-0000-0000" required>
       </div>
       <div class="form-group">
-        <label class="form-label" for="address">숙소 주소 *</label>
-        <input class="form-input" id="address" type="text" placeholder="현재 숙소 주소를 입력해 주세요" required>
-      </div>
-      <div class="form-group">
         <label class="form-label" for="situation">긴급 상황 내용 *</label>
         <textarea class="form-textarea" id="situation" placeholder="발생한 상황을 간략히 설명해 주세요." required></textarea>
       </div>
@@ -110,7 +106,6 @@ document.getElementById('emergencyForm').addEventListener('submit', async functi
   var data = {
     hostName:   document.getElementById('hostName').value.trim(),
     hostPhone:  document.getElementById('hostPhone').value.trim(),
-    address:    document.getElementById('address').value.trim(),
     situation:  document.getElementById('situation').value.trim(),
   };
 
