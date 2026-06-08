@@ -24,20 +24,31 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f7;color:#1d1d1f;min-
 .form-input,.form-textarea{width:100%;background:#f5f5f7;border:1.5px solid #e0e0e0;border-radius:10px;padding:11px 14px;font-size:14px;font-family:inherit;outline:none;transition:border .2s}
 .form-input:focus,.form-textarea:focus{border-color:#d32f2f}
 .form-textarea{min-height:100px;resize:vertical}
-.btn-submit{width:100%;background:#d32f2f;color:#fff;font-size:16px;font-weight:800;padding:15px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;margin-top:8px;letter-spacing:-0.01em}
+.btn{width:100%;font-size:15px;font-weight:800;padding:14px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;letter-spacing:-0.01em}
+.btn-lookup{background:#1565c0;color:#fff;margin-top:4px}
+.btn-lookup:hover{background:#0d47a1;transform:translateY(-1px)}
+.btn-submit{background:#d32f2f;color:#fff;margin-top:8px}
 .btn-submit:hover{background:#b71c1c;transform:translateY(-1px);box-shadow:0 6px 20px rgba(211,47,47,0.35)}
-.btn-submit:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
+.btn:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
 .notice{background:#fff3e0;border:1.5px solid #ffe0b2;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#e65100;line-height:1.6}
-.result-box{display:none;border-radius:12px;padding:20px;text-align:center;margin-top:16px;font-size:15px;font-weight:600;line-height:1.6}
-.result-box.success{background:#e8f5e9;border:1.5px solid #c8e6c9;color:#2e7d32}
-.result-box.error{background:#ffebee;border:1.5px solid #ffcdd2;color:#c62828}
+.host-confirm{display:none;background:#e3f2fd;border:1.5px solid #90caf9;border-radius:12px;padding:16px 18px;margin-bottom:16px}
+.host-confirm-label{font-size:12px;font-weight:700;color:#1565c0;margin-bottom:6px}
+.host-confirm-name{font-size:18px;font-weight:800;color:#0d47a1}
+.host-confirm-sub{font-size:13px;color:#1565c0;margin-top:3px}
+.host-confirm-warn{display:none;background:#ffebee;border:1.5px solid #ffcdd2;border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:#c62828;line-height:1.6}
+.step2{display:none}
 .recipients{display:flex;gap:10px;margin-bottom:20px}
 .recipient{flex:1;background:#f9f9f9;border:1.5px solid #e0e0e0;border-radius:10px;padding:12px 14px}
 .recipient-label{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
 .recipient-name{font-size:14px;font-weight:700;color:#1d1d1f}
 .recipient-role{font-size:12px;color:#666;margin-top:2px}
+.result-box{display:none;border-radius:12px;padding:20px;text-align:center;margin-top:16px;font-size:15px;font-weight:600;line-height:1.6}
+.result-box.success{background:#e8f5e9;border:1.5px solid #c8e6c9;color:#2e7d32}
+.result-box.error{background:#ffebee;border:1.5px solid #ffcdd2;color:#c62828}
 .back-link{display:block;text-align:center;margin-top:20px;font-size:13px;color:#888;text-decoration:none}
 .back-link:hover{color:#d32f2f}
+.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin-right:6px;vertical-align:middle}
+@keyframes spin{to{transform:rotate(360deg)}}
 @media(max-width:480px){
   .card-body{padding:20px}
   .card-header{padding:22px 20px}
@@ -53,40 +64,47 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f7;color:#1d1d1f;min-
     <p>Emergency Support Request</p>
   </div>
   <div class="card-body">
-    <p class="desc">게스트와 연락이 닿지 않거나 현장에서 <strong>긴급 상황이 발생한 경우</strong>, 아래 양식을 작성해 제출하시면 위홈 대표 및 부산시 담당자에게 즉시 문자가 발송됩니다.</p>
+    <p class="desc">게스트와 연락이 닿지 않거나 현장에서 <strong>긴급 상황이 발생한 경우</strong>, 위홈 대표 및 부산시 담당자에게 즉시 문자가 발송됩니다.</p>
 
     <div class="notice">
       위급 상황이라면 먼저 <strong>119(소방/응급)</strong> 또는 <strong>112(경찰)</strong>에 신고해 주세요.
     </div>
 
-    <div class="recipients">
-      <div class="recipient">
-        <div class="recipient-label">수신 1</div>
-        <div class="recipient-name">조산구 대표</div>
-        <div class="recipient-role">위홈</div>
+    <!-- Step 1: 전화번호 입력 및 본인 확인 -->
+    <div id="step1">
+      <div class="form-group">
+        <label class="form-label" for="hostPhone">호스트 연락처</label>
+        <input class="form-input" id="hostPhone" type="tel" placeholder="010-0000-0000" inputmode="tel" autocomplete="tel">
       </div>
-      <div class="recipient">
-        <div class="recipient-label">수신 2</div>
-        <div class="recipient-name">부산시 담당자</div>
-        <div class="recipient-role">부산시 (임시)</div>
+      <div class="host-confirm" id="hostConfirm">
+        <div class="host-confirm-label">등록된 호스트 정보</div>
+        <div class="host-confirm-name" id="confirmedName"></div>
+        <div class="host-confirm-sub" id="confirmedSub"></div>
       </div>
+      <div class="host-confirm-warn" id="hostWarn"></div>
+      <button type="button" class="btn btn-lookup" id="btnLookup">본인 확인</button>
     </div>
 
-    <form id="emergencyForm">
-      <div class="form-group">
-        <label class="form-label" for="hostName">호스트 이름 *</label>
-        <input class="form-input" id="hostName" type="text" placeholder="성함을 입력해 주세요" required>
-      </div>
-      <div class="form-group">
-        <label class="form-label" for="hostPhone">호스트 연락처 *</label>
-        <input class="form-input" id="hostPhone" type="tel" placeholder="010-0000-0000" required>
+    <!-- Step 2: 상황 입력 및 전송 -->
+    <div class="step2" id="step2">
+      <div class="recipients">
+        <div class="recipient">
+          <div class="recipient-label">수신 1</div>
+          <div class="recipient-name">조산구 대표</div>
+          <div class="recipient-role">위홈</div>
+        </div>
+        <div class="recipient">
+          <div class="recipient-label">수신 2</div>
+          <div class="recipient-name">부산시 담당자</div>
+          <div class="recipient-role">부산시 (임시)</div>
+        </div>
       </div>
       <div class="form-group">
         <label class="form-label" for="situation">긴급 상황 내용 *</label>
         <textarea class="form-textarea" id="situation" placeholder="발생한 상황을 간략히 설명해 주세요." required></textarea>
       </div>
-      <button type="submit" class="btn-submit" id="submitBtn">긴급 지원 요청 전송</button>
-    </form>
+      <button type="button" class="btn btn-submit" id="submitBtn">긴급 지원 요청 전송</button>
+    </div>
 
     <div class="result-box" id="resultBox"></div>
 
@@ -95,32 +113,103 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f7;color:#1d1d1f;min-
 </div>
 
 <script>
-document.getElementById('emergencyForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  var btn = document.getElementById('submitBtn');
-  var resultBox = document.getElementById('resultBox');
-  btn.disabled = true;
-  btn.textContent = '전송 중...';
-  resultBox.style.display = 'none';
+var confirmedHostName = '';
+var confirmedHostPhone = '';
 
-  var data = {
-    hostName:   document.getElementById('hostName').value.trim(),
-    hostPhone:  document.getElementById('hostPhone').value.trim(),
-    situation:  document.getElementById('situation').value.trim(),
-  };
+// 전화번호 입력 시 자동으로 본인 확인 (입력 완료 감지)
+var phoneInput = document.getElementById('hostPhone');
+var lookupTimer = null;
+phoneInput.addEventListener('input', function() {
+  clearTimeout(lookupTimer);
+  var val = this.value.replace(/[^0-9]/g, '');
+  if (val.length >= 10) {
+    lookupTimer = setTimeout(doLookup, 600);
+  } else {
+    resetConfirm();
+  }
+});
+
+document.getElementById('btnLookup').addEventListener('click', doLookup);
+
+// 엔터키로도 조회
+phoneInput.addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') { e.preventDefault(); doLookup(); }
+});
+
+async function doLookup() {
+  var phone = document.getElementById('hostPhone').value.trim();
+  if (!phone) { return; }
+  var btn = document.getElementById('btnLookup');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>확인 중...';
+  resetConfirm();
 
   try {
     var res = await fetch('/emergency-contact.php', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(data)
+      body: JSON.stringify({action: 'lookup', phone: phone})
+    });
+    var json = await res.json();
+    if (json.ok && json.host) {
+      confirmedHostName  = json.host.name;
+      confirmedHostPhone = json.host.phone;
+      document.getElementById('confirmedName').textContent = json.host.name;
+      document.getElementById('confirmedSub').textContent  = json.host.address || '';
+      document.getElementById('hostConfirm').style.display = 'block';
+      document.getElementById('step2').style.display = 'block';
+      document.getElementById('situation').focus();
+    } else {
+      document.getElementById('hostWarn').style.display = 'block';
+      document.getElementById('hostWarn').innerHTML =
+        json.msg || '등록된 호스트 정보를 찾을 수 없습니다.<br>연락처를 다시 확인해 주세요.';
+      document.getElementById('step2').style.display = 'none';
+    }
+  } catch(e) {
+    document.getElementById('hostWarn').style.display = 'block';
+    document.getElementById('hostWarn').textContent = '조회 중 오류가 발생했습니다. 다시 시도해 주세요.';
+  }
+  btn.disabled = false;
+  btn.textContent = '본인 확인';
+}
+
+function resetConfirm() {
+  document.getElementById('hostConfirm').style.display = 'none';
+  document.getElementById('hostWarn').style.display = 'none';
+  document.getElementById('step2').style.display = 'none';
+  confirmedHostName = '';
+  confirmedHostPhone = '';
+}
+
+// 전송
+document.getElementById('submitBtn').addEventListener('click', async function() {
+  var situation = document.getElementById('situation').value.trim();
+  if (!situation) { document.getElementById('situation').focus(); return; }
+
+  var btn = this;
+  var resultBox = document.getElementById('resultBox');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>전송 중...';
+  resultBox.style.display = 'none';
+
+  try {
+    var res = await fetch('/emergency-contact.php', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        action:    'send',
+        hostName:  confirmedHostName,
+        hostPhone: confirmedHostPhone,
+        situation: situation,
+      })
     });
     var json = await res.json();
     if (json.ok) {
       resultBox.className = 'result-box success';
-      resultBox.innerHTML = '요청이 전송되었습니다.<br>위홈 대표 및 부산시 담당자에게 즉시 문자가 발송됩니다.<br>잠시만 기다려 주세요.';
+      resultBox.innerHTML = '요청이 전송되었습니다.<br>위홈 대표 및 부산시 담당자에게 즉시 문자가 발송됩니다.';
       resultBox.style.display = 'block';
-      document.getElementById('emergencyForm').reset();
+      document.getElementById('situation').value = '';
+      window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});
     } else {
       throw new Error(json.msg || '전송 실패');
     }
@@ -129,7 +218,6 @@ document.getElementById('emergencyForm').addEventListener('submit', async functi
     resultBox.innerHTML = '전송 중 오류가 발생했습니다.<br>위홈 고객센터(1544-5665)로 직접 연락해 주세요.';
     resultBox.style.display = 'block';
   }
-
   btn.disabled = false;
   btn.textContent = '긴급 지원 요청 전송';
 });
