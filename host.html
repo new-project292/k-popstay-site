@@ -171,6 +171,18 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
 .nav-mobile-menu .nav-lang-pill{align-self:flex-start}
 .nav-mobile-menu .nav-guest-link{align-self:flex-start;font-size:.88rem;font-weight:600;color:var(--text-700);padding:8px 14px;border-radius:100px;border:1.5px solid var(--border)}
 
+/* FREE BANNER */
+.free-banner{background:var(--bg-soft);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:56px 24px;text-align:center}
+.free-banner-inner{max-width:720px;margin:0 auto}
+.free-banner-pill{display:inline-flex;align-items:center;gap:7px;background:var(--purple-xlight);border:1.5px solid var(--purple-light);color:var(--purple);font-size:.75rem;font-weight:700;padding:5px 16px;border-radius:100px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:20px}
+.free-banner-pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--purple);animation:pulse 1.6s ease-in-out infinite}
+.free-banner-title{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;color:var(--text-900);line-height:1.2;letter-spacing:-.03em;margin-bottom:14px}
+.free-banner-title .hl{display:inline-block;color:var(--purple)}
+.free-banner-sub{font-size:clamp(.9rem,1.8vw,1.05rem);color:var(--text-500);line-height:1.7;margin-bottom:28px;max-width:540px;margin-left:auto;margin-right:auto}
+.free-banner-items{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.free-banner-item{display:flex;align-items:center;gap:8px;background:var(--bg);border:1px solid var(--border);border-radius:100px;padding:8px 18px;color:var(--text-700);font-size:.85rem;font-weight:600;white-space:nowrap}
+.free-banner-item svg{color:var(--purple);flex-shrink:0}
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .why-grid{grid-template-columns:1fr}
@@ -179,6 +191,8 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
   #hero{padding:calc(66px + 56px) 20px 56px}
   section{padding:64px 20px}
   #fabHost{bottom:20px;right:20px;padding:12px 22px;font-size:.82rem}
+  .free-banner{padding:40px 20px}
+  .free-banner-items{flex-direction:column;align-items:center}
 }
 @media(max-width:640px){
   .nav-right{display:none}
@@ -217,7 +231,7 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
   <div class="hero-inner fade-up">
     <div class="hero-eyebrow">K-POPSTAY BUSAN 2026 · 부산 갈매기 둥지스테이</div>
     <h1 class="hero-title">K-POPSTAY BUSAN<br><span class="grad" style="color:var(--purple)">호스트가 되어보세요</span></h1>
-    <p class="hero-sub">글로벌 아미를 내 집에서 맞이하는 특별한 경험. 부산시, 시민단체, 위홈이 함께합니다.</p>
+    <p class="hero-sub">전 세계 아미에게 <strong>무료 숙박</strong>을 제공하는 부산 시민 호스트. 부산시, 시민단체, 위홈이 함께합니다.</p>
     <div class="hero-badges">
       <span class="badge-open">6월 11일까지 모집 중</span>
     </div>
@@ -228,6 +242,36 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
   </div>
   <div class="scroll-indicator"><span></span></div>
 </section>
+
+<!-- FREE STAY BANNER -->
+<div class="free-banner">
+  <div class="free-banner-inner">
+    <div class="free-banner-pill">핵심 안내</div>
+    <h2 class="free-banner-title">아미 게스트에게<br><span class="hl">무료 숙박</span>을 제공합니다</h2>
+    <p class="free-banner-sub">
+      K-POPSTAY BUSAN은 전 세계 아미 게스트에게 숙박비 0원의 무료 홈스테이를 제공하는 시민 참여 프로젝트입니다.<br>
+      호스트 여러분의 집을 아낌없이 나눠주세요 — 위홈이 모든 과정을 함께합니다.
+    </p>
+    <div class="free-banner-items">
+      <div class="free-banner-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        게스트 숙박비 0원 완전 무료
+      </div>
+      <div class="free-banner-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        노쇼 방지 보증금 — 체크인 시 전액 환급
+      </div>
+      <div class="free-banner-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        사업자 등록 없이 즉시 참여 가능
+      </div>
+      <div class="free-banner-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        위홈이 게스트 매칭 전 과정 지원
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- WHY -->
 <section id="why">
@@ -358,43 +402,43 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
       <div>
         <div class="host-tl-wrap">
           <div class="host-tl-item">
-            <div class="tl-date">~6월 5일</div>
+            <div class="tl-date">~6월 7일</div>
             <div class="tl-node"></div>
             <div class="tl-content">
-              <div class="tl-title">호스트 신청 마감</div>
-              <div class="tl-desc">위홈 공식 페이지를 통한 신청 접수 마감</div>
+              <div class="tl-title">글로벌 아미 게스트 신청 마감</div>
+              <div class="tl-desc">6월 7일 자정에 신청 마감 / 게스트·호스트 매칭 개시</div>
             </div>
           </div>
           <div class="host-tl-item">
-            <div class="tl-date">6월 6~8일</div>
+            <div class="tl-date">~6월 8일</div>
             <div class="tl-node"></div>
             <div class="tl-content">
-              <div class="tl-title">현장 방문 검증</div>
-              <div class="tl-desc">담당자 방문 및 숙소 안전 확인</div>
+              <div class="tl-title">숙소 매칭 완료 및 예약 진행</div>
+              <div class="tl-desc">게스트·호스트 매칭 완료 후 예약 개시 / 추가 호스트 등록 시 추가 매칭 계속 진행</div>
             </div>
           </div>
           <div class="host-tl-item">
-            <div class="tl-date">6월 9~10일</div>
+            <div class="tl-date">6월 10일</div>
             <div class="tl-node"></div>
             <div class="tl-content">
-              <div class="tl-title">게스트 매칭 완료</div>
-              <div class="tl-desc">호스트-게스트 최종 매칭 및 안내 발송</div>
+              <div class="tl-title">호스트 설명회 (부산시청)</div>
+              <div class="tl-desc">위홈 참석 / 아미에게 배포할 웰컴홈위홈 기프트백 전달</div>
             </div>
           </div>
           <div class="host-tl-item">
-            <div class="tl-date">6월 11일</div>
+            <div class="tl-date">6월 12일~</div>
             <div class="tl-node"></div>
             <div class="tl-content">
-              <div class="tl-title">게스트 체크인</div>
-              <div class="tl-desc">전 세계 아미 게스트 부산 도착 및 입실</div>
+              <div class="tl-title">아미 체크인</div>
+              <div class="tl-desc">일부 호스트 협의 시 6월 11일부터 조기 입실 가능<br>체크인 시 아미 1인당 5만원 부산관광상품권 + 웰컴홈 기프트백 제공<br>챌린지 참여: #보라해한글 호스트와 사진 촬영 및 SNS 공유</div>
             </div>
           </div>
           <div class="host-tl-item">
             <div class="tl-date">6월 14일</div>
             <div class="tl-node"></div>
             <div class="tl-content">
-              <div class="tl-title">체크아웃 및 마무리</div>
-              <div class="tl-desc">호스팅 종료 및 후기 작성</div>
+              <div class="tl-title">글로벌 아미 체크아웃 및 사업 평가</div>
+              <div class="tl-desc">호스팅 종료 / 전체 사업 성과 평가</div>
             </div>
           </div>
         </div>

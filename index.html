@@ -180,24 +180,36 @@ section{padding:96px 0}
 /* GUIDEBOOK */
 #guidebook{background:var(--bg)}
 .guidebook-header{text-align:center;margin-bottom:48px}
-.guidebook-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.guide-block{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:36px}
-.guide-block h3{font-size:1.05rem;font-weight:700;color:var(--text-900);
-  margin-bottom:8px;letter-spacing:-0.02em}
-.guide-label{display:inline-block;background:var(--purple-xlight);color:var(--purple);
-  font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:6px;margin-bottom:12px}
-.guide-cost{font-size:1.5rem;font-weight:800;color:var(--text-900);
-  margin-bottom:8px;letter-spacing:-0.03em}
+.guide-notice{background:#fff8f0;border:1.5px solid #fcd34d;border-radius:14px;padding:20px 24px;margin-bottom:32px;font-size:0.875rem;color:#92400e;line-height:1.7}
+.guide-notice strong{display:block;font-size:0.92rem;margin-bottom:6px;color:#78350f}
+.guide-intro{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:32px;margin-bottom:20px;font-size:0.875rem;color:var(--text-500);line-height:1.8}
+.guide-intro p{margin-bottom:10px}
+.guide-intro p:last-child{margin-bottom:0}
+.guidebook-cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.guide-block{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:32px}
+.guide-block h3{font-size:1rem;font-weight:700;color:var(--text-900);margin-bottom:16px;letter-spacing:-0.02em;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.guide-label{display:inline-block;background:var(--purple-xlight);color:var(--purple);font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:6px;margin-bottom:12px}
+.guide-cost{font-size:1.5rem;font-weight:800;color:var(--text-900);margin-bottom:8px;letter-spacing:-0.03em}
 .guide-block p{font-size:0.875rem;color:var(--text-500);line-height:1.7;margin-bottom:12px}
-.guide-highlight{background:var(--bg);border-left:3px solid var(--purple);
-  border-radius:0 8px 8px 0;padding:14px 16px;font-size:0.875rem;color:var(--text-700);
-  font-weight:500;line-height:1.6}
+.guide-highlight{background:var(--bg);border-left:3px solid var(--purple);border-radius:0 8px 8px 0;padding:14px 16px;font-size:0.875rem;color:var(--text-700);font-weight:500;line-height:1.6;margin-top:12px}
+.guide-rule-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.guide-rule-item{display:flex;align-items:flex-start;gap:10px;font-size:0.855rem;color:var(--text-700);line-height:1.65}
+.guide-rule-dot{width:22px;height:22px;min-width:22px;border-radius:6px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:0.75rem;color:var(--purple);font-weight:700;margin-top:1px}
+.guide-rule-dot.red{background:#fef2f2;color:#ef4444}
+.guide-full{background:var(--bg-card);border:1.5px solid var(--border);border-radius:16px;padding:32px;margin-bottom:20px}
+.guide-full h3{font-size:1rem;font-weight:700;color:var(--text-900);margin-bottom:16px;letter-spacing:-0.02em;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.guide-full-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.guide-full-item{display:flex;align-items:flex-start;gap:10px;font-size:0.855rem;color:var(--text-700);line-height:1.65}
+.guide-support{background:var(--purple-xlight);border:1.5px solid var(--purple-light);border-radius:16px;padding:28px 32px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.guide-support-item{font-size:0.855rem;color:var(--text-700);line-height:1.7}
+.guide-support-item strong{display:block;font-size:0.88rem;color:var(--purple);margin-bottom:4px}
+@media(max-width:640px){
+  .guidebook-cols{grid-template-columns:1fr}
+  .guide-support{grid-template-columns:1fr}
+}
 .perk-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:12px}
-.perk-item{display:flex;align-items:flex-start;gap:12px;font-size:0.875rem;
-  color:var(--text-700);line-height:1.6}
-.perk-icon{width:28px;height:28px;min-width:28px;border-radius:7px;
-  background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;
-  font-size:0.8rem}
+.perk-item{display:flex;align-items:flex-start;gap:12px;font-size:0.875rem;color:var(--text-700);line-height:1.6}
+.perk-icon{width:28px;height:28px;min-width:28px;border-radius:7px;background:var(--purple-xlight);display:flex;align-items:center;justify-content:center;font-size:0.8rem}
 
 /* PARTNERS */
 #partners{background:#fff;padding:80px 0;border-top:1px solid var(--border)}
@@ -397,6 +409,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
     <div class="hero-sub-links fade-up">
       <a href="/host" class="hero-sub-link">Become a Busan Citizen Host &rsaquo;</a>
       <a href="https://www.wehome.me/k-popstay-busan" class="hero-sub-link" target="_blank" rel="noopener">Book Wehome Busan Accommodations 10% Off &rsaquo;</a>
+      <a href="https://www.wehome.me/k-popstay-homestay" class="hero-sub-link" target="_blank" rel="noopener">Busan Citizen Homestay on Wehome &rsaquo;</a>
     </div>
   </div>
   <div id="scrollIndicator">
@@ -481,35 +494,19 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
     <div class="guidebook-header fade-up">
       <div class="section-eyebrow">Guest Guidebook</div>
       <h2 class="section-title">Everything You Need to Know</h2>
+      <p class="section-desc" style="margin:0 auto">House rules, deposit policy, check-in info and more — all in one place.</p>
     </div>
-    <div class="guidebook-grid">
-      <div class="guide-block fade-up">
-        <div class="guide-label">K-POPSTAY Busan Policy</div>
-        <h3>Stay Costs & Deposit Policy</h3>
-        <div class="guide-cost">Guest Cost: KRW 0</div>
-        <p>Your stay is completely free of charge. K-POPSTAY BUSAN is a civic initiative — Busan citizen hosts voluntarily open their homes to global ARMY at no cost.</p>
-        <div class="guide-highlight">
-          Refundable Security Deposit: A small deposit is collected at booking to ensure mutual commitment. It is 100% refunded upon checkout with no conditions.
+    <div class="fade-up" style="text-align:center">
+      <a href="/guest-guidebook" style="display:inline-flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:24px 36px;box-shadow:var(--shadow-md);transition:all 0.25s;text-decoration:none" onmouseover="this.style.borderColor='var(--purple)';this.style.boxShadow='0 8px 32px rgba(118,17,131,0.12)'" onmouseout="this.style.borderColor='var(--border)';this.style.boxShadow='var(--shadow-md)'">
+        <div style="width:44px;height:44px;background:var(--purple-xlight);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         </div>
-      </div>
-      <div class="guide-block fade-up">
-        <div class="guide-label">House Rules</div>
-        <h3>Stay Rules</h3>
-        <ul class="perk-list">
-          <li class="perk-item">
-            <div class="perk-icon" style="color:var(--red,#ef4444)">&#9679;</div>
-            <div><strong>No Smoking</strong> <span style="color:#8B95A1;font-weight:500">— 금연</span><br>Smoking is strictly prohibited inside the home and on the premises at all times.</div>
-          </li>
-          <li class="perk-item">
-            <div class="perk-icon" style="color:var(--red,#ef4444)">&#9679;</div>
-            <div><strong>No Cooking</strong> <span style="color:#8B95A1;font-weight:500">— 취사 금지</span><br>Cooking and use of kitchen appliances are not permitted during your stay.</div>
-          </li>
-          <li class="perk-item">
-            <div class="perk-icon" style="color:var(--purple)">&#10003;</div>
-            <div><strong>Check-in &amp; Check-out Times</strong> <span style="color:#8B95A1;font-weight:500">— 호스트별 별도 지정</span><br>Check-in and check-out times are set individually by each host. Please confirm the exact times with your host after booking.</div>
-          </li>
-        </ul>
-      </div>
+        <div style="text-align:left">
+          <div style="font-size:1rem;font-weight:800;color:var(--text-900);letter-spacing:-.02em" id="guide_link_title">Read the Guest Guidebook</div>
+          <div style="font-size:0.85rem;color:var(--text-500);margin-top:3px" id="guide_link_sub">House rules · Deposit policy · Check-in · Support</div>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--text-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:8px;flex-shrink:0"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
     </div>
   </div>
 </section>

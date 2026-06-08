@@ -28,6 +28,12 @@ RewriteRule ^about-kpopstay/?$ /about-kpopstay.html [L]
 # /travelguide -> travelguide.html
 RewriteRule ^travelguide/?$ /travelguide.html [L]
 
+# /guest-guidebook -> guest-guidebook.html
+RewriteRule ^guest-guidebook/?$ /guest-guidebook.html [L]
+
+# /emergency-contact -> emergency-contact.html
+RewriteRule ^emergency-contact/?$ /emergency-contact.html [L]
+
 # 업로드 파일: PHP 실행 차단 (이미지/PDF만 허용)
 <FilesMatch "\.php$">
   <If "%{REQUEST_URI} =~ m|^/uploads/|">

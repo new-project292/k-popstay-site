@@ -31,6 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     json_error('Method not allowed', 405);
 }
 
+// Guest application closed (2026-06-07)
+if (isset($_POST['type']) && $_POST['type'] === 'guest') {
+    json_error('Guest applications are now closed. Selected ARMY will be notified by email.', 403);
+}
+
 function send_confirmation_email($to_email, $guest_name) {
     $subject   = '[K-POPSTAY BUSAN 2026] Application Received — You\'re in the queue!';
     $from      = 'K-POPSTAY BUSAN <noreply@wehome.me>';

@@ -54,6 +54,7 @@
       hero_share:'공유',
       hero_host:'부산 시민 호스트 신청하기 ›',
       hero_book:'위홈 부산 숙박 10% 할인 예약 ›',
+      hero_homestay:'부산 시민 홈스테이 (위홈) ›',
       fab:'2박 3일 무료 신청<br>(외국인 아미 우선) ›',
       intro_tag:'공정하고 상생하는 시민 참여형 거버넌스',
       intro_title:'부산 갈매기<br><span style="color:var(--purple)">둥지스테이</span>',
@@ -72,11 +73,33 @@
       about_g2_title:'호스트 혜택', about_g2_desc:'전 세계 팬들과 교류하고, 위홈과 함께 공유숙박을 경험하세요. K-컬처 문화 대사로서 의미 있는 문화적 임팩트를 만들어갑니다.',
       about_g3_title:'사회적 가치', about_g3_desc:'바가지 요금 근절, K-라이프스타일 수요 충족, 지역경제 살리기. 공유숙박의 새로운 기준을 정립하는 사회적 모델입니다.',
       guide_eyebrow:'게스트 가이드북', guide_title:'알아야 할 모든 것',
-      guide_label:'둥지스테이 비용 정책', guide_h3:'숙박 요금 및 보증금 정책',
+      guide_link_title:'게스트 가이드북 읽기',
+      guide_link_sub:'이용 규칙 · 보증금 정책 · 체크인 · 고객지원',
+      guide_notice_title:'전제 사항',
+      guide_notice_body:'본 가이드는 위홈 공유숙박 사용자 약관에 우선적으로 적용됩니다. 여기에서 언급되지 않은 사항은 위홈의 사용자 약관을 따릅니다.',
+      guide_intro_html:'<p>K-POPSTAY BUSAN 2026은 부산 아미와 시민들의 참여를 바탕으로 부산시와 위홈이 진행합니다. 글로벌 아미와 부산의 아미 및 시민을 연결해서 숙박 문제를 다소라도 해결해 드리고 상호 교류를 돕기 위한 프로젝트입니다.</p><p>부산시도, 위홈도, 시민들도 모두 자발적인 참여로 진행됩니다. 특히 이번 K-POPSTAY BUSAN 2026은 부산의 아미와 시민이 자발적으로 나서서 글로벌 아미를 위해 아무런 대가 없이 기꺼이 숙소를 내어주는 것입니다.</p><p>촉박한 상황에서 적극적인 협조로 진행되는 만큼 아미 여러분의 협조와 호스트에 대한 감사, 그리고 존중의 자세가 필요합니다. 다소 부족한 점이 있을 수 있으니 너그러이 이해해 주시기 바랍니다.</p>',
+      guide_label:'자격 및 숙박 정책', guide_h3:'예약 및 보증금',
       guide_cost:'게스트 비용: 0원',
-      guide_p:'숙박은 완전히 무료입니다. K-POPSTAY BUSAN은 시민 참여 프로젝트로, 부산 시민 호스트들이 자발적으로 집을 개방합니다.',
-      guide_highlight:'환급 보증금: 예약 확정 시 상호 신뢰를 위한 소액 보증금이 수취됩니다. 체크인 시 부산관광상품카드로 100% 전액 환급됩니다.',
-      guide2_h3:'하우스 룰',
+      guide_p:'무료 숙박은 BTS 글로벌 아미에 우선 제공됩니다. 아미 확인이 불가한 경우 확약 후에도 취소될 수 있습니다. 보다 많은 아미에게 편의를 제공하기 위해 거실도 방으로 제공될 수 있으며, 시설 설명란에 명기됩니다.',
+      guide_highlight:'<strong>보증금 — 1인당 5만원</strong><br>상호 신뢰를 위해 신용카드로 결제됩니다. 체크인 시 <strong>부산관광카드(5만원 충전)</strong>로 전액 환급됩니다. 부산 내 가맹점에서 현금처럼 사용 가능(백화점·대형 쇼핑몰 제외).<br><br>확약 후 노쇼의 경우 보증금은 환불되지 않습니다.',
+      guide_highlight2:'<strong>웰컴홈 기프트백</strong><br>선착순 100명 게스트에게 무료 제공. 부산시 및 제나벨(Genabelle) 후원.',
+      guide2_h3:'이용 규칙 및 에티켓',
+      guide_rule1:'<strong>금연</strong><br>숙소 내부 및 건물 내에서는 항상 흡연이 엄격히 금지됩니다.',
+      guide_rule2:'<strong>취사 금지</strong><br>원칙적으로 주방 이용 및 조리 기구 사용은 불가합니다. (호스트가 문자로 허락한 경우에 한해 예외 가능)',
+      guide_rule3:'<strong>음주 금지 및 소음 주의</strong><br>숙소 내 음주는 엄격히 금지되며, 이웃에게 피해를 줄 수 있는 소음이나 가무는 절대 삼가 주세요.',
+      guide_rule4:'<strong>체크인·체크아웃</strong><br>시간은 호스트별로 다릅니다. 예약 후 직접 확인해 주세요. 일부 호스트는 6월 11일 조기 입실 가능.',
+      guide_rule5:'<strong>공간 존중</strong><br>부산 시민이 실제 거주하는 공간입니다. 호스트의 사적인 공간이나 물건을 함부로 열거나 사용하지 마세요. 동숙 아미들과도 서로 배려해 주세요.',
+      guide_rule6:'<strong>호스트 개인정보 보호</strong><br>호스트의 연락처 및 상세 숙소 정보는 외부에 유출하거나 SNS 등에 절대 공유해서는 안 됩니다.',
+      guide_rule7:'<strong>규칙 위반 시 즉시 퇴실 조치될 수 있습니다.</strong>',
+      guide_checkout_label:'체크아웃',
+      guide_checkout_h3:'체크아웃 및 쓰레기 분리수거',
+      guide_co1:'체크아웃 전 사용한 물건을 제자리에 두고 깨끗하게 정리해 주세요.',
+      guide_co2:'<strong>쓰레기 분리수거는 필수입니다.</strong> 일반쓰레기, 재활용품(플라스틱·캔·유리·종이·비닐), 음식물 쓰레기를 분리해 주세요. 호스트가 별도 안내한 방법이 있다면 우선적으로 따라 주세요.',
+      guide_co3:'세안 도구는 각자 챙겨오셔야 하며, 공연 후 숙소까지의 이동은 직접 하셔야 합니다.',
+      guide_co4:'<strong>아미 챌린지:</strong> 호스트와 사진을 찍고 <strong>#보라해한글</strong> 해시태그로 SNS에 공유해 주세요.',
+      guide_sup1:'<strong>채널톡 (가장 빠름)</strong>위홈 홈페이지 우측 하단 채팅 버튼',
+      guide_sup2:'<strong>이메일 · 전화</strong>cs@wehome.me<br>1544-5665 (평일 10–18시)',
+      guide_sup3:'<strong>긴급 · 기타 문의</strong>부산시민단체협의회: 051-809-2629<br>시청 경제정책과: 051-888-4751',
       perk1_title:'금연 (No Smoking)', perk1_desc:'실내 및 건물 내 어디서든 흡연은 엄격히 금지됩니다.',
       perk2_title:'취사 금지 (No Cooking)', perk2_desc:'숙박 기간 중 취사 및 주방 기구 사용은 허용되지 않습니다.',
       perk3_title:'체크인/체크아웃 — 호스트별 별도 지정', perk3_desc:'체크인·체크아웃 시간은 호스트마다 다릅니다. 예약 후 호스트에게 직접 확인해 주세요.',
@@ -222,7 +245,10 @@
       apply_err_agree:'약관에 동의해 주세요.',
       apply_btn_back:'← 이전', apply_btn_continue:'다음 →', apply_btn_submit:'신청 제출하기', apply_btn_submitting:'제출 중...',
       apply_success_title:'신청이 접수되었습니다!',
-      apply_success_desc:'K-POPSTAY BUSAN 2026 게스트 신청서가 정상적으로 접수되었습니다.<br><strong>2026년 6월 6–7일</strong>까지 검토 후 이메일로 안내드립니다.<br><br>이메일로 확인서를 발송했습니다. 외국인 아미 팬 우선 선발입니다.'
+      apply_success_desc:'K-POPSTAY BUSAN 2026 게스트 신청서가 정상적으로 접수되었습니다.<br><strong>2026년 6월 6–7일</strong>까지 검토 후 이메일로 안내드립니다.<br><br>이메일로 확인서를 발송했습니다. 외국인 아미 팬 우선 선발입니다.',
+      apply_closed_msg:'여러 아미 게스트 여러분의 부응에 감사합니다.<br>글로벌 아미 중심으로 선정해서 아미 호스트와 시민 호스트와 매칭해서 숙소 예약을 진행할 수 있도록 하겠습니다.<br>선정된 아미들에게는 이메일로 결과를 알려드리겠습니다.<br><br>아미 여러분의 성원에 감사드립니다.',
+      apply_closed_title:'신청 마감',
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 감사합니다, ARMY!'
     },
     en: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Guest Guidebook', nav_apply:'Apply Now ›',
@@ -234,6 +260,7 @@
       hero_share:'Share',
       hero_host:'Become a Busan Citizen Host ›',
       hero_book:'Book Wehome Busan Accommodations 10% Off ›',
+      hero_homestay:'Busan Citizen Homestay on Wehome ›',
       fab:'Apply for Free 2-Night Stay<br>(Global BTS ARMY First) ›',
       intro_tag:'Fair &amp; Community-Driven Civic Governance',
       intro_title:'Busan Seagull<br>Nest',
@@ -252,6 +279,8 @@
       about_g2_title:'For Hosts', about_g2_desc:'Busan residents share their home, meet a global fan, and contribute to a community movement. Hosts receive recognition and support through Wehome\'s platform.',
       about_g3_title:'For Society', about_g3_desc:'A new model for event tourism — one that prioritizes fairness, community, and cultural exchange over profit. A blueprint for future K-POP events worldwide.',
       guide_eyebrow:'Guest Guidebook', guide_title:'Everything You Need to Know',
+      guide_link_title:'Read the Guest Guidebook',
+      guide_link_sub:'House rules · Deposit policy · Check-in · Support',
       guide_label:'K-POPSTAY Busan Policy', guide_h3:'Stay Costs &amp; Deposit Policy',
       guide_cost:'Guest Cost: KRW 0',
       guide_p:'Your stay is completely free of charge. K-POPSTAY BUSAN is a civic initiative — Busan citizen hosts voluntarily open their homes to global ARMY at no cost.',
@@ -402,7 +431,10 @@
       apply_err_agree:'Please agree to the terms.',
       apply_btn_back:'← Back', apply_btn_continue:'Continue →', apply_btn_submit:'Submit Application', apply_btn_submitting:'Submitting...',
       apply_success_title:'Application Submitted!',
-      apply_success_desc:'Thank you for applying to K-POPSTAY BUSAN 2026.<br>We will review your application and notify you.<br><br>Check your email for confirmation. Priority is given to international ARMY.'
+      apply_success_desc:'Thank you for applying to K-POPSTAY BUSAN 2026.<br>We will review your application and notify you.<br><br>Check your email for confirmation. Priority is given to international ARMY.',
+      apply_closed_msg:'Thank you so much for the overwhelming response from ARMY guests around the world.<br>We will be selecting global ARMY and matching them with ARMY hosts and citizen hosts to arrange accommodation.<br>Selected ARMY members will be notified of the results by email.<br><br>Thank you for your enthusiastic support, ARMY!',
+      apply_closed_title:'Applications Closed',
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · Thank you, ARMY!'
     },
     ja: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'ゲストガイドブック', nav_apply:'今すぐ申し込む ›',
@@ -414,6 +446,7 @@
       hero_share:'シェア',
       hero_host:'釜山市民ホストになる ›',
       hero_book:'Wehome釜山宿泊を10%割引で予約 ›',
+      hero_homestay:'釜山市民ホームステイ (Wehome) ›',
       fab:'無料2泊宿泊に申し込む<br>（海外BTSアーミー優先）›',
       intro_tag:'公正でコミュニティ主導の市民ガバナンス',
       intro_title:'釜山シーガル<br>ネスト',
@@ -432,6 +465,8 @@
       about_g2_title:'ホストの方へ', about_g2_desc:'釜山在住者が自宅を共有し、世界中のファンと交流し、コミュニティムーブメントに貢献します。ホストはWehomeのプラットフォームを通じて認定とサポートを受けます。',
       about_g3_title:'社会のために', about_g3_desc:'利益よりも公平性、コミュニティ、文化交流を優先するイベント観光の新しいモデル。世界中の将来のK-POPイベントの青写真です。',
       guide_eyebrow:'ゲストガイドブック', guide_title:'知っておくべきすべてのこと',
+      guide_link_title:'ゲストガイドブックを読む',
+      guide_link_sub:'ハウスルール · デポジット · チェックイン · サポート',
       guide_label:'K-POPSTAY 釜山ポリシー', guide_h3:'宿泊費用とデポジットポリシー',
       guide_cost:'ゲスト費用：0ウォン',
       guide_p:'宿泊は完全無料です。K-POPSTAY BUSANは市民イニシアチブです — 釜山市民ホストが世界のARMYに無償で自宅を開放します。',
@@ -582,7 +617,10 @@
       apply_err_agree:'利用規約に同意してください。',
       apply_btn_back:'← 戻る', apply_btn_continue:'次へ →', apply_btn_submit:'申し込みを送信', apply_btn_submitting:'送信中...',
       apply_success_title:'申し込みが受付されました！',
-      apply_success_desc:'K-POPSTAY BUSAN 2026へのお申し込みありがとうございます。<br><strong>2026年6月6–7日</strong>までに審査結果をメールでお知らせします。<br><br>確認メールをご確認ください。海外ARMYを優先します。'
+      apply_success_desc:'K-POPSTAY BUSAN 2026へのお申し込みありがとうございます。<br><strong>2026年6月6–7日</strong>までに審査結果をメールでお知らせします。<br><br>確認メールをご確認ください。海外ARMYを優先します。',
+      apply_closed_msg:'多くのARMYゲストの皆さまのご応募に心より感謝申し上げます。<br>グローバルARMYを中心に選定し、ARMYホストおよびシティズンホストとマッチングして宿泊予約を進めてまいります。<br>選ばれたARMYの方々には、メールで結果をお知らせいたします。<br><br>ARMYの皆さまの温かいご支援に感謝いたします。',
+      apply_closed_title:'申し込み締め切り',
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · ありがとう、ARMY！'
     },
     zh_t: {
       nav_home:'首頁', nav_about:'K-POPSTAY', nav_guide:'訪客指南', nav_apply:'立即申請 ›',
@@ -594,6 +632,7 @@
       hero_share:'分享',
       hero_host:'成為釜山市民房東 ›',
       hero_book:'Wehome釜山住宿九折優惠預訂 ›',
+      hero_homestay:'釜山市民 homestay (Wehome) ›',
       fab:'申請免費2晚住宿<br>（全球BTS ARMY優先）›',
       intro_tag:'公平且由社區主導的公民治理',
       intro_title:'釜山海鷗<br>巢穴',
@@ -612,6 +651,8 @@
       about_g2_title:'房東', about_g2_desc:'釜山居民分享自己的家，結識全球粉絲，並為社區運動做出貢獻。房東通過Wehome平台獲得認可和支持。',
       about_g3_title:'社會', about_g3_desc:'活動旅遊的新模式 — 優先考慮公平、社區和文化交流而非利潤。未來全球K-POP活動的藍圖。',
       guide_eyebrow:'訪客指南', guide_title:'您需要了解的一切',
+      guide_link_title:'閱讀訪客指南',
+      guide_link_sub:'住宿規則 · 保證金政策 · 入住 · 客服支援',
       guide_label:'K-POPSTAY 釜山政策', guide_h3:'住宿費用及保證金政策',
       guide_cost:'訪客費用：0韓元',
       guide_p:'您的住宿完全免費。K-POPSTAY BUSAN是一項公民倡議 — 釜山市民房東自願向全球ARMY免費開放自己的家。',
@@ -747,7 +788,10 @@
       apply_err_agree:'請同意條款。',
       apply_btn_back:'← 返回', apply_btn_continue:'繼續 →', apply_btn_submit:'提交申請', apply_btn_submitting:'提交中...',
       apply_success_title:'申請已提交！',
-      apply_success_desc:'感謝您申請K-POPSTAY BUSAN 2026。<br>我們將在<strong>2026年6月6–7日</strong>前審核並通知您。<br><br>請查收確認郵件。優先考慮海外ARMY。'
+      apply_success_desc:'感謝您申請K-POPSTAY BUSAN 2026。<br>我們將在<strong>2026年6月6–7日</strong>前審核並通知您。<br><br>請查收確認郵件。優先考慮海外ARMY。',
+      apply_closed_msg:'非常感謝眾多ARMY訪客的踴躍參與。<br>我們將以全球ARMY為中心進行選拔，並與ARMY房東及市民房東進行配對，安排住宿預訂。<br>入選的ARMY將透過電子郵件收到結果通知。<br><br>感謝ARMY們的熱情支持！',
+      apply_closed_title:'申請已截止',
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 謝謝您，ARMY！'
     },
     zh_s: {
       nav_home:'首页', nav_about:'K-POPSTAY', nav_guide:'访客指南', nav_apply:'立即申请 ›',
@@ -759,6 +803,7 @@
       hero_share:'分享',
       hero_host:'成为釜山市民房东 ›',
       hero_book:'Wehome釜山住宿九折优惠预订 ›',
+      hero_homestay:'釜山市民 homestay (Wehome) ›',
       fab:'申请免费2晚住宿<br>（全球BTS ARMY优先）›',
       intro_tag:'公平且由社区主导的公民治理',
       intro_title:'釜山海鸥<br>巢穴',
@@ -777,6 +822,8 @@
       about_g2_title:'房东', about_g2_desc:'釜山居民分享自己的家，结识全球粉丝，并为社区运动做出贡献。房东通过Wehome平台获得认可和支持。',
       about_g3_title:'社会', about_g3_desc:'活动旅游的新模式 — 优先考虑公平、社区和文化交流而非利润。未来全球K-POP活动的蓝图。',
       guide_eyebrow:'访客指南', guide_title:'您需要了解的一切',
+      guide_link_title:'阅读访客指南',
+      guide_link_sub:'住宿规则 · 保证金政策 · 入住 · 客服支持',
       guide_label:'K-POPSTAY 釜山政策', guide_h3:'住宿费用及保证金政策',
       guide_cost:'访客费用：0韩元',
       guide_p:'您的住宿完全免费。K-POPSTAY BUSAN是一项公民倡议 — 釜山市民房东自愿向全球ARMY免费开放自己的家。',
@@ -912,7 +959,10 @@
       apply_err_agree:'请同意条款。',
       apply_btn_back:'← 返回', apply_btn_continue:'继续 →', apply_btn_submit:'提交申请', apply_btn_submitting:'提交中...',
       apply_success_title:'申请已提交！',
-      apply_success_desc:'感谢您申请K-POPSTAY BUSAN 2026。<br>我们将在<strong>2026年6月6–7日</strong>前审核并通知您。<br><br>请查收确认邮件。优先考虑海外ARMY。'
+      apply_success_desc:'感谢您申请K-POPSTAY BUSAN 2026。<br>我们将在<strong>2026年6月6–7日</strong>前审核并通知您。<br><br>请查收确认邮件。优先考虑海外ARMY。',
+      apply_closed_msg:'非常感谢众多ARMY访客的踊跃参与。<br>我们将以全球ARMY为中心进行选拔，并与ARMY房东及市民房东进行配对，安排住宿预订。<br>入选的ARMY将通过电子邮件收到结果通知。<br><br>感谢ARMY们的热情支持！',
+      apply_closed_title:'申请已截止',
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 谢谢你，ARMY！'
     },
     id: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Panduan Tamu', nav_apply:'Daftar Sekarang ›',
@@ -924,6 +974,7 @@
       hero_share:'Bagikan',
       hero_host:'Jadilah Tuan Rumah Warga Busan ›',
       hero_book:'Pesan Akomodasi Wehome Busan Diskon 10% ›',
+      hero_homestay:'Homestay Warga Busan di Wehome ›',
       fab:'Daftar Menginap Gratis 2 Malam<br>(Prioritas ARMY BTS Global) ›',
       intro_tag:'Tata Kelola Sipil yang Adil &amp; Berbasis Komunitas',
       intro_title:'Sarang Camar<br>Busan',
@@ -942,6 +993,8 @@
       about_g2_title:'Untuk Tuan Rumah', about_g2_desc:'Warga Busan berbagi rumah, bertemu penggemar global, dan berkontribusi pada gerakan komunitas. Tuan rumah menerima pengakuan dan dukungan melalui platform Wehome.',
       about_g3_title:'Untuk Masyarakat', about_g3_desc:'Model baru untuk pariwisata acara — yang mengutamakan keadilan, komunitas, dan pertukaran budaya daripada keuntungan. Cetak biru untuk acara K-POP masa depan di seluruh dunia.',
       guide_eyebrow:'Panduan Tamu', guide_title:'Semua yang Perlu Anda Ketahui',
+      guide_link_title:'Baca Panduan Tamu',
+      guide_link_sub:'Aturan hunian · Kebijakan deposit · Check-in · Dukungan',
       guide_label:'Kebijakan K-POPSTAY Busan', guide_h3:'Biaya Menginap &amp; Kebijakan Deposit',
       guide_cost:'Biaya Tamu: KRW 0',
       guide_p:'Menginap Anda sepenuhnya gratis. K-POPSTAY BUSAN adalah inisiatif sipil — tuan rumah warga Busan secara sukarela membuka rumah mereka untuk ARMY global tanpa biaya.',
@@ -1077,7 +1130,10 @@
       apply_err_agree:'Silakan setujui ketentuan.',
       apply_btn_back:'← Kembali', apply_btn_continue:'Lanjutkan →', apply_btn_submit:'Kirim Pendaftaran', apply_btn_submitting:'Mengirim...',
       apply_success_title:'Pendaftaran Terkirim!',
-      apply_success_desc:'Terima kasih telah mendaftar K-POPSTAY BUSAN 2026.<br>Kami akan meninjau pendaftaran Anda dan memberitahu pada <strong>6–7 Jun 2026</strong>.<br><br>Periksa email Anda untuk konfirmasi. Prioritas diberikan kepada ARMY internasional.'
+      apply_success_desc:'Terima kasih telah mendaftar K-POPSTAY BUSAN 2026.<br>Kami akan meninjau pendaftaran Anda dan memberitahu pada <strong>6–7 Jun 2026</strong>.<br><br>Periksa email Anda untuk konfirmasi. Prioritas diberikan kepada ARMY internasional.',
+      apply_closed_msg:'Terima kasih atas antusiasme luar biasa dari para tamu ARMY di seluruh dunia.<br>Kami akan menyeleksi ARMY global dan mencocokkan mereka dengan ARMY host serta citizen host untuk mengatur pemesanan akomodasi.<br>ARMY terpilih akan diberitahu hasilnya melalui email.<br><br>Terima kasih atas dukungan hangat kalian, ARMY!',
+      apply_closed_title:'Pendaftaran Ditutup',
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · Terima kasih, ARMY!'
     }
   };
 
@@ -1147,7 +1203,8 @@
     q('.hero-apply-btn', t('hero_cta'));
     q('.btn-share', t('hero_share'));
     q('.hero-sub-link:first-child', t('hero_host'));
-    q('.hero-sub-links a:last-child', t('hero_book'));
+    q('.hero-sub-link[href*="k-popstay-busan"]', t('hero_book'));
+    q('.hero-sub-link[href*="k-popstay-homestay"]', t('hero_homestay'));
     set('fabApply', t('fab'));
 
     // INTRODUCE
@@ -1183,22 +1240,8 @@
     // GUIDEBOOK
     q('#guidebook .section-eyebrow', t('guide_eyebrow'));
     q('#guidebook .section-title', t('guide_title'));
-    var gblocks = document.querySelectorAll('.guide-block');
-    if(gblocks[0]){
-      gblocks[0].querySelector('.guide-label').textContent = t('guide_label');
-      gblocks[0].querySelector('h3').textContent = t('guide_h3');
-      gblocks[0].querySelector('.guide-cost').textContent = t('guide_cost');
-      gblocks[0].querySelector('p').innerHTML = t('guide_p');
-      gblocks[0].querySelector('.guide-highlight').textContent = t('guide_highlight');
-    }
-    if(gblocks[1]){
-      gblocks[1].querySelector('h3').textContent = t('guide2_h3');
-      var perks = gblocks[1].querySelectorAll('.perk-item div:last-child');
-      var pkeys = [['perk1_title','perk1_desc'],['perk2_title','perk2_desc'],['perk3_title','perk3_desc']];
-      perks.forEach(function(p,i){
-        if(pkeys[i]) p.innerHTML = '<strong>'+t(pkeys[i][0])+'</strong><br>'+t(pkeys[i][1]);
-      });
-    }
+    set('guide_link_title', t('guide_link_title'));
+    set('guide_link_sub', t('guide_link_sub'));
 
     // PARTNERS
     q('#partners .section-eyebrow', t('partners_eyebrow'));
@@ -1981,10 +2024,15 @@
     var lbl = document.getElementById('kpopLangCurLabel');
     if(lbl) lbl.textContent = window.KPOP_LANG_LABEL || 'EN';
 
+    // 신청 마감 메시지 (applyClosedMsg 존재 시)
+    var closedMsg = document.getElementById('applyClosedMsg');
+    if(closedMsg) closedMsg.innerHTML = t('apply_closed_msg');
+
     // PAGE HEADER
     q('.page-eyebrow', t('apply_eyebrow'));
-    q('.page-title', t('apply_title'));
-    q('.page-sub', t('apply_sub'));
+    var isClosed = !!document.getElementById('applyClosedMsg');
+    q('.page-title', isClosed ? t('apply_closed_title') : t('apply_title'));
+    q('.page-sub', isClosed ? t('apply_closed_sub') : t('apply_sub'));
 
     // FORM HEADER
     q('.apply-form-header h2', t('apply_form_h2'));
