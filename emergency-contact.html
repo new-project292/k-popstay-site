@@ -6,53 +6,320 @@
 <title>K-POPSTAY BUSAN 2026 긴급 지원 요청</title>
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
 <style>
+:root {
+  --purple: #761183;
+  --purple-deep: #5a0d63;
+  --purple-mid: #9c27b0;
+  --purple-tint: #f9f0fb;
+  --purple-soft: #f0d9f4;
+  --purple-border: #dbb8e3;
+  --ink: #1a1023;
+  --ink-mid: #4a3555;
+  --ink-muted: #7a6a85;
+  --surface: #fdfaff;
+  --surface-raised: #ffffff;
+  --border: #ede0f2;
+  --shadow-sm: 0 1px 4px rgba(118,17,131,0.06), 0 4px 16px rgba(0,0,0,0.05);
+  --shadow-md: 0 2px 8px rgba(118,17,131,0.08), 0 8px 32px rgba(0,0,0,0.07);
+  --shadow-input: 0 1px 3px rgba(118,17,131,0.04), 0 2px 8px rgba(0,0,0,0.04);
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f7;color:#1d1d1f;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px}
-.card{background:#fff;border-radius:20px;box-shadow:0 8px 40px rgba(0,0,0,0.1);max-width:480px;width:100%;overflow:hidden}
-.card-header{background:#d32f2f;padding:28px 32px;text-align:center}
-.card-header .logo{font-size:13px;font-weight:700;color:rgba(255,255,255,0.7);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:8px}
-.card-header h1{font-size:22px;font-weight:800;color:#fff;line-height:1.3}
-.card-header p{font-size:13px;color:rgba(255,255,255,0.85);margin-top:6px}
-.card-body{padding:28px 32px}
-.desc{font-size:15px;color:#333;line-height:1.7;margin-bottom:24px;word-break:keep-all}
-.desc strong{color:#d32f2f}
-.form-group{margin-bottom:16px}
-.form-label{font-size:13px;font-weight:700;color:#555;margin-bottom:6px;display:block}
-.form-input,.form-textarea{width:100%;background:#f5f5f7;border:1.5px solid #e0e0e0;border-radius:10px;padding:11px 14px;font-size:14px;font-family:inherit;outline:none;transition:border .2s}
-.form-input:focus,.form-textarea:focus{border-color:#d32f2f}
-.form-textarea{min-height:100px;resize:vertical}
-.btn{width:100%;font-size:15px;font-weight:800;padding:14px;border-radius:12px;border:none;cursor:pointer;transition:all .2s;letter-spacing:-0.01em}
-.btn-lookup{background:#1565c0;color:#fff;margin-top:4px}
-.btn-lookup:hover{background:#0d47a1;transform:translateY(-1px)}
-.btn-submit{background:#d32f2f;color:#fff;margin-top:8px}
-.btn-submit:hover{background:#b71c1c;transform:translateY(-1px);box-shadow:0 6px 20px rgba(211,47,47,0.35)}
-.btn:disabled{background:#ccc;cursor:not-allowed;transform:none;box-shadow:none}
-.notice{background:#fff3e0;border:1.5px solid #ffe0b2;border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:13px;color:#e65100;line-height:1.6}
-.host-confirm{display:none;background:#e3f2fd;border:1.5px solid #90caf9;border-radius:12px;padding:16px 18px;margin-bottom:16px}
-.host-confirm-label{font-size:12px;font-weight:700;color:#1565c0;margin-bottom:6px}
-.host-confirm-name{font-size:18px;font-weight:800;color:#0d47a1}
-.host-confirm-sub{font-size:13px;color:#1565c0;margin-top:3px}
-.host-confirm-warn{display:none;background:#ffebee;border:1.5px solid #ffcdd2;border-radius:12px;padding:14px 16px;margin-bottom:16px;font-size:13px;color:#c62828;line-height:1.6}
-.step2{display:none;margin-top:20px;padding-top:20px;border-top:1px solid #e0e0e0}
-.recipients{display:flex;gap:10px;margin-bottom:20px}
-.recipient{flex:1;background:#f9f9f9;border:1.5px solid #e0e0e0;border-radius:10px;padding:12px 14px}
-.recipient-label{font-size:11px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:4px}
-.recipient-name{font-size:14px;font-weight:700;color:#1d1d1f}
-.recipient-role{font-size:12px;color:#666;margin-top:2px}
-.result-box{display:none;border-radius:12px;padding:20px;text-align:center;margin-top:16px;font-size:15px;font-weight:600;line-height:1.6}
-.result-box.success{background:#e8f5e9;border:1.5px solid #c8e6c9;color:#2e7d32}
-.result-box.error{background:#ffebee;border:1.5px solid #ffcdd2;color:#c62828}
-.back-link{display:block;text-align:center;margin-top:20px;font-size:13px;color:#888;text-decoration:none}
-.back-link:hover{color:#d32f2f}
-.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,0.4);border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite;margin-right:6px;vertical-align:middle}
-@keyframes spin{to{transform:rotate(360deg)}}
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  background: var(--surface);
+  background-image: radial-gradient(ellipse at 30% 0%, rgba(118,17,131,0.07) 0%, transparent 60%),
+                    radial-gradient(ellipse at 80% 100%, rgba(118,17,131,0.04) 0%, transparent 50%);
+  color: var(--ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.card {
+  background: var(--surface-raised);
+  border-radius: 28px;
+  box-shadow: var(--shadow-md), 0 0 0 1px rgba(118,17,131,0.06);
+  max-width: 460px;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.card-header {
+  background: var(--purple);
+  background-image: radial-gradient(ellipse at top right, rgba(255,255,255,0.12) 0%, transparent 60%);
+  padding: 32px 36px 28px;
+  position: relative;
+  overflow: hidden;
+}
+.card-header::before {
+  content: '';
+  position: absolute;
+  bottom: -24px; right: -24px;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.card-header .logo {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.6);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.card-header h1 {
+  font-family: 'Fraunces', 'Noto Sans KR', serif;
+  font-size: 28px;
+  font-weight: 300;
+  font-style: italic;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+.card-header p {
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  margin-top: 6px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Body ── */
+.card-body { padding: 32px 36px 36px; }
+
+.desc {
+  font-size: 14px;
+  color: var(--ink-mid);
+  line-height: 1.75;
+  margin-bottom: 20px;
+  word-break: keep-all;
+}
+.desc strong { color: var(--purple); font-weight: 700; }
+
+/* ── Notice ── */
+.notice {
+  background: #fffbf0;
+  border: 1px solid #f5d77a;
+  border-radius: 14px;
+  padding: 13px 16px;
+  margin-bottom: 24px;
+  font-size: 13px;
+  color: #7a5800;
+  line-height: 1.6;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.notice::before {
+  content: '⚠';
+  font-size: 15px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.notice strong { font-weight: 700; }
+
+/* ── Form elements ── */
+.form-group { margin-bottom: 14px; }
+.form-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  margin-bottom: 7px;
+  display: block;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.form-input, .form-textarea {
+  width: 100%;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--ink);
+  outline: none;
+  transition: border-color .18s, box-shadow .18s;
+  box-shadow: var(--shadow-input);
+}
+.form-input::placeholder, .form-textarea::placeholder { color: #c4b8cc; }
+.form-input:focus, .form-textarea:focus {
+  border-color: var(--purple);
+  box-shadow: 0 0 0 3px rgba(118,17,131,0.1), var(--shadow-input);
+}
+.form-textarea { min-height: 110px; resize: vertical; }
+
+/* ── Buttons ── */
+.btn {
+  width: 100%;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+  transition: all .2s;
+  letter-spacing: -0.01em;
+  position: relative;
+}
+.btn-lookup {
+  background: var(--purple);
+  color: #fff;
+  margin-top: 6px;
+  box-shadow: 0 4px 16px rgba(118,17,131,0.3);
+}
+.btn-lookup:hover { background: var(--purple-deep); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(118,17,131,0.4); }
+.btn-submit {
+  background: var(--purple);
+  color: #fff;
+  margin-top: 10px;
+  box-shadow: 0 4px 16px rgba(118,17,131,0.3);
+}
+.btn-submit:hover { background: var(--purple-deep); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(118,17,131,0.4); }
+.btn:disabled { background: #d4cad8; box-shadow: none; cursor: not-allowed; transform: none; }
+
+/* ── Host confirm ── */
+.host-confirm {
+  display: none;
+  background: var(--purple-tint);
+  border: 1.5px solid var(--purple-border);
+  border-left: 4px solid var(--purple);
+  border-radius: 16px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  display: none;
+  align-items: center;
+  gap: 14px;
+}
+.host-avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--purple);
+  background-image: radial-gradient(circle at 35% 35%, var(--purple-mid), var(--purple-deep));
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 800; color: #fff;
+  box-shadow: 0 2px 8px rgba(118,17,131,0.25);
+}
+.host-confirm-info { flex: 1; min-width: 0; }
+.host-confirm-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--purple);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.host-confirm-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--purple-deep);
+  line-height: 1.2;
+}
+.host-confirm-sub {
+  font-size: 12px;
+  color: var(--ink-muted);
+  margin-top: 3px;
+}
+
+.host-confirm-warn {
+  display: none;
+  background: #fff5f5;
+  border: 1.5px solid #fecdd3;
+  border-radius: 14px;
+  padding: 13px 16px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #9f1239;
+  line-height: 1.6;
+}
+
+/* ── Step 2 ── */
+.step2 { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+
+/* ── Recipients ── */
+.recipients { display: flex; gap: 10px; margin-bottom: 22px; }
+.recipient {
+  flex: 1;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  padding: 13px 14px;
+  box-shadow: var(--shadow-sm);
+}
+.recipient-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--purple);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px;
+}
+.recipient-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+.recipient-role { font-size: 11px; color: var(--ink-muted); margin-top: 2px; }
+
+/* ── Result ── */
+.result-box {
+  display: none;
+  border-radius: 14px;
+  padding: 18px 20px;
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.65;
+}
+.result-box.success {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  color: #166534;
+}
+.result-box.error {
+  background: #fff5f5;
+  border: 1.5px solid #fecdd3;
+  color: #9f1239;
+}
+
+/* ── Back link ── */
+.back-link {
+  display: block;
+  text-align: center;
+  margin-top: 22px;
+  font-size: 13px;
+  color: var(--ink-muted);
+  text-decoration: none;
+  transition: color .15s;
+}
+.back-link:hover { color: var(--purple); }
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  width: 14px; height: 14px;
+  border: 2px solid rgba(255,255,255,0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+  margin-right: 7px;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
 @media(max-width:480px){
-  .card-body{padding:20px}
-  .card-header{padding:22px 20px}
-  .recipients{flex-direction:column}
+  .card-body { padding: 24px 22px 28px; }
+  .card-header { padding: 26px 22px 22px; }
+  .recipients { flex-direction: column; }
+  .card-header h1 { font-size: 24px; }
 }
 </style>
 </head>
@@ -70,22 +337,25 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f7;color:#1d1d1f;min-
       위급 상황이라면 먼저 <strong>119(소방/응급)</strong> 또는 <strong>112(경찰)</strong>에 신고해 주세요.
     </div>
 
-    <!-- Step 1: 전화번호 입력 및 본인 확인 -->
+    <!-- Step 1 -->
     <div id="step1">
       <div class="form-group">
         <label class="form-label" for="hostPhone">호스트 연락처</label>
         <input class="form-input" id="hostPhone" type="tel" placeholder="010-0000-0000" inputmode="tel" autocomplete="tel">
       </div>
       <div class="host-confirm" id="hostConfirm">
-        <div class="host-confirm-label">등록된 호스트 정보</div>
-        <div class="host-confirm-name" id="confirmedName"></div>
-        <div class="host-confirm-sub" id="confirmedSub"></div>
+        <div class="host-avatar" id="hostAvatar">?</div>
+        <div class="host-confirm-info">
+          <div class="host-confirm-label">등록된 호스트 정보</div>
+          <div class="host-confirm-name" id="confirmedName"></div>
+          <div class="host-confirm-sub" id="confirmedSub"></div>
+        </div>
       </div>
       <div class="host-confirm-warn" id="hostWarn"></div>
       <button type="button" class="btn btn-lookup" id="btnLookup">본인 확인</button>
     </div>
 
-    <!-- Step 2: 상황 입력 및 전송 -->
+    <!-- Step 2 -->
     <div class="step2" id="step2">
       <div class="recipients">
         <div class="recipient">
@@ -116,11 +386,9 @@ body{font-family:'Noto Sans KR',sans-serif;background:#f5f5f7;color:#1d1d1f;min-
 var confirmedHostName = '';
 var confirmedHostPhone = '';
 
-// 전화번호 입력 시 자동으로 본인 확인 (입력 완료 감지)
 var phoneInput = document.getElementById('hostPhone');
 var lookupTimer = null;
 phoneInput.addEventListener('input', function() {
-  // 하이픈 자동 포맷
   var digits = this.value.replace(/[^0-9]/g, '');
   var formatted = '';
   if (digits.length <= 3) {
@@ -144,7 +412,6 @@ phoneInput.addEventListener('input', function() {
 
 document.getElementById('btnLookup').addEventListener('click', doLookup);
 
-// 엔터키로도 조회
 phoneInput.addEventListener('keydown', function(e) {
   if (e.key === 'Enter') { e.preventDefault(); doLookup(); }
 });
@@ -169,7 +436,10 @@ async function doLookup() {
       confirmedHostPhone = json.host.phone;
       document.getElementById('confirmedName').textContent = json.host.name;
       document.getElementById('confirmedSub').textContent  = json.host.address || '';
-      document.getElementById('hostConfirm').style.display = 'block';
+      // 아바타에 이름 첫 글자
+      var initial = json.host.name ? json.host.name.charAt(0) : '?';
+      document.getElementById('hostAvatar').textContent = initial;
+      document.getElementById('hostConfirm').style.display = 'flex';
       document.getElementById('step2').style.display = 'block';
       document.getElementById('situation').focus();
     } else {
@@ -194,7 +464,6 @@ function resetConfirm() {
   confirmedHostPhone = '';
 }
 
-// 전송
 document.getElementById('submitBtn').addEventListener('click', async function() {
   var situation = document.getElementById('situation').value.trim();
   if (!situation) { document.getElementById('situation').focus(); return; }
