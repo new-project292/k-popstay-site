@@ -34,6 +34,9 @@ RewriteRule ^guest-guidebook/?$ /guest-guidebook.html [L]
 # /emergency-contact -> emergency-contact.html
 RewriteRule ^emergency-contact/?$ /emergency-contact.html [L]
 
+# /guest-emergency -> guest-emergency.html
+RewriteRule ^guest-emergency/?$ /guest-emergency.html [L]
+
 # 업로드 파일: PHP 실행 차단 (이미지/PDF만 허용)
 <FilesMatch "\.php$">
   <If "%{REQUEST_URI} =~ m|^/uploads/|">
