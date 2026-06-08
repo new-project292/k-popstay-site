@@ -120,9 +120,22 @@ var confirmedHostPhone = '';
 var phoneInput = document.getElementById('hostPhone');
 var lookupTimer = null;
 phoneInput.addEventListener('input', function() {
+  // 하이픈 자동 포맷
+  var digits = this.value.replace(/[^0-9]/g, '');
+  var formatted = '';
+  if (digits.length <= 3) {
+    formatted = digits;
+  } else if (digits.length <= 7) {
+    formatted = digits.slice(0,3) + '-' + digits.slice(3);
+  } else if (digits.length <= 11) {
+    formatted = digits.slice(0,3) + '-' + digits.slice(3,7) + '-' + digits.slice(7);
+  } else {
+    formatted = digits.slice(0,3) + '-' + digits.slice(3,7) + '-' + digits.slice(7,11);
+  }
+  this.value = formatted;
+
   clearTimeout(lookupTimer);
-  var val = this.value.replace(/[^0-9]/g, '');
-  if (val.length >= 10) {
+  if (digits.length >= 10) {
     lookupTimer = setTimeout(doLookup, 600);
   } else {
     resetConfirm();
