@@ -39,7 +39,7 @@ if ($action === 'lookup') {
     try {
         $pdo = get_pdo();
         $stmt = $pdo->prepare("
-            SELECT guest_name, email, nationality, check_in, check_out
+            SELECT guest_name, email, phone, nationality, check_in, check_out
             FROM kpopstay_guests
             WHERE LOWER(email) = LOWER(?)
             ORDER BY created_at DESC LIMIT 1
@@ -58,6 +58,7 @@ if ($action === 'lookup') {
                 'guest' => [
                     'name'        => $guest['guest_name'],
                     'email'       => $guest['email'],
+                    'phone'       => $guest['phone'] ?? '',
                     'nationality' => $sub,
                 ],
             ]);
@@ -74,6 +75,7 @@ if ($action === 'lookup') {
 // ── 긴급 요청 전송 ───────────────────────────────────────────
 $guestName  = clean($body['guestName']  ?? '');
 $guestEmail = clean($body['guestEmail'] ?? '');
+$guestPhone = clean($body['guestPhone'] ?? '');
 $situation  = clean($body['situation']  ?? '');
 
 if (!$guestName || !$guestEmail || !$situation) {
@@ -88,7 +90,8 @@ $recipients = [
 ];
 
 $now = date('m/d H:i');
-$msg = "[K-POPSTAY 게스트긴급] {$now}\n게스트: {$guestName} ({$guestEmail})\n상황: {$situation}";
+$contact_line = $guestEmail . ($guestPhone ? " / {$guestPhone}" : '');
+$msg = "[K-POPSTAY 게스트긴급] {$now}\n게스트: {$guestName}\n연락처: {$contact_line}\n상황: {$situation}";
 
 // NHN Toast SMS API
 $sms_appkey = 'RxJXel5A8F25a6UO';

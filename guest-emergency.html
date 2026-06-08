@@ -372,6 +372,7 @@ body {
 <script>
 var confirmedGuestName = '';
 var confirmedGuestEmail = '';
+var confirmedGuestPhone = '';
 
 var emailInput = document.getElementById('guestEmail');
 var lookupTimer = null;
@@ -410,6 +411,7 @@ async function doLookup() {
     if (json.ok && json.guest) {
       confirmedGuestName  = json.guest.name;
       confirmedGuestEmail = json.guest.email;
+      confirmedGuestPhone = json.guest.phone || '';
       document.getElementById('confirmedName').textContent = json.guest.name;
       document.getElementById('confirmedSub').textContent  = json.guest.nationality || '';
       var initial = json.guest.name ? json.guest.name.charAt(0) : '?';
@@ -437,6 +439,7 @@ function resetConfirm() {
   document.getElementById('step2').style.display = 'none';
   confirmedGuestName = '';
   confirmedGuestEmail = '';
+  confirmedGuestPhone = '';
 }
 
 document.getElementById('submitBtn').addEventListener('click', async function() {
@@ -454,10 +457,11 @@ document.getElementById('submitBtn').addEventListener('click', async function() 
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
-        action:     'send',
-        guestName:  confirmedGuestName,
-        guestEmail: confirmedGuestEmail,
-        situation:  situation,
+        action:      'send',
+        guestName:   confirmedGuestName,
+        guestEmail:  confirmedGuestEmail,
+        guestPhone:  confirmedGuestPhone,
+        situation:   situation,
       })
     });
     var json = await res.json();
