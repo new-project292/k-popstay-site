@@ -321,7 +321,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 .gallery-empty-cta{text-align:center}
 .gallery-empty-cta p{font-size:.95rem;color:var(--text-500);margin-bottom:16px;line-height:1.6}
 .gallery-empty-cta strong{color:var(--purple)}
-@media(max-width:560px){.gallery-empty-grid{grid-template-columns:1fr;max-width:340px}}
+@media(max-width:560px){
+  /* 모바일: 카드 그리드 숨기고 심플하게 */
+  .gallery-empty-grid{display:none}
+  .gallery-empty-cta p{font-size:.875rem}
+}
 .gallery-loading{display:flex;justify-content:center;padding:48px;gap:8px}
 .gallery-loading span{width:10px;height:10px;border-radius:50%;background:var(--purple);
   animation:bounce2 1.2s ease-in-out infinite}
