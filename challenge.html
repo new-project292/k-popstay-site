@@ -208,7 +208,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 
 /* 사진 업로드 드롭존 */
 .photo-dropzone{
-  border:2px dashed var(--border);border-radius:12px;padding:32px 20px;
+  border:2px dashed var(--border);border-radius:12px;padding:28px 20px;
   text-align:center;cursor:pointer;transition:border-color .2s,background .2s;
   position:relative;background:#fff;
 }
@@ -220,21 +220,35 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 }
 .photo-dropzone-icon{
   width:44px;height:44px;border-radius:12px;background:var(--purple-xlight);
-  display:flex;align-items:center;justify-content:center;margin:0 auto 12px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto 10px;
 }
-.photo-dropzone p{font-size:.85rem;color:var(--text-500);line-height:1.6}
+.photo-dropzone p{font-size:.85rem;color:var(--text-500);line-height:1.5;margin-bottom:4px}
 .photo-dropzone strong{color:var(--purple)}
 .photo-dropzone small{font-size:.75rem;color:var(--text-300)}
-.photo-preview{
-  position:relative;margin-bottom:16px;border-radius:12px;overflow:hidden;
-  border:1.5px solid var(--border);
+/* 다중 미리보기 그리드 */
+.photo-preview-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:10px;
 }
-.photo-preview img{width:100%;display:block;max-height:280px;object-fit:cover}
+.photo-preview-item{
+  position:relative;aspect-ratio:1;border-radius:10px;overflow:hidden;
+  border:1.5px solid var(--border);background:var(--bg);
+}
+.photo-preview-item img{width:100%;height:100%;object-fit:cover;display:block}
 .photo-preview-remove{
-  position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;
-  background:rgba(0,0,0,.55);border:none;color:#fff;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;font-size:.8rem;
+  position:absolute;top:4px;right:4px;width:22px;height:22px;border-radius:50%;
+  background:rgba(0,0,0,.6);border:none;color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
 }
+/* 추가 버튼 (그리드 마지막 셀) */
+.photo-add-btn{
+  aspect-ratio:1;border-radius:10px;border:2px dashed var(--border);
+  background:#fff;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;gap:4px;cursor:pointer;transition:border-color .2s,background .2s;
+  position:relative;
+}
+.photo-add-btn:hover{border-color:var(--purple);background:var(--purple-xlight)}
+.photo-add-btn input[type=file]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+.photo-add-btn span{font-size:.72rem;color:var(--text-300);font-weight:600}
 @media(max-width:520px){.modal-body{padding:16px 20px 24px}}
 
 /* FORM (모달 내부 공용) */
@@ -347,9 +361,29 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
   transition:box-shadow .25s,transform .25s;
 }
 .upload-item:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
-.upload-item-img{
-  width:100%;aspect-ratio:1;object-fit:cover;display:block;background:var(--bg);
+/* 사진 슬라이더 */
+.upload-slider{position:relative;overflow:hidden;aspect-ratio:1;background:var(--bg)}
+.upload-slider-track{display:flex;height:100%;transition:transform .3s ease}
+.upload-slider-track img{
+  flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block;
 }
+.upload-slider-prev,.upload-slider-next{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:28px;height:28px;border-radius:50%;
+  background:rgba(0,0,0,.45);border:none;color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;z-index:2;
+}
+.upload-slider-prev{left:6px}
+.upload-slider-next{right:6px}
+.upload-slider-dots{
+  position:absolute;bottom:6px;left:50%;transform:translateX(-50%);
+  display:flex;gap:4px;
+}
+.upload-slider-dot{
+  width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.5);
+  transition:background .2s;
+}
+.upload-slider-dot.active{background:#fff}
 .upload-item-body{padding:14px 16px 16px}
 .upload-item-name{font-size:.8rem;font-weight:700;color:var(--purple);margin-bottom:4px;
   display:flex;align-items:center;gap:6px;}
@@ -607,22 +641,19 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       <div class="modal-tab-panel" id="tabUpload">
         <p class="sub">No Instagram? Upload your photo directly — Hangul art, stay memories, Busan moments, anything!</p>
         <form id="submitFormUpload" onsubmit="submitPost(event,'upload')">
-          <!-- 사진 드롭존 -->
+          <!-- 사진 드롭존 (다중) -->
           <div class="form-group">
-            <label>Photo <span style="color:#dc2626">*</span></label>
-            <div id="photoPreview" class="photo-preview" style="display:none">
-              <img id="photoPreviewImg" src="" alt="preview">
-              <button type="button" class="photo-preview-remove" onclick="removePhoto()">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              </button>
-            </div>
+            <label>Photos <span style="color:#dc2626">*</span> <span style="font-weight:400;color:var(--text-300);font-size:.78rem">up to 5 photos</span></label>
+            <!-- 미리보기 그리드 (JS로 채움) -->
+            <div class="photo-preview-grid" id="photoPreviewGrid" style="display:none"></div>
+            <!-- 초기 드롭존 -->
             <div class="photo-dropzone" id="photoDropzone">
-              <input type="file" id="photoFile" name="photo" accept="image/*" onchange="onPhotoSelect(this)">
+              <input type="file" id="photoFile" name="photos[]" accept="image/*" multiple onchange="onPhotosSelect(this)">
               <div class="photo-dropzone-icon">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
               </div>
-              <p><strong>Tap to choose a photo</strong></p>
-              <small>JPG, PNG, WEBP, GIF &mdash; max 10MB</small>
+              <p><strong>Tap to choose photos</strong></p>
+              <small>Up to 5 photos &middot; JPG, PNG, WEBP, GIF &middot; max 10MB each</small>
             </div>
           </div>
           <div class="form-group">
@@ -812,21 +843,65 @@ function switchTab(tab){
   document.getElementById('submitMsg').style.display='none';
 }
 
-// 사진 미리보기
-function onPhotoSelect(input){
-  if(!input.files||!input.files[0]) return;
-  var reader=new FileReader();
-  reader.onload=function(e){
-    document.getElementById('photoPreviewImg').src=e.target.result;
-    document.getElementById('photoPreview').style.display='block';
-    document.getElementById('photoDropzone').style.display='none';
-  };
-  reader.readAsDataURL(input.files[0]);
+// 다중 사진 관리
+var selectedFiles=[];
+var MAX_PHOTOS=5;
+
+function onPhotosSelect(input){
+  if(!input.files||!input.files.length) return;
+  var newFiles=Array.from(input.files);
+  // 최대 5개 제한
+  newFiles.forEach(function(f){
+    if(selectedFiles.length<MAX_PHOTOS) selectedFiles.push(f);
+  });
+  input.value=''; // input 초기화 (같은 파일 재선택 허용)
+  renderPhotoPreview();
 }
-function removePhoto(){
-  document.getElementById('photoFile').value='';
-  document.getElementById('photoPreview').style.display='none';
-  document.getElementById('photoDropzone').style.display='block';
+
+function removePhotoAt(idx){
+  selectedFiles.splice(idx,1);
+  renderPhotoPreview();
+}
+
+function renderPhotoPreview(){
+  var grid=document.getElementById('photoPreviewGrid');
+  var dropzone=document.getElementById('photoDropzone');
+  grid.innerHTML='';
+
+  if(!selectedFiles.length){
+    grid.style.display='none';
+    dropzone.style.display='block';
+    return;
+  }
+
+  grid.style.display='grid';
+  dropzone.style.display='none';
+
+  selectedFiles.forEach(function(f,i){
+    var item=document.createElement('div');
+    item.className='photo-preview-item';
+    var img=document.createElement('img');
+    img.alt='preview '+i;
+    var reader=new FileReader();
+    reader.onload=function(e){ img.src=e.target.result; };
+    reader.readAsDataURL(f);
+    var rmBtn=document.createElement('button');
+    rmBtn.type='button';
+    rmBtn.className='photo-preview-remove';
+    rmBtn.innerHTML='<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+    (function(idx){ rmBtn.onclick=function(){ removePhotoAt(idx); }; })(i);
+    item.appendChild(img);
+    item.appendChild(rmBtn);
+    grid.appendChild(item);
+  });
+
+  // 아직 5개 미만이면 + 추가 버튼
+  if(selectedFiles.length<MAX_PHOTOS){
+    var addBtn=document.createElement('div');
+    addBtn.className='photo-add-btn';
+    addBtn.innerHTML='<input type="file" accept="image/*" multiple onchange="onPhotosSelect(this)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--text-300)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg><span>Add</span>';
+    grid.appendChild(addBtn);
+  }
 }
 
 // 모달
@@ -870,6 +945,21 @@ var obs=new IntersectionObserver(function(entries){
 },{threshold:.1});
 fades.forEach(function(el){obs.observe(el)});
 
+// 업로드 슬라이더
+function sliderMove(btn, dir){
+  var slider=btn.closest('.upload-slider');
+  var track=slider.querySelector('.upload-slider-track');
+  var imgs=track.querySelectorAll('img');
+  var total=imgs.length;
+  var cur=parseInt(slider.getAttribute('data-idx')||'0');
+  var next=(cur+dir+total)%total;
+  slider.setAttribute('data-idx', next);
+  track.style.transform='translateX(-'+next+'00%)';
+  slider.querySelectorAll('.upload-slider-dot').forEach(function(d,i){
+    d.classList.toggle('active',i===next);
+  });
+}
+
 // XSS 방지용 이스케이프
 function escHtml(s){
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
@@ -898,8 +988,28 @@ function loadGallery(){
         var item=document.createElement('div');
 
         if(p.post_type==='upload'){
-          // 직접 업로드 카드
           item.className='upload-item';
+          // 사진 목록 (photos JSON 우선, 없으면 photo_path 단일)
+          var photos=[];
+          try{ if(p.photos) photos=JSON.parse(p.photos); } catch(e){}
+          if(!photos.length && p.photo_path) photos=[p.photo_path];
+
+          // 슬라이더 HTML
+          var sliderHtml='<div class="upload-slider" data-idx="0">';
+          sliderHtml+='<div class="upload-slider-track">';
+          photos.forEach(function(src){
+            sliderHtml+='<img src="'+escHtml(src)+'" alt="photo" loading="lazy">';
+          });
+          sliderHtml+='</div>';
+          if(photos.length>1){
+            sliderHtml+='<button type="button" class="upload-slider-prev" onclick="sliderMove(this,-1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
+            sliderHtml+='<button type="button" class="upload-slider-next" onclick="sliderMove(this,1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>';
+            sliderHtml+='<div class="upload-slider-dots">';
+            photos.forEach(function(_,i){ sliderHtml+='<div class="upload-slider-dot'+(i===0?' active':'')+'"></div>'; });
+            sliderHtml+='</div>';
+          }
+          sliderHtml+='</div>';
+
           var bodyHtml='';
           if(p.submitter_name||p.caption||p.submitter_note){
             bodyHtml='<div class="upload-item-body">';
@@ -908,7 +1018,7 @@ function loadGallery(){
             else if(p.submitter_note) bodyHtml+='<div class="upload-item-caption">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
             bodyHtml+='</div>';
           }
-          item.innerHTML='<img class="upload-item-img" src="'+escHtml(p.photo_path)+'" alt="'+escHtml(p.submitter_name||'K-POPSTAY post')+'" loading="lazy">'+bodyHtml;
+          item.innerHTML=sliderHtml+bodyHtml;
         } else {
           // 인스타그램 embed 카드
           item.className='insta-item';
@@ -961,9 +1071,8 @@ function submitPost(e, type){
     fd.append('submitter_email', document.getElementById('subEmail').value.trim());
     fd.append('submitter_note', document.getElementById('subNote').value.trim());
   } else {
-    var file=document.getElementById('photoFile').files[0];
-    if(!file){ showMsg('err','Please select a photo.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
-    fd.append('photo', file);
+    if(!selectedFiles.length){ showMsg('err','Please select at least one photo.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
+    selectedFiles.forEach(function(f){ fd.append('photos[]', f); });
     fd.append('caption', document.getElementById('uploadCaption').value.trim());
     fd.append('submitter_name', document.getElementById('uploadName').value.trim());
     fd.append('submitter_email', document.getElementById('uploadEmail').value.trim());
@@ -976,7 +1085,7 @@ function submitPost(e, type){
       showMsg(d.ok?'ok':'err', d.msg||(d.ok?'Submitted!':'Submission failed.'));
       if(d.ok){
         if(type==='instagram') document.getElementById('submitFormInsta').reset();
-        else { document.getElementById('submitFormUpload').reset(); removePhoto(); }
+        else { document.getElementById('submitFormUpload').reset(); selectedFiles=[]; renderPhotoPreview(); }
         setTimeout(closeModal, 2000);
       }
     })
