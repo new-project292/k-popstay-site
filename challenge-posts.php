@@ -1,5 +1,4 @@
 <?php
-// 인스타그램 챌린지 게시물 목록 API (승인된 것만 반환)
 header('Content-Type: application/json; charset=utf-8');
 header('Access-Control-Allow-Origin: *');
 
@@ -15,7 +14,8 @@ $pdo = new PDO(
 );
 
 $rows = $pdo->query("
-    SELECT id, shortcode, submitter_name, submitter_note, display_order, approved_at
+    SELECT id, post_type, shortcode, photo_path, caption,
+           submitter_name, submitter_note, display_order, approved_at
     FROM kpopstay_challenge_posts
     WHERE status = 'approved'
     ORDER BY display_order DESC, approved_at DESC

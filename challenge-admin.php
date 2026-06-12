@@ -42,7 +42,7 @@ if ($authed) {
 
     $tab    = $_GET['tab'] ?? 'pending';
     $status = in_array($tab, ['pending','approved','rejected']) ? $tab : 'pending';
-    $posts  = $pdo->prepare("SELECT * FROM kpopstay_challenge_posts WHERE status=? ORDER BY created_at DESC LIMIT 500");
+    $posts  = $pdo->prepare("SELECT id, post_type, shortcode, photo_path, caption, submitter_name, submitter_email, submitter_note, status, created_at FROM kpopstay_challenge_posts WHERE status=? ORDER BY created_at DESC LIMIT 500");
     $posts->execute([$status]);
     $posts = $posts->fetchAll(PDO::FETCH_ASSOC);
 
@@ -71,6 +71,10 @@ h1{color:#761183;margin-bottom:20px}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px}
 .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.06)}
 .card-thumb{width:100%;aspect-ratio:1;border:none;display:block}
+.card-thumb-img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+.card-type{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:6px;margin-bottom:6px}
+.card-type-insta{background:#fce7f3;color:#be185d}
+.card-type-upload{background:#ede9fe;color:#6d28d9}
 .card-body{padding:14px}
 .card-meta{font-size:.78rem;color:#888;margin-bottom:10px;line-height:1.6}
 .card-actions{display:flex;gap:6px;flex-wrap:wrap}
@@ -100,15 +104,23 @@ h1{color:#761183;margin-bottom:20px}
 <div class="grid">
 <?php foreach ($posts as $p): ?>
 <div class="card">
-  <iframe class="card-thumb"
-    src="https://www.instagram.com/p/<?= htmlspecialchars($p['shortcode']) ?>/embed/captioned/"
-    frameborder="0" scrolling="no" allowtransparency="true"
-    loading="lazy"></iframe>
+  <?php if ($p['post_type'] === 'upload'): ?>
+    <img class="card-thumb-img" src="<?= htmlspecialchars($p['photo_path']) ?>" alt="upload">
+  <?php else: ?>
+    <iframe class="card-thumb"
+      src="https://www.instagram.com/p/<?= htmlspecialchars($p['shortcode'] ?? '') ?>/embed/captioned/"
+      frameborder="0" scrolling="no" allowtransparency="true"
+      loading="lazy"></iframe>
+  <?php endif; ?>
   <div class="card-body">
     <div class="card-meta">
-      #<?= $p['id'] ?> &middot; <?= htmlspecialchars($p['shortcode']) ?><br>
+      <span class="card-type <?= $p['post_type']==='upload' ? 'card-type-upload' : 'card-type-insta' ?>">
+        <?= $p['post_type']==='upload' ? 'Upload' : 'Instagram' ?>
+      </span><br>
+      #<?= $p['id'] ?><?= $p['shortcode'] ? ' &middot; '.$p['shortcode'] : '' ?><br>
       <?= $p['submitter_name'] ? htmlspecialchars($p['submitter_name']) . ' &middot; ' : '' ?>
       <?= $p['submitter_email'] ? htmlspecialchars($p['submitter_email']) . '<br>' : '' ?>
+      <?= $p['caption'] ? '<em>' . htmlspecialchars($p['caption']) . '</em><br>' : '' ?>
       <?= $p['submitter_note'] ? '<em>' . htmlspecialchars($p['submitter_note']) . '</em><br>' : '' ?>
       제출: <?= $p['created_at'] ?>
     </div>
