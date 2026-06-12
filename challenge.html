@@ -589,9 +589,6 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   .nav-hamburger{display:flex}
   .submit-card{padding:24px}
 }
-@media(max-width:640px){
-  #jjimjilbang-cards{grid-template-columns:1fr !important}
-}
 </style>
 </head>
 <body>
@@ -899,70 +896,25 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
 <div class="toast" id="toast"></div>
 
 <!-- JJIMJILBANG EVENT -->
-<section style="background:#fff;border-top:1px solid var(--border);padding:72px 24px">
-  <div style="max-width:860px;margin:0 auto">
-    <div class="fade-up" style="text-align:center;margin-bottom:40px">
-      <div style="display:inline-flex;background:var(--purple-xlight);color:var(--purple);
-        font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
-        padding:4px 12px;border-radius:6px;margin-bottom:14px">
-        Bonus Event
+<section style="background:#fff;border-top:1px solid var(--border);padding:48px 24px">
+  <div style="max-width:680px;margin:0 auto">
+    <a href="https://www.wehome.me/Jjimjilbang" target="_blank" rel="noopener" class="fade-up"
+      style="display:flex;align-items:center;gap:20px;background:var(--purple-xlight);
+        border:1.5px solid var(--purple-light);border-radius:18px;padding:24px 28px;
+        text-decoration:none;transition:box-shadow .2s"
+      onmouseover="this.style.boxShadow='0 8px 32px rgba(118,17,131,.12)'"
+      onmouseout="this.style.boxShadow='none'">
+      <div style="width:48px;height:48px;min-width:48px;border-radius:14px;
+        background:var(--purple);display:flex;align-items:center;justify-content:center">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
       </div>
-      <h2 style="font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--text-900);
-        letter-spacing:-.03em;margin-bottom:10px">
-        Jjimjilbang Treasure Hunt
-      </h2>
-      <p style="font-size:.9rem;color:var(--text-500);line-height:1.7;max-width:560px;margin:0 auto">
-        A special private event for K-POPSTAY ARMY guests at Bally Aqua Land — find hidden gifts in the lockers and complete the Hangul wall challenge!
-      </p>
-    </div>
-
-    <!-- 3단 카드 -->
-    <div id="jjimjilbang-cards" class="fade-up" style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:32px">
-      <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center">
-        <div style="width:44px;height:44px;border-radius:12px;background:var(--purple-xlight);
-          display:flex;align-items:center;justify-content:center;margin:0 auto 14px">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg>
-        </div>
-        <div style="font-size:.88rem;font-weight:700;color:var(--text-900);margin-bottom:8px">Find the Botari</div>
-        <div style="font-size:.8rem;color:var(--text-500);line-height:1.65">Check women's lockers for a hidden <em style="color:var(--purple);font-style:normal;font-weight:600">Borahae Hangul Kit</em> or <em style="color:var(--purple);font-style:normal;font-weight:600">Wehome Gift Botari</em> — first come, first served!</div>
+      <div style="flex:1">
+        <div style="font-size:.72rem;font-weight:700;color:var(--purple);letter-spacing:.08em;text-transform:uppercase;margin-bottom:4px">Bonus Event</div>
+        <div style="font-size:1rem;font-weight:800;color:var(--text-900);letter-spacing:-.02em;margin-bottom:4px">Jjimjilbang Treasure Hunt</div>
+        <div style="font-size:.82rem;color:var(--text-500);line-height:1.6">Find hidden Borahae gifts in Bally Aqua Land lockers &amp; complete the Hangul wall challenge — K-POPSTAY guests only.</div>
       </div>
-      <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center">
-        <div style="width:44px;height:44px;border-radius:12px;background:var(--purple-xlight);
-          display:flex;align-items:center;justify-content:center;margin:0 auto 14px">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
-        <div style="font-size:.88rem;font-weight:700;color:var(--text-900);margin-bottom:8px">Hangul Wall Challenge</div>
-        <div style="font-size:.8rem;color:var(--text-500);line-height:1.65">Spell your name or message on the designated wall using Hangul stickers. Get your treasure map after completing the mission!</div>
-      </div>
-      <div style="background:var(--bg);border:1.5px solid var(--border);border-radius:14px;padding:24px 20px;text-align:center">
-        <div style="width:44px;height:44px;border-radius:12px;background:var(--purple-xlight);
-          display:flex;align-items:center;justify-content:center;margin:0 auto 14px">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-        </div>
-        <div style="font-size:.88rem;font-weight:700;color:var(--text-900);margin-bottom:8px">Share &amp; Win</div>
-        <div style="font-size:.8rem;color:var(--text-500);line-height:1.65">Upload your wall art to this gallery! Share the moment with ARMY worldwide and make it part of the K-POPSTAY memory.</div>
-      </div>
-    </div>
-
-    <!-- 배지 + 링크 -->
-    <div class="fade-up" style="background:var(--purple-xlight);border:1.5px solid var(--purple-light);border-radius:16px;padding:24px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap">
-      <div>
-        <div style="font-size:.75rem;font-weight:700;color:var(--purple);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px">Location</div>
-        <div style="font-size:1rem;font-weight:800;color:var(--text-900);letter-spacing:-.02em">Bally Aqua Land, Busan</div>
-        <div style="font-size:.82rem;color:var(--text-500);margin-top:3px">Jun 12–13 · Women-Only Floor · K-POPSTAY Guests Only</div>
-        <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
-          <span style="background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:6px">Borahae Hangul Kit × 8–9</span>
-          <span style="background:var(--purple);color:#fff;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:6px">Wehome Gift Botari × 2</span>
-        </div>
-      </div>
-      <a href="https://www.wehome.me/Jjimjilbang" target="_blank" rel="noopener"
-        style="display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;
-          font-size:.9rem;font-weight:700;padding:12px 22px;border-radius:10px;
-          text-decoration:none;white-space:nowrap;flex-shrink:0">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        View Event Details
-      </a>
-    </div>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><polyline points="9 18 15 12 9 6"/></svg>
+    </a>
   </div>
 </section>
 
