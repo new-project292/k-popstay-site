@@ -130,6 +130,42 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
   .poster-item:last-child{margin-right:calc(28vw - 10px)}
 }
 
+/* 이벤트 정보 카드 */
+.poster-event-card{
+  margin-top:12px;background:#fff;border:1.5px solid var(--border);
+  border-radius:14px;padding:18px 20px;
+}
+.poster-event-title{
+  font-size:.78rem;font-weight:700;color:var(--purple);
+  display:flex;align-items:center;gap:6px;margin-bottom:14px;
+  letter-spacing:-.01em;
+}
+.poster-event-steps{display:flex;flex-direction:column;gap:12px;margin-bottom:14px}
+.poster-event-step{display:flex;align-items:flex-start;gap:10px}
+.poster-event-num{
+  width:22px;height:22px;min-width:22px;border-radius:50%;
+  background:var(--purple);color:#fff;font-size:.72rem;font-weight:800;
+  display:flex;align-items:center;justify-content:center;margin-top:1px;
+}
+.poster-event-step strong{display:block;font-size:.83rem;font-weight:700;color:var(--text-900);margin-bottom:2px}
+.poster-event-step p{font-size:.78rem;color:var(--text-500);line-height:1.6;margin:0}
+.poster-event-step em{font-style:normal;color:var(--purple);font-weight:600}
+.poster-event-prizes{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+  padding-top:12px;border-top:1px solid var(--border);
+  font-size:.75rem;color:var(--text-300);font-weight:600;
+}
+.poster-prize-tag{
+  background:var(--purple-xlight);color:var(--purple);
+  border-radius:6px;padding:2px 8px;font-size:.72rem;font-weight:700;
+}
+.poster-hashtag-btn{
+  background:none;border:none;color:var(--purple);font-weight:700;
+  font-size:.78rem;cursor:pointer;padding:0;font-family:inherit;
+  text-decoration:underline;text-underline-offset:2px;
+}
+@media(max-width:640px){.poster-event-card{margin-top:10px}}
+
 /* 슬라이더 스크롤 힌트 텍스트 */
 .poster-scroll-hint{
   display:none;text-align:center;margin-top:10px;
@@ -637,6 +673,41 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
           </div>
         </div>
         <p class="poster-scroll-hint">← swipe to see more →</p>
+        <!-- 이벤트 정보 카드 -->
+        <div class="poster-event-card">
+          <div class="poster-event-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Bally Aqua Land · Jun 12–13, 10PM
+          </div>
+          <div class="poster-event-steps">
+            <div class="poster-event-step">
+              <div class="poster-event-num">1</div>
+              <div>
+                <strong>Find the Botari</strong>
+                <p>After 10PM, check women's lockers — find a <em>Borahae Hangul Kit</em> or <em>Wehome Gift Botari</em> and it's yours!</p>
+              </div>
+            </div>
+            <div class="poster-event-step">
+              <div class="poster-event-num">2</div>
+              <div>
+                <strong>Hangul Wall Challenge</strong>
+                <p>Use the stickers to spell your name or a message on the designated wall in the aqua land.</p>
+              </div>
+            </div>
+            <div class="poster-event-step">
+              <div class="poster-event-num">3</div>
+              <div>
+                <strong>Share &amp; Upload</strong>
+                <p>Post your creation on Instagram with <button onclick="copyHashtag('#KPOPSTAYBusan')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>, then submit it to this gallery!</p>
+              </div>
+            </div>
+          </div>
+          <div class="poster-event-prizes">
+            <span>Prizes:</span>
+            <span class="poster-prize-tag">Borahae Hangul Kit × 8–9</span>
+            <span class="poster-prize-tag">Wehome Gift Botari × 2</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
