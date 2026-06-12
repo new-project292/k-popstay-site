@@ -322,9 +322,16 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 .gallery-empty-cta p{font-size:.95rem;color:var(--text-500);margin-bottom:16px;line-height:1.6}
 .gallery-empty-cta strong{color:var(--purple)}
 @media(max-width:560px){
-  /* 모바일: 카드 그리드 숨기고 심플하게 */
-  .gallery-empty-grid{display:none}
-  .gallery-empty-cta p{font-size:.875rem}
+  /* 모바일: 카드를 가로 레이아웃으로 컴팩트하게 */
+  .gallery-empty-grid{
+    grid-template-columns:1fr;max-width:none;gap:8px;margin-bottom:20px;
+  }
+  .gallery-empty-card{
+    flex-direction:row;text-align:left;padding:14px 16px;gap:14px;
+  }
+  .gallery-empty-icon{width:36px;height:36px;min-width:36px;border-radius:10px}
+  .gallery-empty-card h4{font-size:.85rem;margin-bottom:2px}
+  .gallery-empty-card p{font-size:.75rem}
 }
 .gallery-loading{display:flex;justify-content:center;padding:48px;gap:8px}
 .gallery-loading span{width:10px;height:10px;border-radius:50%;background:var(--purple);
@@ -573,9 +580,6 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       </div>
       <div class="gallery-empty-cta">
         <p>Be the <strong>first ARMY</strong> to leave a memory here.<br>Your post will be the one everyone sees first.</p>
-        <button class="btn-share-gallery" onclick="openModal()">
-          Share My Moment First &rsaquo;
-        </button>
       </div>
     </div>
     <div class="insta-grid" id="instaGrid"></div>
