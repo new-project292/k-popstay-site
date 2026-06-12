@@ -248,7 +248,61 @@
       apply_success_desc:'K-POPSTAY BUSAN 2026 게스트 신청서가 정상적으로 접수되었습니다.<br><strong>2026년 6월 6–7일</strong>까지 검토 후 이메일로 안내드립니다.<br><br>이메일로 확인서를 발송했습니다. 외국인 아미 팬 우선 선발입니다.',
       apply_closed_msg:'여러 아미 게스트 여러분의 부응에 감사합니다.<br>글로벌 아미 중심으로 선정해서 아미 호스트와 시민 호스트와 매칭해서 숙소 예약을 진행할 수 있도록 하겠습니다.<br>선정된 아미들에게는 이메일로 결과를 알려드리겠습니다.<br><br>아미 여러분의 성원에 감사드립니다.',
       apply_closed_title:'신청 마감',
-      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 감사합니다, ARMY!'
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 감사합니다, ARMY!',
+      ch_nav:'보라해 챌린지',
+      ch_hero_eyebrow:'위홈 웰컴레터 & 보라해 한글 챌린지',
+      ch_hero_title:'위홈 <span class="brand">웰컴레터</span><br>&amp; 부산 스테이<br>갤러리',
+      ch_hero_p:'인스타그램에 K-POPSTAY 부산 순간을 공유해요 — 웰컴레터에 <strong>보라해</strong>를 쓰거나, 스테이 사진, 부산에서 호스트와 함께한 모든 것 OK!',
+      ch_poster_eyebrow:'보라해 한글 챌린지',
+      ch_poster_title:'나만의 한글 아트 만들기',
+      ch_poster_desc:'호스트가 도착하면 <strong>위홈 보라해 한글 스티커 시트</strong>를 드립니다 — 내 이름, 좋아하는 BTS 멤버, 한국어로 원하는 단어 무엇이든 써보세요. 한국어 몰라도 됩니다!',
+      ch_event_loc:'발리 아쿠아 랜드 · 6월 12–13일',
+      ch_event_s1_title:'보따리 찾기',
+      ch_event_s1_desc:'여성 락커를 확인하세요 — <em>보라해 한글 킷</em>이나 <em>위홈 선물 보따리</em>가 숨겨져 있다면 당신 것!',
+      ch_event_s2_title:'한글 벽면 챌린지',
+      ch_event_s2_desc:'스티커로 지정된 벽면에 이름이나 메시지를 붙여보세요.',
+      ch_event_s3_title:'공유 &amp; 업로드',
+      ch_event_s3_desc:'<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>으로 인스타에 올리고 갤러리에 등록해요!',
+      ch_event_prizes_label:'상품:',
+      ch_event_prize1:'보라해 한글 킷 × 8–9개',
+      ch_event_prize2:'위홈 선물 보따리 × 2개',
+      ch_gallery_eyebrow:'커뮤니티 갤러리',
+      ch_gallery_title:'부산 스테이 갤러리',
+      ch_gallery_desc:'전 세계 아미가 공유하는 K-POPSTAY 부산 순간 — 웰컴레터, 스테이 추억, 호스트와의 부산 여행.',
+      ch_gallery_share:'내 게시물 공유',
+      ch_gallery_counter_label:'부산에서 공유된 추억',
+      ch_gallery_filter_all:'전체',
+      ch_gallery_filter_insta:'인스타그램',
+      ch_gallery_filter_upload:'사진 업로드',
+      ch_gallery_loadmore:'더 보기 ›',
+      ch_empty_title1:'나의 한글 아트',
+      ch_empty_desc1:'스티커로 한국어 단어를 쓰고 사진을 찍어요',
+      ch_empty_title2:'게시 &amp; 태그',
+      ch_empty_desc2:'<strong style="color:var(--purple)">#KPOPSTAYBusan</strong>으로 인스타에 공유',
+      ch_empty_title3:'갤러리 참여',
+      ch_empty_desc3:'링크 제출 — 전 세계 아미가 볼 수 있는 갤러리에 게시됩니다',
+      ch_empty_cta:'여기에 <strong>첫 번째 아미</strong>로 추억을 남겨주세요.<br>당신의 게시물이 모두가 처음 보는 것이 됩니다.',
+      ch_modal_eyebrow:'이야기 공유',
+      ch_modal_title:'게시물 제출',
+      ch_modal_tab_insta:'인스타그램 링크',
+      ch_modal_tab_upload:'사진 업로드',
+      ch_modal_insta_sub:'인스타그램 게시글 링크를 붙여넣으세요 — 검토 후 갤러리에 표시됩니다!',
+      ch_modal_insta_url_label:'인스타그램 게시글 URL',
+      ch_modal_name_label:'이름 (선택)',
+      ch_modal_name_ph:'예: ARMY_Korea',
+      ch_modal_email_label:'이메일 (선택)',
+      ch_modal_note_label:'호스트에게 메시지 (선택)',
+      ch_modal_note_ph:'보라해! 집을 열어주셔서 감사합니다...',
+      ch_modal_btn_insta:'게시물 제출 ›',
+      ch_modal_upload_sub:'인스타그램이 없나요? 직접 사진을 올려요 — 한글 아트, 스테이 추억, 부산 순간 무엇이든!',
+      ch_modal_photo_label:'사진',
+      ch_modal_photo_up_to:'최대 5장',
+      ch_modal_photo_tap:'<strong>사진 선택하기</strong>',
+      ch_modal_photo_hint:'최대 5장 · JPG, PNG, WEBP, GIF · 장당 최대 10MB',
+      ch_modal_caption_label:'캡션 (선택)',
+      ch_modal_caption_ph:'보라해! 부산에서 만든 한글 아트예요...',
+      ch_modal_upload_note_label:'호스트에게 메시지 (선택)',
+      ch_modal_btn_upload:'업로드 &amp; 제출 ›'
     },
     en: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Guest Guidebook', nav_apply:'Apply Now ›',
@@ -434,7 +488,61 @@
       apply_success_desc:'Thank you for applying to K-POPSTAY BUSAN 2026.<br>We will review your application and notify you.<br><br>Check your email for confirmation. Priority is given to international ARMY.',
       apply_closed_msg:'Thank you so much for the overwhelming response from ARMY guests around the world.<br>We will be selecting global ARMY and matching them with ARMY hosts and citizen hosts to arrange accommodation.<br>Selected ARMY members will be notified of the results by email.<br><br>Thank you for your enthusiastic support, ARMY!',
       apply_closed_title:'Applications Closed',
-      apply_closed_sub:'K-POPSTAY BUSAN 2026 · Thank you, ARMY!'
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · Thank you, ARMY!',
+      ch_nav:'Borahae Challenge',
+      ch_hero_eyebrow:'위홈 웰컴레터 & 보라해 한글 챌린지',
+      ch_hero_title:'Wehome <span class="brand">Welcome Letter</span><br>&amp; Busan Stay<br>Gallery',
+      ch_hero_p:'Share your K-POPSTAY Busan moments on Instagram — write <strong>보라해</strong> on your Welcome Letter, snap your stay, capture Busan with your host, anything goes!',
+      ch_poster_eyebrow:'Borahae Hangul Challenge',
+      ch_poster_title:'Make Your Own Hangul Art',
+      ch_poster_desc:'Your host will give you the <strong>Wehome Borahae Hangul sticker sheet</strong> when you arrive — use it to write your name, your favorite BTS member, or any Korean word you love. No Korean skills needed!',
+      ch_event_loc:'Bally Aqua Land · Jun 12–13',
+      ch_event_s1_title:'Find the Botari',
+      ch_event_s1_desc:'Check women\'s lockers — find a <em>Borahae Hangul Kit</em> or <em>Wehome Gift Botari</em> hidden inside and it\'s yours!',
+      ch_event_s2_title:'Hangul Wall Challenge',
+      ch_event_s2_desc:'Use the stickers to spell your name or a message on the designated wall in the aqua land.',
+      ch_event_s3_title:'Share &amp; Upload',
+      ch_event_s3_desc:'Post your creation on Instagram with <button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>, then submit it to this gallery!',
+      ch_event_prizes_label:'Prizes:',
+      ch_event_prize1:'Borahae Hangul Kit × 8–9',
+      ch_event_prize2:'Wehome Gift Botari × 2',
+      ch_gallery_eyebrow:'Community Gallery',
+      ch_gallery_title:'Busan Stay Gallery',
+      ch_gallery_desc:'ARMY from around the world sharing their K-POPSTAY Busan moments — Welcome Letters, stay memories, and Busan adventures with their hosts.',
+      ch_gallery_share:'Share My Post',
+      ch_gallery_counter_label:'memories shared from Busan',
+      ch_gallery_filter_all:'All',
+      ch_gallery_filter_insta:'Instagram',
+      ch_gallery_filter_upload:'Photo Upload',
+      ch_gallery_loadmore:'Load More ›',
+      ch_empty_title1:'Your Hangul Art',
+      ch_empty_desc1:'Write any Korean word with the stickers and snap a photo',
+      ch_empty_title2:'Post &amp; Tag',
+      ch_empty_desc2:'Share on Instagram with <strong style="color:var(--purple)">#KPOPSTAYBusan</strong>',
+      ch_empty_title3:'Join the Gallery',
+      ch_empty_desc3:'Submit your link — your post appears here for ARMY worldwide',
+      ch_empty_cta:'Be the <strong>first ARMY</strong> to leave a memory here.<br>Your post will be the one everyone sees first.',
+      ch_modal_eyebrow:'Share Your Story',
+      ch_modal_title:'Submit Your Post',
+      ch_modal_tab_insta:'Instagram Link',
+      ch_modal_tab_upload:'Upload Photo',
+      ch_modal_insta_sub:'Paste your Instagram post link — after a quick review it\'ll appear in the gallery!',
+      ch_modal_insta_url_label:'Instagram Post URL',
+      ch_modal_name_label:'Your Name (optional)',
+      ch_modal_name_ph:'e.g. ARMY_USA',
+      ch_modal_email_label:'Email (optional)',
+      ch_modal_note_label:'Message to your host (optional)',
+      ch_modal_note_ph:'보라해! Thank you for opening your home...',
+      ch_modal_btn_insta:'Submit My Post ›',
+      ch_modal_upload_sub:'No Instagram? Upload your photo directly — Hangul art, stay memories, Busan moments, anything!',
+      ch_modal_photo_label:'Photos',
+      ch_modal_photo_up_to:'up to 5 photos',
+      ch_modal_photo_tap:'<strong>Tap to choose photos</strong>',
+      ch_modal_photo_hint:'Up to 5 photos · JPG, PNG, WEBP, GIF · max 10MB each',
+      ch_modal_caption_label:'Caption (optional)',
+      ch_modal_caption_ph:'보라해! Here\'s my Hangul art from Busan...',
+      ch_modal_upload_note_label:'Message to your host (optional)',
+      ch_modal_btn_upload:'Upload &amp; Submit ›'
     },
     ja: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'ゲストガイドブック', nav_apply:'今すぐ申し込む ›',
@@ -620,7 +728,61 @@
       apply_success_desc:'K-POPSTAY BUSAN 2026へのお申し込みありがとうございます。<br><strong>2026年6月6–7日</strong>までに審査結果をメールでお知らせします。<br><br>確認メールをご確認ください。海外ARMYを優先します。',
       apply_closed_msg:'多くのARMYゲストの皆さまのご応募に心より感謝申し上げます。<br>グローバルARMYを中心に選定し、ARMYホストおよびシティズンホストとマッチングして宿泊予約を進めてまいります。<br>選ばれたARMYの方々には、メールで結果をお知らせいたします。<br><br>ARMYの皆さまの温かいご支援に感謝いたします。',
       apply_closed_title:'申し込み締め切り',
-      apply_closed_sub:'K-POPSTAY BUSAN 2026 · ありがとう、ARMY！'
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · ありがとう、ARMY！',
+      ch_nav:'ボラヘチャレンジ',
+      ch_hero_eyebrow:'위홈 웰컴레터 & 보라해 한글 챌린지',
+      ch_hero_title:'Wehome <span class="brand">ウェルカムレター</span><br>&amp; 釜山ステイ<br>ギャラリー',
+      ch_hero_p:'インスタグラムにK-POPSTAY釜山の思い出をシェアしよう — ウェルカムレターに<strong>보라해</strong>を書いたり、ステイの写真、釜山でホストと一緒に何でもOK！',
+      ch_poster_eyebrow:'ボラヘハングルチャレンジ',
+      ch_poster_title:'自分だけのハングルアートを作ろう',
+      ch_poster_desc:'到着時にホストが<strong>Wehomeボラヘハングルステッカーシート</strong>をくれます — 自分の名前、好きなBTSメンバー、好きな韓国語の言葉何でも書いてみて。韓国語ができなくても大丈夫！',
+      ch_event_loc:'バリアクアランド · 6月12–13日',
+      ch_event_s1_title:'ボタリを見つけよう',
+      ch_event_s1_desc:'女性ロッカーをチェック — <em>ボラヘハングルキット</em>や<em>Wehomeギフトボタリ</em>が隠れていたらあなたのもの！',
+      ch_event_s2_title:'ハングル壁チャレンジ',
+      ch_event_s2_desc:'ステッカーで指定された壁に名前やメッセージを貼ってみよう。',
+      ch_event_s3_title:'シェア &amp; アップロード',
+      ch_event_s3_desc:'<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>でインスタに投稿して、ギャラリーに登録しよう！',
+      ch_event_prizes_label:'賞品：',
+      ch_event_prize1:'ボラヘハングルキット × 8–9個',
+      ch_event_prize2:'Wehomeギフトボタリ × 2個',
+      ch_gallery_eyebrow:'コミュニティギャラリー',
+      ch_gallery_title:'釜山ステイギャラリー',
+      ch_gallery_desc:'世界中のARMYが共有するK-POPSTAY釜山の思い出 — ウェルカムレター、ステイの記念、ホストとの釜山の冒険。',
+      ch_gallery_share:'投稿をシェア',
+      ch_gallery_counter_label:'釜山からシェアされた思い出',
+      ch_gallery_filter_all:'すべて',
+      ch_gallery_filter_insta:'Instagram',
+      ch_gallery_filter_upload:'写真アップロード',
+      ch_gallery_loadmore:'もっと見る ›',
+      ch_empty_title1:'ハングルアート',
+      ch_empty_desc1:'ステッカーで韓国語を書いて写真を撮ろう',
+      ch_empty_title2:'投稿 &amp; タグ',
+      ch_empty_desc2:'<strong style="color:var(--purple)">#KPOPSTAYBusan</strong>でインスタにシェア',
+      ch_empty_title3:'ギャラリーに参加',
+      ch_empty_desc3:'リンクを送信 — 世界中のARMYが見られるギャラリーに表示されます',
+      ch_empty_cta:'ここに<strong>最初のARMY</strong>として思い出を残してください。<br>あなたの投稿が最初に見られるものになります。',
+      ch_modal_eyebrow:'ストーリーをシェア',
+      ch_modal_title:'投稿を提出',
+      ch_modal_tab_insta:'Instagramリンク',
+      ch_modal_tab_upload:'写真アップロード',
+      ch_modal_insta_sub:'Instagramの投稿リンクを貼り付けてください — 確認後ギャラリーに表示されます！',
+      ch_modal_insta_url_label:'Instagram投稿URL',
+      ch_modal_name_label:'お名前（任意）',
+      ch_modal_name_ph:'例：ARMY_Japan',
+      ch_modal_email_label:'メール（任意）',
+      ch_modal_note_label:'ホストへのメッセージ（任意）',
+      ch_modal_note_ph:'보라해！家を開けてくれてありがとう...',
+      ch_modal_btn_insta:'投稿を提出 ›',
+      ch_modal_upload_sub:'Instagramがない？写真を直接アップロードしよう — ハングルアート、ステイの思い出、釜山の瞬間何でも！',
+      ch_modal_photo_label:'写真',
+      ch_modal_photo_up_to:'最大5枚',
+      ch_modal_photo_tap:'<strong>写真を選択</strong>',
+      ch_modal_photo_hint:'最大5枚 · JPG, PNG, WEBP, GIF · 1枚最大10MB',
+      ch_modal_caption_label:'キャプション（任意）',
+      ch_modal_caption_ph:'보라해！釜山で作ったハングルアートです...',
+      ch_modal_upload_note_label:'ホストへのメッセージ（任意）',
+      ch_modal_btn_upload:'アップロード＆提出 ›'
     },
     zh_t: {
       nav_home:'首頁', nav_about:'K-POPSTAY', nav_guide:'訪客指南', nav_apply:'立即申請 ›',
@@ -791,7 +953,61 @@
       apply_success_desc:'感謝您申請K-POPSTAY BUSAN 2026。<br>我們將在<strong>2026年6月6–7日</strong>前審核並通知您。<br><br>請查收確認郵件。優先考慮海外ARMY。',
       apply_closed_msg:'非常感謝眾多ARMY訪客的踴躍參與。<br>我們將以全球ARMY為中心進行選拔，並與ARMY房東及市民房東進行配對，安排住宿預訂。<br>入選的ARMY將透過電子郵件收到結果通知。<br><br>感謝ARMY們的熱情支持！',
       apply_closed_title:'申請已截止',
-      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 謝謝您，ARMY！'
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 謝謝您，ARMY！',
+      ch_nav:'보라해挑戰',
+      ch_hero_eyebrow:'위홈 웰컴레터 & 보라해 한글 챌린지',
+      ch_hero_title:'Wehome <span class="brand">歡迎信</span><br>&amp; 釜山住宿<br>相簿',
+      ch_hero_p:'在Instagram分享你的K-POPSTAY釜山時刻 — 在歡迎信上寫<strong>보라해</strong>、拍住宿照片、和房東在釜山的冒險，什麼都可以！',
+      ch_poster_eyebrow:'보라해韓文挑戰',
+      ch_poster_title:'創作你的韓文藝術',
+      ch_poster_desc:'到達時房東會給你<strong>Wehome보라해韓文貼紙頁</strong> — 用它寫你的名字、最愛的BTS成員、或任何你喜歡的韓文單詞。不懂韓文也沒關係！',
+      ch_event_loc:'Bally Aqua Land · 6月12–13日',
+      ch_event_s1_title:'尋找보따리',
+      ch_event_s1_desc:'查看女性更衣室儲物格 — 找到隱藏的<em>보라해韓文組合</em>或<em>Wehome禮物보따리</em>就是你的了！',
+      ch_event_s2_title:'韓文牆面挑戰',
+      ch_event_s2_desc:'用貼紙在指定牆面拼出你的名字或訊息。',
+      ch_event_s3_title:'分享 &amp; 上傳',
+      ch_event_s3_desc:'在Instagram上傳，標記<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>，再提交到相簿！',
+      ch_event_prizes_label:'獎品：',
+      ch_event_prize1:'보라해韓文組合 × 8–9個',
+      ch_event_prize2:'Wehome禮物보따리 × 2個',
+      ch_gallery_eyebrow:'社群相簿',
+      ch_gallery_title:'釜山住宿相簿',
+      ch_gallery_desc:'來自世界各地的ARMY分享K-POPSTAY釜山時刻 — 歡迎信、住宿回憶、和房東的釜山冒險。',
+      ch_gallery_share:'分享我的貼文',
+      ch_gallery_counter_label:'從釜山分享的回憶',
+      ch_gallery_filter_all:'全部',
+      ch_gallery_filter_insta:'Instagram',
+      ch_gallery_filter_upload:'上傳照片',
+      ch_gallery_loadmore:'載入更多 ›',
+      ch_empty_title1:'你的韓文藝術',
+      ch_empty_desc1:'用貼紙寫韓文單詞並拍照',
+      ch_empty_title2:'發佈 &amp; 標記',
+      ch_empty_desc2:'在Instagram標記<strong style="color:var(--purple)">#KPOPSTAYBusan</strong>分享',
+      ch_empty_title3:'加入相簿',
+      ch_empty_desc3:'提交連結 — 你的貼文將出現在全世界ARMY都能看到的相簿',
+      ch_empty_cta:'成為這裡<strong>第一位ARMY</strong>留下回憶。<br>你的貼文將是所有人第一眼看到的。',
+      ch_modal_eyebrow:'分享你的故事',
+      ch_modal_title:'提交貼文',
+      ch_modal_tab_insta:'Instagram連結',
+      ch_modal_tab_upload:'上傳照片',
+      ch_modal_insta_sub:'貼上你的Instagram貼文連結 — 審核後將出現在相簿！',
+      ch_modal_insta_url_label:'Instagram貼文網址',
+      ch_modal_name_label:'你的名字（選填）',
+      ch_modal_name_ph:'例：ARMY_Taiwan',
+      ch_modal_email_label:'電子郵件（選填）',
+      ch_modal_note_label:'給房東的訊息（選填）',
+      ch_modal_note_ph:'보라해！謝謝你開放你的家...',
+      ch_modal_btn_insta:'提交貼文 ›',
+      ch_modal_upload_sub:'沒有Instagram？直接上傳照片 — 韓文藝術、住宿回憶、釜山時刻，什麼都可以！',
+      ch_modal_photo_label:'照片',
+      ch_modal_photo_up_to:'最多5張',
+      ch_modal_photo_tap:'<strong>點選選擇照片</strong>',
+      ch_modal_photo_hint:'最多5張 · JPG, PNG, WEBP, GIF · 每張最大10MB',
+      ch_modal_caption_label:'說明文字（選填）',
+      ch_modal_caption_ph:'보라해！這是我在釜山創作的韓文藝術...',
+      ch_modal_upload_note_label:'給房東的訊息（選填）',
+      ch_modal_btn_upload:'上傳 &amp; 提交 ›'
     },
     zh_s: {
       nav_home:'首页', nav_about:'K-POPSTAY', nav_guide:'访客指南', nav_apply:'立即申请 ›',
@@ -962,7 +1178,61 @@
       apply_success_desc:'感谢您申请K-POPSTAY BUSAN 2026。<br>我们将在<strong>2026年6月6–7日</strong>前审核并通知您。<br><br>请查收确认邮件。优先考虑海外ARMY。',
       apply_closed_msg:'非常感谢众多ARMY访客的踊跃参与。<br>我们将以全球ARMY为中心进行选拔，并与ARMY房东及市民房东进行配对，安排住宿预订。<br>入选的ARMY将通过电子邮件收到结果通知。<br><br>感谢ARMY们的热情支持！',
       apply_closed_title:'申请已截止',
-      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 谢谢你，ARMY！'
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · 谢谢你，ARMY！',
+      ch_nav:'보라해挑战',
+      ch_hero_eyebrow:'위홈 웰컴레터 & 보라해 한글 챌린지',
+      ch_hero_title:'Wehome <span class="brand">欢迎信</span><br>&amp; 釜山住宿<br>相册',
+      ch_hero_p:'在Instagram分享你的K-POPSTAY釜山时刻 — 在欢迎信上写<strong>보라해</strong>、拍住宿照片、和房东在釜山的冒险，什么都可以！',
+      ch_poster_eyebrow:'보라해韩文挑战',
+      ch_poster_title:'创作你的韩文艺术',
+      ch_poster_desc:'到达时房东会给你<strong>Wehome보라해韩文贴纸页</strong> — 用它写你的名字、最喜欢的BTS成员、或任何韩文单词。不懂韩文也没关系！',
+      ch_event_loc:'Bally Aqua Land · 6月12–13日',
+      ch_event_s1_title:'寻找보따리',
+      ch_event_s1_desc:'查看女性储物柜 — 找到隐藏的<em>보라해韩文套装</em>或<em>Wehome礼物보따리</em>就是你的了！',
+      ch_event_s2_title:'韩文墙面挑战',
+      ch_event_s2_desc:'用贴纸在指定墙面拼出你的名字或留言。',
+      ch_event_s3_title:'分享 &amp; 上传',
+      ch_event_s3_desc:'在Instagram上传，标记<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>，再提交到相册！',
+      ch_event_prizes_label:'奖品：',
+      ch_event_prize1:'보라해韩文套装 × 8–9个',
+      ch_event_prize2:'Wehome礼物보따리 × 2个',
+      ch_gallery_eyebrow:'社区相册',
+      ch_gallery_title:'釜山住宿相册',
+      ch_gallery_desc:'来自世界各地的ARMY分享K-POPSTAY釜山时刻 — 欢迎信、住宿回忆、和房东的釜山冒险。',
+      ch_gallery_share:'分享我的帖子',
+      ch_gallery_counter_label:'从釜山分享的回忆',
+      ch_gallery_filter_all:'全部',
+      ch_gallery_filter_insta:'Instagram',
+      ch_gallery_filter_upload:'上传照片',
+      ch_gallery_loadmore:'加载更多 ›',
+      ch_empty_title1:'你的韩文艺术',
+      ch_empty_desc1:'用贴纸写韩文单词并拍照',
+      ch_empty_title2:'发布 &amp; 标记',
+      ch_empty_desc2:'在Instagram标记<strong style="color:var(--purple)">#KPOPSTAYBusan</strong>分享',
+      ch_empty_title3:'加入相册',
+      ch_empty_desc3:'提交链接 — 你的帖子将出现在全世界ARMY都能看到的相册',
+      ch_empty_cta:'成为这里<strong>第一位ARMY</strong>留下回忆。<br>你的帖子将是所有人第一眼看到的。',
+      ch_modal_eyebrow:'分享你的故事',
+      ch_modal_title:'提交帖子',
+      ch_modal_tab_insta:'Instagram链接',
+      ch_modal_tab_upload:'上传照片',
+      ch_modal_insta_sub:'粘贴你的Instagram帖子链接 — 审核后将出现在相册！',
+      ch_modal_insta_url_label:'Instagram帖子网址',
+      ch_modal_name_label:'你的名字（选填）',
+      ch_modal_name_ph:'例：ARMY_China',
+      ch_modal_email_label:'电子邮件（选填）',
+      ch_modal_note_label:'给房东的留言（选填）',
+      ch_modal_note_ph:'보라해！谢谢你开放你的家...',
+      ch_modal_btn_insta:'提交帖子 ›',
+      ch_modal_upload_sub:'没有Instagram？直接上传照片 — 韩文艺术、住宿回忆、釜山时刻，什么都可以！',
+      ch_modal_photo_label:'照片',
+      ch_modal_photo_up_to:'最多5张',
+      ch_modal_photo_tap:'<strong>点击选择照片</strong>',
+      ch_modal_photo_hint:'最多5张 · JPG, PNG, WEBP, GIF · 每张最大10MB',
+      ch_modal_caption_label:'说明文字（选填）',
+      ch_modal_caption_ph:'보라해！这是我在釜山创作的韩文艺术...',
+      ch_modal_upload_note_label:'给房东的留言（选填）',
+      ch_modal_btn_upload:'上传 &amp; 提交 ›'
     },
     id: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Panduan Tamu', nav_apply:'Daftar Sekarang ›',
@@ -1133,7 +1403,61 @@
       apply_success_desc:'Terima kasih telah mendaftar K-POPSTAY BUSAN 2026.<br>Kami akan meninjau pendaftaran Anda dan memberitahu pada <strong>6–7 Jun 2026</strong>.<br><br>Periksa email Anda untuk konfirmasi. Prioritas diberikan kepada ARMY internasional.',
       apply_closed_msg:'Terima kasih atas antusiasme luar biasa dari para tamu ARMY di seluruh dunia.<br>Kami akan menyeleksi ARMY global dan mencocokkan mereka dengan ARMY host serta citizen host untuk mengatur pemesanan akomodasi.<br>ARMY terpilih akan diberitahu hasilnya melalui email.<br><br>Terima kasih atas dukungan hangat kalian, ARMY!',
       apply_closed_title:'Pendaftaran Ditutup',
-      apply_closed_sub:'K-POPSTAY BUSAN 2026 · Terima kasih, ARMY!'
+      apply_closed_sub:'K-POPSTAY BUSAN 2026 · Terima kasih, ARMY!',
+      ch_nav:'Tantangan Borahae',
+      ch_hero_eyebrow:'위홈 웰컴레터 & 보라해 한글 챌린지',
+      ch_hero_title:'Wehome <span class="brand">Surat Selamat Datang</span><br>&amp; Galeri<br>Menginap Busan',
+      ch_hero_p:'Bagikan momen K-POPSTAY Busan di Instagram — tulis <strong>보라해</strong> di Surat Selamat Datang, foto penginapan, petualangan Busan bersama host, apa saja boleh!',
+      ch_poster_eyebrow:'Tantangan Hangul Borahae',
+      ch_poster_title:'Buat Seni Hangul Milikmu',
+      ch_poster_desc:'Host akan memberikan <strong>lembar stiker Hangul Borahae Wehome</strong> saat kamu tiba — gunakan untuk menulis namamu, member BTS favoritmu, atau kata Korea apa pun yang kamu suka. Tidak perlu bisa bahasa Korea!',
+      ch_event_loc:'Bally Aqua Land · 12–13 Juni',
+      ch_event_s1_title:'Temukan Botari',
+      ch_event_s1_desc:'Periksa loker wanita — temukan <em>Kit Hangul Borahae</em> atau <em>Hadiah Botari Wehome</em> yang tersembunyi, dan itu milikmu!',
+      ch_event_s2_title:'Tantangan Dinding Hangul',
+      ch_event_s2_desc:'Gunakan stiker untuk menempel namamu atau pesan di dinding yang ditentukan.',
+      ch_event_s3_title:'Bagikan &amp; Unggah',
+      ch_event_s3_desc:'Posting di Instagram dengan <button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>, lalu kirimkan ke galeri!',
+      ch_event_prizes_label:'Hadiah:',
+      ch_event_prize1:'Kit Hangul Borahae × 8–9',
+      ch_event_prize2:'Hadiah Botari Wehome × 2',
+      ch_gallery_eyebrow:'Galeri Komunitas',
+      ch_gallery_title:'Galeri Menginap Busan',
+      ch_gallery_desc:'ARMY dari seluruh dunia berbagi momen K-POPSTAY Busan — Surat Selamat Datang, kenangan menginap, dan petualangan Busan bersama host.',
+      ch_gallery_share:'Bagikan Postingan',
+      ch_gallery_counter_label:'kenangan dibagikan dari Busan',
+      ch_gallery_filter_all:'Semua',
+      ch_gallery_filter_insta:'Instagram',
+      ch_gallery_filter_upload:'Unggah Foto',
+      ch_gallery_loadmore:'Muat Lebih ›',
+      ch_empty_title1:'Seni Hangul Milikmu',
+      ch_empty_desc1:'Tulis kata Korea dengan stiker dan ambil foto',
+      ch_empty_title2:'Posting &amp; Tag',
+      ch_empty_desc2:'Bagikan di Instagram dengan <strong style="color:var(--purple)">#KPOPSTAYBusan</strong>',
+      ch_empty_title3:'Bergabung ke Galeri',
+      ch_empty_desc3:'Kirim linkmu — postinganmu akan muncul di galeri yang dilihat ARMY seluruh dunia',
+      ch_empty_cta:'Jadilah <strong>ARMY pertama</strong> yang meninggalkan kenangan di sini.<br>Postinganmu akan menjadi yang pertama dilihat semua orang.',
+      ch_modal_eyebrow:'Bagikan Ceritamu',
+      ch_modal_title:'Kirim Postingan',
+      ch_modal_tab_insta:'Link Instagram',
+      ch_modal_tab_upload:'Unggah Foto',
+      ch_modal_insta_sub:'Tempel link postingan Instagram kamu — setelah ditinjau akan muncul di galeri!',
+      ch_modal_insta_url_label:'URL Postingan Instagram',
+      ch_modal_name_label:'Namamu (opsional)',
+      ch_modal_name_ph:'contoh: ARMY_Indonesia',
+      ch_modal_email_label:'Email (opsional)',
+      ch_modal_note_label:'Pesan untuk hostmu (opsional)',
+      ch_modal_note_ph:'보라해！Terima kasih sudah membuka rumahmu...',
+      ch_modal_btn_insta:'Kirim Postingan ›',
+      ch_modal_upload_sub:'Tidak punya Instagram? Unggah foto langsung — seni hangul, kenangan menginap, momen Busan, apa saja!',
+      ch_modal_photo_label:'Foto',
+      ch_modal_photo_up_to:'hingga 5 foto',
+      ch_modal_photo_tap:'<strong>Ketuk untuk memilih foto</strong>',
+      ch_modal_photo_hint:'Hingga 5 foto · JPG, PNG, WEBP, GIF · maks 10MB per foto',
+      ch_modal_caption_label:'Keterangan (opsional)',
+      ch_modal_caption_ph:'보라해！Ini seni Hangul yang kubuat di Busan...',
+      ch_modal_upload_note_label:'Pesan untuk hostmu (opsional)',
+      ch_modal_btn_upload:'Unggah &amp; Kirim ›'
     }
   };
 
@@ -2685,17 +3009,104 @@
     q('a[href="mailto:cs@wehome.me"].footer-link', t('footer_cs'));
   }
 
+  function applyTranslationsChallenge(){
+    // nav
+    var chNavLink = document.querySelector('.nav-link[href="/challenge"]');
+    if(chNavLink) chNavLink.textContent = t('ch_nav');
+    var chMobileLink = document.querySelector('.mobile-link[href="/challenge"]');
+    if(chMobileLink) chMobileLink.textContent = t('ch_nav');
+
+    // hero
+    q('.hero-eyebrow', t('ch_hero_eyebrow'));
+    var h1 = document.querySelector('.challenge-hero h1'); if(h1) h1.innerHTML = t('ch_hero_title');
+    var hp = document.querySelector('.challenge-hero p'); if(hp) hp.innerHTML = t('ch_hero_p');
+
+    // poster section
+    q('.poster-section-header .eyebrow', t('ch_poster_eyebrow'));
+    q('.poster-section-header h2', t('ch_poster_title'));
+    var pd = document.querySelector('.poster-section-header p'); if(pd) pd.innerHTML = t('ch_poster_desc');
+
+    // event card
+    var evtLoc = document.querySelector('.poster-event-title'); if(evtLoc) evtLoc.lastChild.textContent = ' '+t('ch_event_loc');
+    var evtSteps = document.querySelectorAll('.poster-event-step');
+    if(evtSteps[0]){ evtSteps[0].querySelector('strong').textContent=t('ch_event_s1_title'); var p=evtSteps[0].querySelector('p'); if(p) p.innerHTML=t('ch_event_s1_desc'); }
+    if(evtSteps[1]){ evtSteps[1].querySelector('strong').textContent=t('ch_event_s2_title'); var p=evtSteps[1].querySelector('p'); if(p) p.innerHTML=t('ch_event_s2_desc'); }
+    if(evtSteps[2]){ evtSteps[2].querySelector('strong').textContent=t('ch_event_s3_title'); var p=evtSteps[2].querySelector('p'); if(p) p.innerHTML=t('ch_event_s3_desc'); }
+    var prizeEls = document.querySelectorAll('.poster-prize-tag');
+    if(prizeEls[0]) prizeEls[0].textContent = t('ch_event_prize1');
+    if(prizeEls[1]) prizeEls[1].textContent = t('ch_event_prize2');
+    var prizesLabel = document.querySelector('.poster-event-prizes'); if(prizesLabel) prizesLabel.firstChild.textContent = t('ch_event_prizes_label');
+
+    // gallery header
+    q('.gallery-header .eyebrow', t('ch_gallery_eyebrow'));
+    q('.gallery-header h2', t('ch_gallery_title'));
+    var gdesc = document.querySelector('.gallery-header p'); if(gdesc) gdesc.textContent = t('ch_gallery_desc');
+    var gshare = document.querySelector('.btn-share-gallery'); if(gshare) gshare.lastChild.textContent = ' '+t('ch_gallery_share');
+
+    // counter
+    q('.gallery-counter-label', t('ch_gallery_counter_label'));
+
+    // filter buttons
+    var fbtns = document.querySelectorAll('.gallery-filter-btn');
+    if(fbtns[0]){ fbtns[0].firstChild.textContent = t('ch_gallery_filter_all')+' '; }
+    if(fbtns[1]){ fbtns[1].firstChild.textContent = t('ch_gallery_filter_insta')+' '; }
+    if(fbtns[2]){ fbtns[2].firstChild.textContent = t('ch_gallery_filter_upload')+' '; }
+
+    // load more
+    q('#btnLoadMore', t('ch_gallery_loadmore'));
+
+    // empty state
+    var ecards = document.querySelectorAll('.gallery-empty-card');
+    if(ecards[0]){ var h4=ecards[0].querySelector('h4'); if(h4) h4.innerHTML=t('ch_empty_title1'); var p=ecards[0].querySelector('p'); if(p) p.textContent=t('ch_empty_desc1'); }
+    if(ecards[1]){ var h4=ecards[1].querySelector('h4'); if(h4) h4.innerHTML=t('ch_empty_title2'); var p=ecards[1].querySelector('p'); if(p) p.innerHTML=t('ch_empty_desc2'); }
+    if(ecards[2]){ var h4=ecards[2].querySelector('h4'); if(h4) h4.innerHTML=t('ch_empty_title3'); var p=ecards[2].querySelector('p'); if(p) p.textContent=t('ch_empty_desc3'); }
+    var ectap = document.querySelector('.gallery-empty-cta p'); if(ectap) ectap.innerHTML = t('ch_empty_cta');
+
+    // modal
+    q('.modal-header-text .eyebrow2', t('ch_modal_eyebrow'));
+    q('#modalTitle', t('ch_modal_title'));
+    var tabs = document.querySelectorAll('.modal-tab');
+    if(tabs[0]) tabs[0].lastChild.textContent = ' '+t('ch_modal_tab_insta');
+    if(tabs[1]) tabs[1].lastChild.textContent = ' '+t('ch_modal_tab_upload');
+    var instaSubP = document.querySelector('#tabInstagram .sub'); if(instaSubP) instaSubP.textContent = t('ch_modal_insta_sub');
+    var instaUrlLabel = document.querySelector('#tabInstagram label[for="instaUrl"]'); if(instaUrlLabel) instaUrlLabel.firstChild.textContent = t('ch_modal_insta_url_label')+' ';
+    q('#instaUrl', null, 'placeholder', null);
+    var subNameLabel = document.querySelector('label[for="subName"]'); if(subNameLabel) subNameLabel.textContent = t('ch_modal_name_label');
+    var subName = document.getElementById('subName'); if(subName) subName.placeholder = t('ch_modal_name_ph');
+    var subEmailLabel = document.querySelector('label[for="subEmail"]'); if(subEmailLabel) subEmailLabel.textContent = t('ch_modal_email_label');
+    var subNoteLabel = document.querySelector('label[for="subNote"]'); if(subNoteLabel) subNoteLabel.textContent = t('ch_modal_note_label');
+    var subNote = document.getElementById('subNote'); if(subNote) subNote.placeholder = t('ch_modal_note_ph');
+    var btnInsta = document.getElementById('submitBtnInsta'); if(btnInsta) btnInsta.innerHTML = t('ch_modal_btn_insta');
+
+    var uploadSubP = document.querySelector('#tabUpload .sub'); if(uploadSubP) uploadSubP.textContent = t('ch_modal_upload_sub');
+    var photoLabel = document.querySelector('label[for="photoFile"]');
+    if(!photoLabel){ var allLabels=document.querySelectorAll('#tabUpload label'); photoLabel=allLabels[0]||null; }
+    if(photoLabel){ photoLabel.firstChild.textContent = t('ch_modal_photo_label')+' '; }
+    var uptoSpan = document.querySelector('.form-group span[style*="text-300"]'); if(uptoSpan) uptoSpan.textContent = t('ch_modal_photo_up_to');
+    var dropP = document.querySelector('.photo-dropzone p'); if(dropP) dropP.innerHTML = t('ch_modal_photo_tap');
+    var dropSmall = document.querySelector('.photo-dropzone small'); if(dropSmall) dropSmall.innerHTML = t('ch_modal_photo_hint');
+    var captionLabel = document.querySelector('label[for="uploadCaption"]'); if(captionLabel) captionLabel.textContent = t('ch_modal_caption_label');
+    var captionTA = document.getElementById('uploadCaption'); if(captionTA) captionTA.placeholder = t('ch_modal_caption_ph');
+    var uploadNameLabel = document.querySelector('label[for="uploadName"]'); if(uploadNameLabel) uploadNameLabel.textContent = t('ch_modal_name_label');
+    var uploadName = document.getElementById('uploadName'); if(uploadName) uploadName.placeholder = t('ch_modal_name_ph');
+    var uploadEmailLabel = document.querySelector('label[for="uploadEmail"]'); if(uploadEmailLabel) uploadEmailLabel.textContent = t('ch_modal_email_label');
+    var uploadNoteLabel = document.querySelector('label[for="uploadNote"]'); if(uploadNoteLabel) uploadNoteLabel.textContent = t('ch_modal_upload_note_label');
+    var btnUpload = document.getElementById('submitBtnUpload'); if(btnUpload) btnUpload.innerHTML = t('ch_modal_btn_upload');
+  }
+
   var _path = location.pathname;
   var IS_APPLY_PAGE  = (_path.indexOf('apply') !== -1);
   var IS_ABOUT_PAGE  = (_path === '/about' || _path === '/about.html');
   var IS_TGUIDE_PAGE = (_path === '/travel-guide' || _path === '/travel-guide.html');
   var IS_GGB_PAGE    = (_path === '/guest-guidebook' || _path === '/guest-guidebook.html');
+  var IS_CHALLENGE_PAGE = (_path === '/challenge' || _path === '/challenge.html');
 
   function _runTranslation(){
-    if(IS_APPLY_PAGE)  applyTranslationsApply();
+    if(IS_APPLY_PAGE)       applyTranslationsApply();
     else if(IS_ABOUT_PAGE)  applyTranslationsAbout();
     else if(IS_TGUIDE_PAGE) applyTranslationsTravelGuide();
     else if(IS_GGB_PAGE)    applyTranslationsGuestGuidebook();
+    else if(IS_CHALLENGE_PAGE) applyTranslationsChallenge();
     else applyTranslations();
   }
 
