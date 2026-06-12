@@ -83,49 +83,51 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
   letter-spacing:-.03em;margin-bottom:10px}
 .poster-section-header p{font-size:.9rem;color:var(--text-500);line-height:1.7}
 
-/* 메인 포스터 (guide) — 클릭하면 라이트박스 */
-.poster-main{
-  border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);
-  border:1.5px solid var(--border);cursor:zoom-in;
-  transition:transform .25s,box-shadow .25s;margin-bottom:20px;
-  max-width:420px;margin-left:auto;margin-right:auto;
+/* 포스터 전체 레이아웃 — PC: 메인(좌) + 서브3장(우) 2열 */
+.poster-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+  align-items:start;
+  max-width:960px;
+  margin:0 auto;
 }
-.poster-main:hover{transform:scale(1.01);box-shadow:0 16px 48px rgba(118,17,131,.15)}
+
+/* 메인 포스터 */
+.poster-main{
+  border-radius:16px;overflow:hidden;box-shadow:var(--shadow-md);
+  border:1.5px solid var(--border);cursor:zoom-in;
+  transition:transform .25s,box-shadow .25s;
+}
+.poster-main:hover{transform:scale(1.01);box-shadow:0 12px 32px rgba(118,17,131,.14)}
 .poster-main img{width:100%;display:block}
 
 /* 서브 포스터 3장 그리드 */
 .poster-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
-  max-width:900px;margin:0 auto;
+  display:grid;grid-template-columns:repeat(3,1fr);gap:10px;
 }
 .poster-item{
-  border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);
+  border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);
   border:1.5px solid var(--border);cursor:zoom-in;
   transition:transform .2s,box-shadow .2s;
 }
-.poster-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(118,17,131,.12)}
+.poster-item:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(118,17,131,.12)}
 .poster-item img{width:100%;display:block}
+
 @media(max-width:640px){
+  .poster-layout{grid-template-columns:1fr;gap:12px}
+  .poster-main{max-width:340px;margin:0 auto}
   .poster-grid{
-    display:flex;
-    overflow-x:auto;
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
-    gap:12px;
-    max-width:none;
-    padding-bottom:12px;
-    /* 스크롤바 숨기기 */
+    display:flex;overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;gap:10px;padding-bottom:10px;
     scrollbar-width:none;
   }
   .poster-grid::-webkit-scrollbar{display:none}
   .poster-item{
-    flex:0 0 72vw;
-    max-width:280px;
-    scroll-snap-align:start;
-    border-radius:12px;
+    flex:0 0 72vw;max-width:260px;
+    scroll-snap-align:start;border-radius:10px;
   }
-  /* 슬라이더 힌트 — 마지막 아이템 뒤 여백 */
-  .poster-item:last-child{margin-right:calc(28vw - 12px)}
+  .poster-item:last-child{margin-right:calc(28vw - 10px)}
 }
 
 /* 슬라이더 스크롤 힌트 텍스트 */
@@ -612,27 +614,31 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       <h2>Make Your Own Hangul Art</h2>
       <p>Your host will give you the <strong>Wehome Borahae Hangul sticker sheet</strong> when you arrive — use it to write your name, your favorite BTS member, or any Korean word you love. No Korean skills needed!</p>
     </div>
-    <!-- 메인 소개 포스터 -->
-    <div class="poster-main fade-up" onclick="openLightbox(this.querySelector('img').src)">
-      <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-guide.jpg"
-           alt="Borahae Hangul Challenge Guide" loading="lazy">
+    <div class="poster-layout fade-up">
+      <!-- 메인 포스터 (좌) -->
+      <div class="poster-main" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-guide.jpg"
+             alt="Borahae Hangul Challenge Guide" loading="lazy">
+      </div>
+      <!-- 서브 포스터 3장 (우) -->
+      <div>
+        <div class="poster-grid">
+          <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
+            <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-1.jpg"
+                 alt="Hangul Challenge Detail 1" loading="lazy">
+          </div>
+          <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
+            <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-2.jpg"
+                 alt="Hangul Challenge Detail 2" loading="lazy">
+          </div>
+          <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
+            <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-3.jpg"
+                 alt="Hangul Challenge Detail 3" loading="lazy">
+          </div>
+        </div>
+        <p class="poster-scroll-hint">← swipe to see more →</p>
+      </div>
     </div>
-    <!-- 상세 포스터 3장 -->
-    <div class="poster-grid fade-up">
-      <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
-        <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-1.jpg"
-             alt="Hangul Challenge Detail 1" loading="lazy">
-      </div>
-      <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
-        <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-2.jpg"
-             alt="Hangul Challenge Detail 2" loading="lazy">
-      </div>
-      <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
-        <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-3.jpg"
-             alt="Hangul Challenge Detail 3" loading="lazy">
-      </div>
-    </div>
-    <p class="poster-scroll-hint">← swipe to see more →</p>
   </div>
 </section>
 
