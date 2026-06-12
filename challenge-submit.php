@@ -15,6 +15,24 @@ function json_err($msg, $code = 400) {
     exit;
 }
 
+function fix_image_orientation($path, $mime) {
+    if (!function_exists('exif_read_data')) return;
+    if (!in_array($mime, ['image/jpeg', 'image/jpg'])) return;
+    $exif = @exif_read_data($path);
+    $orientation = $exif['Orientation'] ?? 1;
+    if ($orientation === 1) return;
+    $img = @imagecreatefromjpeg($path);
+    if (!$img) return;
+    switch ($orientation) {
+        case 3: $img = imagerotate($img, 180, 0); break;
+        case 6: $img = imagerotate($img, -90, 0); break;
+        case 8: $img = imagerotate($img, 90, 0);  break;
+        default: return;
+    }
+    imagejpeg($img, $path, 92);
+    imagedestroy($img);
+}
+
 function clean($v) {
     return htmlspecialchars(trim((string)$v), ENT_QUOTES, 'UTF-8');
 }
@@ -104,6 +122,8 @@ if ($type === 'upload') {
         $destPath = UPLOAD_DIR . $safeName;
 
         if (move_uploaded_file($file['tmp'], $destPath)) {
+            // EXIF 회전 보정 (아이폰 등 세로 사진 뒤집힘 방지)
+            fix_image_orientation($destPath, $mime);
             $photo_urls[] = UPLOAD_URL . $safeName;
         }
     }
