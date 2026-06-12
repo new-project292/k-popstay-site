@@ -409,7 +409,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       <a href="#guidebook" class="nav-link">Guest Guidebook</a>
       <a href="/travel-guide" class="nav-link">Travel Guide</a>
       <a href="/challenge" class="nav-link">Borahae Challenge</a>
-      <a href="apply.html" class="btn-apply-nav">Apply Now &rsaquo;</a>
+      <span class="btn-apply-nav" style="opacity:0.5;cursor:default;pointer-events:none;">Closed</span>
       <!-- k-popstay 전용 언어 선택기 — wehome.me 세션/쿠키 불개입 -->
       <div class="kpop-lang-wrap" id="kpopLangWrap">
         <button class="kpop-lang-btn" onclick="toggleKpopLang(event)" aria-expanded="false" aria-label="Language">
@@ -432,7 +432,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   <a href="#guidebook" class="mobile-link" onclick="toggleMenu()">Guest Guidebook</a>
   <a href="/travel-guide" class="mobile-link" onclick="toggleMenu()">Travel Guide</a>
   <a href="/challenge" class="mobile-link" onclick="toggleMenu()">Borahae Challenge</a>
-  <a href="apply.html" class="mobile-link" style="color:var(--purple);font-weight:700">Apply Now &rsaquo;</a>
+  <span class="mobile-link" style="color:#999;font-weight:700;pointer-events:none;">Closed</span>
   <div id="mobileLangList"></div>
   <a href="/host" class="mobile-link">Host Apply KR</a>
 </div>
@@ -446,7 +446,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
     <p class="hero-subtitle fade-up">A Purple Welcome for Global Fans,<br>Hosted by Busan Citizens.</p>
     <div class="city-badge active fade-up">Busan &mdash; Jun 12&ndash;14</div>
     <div class="hero-cta-row fade-up">
-      <a href="apply.html" class="btn-primary hero-apply-btn">Apply for Free 2-Night Stay (Global BTS ARMY First) &rsaquo;</a>
+      <span class="btn-primary hero-apply-btn" style="opacity:0.5;cursor:default;pointer-events:none;background:#999;">신청 마감</span>
       <button class="btn-secondary btn-share" onclick="sharePage()">Share</button>
     </div>
     <div class="hero-sub-links fade-up">
@@ -461,7 +461,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
 </section>
 
 <!-- FAB -->
-<button id="fabApply" onclick="location.href='apply.html'">Apply for Free 2-Night Stay<br>(Global BTS ARMY First) &rsaquo;</button>
+<button id="fabApply" style="background:#999;cursor:default;pointer-events:none;">신청 마감</button>
 
 <!-- INTRODUCE -->
 <section id="introduce">
@@ -717,7 +717,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       <div class="footer-links">
         <a href="#home" class="footer-link">Home</a>
         <a href="#guidebook" class="footer-link">Guidebook</a>
-        <a href="apply.html" class="footer-link">Apply Now</a>
+        <span class="footer-link" style="color:#999;cursor:default;">Closed</span>
         <a href="/host" class="footer-link">호스트 신청</a>
         <a href="mailto:cs@wehome.me" class="footer-link">Customer Support</a>
       </div>
