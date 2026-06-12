@@ -4,6 +4,12 @@ RewriteEngine On
 # /host -> host.html
 RewriteRule ^host/?$ /host.html [L]
 
+# /host-report -> host-report.html
+RewriteRule ^host-report/?$ /host-report.html [L]
+
+# /host-report-data -> host-report-data.php
+RewriteRule ^host-report-data/?$ /host-report-data.php [L]
+
 # /about -> about.html
 RewriteRule ^about/?$ /about.html [L]
 
@@ -36,6 +42,9 @@ RewriteRule ^emergency-contact/?$ /emergency-contact.html [L]
 
 # /guest-emergency -> guest-emergency.html
 RewriteRule ^guest-emergency/?$ /guest-emergency.html [L]
+
+# /challenge -> challenge.html
+RewriteRule ^challenge/?$ /challenge.html [L]
 
 # 업로드 파일: PHP 실행 차단 (이미지/PDF만 허용)
 <FilesMatch "\.php$">

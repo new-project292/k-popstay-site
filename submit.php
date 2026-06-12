@@ -279,6 +279,8 @@ if ($type === 'guest') {
 // HOST 신청 (JSON body)
 // ═══════════════════════════════════════════════════════════════
 if ($type === 'host') {
+    json_error('호스트 모집이 마감되었습니다. 마감 전 접수된 신청 건은 순차 안내드립니다.', 403);
+
     // JSON body에서 읽기 (host-apply.html은 multipart/form-data로 전송)
     if (empty($body)) {
         $body = [];

@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>K-POPSTAY 호스트 매칭 현황 | 위홈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --purple: #6800cd;
+  --black: #1d1d1f;
+  --gray: #6e6e73;
+  --gray-light: #aeaeb2;
+  --line: #e8e8ed;
+  --bg: #f5f5f7;
+  --card: #fff;
+  --green: #1a7f4b;
+  --blue: #0055b8;
+  --red: #c41e1e;
+  --idle: #8e8e93;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:18px}
+body{font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--black);line-height:1.5;-webkit-font-smoothing:antialiased}
+
+.header{background:var(--card);border-bottom:1px solid var(--line);padding:32px clamp(40px,6vw,80px) 28px}
+.header-inner{max-width:1680px;margin:0 auto}
+.header-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.logo{font-weight:800;color:var(--purple);font-size:1.05rem;letter-spacing:-0.02em}
+.updated{font-size:0.88rem;color:var(--gray-light)}
+.title{font-size:2rem;font-weight:800;letter-spacing:-0.035em;line-height:1.2}
+.subtitle{font-size:1.05rem;color:var(--gray);margin-top:8px;font-weight:500}
+
+.page{max-width:1680px;margin:0 auto;padding:28px clamp(32px,4vw,64px) 72px}
+
+.toolbar{display:flex;align-items:center;gap:20px;margin-bottom:28px;flex-wrap:wrap}
+.search{flex:1;min-width:280px;max-width:420px;padding:14px 18px;border:1px solid var(--line);border-radius:10px;font-size:1rem;font-family:inherit;background:var(--card);transition:border-color .15s}
+.search:focus{outline:none;border-color:var(--purple)}
+.filter-group{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:10px 14px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--gray);font-size:0.92rem;font-weight:700;font-family:inherit;cursor:pointer;transition:all .15s}
+.filter-btn:hover{border-color:#c7c7cc;color:var(--black)}
+.filter-btn.active{background:var(--black);border-color:var(--black);color:#fff}
+
+/* KPI — 통일된 흰 카드 + 숫자만 색 */
+.kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:32px}
+.kpi-cell{background:var(--card);padding:22px 16px;text-align:center}
+.kpi-cell .num{display:block;font-size:2.25rem;font-weight:800;letter-spacing:-0.04em;line-height:1}
+.kpi-cell .lbl{display:block;font-size:0.88rem;font-weight:600;color:var(--gray);margin-top:8px}
+.kpi-cell[data-k="total"] .num{color:var(--black)}
+.kpi-cell[data-k="ok"] .num{color:var(--green)}
+.kpi-cell[data-k="wait"] .num{color:var(--blue)}
+.kpi-cell[data-k="no"] .num{color:var(--red)}
+.kpi-cell[data-k="idle"] .num{color:var(--idle)}
+
+.back{display:inline-flex;align-items:center;gap:6px;font-size:1rem;font-weight:600;color:var(--purple);background:none;border:none;cursor:pointer;font-family:inherit;padding:0 0 20px}
+.back svg{width:20px;height:20px}
+
+.panel{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.panel-head{padding:16px 24px;border-bottom:1px solid var(--line);font-size:0.88rem;font-weight:600;color:var(--gray)}
+.panel-head span{color:var(--black);font-weight:700}
+
+/* 호스트 개요 테이블 */
+table.data{width:100%;border-collapse:collapse;font-size:1rem}
+table.data thead th{background:#fafafa;font-size:0.88rem;font-weight:700;color:var(--gray);text-align:left;padding:14px 20px;border-bottom:1px solid var(--line);white-space:nowrap}
+table.data tbody td{padding:16px 20px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.data tbody tr:last-child td{border-bottom:none}
+table.data tbody tr.host-row{cursor:pointer;transition:background .12s}
+table.data tbody tr.host-row:hover{background:#fafafa}
+.col-name{font-weight:800;font-size:1.05rem;letter-spacing:-0.02em}
+.col-cat{white-space:nowrap;width:1%}
+.cat-badge{display:inline-block;font-size:0.78rem;font-weight:700;padding:4px 10px;border-radius:6px;white-space:nowrap}
+.cat-badge.busan{color:#0055b8;background:rgba(0,85,184,.1)}
+.cat-badge.general{color:var(--gray);background:rgba(142,142,147,.12)}
+.cat-badge.mixed{color:#7a4b00;background:rgba(255,159,10,.14)}
+tr.host-row.is-busan{background:rgba(0,85,184,.03)}
+tr.host-row.is-general{background:transparent}
+.col-count{color:var(--gray);font-weight:600;text-align:center;width:72px}
+.col-bar{width:180px}
+.col-stat{text-align:center;font-weight:700;font-variant-numeric:tabular-nums;width:64px}
+.col-stat.ok{color:var(--green)}
+.col-stat.wait{color:var(--blue)}
+.col-stat.no{color:var(--red)}
+.col-stat.idle{color:var(--idle)}
+.col-guest-stat{text-align:center;font-weight:800;font-variant-numeric:tabular-nums;width:88px;font-size:1.05rem}
+.col-guest-stat.ok{color:var(--green)}
+.col-guest-stat.wait{color:var(--blue)}
+.col-arrow{width:40px;text-align:center;color:var(--gray-light);font-size:1.2rem}
+
+.bar{display:flex;height:8px;border-radius:4px;overflow:hidden;background:var(--line);min-width:120px}
+.bar-i{height:100%}
+.bar-i.ok{background:var(--green)}
+.bar-i.wait{background:var(--blue)}
+.bar-i.no{background:var(--red)}
+.bar-i.idle{background:#c7c7cc}
+
+/* 상세 테이블 — nowrap + auto 레이아웃 (영문·국적 글자 단위 줄바꿈 방지) */
+.table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table.detail{width:max-content;min-width:100%;table-layout:auto}
+table.detail thead th{white-space:nowrap}
+table.detail tbody td{vertical-align:middle}
+table.detail .col-room{font-weight:600;min-width:360px;white-space:nowrap}
+table.detail .col-guest{font-weight:700;white-space:nowrap;min-width:180px}
+table.detail .col-nat{white-space:nowrap;min-width:110px}
+table.detail .col-num{white-space:nowrap;text-align:center}
+table.detail .col-date{white-space:nowrap;min-width:120px}
+table.detail .col-phone{white-space:nowrap;min-width:140px;font-variant-numeric:tabular-nums}
+table.detail .col-email{white-space:nowrap;min-width:240px}
+table.detail .col-addr{min-width:320px;max-width:420px;color:var(--gray);font-size:0.95rem;word-break:keep-all;line-height:1.5}
+table.detail th.col-st,table.detail td:first-child{white-space:nowrap;width:1%}
+.dash{color:var(--gray-light)}
+
+.tag{display:inline-block;font-size:0.82rem;font-weight:700;padding:4px 10px;border-radius:6px;white-space:nowrap}
+.tag.ok{color:var(--green);background:rgba(26,127,75,.1)}
+.tag.wait{color:var(--blue);background:rgba(0,85,184,.1)}
+.tag.no{color:var(--red);background:rgba(196,30,30,.1)}
+.tag.idle{color:var(--idle);background:rgba(142,142,147,.12)}
+
+.state-msg{text-align:center;padding:56px 24px;color:var(--gray);font-size:1.05rem}
+.state-msg.is-error{color:var(--red)}
+
+.view{display:none}
+.view.active{display:block}
+
+.detail-head{margin-bottom:24px}
+.detail-head h2{font-size:1.75rem;font-weight:800;letter-spacing:-0.03em}
+.detail-head p{font-size:1.05rem;color:var(--gray);margin-top:6px;font-weight:500}
+
+@media(max-width:900px){
+  html{font-size:16px}
+  .kpi-row{grid-template-columns:repeat(3,1fr)}
+  .col-bar{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-top">
+      <div class="logo">Wehome</div>
+      <div class="updated" id="updatedAt"></div>
+    </div>
+    <h1 class="title">K-POPSTAY 매칭 현황</h1>
+    <p class="subtitle" id="summaryLine">불러오는 중...</p>
+  </div>
+</header>
+
+<main class="page">
+  <div class="toolbar">
+    <input class="search" id="search" type="search" placeholder="호스트 이름 검색" autocomplete="off">
+    <div class="filter-group" id="categoryFilters">
+      <button class="filter-btn active" type="button" data-cat="all">전체</button>
+      <button class="filter-btn" type="button" data-cat="busan_city">부산시 선정</button>
+      <button class="filter-btn" type="button" data-cat="general">일반</button>
+      <button class="filter-btn" type="button" data-cat="mixed">혼합</button>
+    </div>
+  </div>
+
+  <div id="viewList" class="view active">
+    <div class="kpi-row" id="kpiRow">
+      <div class="kpi-cell" data-k="total"><span class="num" id="kpiTotal">-</span><span class="lbl">전체 객실</span></div>
+      <div class="kpi-cell" data-k="ok"><span class="num" id="kpiBooked">-</span><span class="lbl">결제완료</span></div>
+      <div class="kpi-cell" data-k="wait"><span class="num" id="kpiPending">-</span><span class="lbl">안내중</span></div>
+      <div class="kpi-cell" data-k="no"><span class="num" id="kpiCancelled">-</span><span class="lbl">배정취소</span></div>
+      <div class="kpi-cell" data-k="idle"><span class="num" id="kpiUnassigned">-</span><span class="lbl">미배정</span></div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">호스트 <span id="hostCount">-</span>명 · 행을 클릭하면 객실 상세</div>
+      <div id="hostTableWrap"><div class="state-msg">불러오는 중...</div></div>
+    </div>
+  </div>
+
+  <div id="viewDetail" class="view">
+    <button class="back" id="btnBack" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      호스트 목록
+    </button>
+    <div class="detail-head" id="hostHead"></div>
+    <div class="panel table-scroll" id="roomTable"></div>
+  </div>
+</main>
+
+<script>
+const PAGE = new URLSearchParams(location.search);
+const VIEW = PAGE.get('view') || PAGE.get('mode') || 'ops';
+const HOST_ID = parseInt(PAGE.get('host_id') || '0', 10) || 0;
+const API = '/host-report-data.php' + (VIEW !== 'ops'
+  ? `?view=${encodeURIComponent(VIEW)}${VIEW === 'host' && HOST_ID ? '&host_id=' + HOST_ID : ''}`
+  : '');
+let allHosts = [];
+let selectedId = null;
+let categoryFilter = 'all';
+let pageView = VIEW;
+let showContactColumns = VIEW === 'host' || VIEW === 'busan';
+
+function esc(s) {
+  return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function stKey(s) {
+  if (s === '결제완료') return 'ok';
+  if (s === '안내중 (미결제)') return 'wait';
+  if (s === '배정취소') return 'no';
+  return 'idle';
+}
+function stLabel(s) {
+  if (s === '안내중 (미결제)') return '안내중';
+  return s || '미배정';
+}
+function fmtDate(d) {
+  if (!d) return '';
+  const p = d.split('-');
+  return p.length === 3 ? parseInt(p[1],10) + '/' + parseInt(p[2],10) : d;
+}
+function fmtSchedule(r) {
+  if (!r.checkin) return '';
+  const cin = fmtDate(r.checkin) + (r.checkinTime ? ' ' + r.checkinTime : '');
+  const cout = r.checkout ? fmtDate(r.checkout) + (r.checkoutTime ? ' ' + r.checkoutTime : '') : '';
+  return cout ? cin + ' ~ ' + cout : cin;
+}
+function rowShowsContact(r) {
+  if (!showContactColumns) return false;
+  const hasGuest = r.guestName && r.status !== '미배정';
+  if (!hasGuest) return false;
+  if (pageView === 'busan') return true;
+  if (pageView === 'host') return r.status === '결제완료';
+  return false;
+}
+function cell(v) {
+  return v && v !== '-' ? esc(v) : '<span class="dash">-</span>';
+}
+
+function ratioBar(s, total) {
+  if (!total) return '<div class="bar"></div>';
+  const parts = [
+    { k: 'ok', n: s['결제완료'] || 0 },
+    { k: 'wait', n: s['안내중'] || 0 },
+    { k: 'no', n: s['배정취소'] || 0 },
+    { k: 'idle', n: s['미배정'] || 0 },
+  ].filter(x => x.n > 0);
+  return '<div class="bar">' + parts.map(x =>
+    `<div class="bar-i ${x.k}" style="width:${(x.n/total*100).toFixed(1)}%"></div>`
+  ).join('') + '</div>';
+}
+
+function statCell(n, key) {
+  return n ? `<td class="col-stat ${key}">${n}</td>` : `<td class="col-stat ${key}"><span class="dash">-</span></td>`;
+}
+
+function guestStatCell(n, key) {
+  return n ? `<td class="col-guest-stat ${key}">${n}명</td>` : `<td class="col-guest-stat ${key}"><span class="dash">-</span></td>`;
+}
+
+function catBadge(category, label) {
+  const key = category === 'busan_city' ? 'busan' : (category === 'mixed' ? 'mixed' : 'general');
+  return `<span class="cat-badge ${key}">${esc(label || '일반')}</span>`;
+}
+
+function catDetailText(h) {
+  if (h.hostCategory === 'mixed') {
+    return `부산시 선정 ${h.busanRoomCount || 0} · 일반 ${h.generalRoomCount || 0}`;
+  }
+  return h.hostCategoryLabel || '일반';
+}
+
+function renderHostTable(hosts) {
+  if (!hosts.length) return '<div class="state-msg">검색 결과가 없습니다.</div>';
+  const showRegion = pageView === 'busan';
+  const rows = hosts.map(h => {
+    const s = h.stats;
+    const g = h.guestStats || {};
+    const rowClass = h.hostCategory === 'busan_city' ? 'is-busan' : (h.hostCategory === 'general' ? 'is-general' : '');
+    const regionCell = showRegion
+      ? `<td class="col-num">${cell(h.regionCode)}</td>`
+      : '';
+    return `<tr class="host-row ${rowClass}" data-id="${h.hostId}">
+      ${showRegion ? regionCell : `<td class="col-cat">${catBadge(h.hostCategory, h.hostCategoryLabel)}</td>`}
+      <td class="col-name">${esc(h.hostName || h.hostLabel)}</td>
+      ${guestStatCell(g['결제완료'] || 0, 'ok')}
+      ${guestStatCell(g['안내중'] || 0, 'wait')}
+      <td class="col-count">${h.roomCount}</td>
+      <td class="col-bar">${ratioBar(s, h.roomCount)}</td>
+      ${statCell(s['결제완료'], 'ok')}
+      ${statCell(s['안내중'], 'wait')}
+      ${statCell(s['배정취소'], 'no')}
+      ${statCell(s['미배정'], 'idle')}
+      <td class="col-arrow">›</td>
+    </tr>`;
+  }).join('');
+  const headRegion = showRegion ? '<th>부산No</th>' : '<th>구분</th>';
+  return `<table class="data"><thead><tr>
+    ${headRegion}<th>호스트</th><th>결제 게스트</th><th>미결제 게스트</th><th>객실</th><th>매칭 비율</th>
+    <th>결제</th><th>안내</th><th>취소</th><th>미배정</th><th></th>
+  </tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function renderDetailTable(rooms) {
+  if (!rooms.length) return '<div class="state-msg">객실이 없습니다.</div>';
+  const showHostContact = pageView === 'busan';
+  const rows = rooms.map(r => {
+    const hasGuest = r.guestName && r.status !== '미배정';
+    const schedule = fmtSchedule(r);
+    const sk = stKey(r.status);
+    const roomCat = r.isBusanCity ? 'busan' : 'general';
+    const roomCatLabel = r.isBusanCity ? '부산시 선정' : '일반';
+    const showContact = rowShowsContact(r);
+    const hostPhoneCol = showHostContact
+      ? `<td class="col-phone">${cell(r.hostPhone)}</td>`
+      : '';
+    const contactCols = showContactColumns
+      ? `<td class="col-phone">${showContact ? cell(r.guestPhone) : '<span class="dash">-</span>'}</td>
+         <td class="col-email">${showContact ? cell(r.guestEmail) : '<span class="dash">-</span>'}</td>`
+      : '';
+    return `<tr>
+      <td><span class="tag ${sk}">${esc(stLabel(r.status))}</span></td>
+      <td class="col-num">${cell(r.regionCode)}</td>
+      <td class="col-cat">${catBadge(roomCat === 'busan' ? 'busan_city' : 'general', roomCatLabel)}</td>
+      <td class="col-room">${esc(r.title)}</td>
+      <td class="col-guest">${hasGuest ? esc(r.guestName) : '<span class="dash">' + (r.status === '미배정' ? '배정 대기' : '-') + '</span>'}</td>
+      <td class="col-nat">${hasGuest ? cell(r.nationality) : '<span class="dash">-</span>'}</td>
+      <td class="col-num">${hasGuest && r.guestCount ? esc(r.guestCount) + '명' : '<span class="dash">-</span>'}</td>
+      <td class="col-date">${schedule ? esc(schedule) : '<span class="dash">-</span>'}</td>
+      <td class="col-num">${cell(r.bookingNo)}</td>
+      ${hostPhoneCol}
+      ${contactCols}
+      <td class="col-addr">${esc(r.address)}</td>
+    </tr>`;
+  }).join('');
+  const hostPhoneHead = showHostContact ? '<th>호스트연락처</th>' : '';
+  const contactHead = showContactColumns ? '<th>게스트연락처</th><th>게스트이메일</th>' : '';
+  return `<table class="data detail"><thead><tr>
+    <th class="col-st">상태</th><th>부산No</th><th>구분</th><th>숙소</th><th>게스트</th><th>국적</th><th>인원</th>
+    <th>체크인·아웃</th><th>예약코드</th>${hostPhoneHead}${contactHead}<th>주소</th>
+  </tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function hostSummaryText(h) {
+  const s = h.stats;
+  const g = h.guestStats || {};
+  const parts = [catDetailText(h), `${h.roomCount}객실`];
+  if (g['결제완료']) parts.push(`결제 게스트 ${g['결제완료']}명`);
+  if (g['안내중']) parts.push(`미결제 게스트 ${g['안내중']}명`);
+  if (s['결제완료']) parts.push(`결제 객실 ${s['결제완료']}`);
+  if (s['안내중']) parts.push(`안내 객실 ${s['안내중']}`);
+  if (s['배정취소']) parts.push(`취소 ${s['배정취소']}`);
+  if (s['미배정']) parts.push(`미배정 ${s['미배정']}`);
+  return parts.join(' · ');
+}
+
+function showList() {
+  if (pageView === 'host') return;
+  selectedId = null;
+  document.getElementById('viewList').classList.add('active');
+  document.getElementById('viewDetail').classList.remove('active');
+  document.getElementById('search').placeholder = '호스트 이름 검색';
+  renderList();
+}
+
+function showDetail(hostId) {
+  selectedId = hostId;
+  const host = allHosts.find(h => h.hostId === hostId);
+  if (!host) return;
+  document.getElementById('viewList').classList.remove('active');
+  document.getElementById('viewDetail').classList.add('active');
+  document.getElementById('search').placeholder = '객실·게스트 검색';
+  document.getElementById('search').value = '';
+  document.getElementById('hostHead').innerHTML = `
+    <h2>${esc(host.hostName || host.hostLabel)} ${catBadge(host.hostCategory, host.hostCategoryLabel)}</h2>
+    <p>${esc(hostSummaryText(host))}</p>`;
+  document.getElementById('roomTable').innerHTML = renderDetailTable(host.rooms);
+}
+
+function bindHostRows() {
+  document.querySelectorAll('.host-row').forEach(row => {
+    row.addEventListener('click', () => showDetail(+row.dataset.id));
+  });
+}
+
+function renderList() {
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const hosts = allHosts.filter(h => {
+    if (categoryFilter !== 'all' && h.hostCategory !== categoryFilter) return false;
+    return !q || h.hostLabel.toLowerCase().includes(q) || h.hostName.toLowerCase().includes(q);
+  });
+  document.getElementById('hostCount').textContent = hosts.length;
+  document.getElementById('hostTableWrap').innerHTML = renderHostTable(hosts);
+  bindHostRows();
+}
+
+function filterDetail() {
+  if (!selectedId) return;
+  const host = allHosts.find(h => h.hostId === selectedId);
+  if (!host) return;
+  const q = document.getElementById('search').value.trim().toLowerCase();
+  const rooms = q ? host.rooms.filter(r =>
+    (r.title || '').toLowerCase().includes(q) ||
+    (r.guestName || '').toLowerCase().includes(q) ||
+    stLabel(r.status).includes(q)
+  ) : host.rooms;
+  document.getElementById('roomTable').innerHTML = renderDetailTable(rooms);
+}
+
+document.getElementById('search').addEventListener('input', () => {
+  if (selectedId) filterDetail();
+  else renderList();
+});
+document.getElementById('btnBack').addEventListener('click', showList);
+document.getElementById('categoryFilters').addEventListener('click', (e) => {
+  const btn = e.target.closest('.filter-btn');
+  if (!btn || selectedId) return;
+  categoryFilter = btn.dataset.cat || 'all';
+  document.querySelectorAll('#categoryFilters .filter-btn').forEach(b => {
+    b.classList.toggle('active', b === btn);
+  });
+  renderList();
+});
+
+function applyViewChrome(data) {
+  pageView = data.view || pageView;
+  showContactColumns = pageView === 'host' || pageView === 'busan';
+  const titleEl = document.querySelector('.title');
+  const subEl = document.getElementById('summaryLine');
+  const filters = document.getElementById('categoryFilters');
+  const backBtn = document.getElementById('btnBack');
+  if (pageView === 'host') {
+    titleEl.textContent = '내 숙소 매칭 현황';
+    filters.style.display = 'none';
+    backBtn.style.display = 'none';
+    subEl.textContent = '결제완료 게스트의 연락처·이메일만 표시됩니다. 위홈 앱에서 메시지로 소통하세요.';
+  } else if (pageView === 'busan') {
+    titleEl.textContent = 'K-POPSTAY 부산시 현황';
+    filters.style.display = 'flex';
+    backBtn.style.display = '';
+    subEl.textContent = '부산No 순 · 게스트·호스트 연락처 포함 · 체크인 현황 실시간(DB)';
+  } else {
+    titleEl.textContent = 'K-POPSTAY 매칭 현황';
+    filters.style.display = 'flex';
+    backBtn.style.display = '';
+  }
+}
+
+function showBlocked(msg) {
+  document.getElementById('summaryLine').textContent = '';
+  document.getElementById('updatedAt').textContent = '';
+  document.querySelector('.title').textContent = '매칭 현황 일시 중단';
+  document.getElementById('categoryFilters').style.display = 'none';
+  document.getElementById('hostTableWrap').innerHTML =
+    '<div class="state-msg">' + esc(msg || '개인정보 보호를 위해 운영 전체 현황 페이지는 일시 중단되었습니다.') + '</div>';
+}
+
+async function load() {
+  try {
+    const res = await fetch(API, { cache: 'no-store' });
+    const data = await res.json();
+    if (!data.ok) {
+      if (data.blocked) {
+        showBlocked(data.msg);
+        return;
+      }
+      throw new Error(data.msg || 'load failed');
+    }
+    allHosts = data.hosts || [];
+    applyViewChrome(data);
+    const s = data.summary;
+    if (pageView !== 'host') {
+      document.getElementById('summaryLine').textContent =
+        `호스트 ${allHosts.length}명 · 부산시 선정 ${(s.busanCityHosts || 0) + (s.mixedHosts || 0)}명 · 일반 ${s.generalHosts || 0}명 · 객실 ${s.total}개(부산시 ${s.busanCityRooms || 0} · 일반 ${s.generalRooms || 0}) · 결제 게스트 ${s.guestsBooked || 0}명 · 미결제 게스트 ${s.guestsPending || 0}명`;
+    }
+    document.getElementById('updatedAt').textContent = data.updatedAt || '';
+    document.getElementById('kpiTotal').textContent = s.total;
+    document.getElementById('kpiBooked').textContent = s.booked;
+    document.getElementById('kpiPending').textContent = s.pending;
+    document.getElementById('kpiCancelled').textContent = s.cancelled;
+    document.getElementById('kpiUnassigned').textContent = s.unassigned;
+    if (pageView === 'host' && allHosts.length === 1) {
+      showDetail(allHosts[0].hostId);
+    } else {
+      renderList();
+    }
+  } catch (e) {
+    document.getElementById('hostTableWrap').innerHTML =
+      '<div class="state-msg is-error">데이터를 불러오지 못했습니다.' + (pageView === 'host' && !HOST_ID ? ' host_id가 필요합니다.' : '') + '</div>';
+    document.getElementById('summaryLine').textContent = '';
+  }
+}
+
+if (pageView === 'ops') {
+  showBlocked('개인정보 보호를 위해 운영 전체 현황 페이지는 일시 중단되었습니다. 호스트 개별 링크(?view=host&host_id=) 또는 부산시 현황(?view=busan)을 이용해 주세요.');
+} else if (pageView === 'host' && !HOST_ID) {
+  document.getElementById('hostTableWrap').innerHTML =
+    '<div class="state-msg is-error">URL에 host_id(위홈 호스트 ID)가 필요합니다.</div>';
+  document.getElementById('summaryLine').textContent = '';
+} else {
+  load();
+}
+</script>
+</body>
+</html>

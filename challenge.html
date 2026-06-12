@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wehome Welcome Letter & Busan Stay Gallery — K-POPSTAY BUSAN 2026</title>
+<meta property="og:title" content="Wehome Welcome Letter & Busan Stay Gallery — K-POPSTAY BUSAN 2026">
+<meta property="og:description" content="Share your K-POPSTAY Busan moments on Instagram — Welcome Letters, stay photos, Busan adventures. Tag #보라해챌린지 #KPOPSTAYBusan and join the gallery!">
+<meta property="og:image" content="https://www.wehome.me/assets/images/kpopstay/thumbnail-en.png?v=8">
+<meta name="description" content="Wehome Welcome Letter & Busan Stay Gallery — Share your K-POPSTAY experience on Instagram. Welcome Letters, stay memories, Busan adventures all welcome.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#761183;--purple-light:#F5DDFC;--purple-mid:#9C27B0;--purple-dark:#5A0D63;
+  --purple-xlight:#FBF3FE;--bg:#F9FAFB;--bg-card:#FFFFFF;
+  --text-900:#191F28;--text-700:#333D4B;--text-500:#4E5968;--text-300:#8B95A1;
+  --border:#E5E8EB;--shadow-sm:0 1px 4px rgba(0,0,0,.04);
+  --shadow-md:0 4px 16px rgba(0,0,0,.06);--shadow-lg:0 8px 32px rgba(0,0,0,.08);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans','Noto Sans KR',sans-serif;background:var(--bg);
+  color:var(--text-700);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
+  background:rgba(255,255,255,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:60px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer;text-decoration:none}
+.nav-logo-text{font-size:1rem;font-weight:800;color:var(--text-900);letter-spacing:-.03em}
+.nav-badge{background:var(--purple);color:#fff;font-size:.6rem;font-weight:700;
+  padding:2px 8px;border-radius:100px;letter-spacing:.02em}
+.nav-links{display:flex;align-items:center;gap:4px}
+.nav-link{font-size:.875rem;font-weight:500;color:var(--text-500);padding:8px 12px;
+  border-radius:8px;transition:color .2s,background .2s;white-space:nowrap}
+.nav-link:hover,.nav-link.active{color:var(--purple);background:var(--purple-xlight)}
+.btn-apply-nav{background:var(--purple);color:#fff;font-size:.875rem;font-weight:700;
+  padding:8px 18px;border-radius:8px;transition:all .2s;white-space:nowrap}
+.btn-apply-nav:hover{background:var(--purple-dark);transform:translateY(-1px)}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-hamburger span{display:block;width:22px;height:2px;background:var(--text-700);
+  border-radius:2px;transition:all .3s}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:#fff;
+  border-top:1px solid var(--border);padding:16px 24px;flex-direction:column;gap:8px;
+  z-index:999;box-shadow:var(--shadow-md)}
+.mobile-menu.open{display:flex}
+.mobile-link{font-size:.95rem;font-weight:500;color:var(--text-700);padding:12px 16px;
+  border-radius:10px;transition:background .2s,color .2s}
+.mobile-link:hover,.mobile-link.active{background:var(--purple-xlight);color:var(--purple)}
+
+/* HERO */
+.hero-wrap{background:linear-gradient(160deg,#fff 55%,var(--purple-xlight) 100%);
+  border-bottom:1px solid var(--border)}
+.challenge-hero{padding:120px 24px 72px;text-align:center;max-width:760px;margin:0 auto}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--purple-xlight);
+  color:var(--purple);font-size:.75rem;font-weight:700;letter-spacing:.06em;
+  padding:5px 14px;border-radius:6px;margin-bottom:24px;text-transform:uppercase}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--purple);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+.challenge-hero h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900;color:var(--text-900);
+  line-height:1.1;letter-spacing:-.04em;margin-bottom:16px}
+.challenge-hero h1 .brand{color:var(--purple)}
+.challenge-hero p{font-size:1rem;color:var(--text-500);line-height:1.75;max-width:580px;margin:0 auto 32px}
+
+/* POSTER SECTION */
+.poster-section{background:var(--bg);padding:64px 24px}
+.poster-inner{max-width:1100px;margin:0 auto}
+.poster-section-header{text-align:center;margin-bottom:36px}
+.poster-section-header .eyebrow{display:inline-flex;background:var(--purple-xlight);color:var(--purple);
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:6px;margin-bottom:12px}
+.poster-section-header h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;color:var(--text-900);
+  letter-spacing:-.03em;margin-bottom:10px}
+.poster-section-header p{font-size:.9rem;color:var(--text-500);line-height:1.7}
+
+/* 메인 포스터 (guide) — 클릭하면 라이트박스 */
+.poster-main{
+  border-radius:20px;overflow:hidden;box-shadow:var(--shadow-lg);
+  border:1.5px solid var(--border);cursor:zoom-in;
+  transition:transform .25s,box-shadow .25s;margin-bottom:20px;
+  max-width:700px;margin-left:auto;margin-right:auto;
+}
+.poster-main:hover{transform:scale(1.01);box-shadow:0 16px 48px rgba(118,17,131,.15)}
+.poster-main img{width:100%;display:block}
+
+/* 서브 포스터 3장 그리드 */
+.poster-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  max-width:900px;margin:0 auto;
+}
+.poster-item{
+  border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md);
+  border:1.5px solid var(--border);cursor:zoom-in;
+  transition:transform .2s,box-shadow .2s;
+}
+.poster-item:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(118,17,131,.12)}
+.poster-item img{width:100%;display:block}
+@media(max-width:640px){
+  .poster-grid{
+    display:flex;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    gap:12px;
+    max-width:none;
+    padding-bottom:12px;
+    /* 스크롤바 숨기기 */
+    scrollbar-width:none;
+  }
+  .poster-grid::-webkit-scrollbar{display:none}
+  .poster-item{
+    flex:0 0 72vw;
+    max-width:280px;
+    scroll-snap-align:start;
+    border-radius:12px;
+  }
+  /* 슬라이더 힌트 — 마지막 아이템 뒤 여백 */
+  .poster-item:last-child{margin-right:calc(28vw - 12px)}
+}
+
+/* 슬라이더 스크롤 힌트 텍스트 */
+.poster-scroll-hint{
+  display:none;text-align:center;margin-top:10px;
+  font-size:.75rem;color:var(--text-300);font-weight:500;letter-spacing:.02em;
+}
+@media(max-width:640px){.poster-scroll-hint{display:block}}
+
+/* 라이트박스 */
+.lightbox{
+  display:none;position:fixed;inset:0;z-index:3000;
+  background:rgba(0,0,0,.88);align-items:center;justify-content:center;padding:20px;
+  cursor:zoom-out;
+}
+.lightbox.open{display:flex}
+.lightbox img{
+  max-width:min(90vw,800px);max-height:90vh;
+  border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.5);
+  animation:lbIn .2s ease;
+}
+@keyframes lbIn{from{opacity:0;transform:scale(.93)}to{opacity:1;transform:scale(1)}}
+.lightbox-close{
+  position:fixed;top:20px;right:24px;width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.2rem;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:background .15s;
+}
+.lightbox-close:hover{background:rgba(255,255,255,.3)}
+
+/* HOW TO */
+.how-section{background:#fff;border-top:1px solid var(--border);border-bottom:1px solid var(--border);
+  padding:56px 24px}
+.how-inner{max-width:860px;margin:0 auto}
+.how-title{font-size:1.25rem;font-weight:800;color:var(--text-900);margin-bottom:28px;
+  text-align:center;letter-spacing:-.02em}
+.how-steps{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative;
+  align-items:stretch; /* 카드 높이 균일하게 */
+}
+/* 카드 사이 연결선 */
+.how-steps::before,.how-steps::after{
+  content:'';position:absolute;top:30px;height:2px;
+  background:linear-gradient(90deg,var(--purple-light),var(--purple));
+  width:calc(33.333% - 36px);z-index:0;pointer-events:none;
+}
+.how-steps::before{left:calc(33.333% + 18px - 4px)}
+.how-steps::after{left:calc(66.666% + 18px - 4px)}
+.how-step{
+  background:var(--bg);border:1.5px solid var(--border);border-radius:14px;
+  /* 위 고정, 아래 늘어남 — 카드 키 균일 */
+  padding:28px 20px 28px;
+  text-align:center;margin:0 8px;position:relative;z-index:1;
+  display:flex;flex-direction:column;align-items:center;
+}
+.how-step:first-child{margin-left:0}
+.how-step:last-child{margin-right:0}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--purple);color:#fff;
+  font-size:.85rem;font-weight:800;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  margin:0 auto 16px;box-shadow:0 0 0 4px var(--purple-xlight),0 0 0 5px var(--purple-light)}
+.how-step h3{font-size:.92rem;font-weight:700;color:var(--text-900);
+  margin-bottom:10px;line-height:1.4;word-break:keep-all}
+.how-step p{
+  font-size:.825rem;color:var(--text-500);line-height:1.75;
+  flex:1; /* 텍스트 영역이 남은 높이 채움 — 시각적 하단 정렬 */
+}
+.borahae-tag{display:inline-block;background:var(--purple);color:#fff;font-size:.75rem;
+  font-weight:700;padding:2px 10px;border-radius:6px;letter-spacing:.04em}
+@media(max-width:640px){
+  .how-steps{grid-template-columns:1fr;gap:12px}
+  .how-steps::before,.how-steps::after{display:none}
+  .how-step{margin:0}
+}
+
+/* MODAL */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,.45);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal-box{
+  background:#fff;border-radius:24px;
+  width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
+  box-shadow:0 24px 64px rgba(0,0,0,.18);
+  animation:modalIn .25s cubic-bezier(.34,1.56,.64,1);
+  position:relative;
+}
+@keyframes modalIn{
+  from{opacity:0;transform:translateY(24px) scale(.97)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.modal-header{
+  padding:28px 32px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;
+}
+.modal-header-text .eyebrow2{
+  display:inline-flex;background:var(--purple-xlight);color:var(--purple);
+  font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 10px;border-radius:6px;margin-bottom:8px;
+}
+.modal-header-text h2{
+  font-size:1.25rem;font-weight:800;color:var(--text-900);letter-spacing:-.03em;margin:0;
+}
+.modal-close{
+  width:32px;height:32px;border-radius:50%;border:none;background:var(--bg);
+  color:var(--text-500);cursor:pointer;display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;font-size:1.1rem;transition:background .15s,color .15s;margin-top:2px;
+}
+.modal-close:hover{background:var(--border);color:var(--text-900)}
+.modal-body{padding:20px 32px 32px}
+.modal-body .sub{font-size:.855rem;color:var(--text-500);margin-bottom:24px;line-height:1.65}
+
+/* FORM (모달 내부 공용) */
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.82rem;font-weight:700;color:var(--text-700);
+  margin-bottom:7px;letter-spacing:-.01em}
+.form-group input,.form-group textarea{width:100%;padding:11px 14px;
+  border:1.5px solid var(--border);border-radius:10px;font-size:.9rem;
+  font-family:inherit;color:var(--text-900);transition:border-color .2s;background:#fff}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--purple)}
+.form-group textarea{resize:vertical;min-height:72px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:520px){.form-row{grid-template-columns:1fr}}
+.btn-submit{width:100%;background:var(--purple);color:#fff;border:none;
+  padding:14px;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;
+  font-family:inherit;transition:all .2s;letter-spacing:-.01em;margin-top:4px}
+.btn-submit:hover{background:var(--purple-dark);transform:translateY(-1px)}
+.btn-submit:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.submit-msg{margin-top:14px;padding:12px 16px;border-radius:10px;font-size:.875rem;
+  font-weight:600;display:none}
+.submit-msg.ok{background:#f0fdf4;color:#16a34a;border:1.5px solid #86efac}
+.submit-msg.err{background:#fef2f2;color:#dc2626;border:1.5px solid #fca5a5}
+
+/* 갤러리 섹션 Share 버튼 */
+.btn-share-gallery{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--purple);color:#fff;
+  font-size:.875rem;font-weight:700;padding:10px 22px;border-radius:10px;
+  border:none;cursor:pointer;font-family:inherit;transition:all .2s;
+  margin-top:16px;
+}
+.btn-share-gallery:hover{background:var(--purple-dark);transform:translateY(-1px)}
+
+/* GALLERY */
+.gallery-section{padding:64px 24px 96px}
+.gallery-inner{max-width:1200px;margin:0 auto}
+.gallery-header{text-align:center;margin-bottom:40px}
+.gallery-header .eyebrow{display:inline-flex;background:var(--purple-xlight);color:var(--purple);
+  font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  padding:4px 12px;border-radius:6px;margin-bottom:14px}
+.gallery-header h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;color:var(--text-900);
+  letter-spacing:-.03em;margin-bottom:10px}
+.gallery-header p{font-size:.9rem;color:var(--text-500);line-height:1.7}
+
+/* 인스타그램 갤러리 */
+.insta-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+  /* 게시물이 적을 때 중앙 정렬 */
+  justify-content:center;
+}
+/* 게시물 수에 따른 동적 컬럼 (JS에서 data-count 설정) */
+.insta-grid[data-count="1"]{grid-template-columns:minmax(0,480px);max-width:520px;margin:0 auto}
+.insta-grid[data-count="2"]{grid-template-columns:repeat(2,minmax(0,420px));max-width:880px;margin:0 auto}
+.insta-grid[data-count="3"]{grid-template-columns:repeat(3,1fr);max-width:960px;margin:0 auto}
+@media(max-width:1000px){.insta-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:680px){
+  .insta-grid,.insta-grid[data-count="1"],.insta-grid[data-count="2"],.insta-grid[data-count="3"]{
+    grid-template-columns:repeat(2,1fr);max-width:none;
+  }
+}
+@media(max-width:420px){
+  .insta-grid,.insta-grid[data-count="1"],.insta-grid[data-count="2"],.insta-grid[data-count="3"]{
+    grid-template-columns:1fr;
+  }
+}
+
+.insta-item{
+  border-radius:16px;overflow:hidden;
+  background:#fff;box-shadow:var(--shadow-sm);
+  border:1.5px solid var(--border);
+  transition:box-shadow .25s,transform .25s;
+}
+.insta-item:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+/* iframe을 정사각형 비율로 고정 — 인스타 기본 embed 비율 */
+.insta-item-frame{
+  position:relative;width:100%;
+  /* 1:1 ~ 약간 세로 비율 (인스타 embed 기본) */
+  padding-bottom:125%;
+  overflow:hidden;background:#fafafa;
+}
+.insta-item-frame iframe{
+  position:absolute;top:0;left:0;
+  width:100%;height:100%;
+  border:none;display:block;
+}
+.insta-caption{
+  padding:14px 16px 16px;
+  border-top:1px solid var(--border);
+}
+.insta-caption-name{
+  font-size:.8rem;font-weight:700;color:var(--purple);margin-bottom:5px;
+  display:flex;align-items:center;gap:6px;
+}
+.insta-caption-name::before{
+  content:'';display:inline-block;width:6px;height:6px;border-radius:50%;
+  background:var(--purple);flex-shrink:0;
+}
+.insta-caption-note{
+  font-size:.82rem;color:var(--text-500);line-height:1.6;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;
+}
+
+/* empty / loading */
+.gallery-empty{padding:0}
+.gallery-empty-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  max-width:800px;margin:0 auto 32px;
+}
+.gallery-empty-card{
+  border-radius:16px;border:2px dashed var(--border);
+  background:#fff;padding:36px 20px;
+  text-align:center;display:flex;flex-direction:column;
+  align-items:center;gap:12px;
+}
+.gallery-empty-icon{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--purple-xlight);
+  display:flex;align-items:center;justify-content:center;
+}
+.gallery-empty-card h4{font-size:.88rem;font-weight:700;color:var(--text-700);line-height:1.4}
+.gallery-empty-card p{font-size:.78rem;color:var(--text-300);line-height:1.6}
+.gallery-empty-cta{text-align:center}
+.gallery-empty-cta p{font-size:.95rem;color:var(--text-500);margin-bottom:16px;line-height:1.6}
+.gallery-empty-cta strong{color:var(--purple)}
+@media(max-width:560px){.gallery-empty-grid{grid-template-columns:1fr;max-width:340px}}
+.gallery-loading{display:flex;justify-content:center;padding:48px;gap:8px}
+.gallery-loading span{width:10px;height:10px;border-radius:50%;background:var(--purple);
+  animation:bounce2 1.2s ease-in-out infinite}
+.gallery-loading span:nth-child(2){animation-delay:.2s}
+.gallery-loading span:nth-child(3){animation-delay:.4s}
+@keyframes bounce2{0%,80%,100%{transform:scale(.5);opacity:.4}40%{transform:scale(1);opacity:1}}
+
+/* 카운트 뱃지 */
+.post-count{display:inline-flex;align-items:center;gap:6px;background:var(--purple-xlight);
+  color:var(--purple);font-size:.78rem;font-weight:700;padding:4px 12px;border-radius:20px;
+  margin-bottom:20px}
+
+/* FOOTER */
+.wehome-banner{background:#fff;border-top:1px solid var(--border)}
+.wehome-banner-link{display:flex;align-items:center;justify-content:center;gap:16px;
+  padding:18px 24px;max-width:1200px;margin:0 auto;transition:opacity .2s;flex-wrap:wrap}
+.wehome-banner-link:hover{opacity:.7}
+.wehome-banner-logo{font-size:.95rem;font-weight:800;color:var(--purple);letter-spacing:-.02em}
+.wehome-banner-divider{width:1px;height:16px;background:var(--border);flex-shrink:0}
+.wehome-banner-text{font-size:.85rem;font-weight:500;color:var(--text-500);white-space:nowrap}
+footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
+.footer-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.footer-top{display:flex;align-items:flex-start;justify-content:space-between;
+  gap:32px;flex-wrap:wrap;margin-bottom:32px}
+.footer-logo-text{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.02em}
+.footer-badge{background:var(--purple);color:#fff;font-size:.6rem;font-weight:700;
+  padding:2px 7px;border-radius:4px;margin-left:8px}
+.footer-tagline{font-size:.8rem;color:#6B7280;margin-top:6px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap}
+.footer-link{font-size:.85rem;color:#9CA3AF;transition:color .2s}
+.footer-link:hover{color:#fff}
+.footer-divider{border:none;border-top:1px solid #2D3748;margin-bottom:20px}
+.footer-company{font-size:.78rem;color:#4B5563;line-height:1.8}
+
+/* FADE UP */
+.fade-up{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* LANG */
+.kpop-lang-wrap{position:relative}
+.kpop-lang-btn{display:flex;align-items:center;gap:4px;background:#fff;
+  border:1.5px solid var(--border);border-radius:8px;padding:6px 10px;
+  font-size:.8rem;font-weight:600;color:var(--text-700);cursor:pointer;
+  font-family:inherit;transition:all .2s;white-space:nowrap}
+.kpop-lang-btn:hover{border-color:var(--purple);color:var(--purple);background:var(--purple-xlight)}
+.kpop-lang-icon{width:16px;height:16px;fill:currentColor;flex-shrink:0}
+.kpop-lang-arrow{width:12px;height:12px;fill:currentColor;opacity:.55;flex-shrink:0}
+.kpop-lang-dropdown{display:none;position:absolute;top:calc(100% + 8px);right:0;
+  background:#fff;border:1.5px solid var(--border);border-radius:12px;
+  box-shadow:0 8px 32px rgba(0,0,0,.10);min-width:130px;padding:6px;z-index:1100}
+.kpop-lang-dropdown.open{display:block}
+.kpop-lang-item{display:block;padding:8px 12px;border-radius:8px;font-size:.82rem;
+  font-weight:600;color:var(--text-700);transition:background .15s,color .15s;
+  white-space:nowrap;text-decoration:none;cursor:pointer;background:none;border:none;
+  font-family:inherit;width:100%;text-align:left}
+.kpop-lang-item:hover{background:var(--purple-xlight);color:var(--purple)}
+.kpop-lang-item.active{color:var(--purple);font-weight:700}
+.kpop-lang-item.active::before{content:'✓ ';font-size:10px}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-hamburger{display:flex}
+  .submit-card{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-text">K-POPSTAY BUSAN</span>
+      <span class="nav-badge">2026</span>
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-link">HOME</a>
+      <a href="/about" class="nav-link">K-POPSTAY</a>
+      <a href="/guest-guidebook" class="nav-link">Guest Guidebook</a>
+      <a href="/travel-guide" class="nav-link">Travel Guide</a>
+      <a href="/challenge" class="nav-link active">Borahae Challenge</a>
+      <a href="/apply" class="btn-apply-nav">Apply Now &rsaquo;</a>
+      <div class="kpop-lang-wrap" id="kpopLangWrap">
+        <button class="kpop-lang-btn" onclick="toggleKpopLang(event)" aria-expanded="false" aria-label="Language">
+          <svg class="kpop-lang-icon" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm0 18c-1.05 0-2.4-.9-3.4-3h6.8c-1 2.1-2.35 3-3.4 3zm-3.8-5c-.13-.64-.2-1.31-.2-2s.07-1.36.2-2h7.6c.13.64.2 1.31.2 2s-.07 1.36-.2 2H8.2zm-4.1-2c0-.68.1-1.35.27-2h3.25c-.1.65-.16 1.31-.16 2s.06 1.35.16 2H4.37A9.94 9.94 0 0 1 4.1 13zm11.5-6h-7.2C9.4 4.9 10.75 4 11.8 4c1.05 0 2.4.9 3.4 3h.4zm2.13 2h3.25A9.94 9.94 0 0 1 21.9 11h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2zm0 4h3.25c-.17.65-.27 1.32-.27 2s.1 1.35.27 2h-3.25c.1-.65.16-1.31.16-2s-.06-1.35-.16-2z"/></svg>
+          <span id="kpopLangCurLabel">EN</span>
+          <svg class="kpop-lang-arrow" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+        </button>
+        <div class="kpop-lang-dropdown" id="kpopLangDropdown" role="listbox"></div>
+      </div>
+    </div>
+    <div class="nav-hamburger" id="navHamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/" class="mobile-link" onclick="toggleMenu()">HOME</a>
+  <a href="/about" class="mobile-link" onclick="toggleMenu()">K-POPSTAY</a>
+  <a href="/guest-guidebook" class="mobile-link" onclick="toggleMenu()">Guest Guidebook</a>
+  <a href="/travel-guide" class="mobile-link" onclick="toggleMenu()">Travel Guide</a>
+  <a href="/challenge" class="mobile-link active" onclick="toggleMenu()">Borahae Challenge</a>
+  <a href="/apply" class="mobile-link" style="color:var(--purple);font-weight:700" onclick="toggleMenu()">Apply Now &rsaquo;</a>
+  <div id="mobileLangList"></div>
+</div>
+
+<!-- HERO -->
+<div class="hero-wrap">
+  <div class="challenge-hero fade-up">
+    <div class="hero-eyebrow">위홈 웰컴레터 &amp; 보라해 한글 챌린지</div>
+    <h1>Wehome <span class="brand">Welcome Letter</span><br>&amp; Busan Stay<br>Gallery</h1>
+    <p>Share your K-POPSTAY Busan moments on Instagram &mdash; write <strong>보라해</strong> on your Welcome Letter, snap your stay, capture Busan with your host, anything goes!<br><br>
+    Tag <strong>#보라해챌린지</strong> <strong>#KPOPSTAYBusan</strong> and submit your link below to join the gallery.</p>
+    <button onclick="openModal()" style="display:inline-flex;align-items:center;gap:8px;background:var(--purple);color:#fff;font-size:.95rem;font-weight:700;padding:13px 28px;border-radius:10px;letter-spacing:-.01em;border:none;cursor:pointer;font-family:inherit;transition:all .2s" onmouseover="this.style.background='var(--purple-dark)'" onmouseout="this.style.background='var(--purple)'">Share My Moment &rsaquo;</button>
+  </div>
+</div>
+
+<!-- POSTER SECTION -->
+<section class="poster-section">
+  <div class="poster-inner">
+    <div class="poster-section-header fade-up">
+      <div class="eyebrow">Borahae Hangul Challenge</div>
+      <h2>Make Your Own Hangul Art</h2>
+      <p>Use the Wehome Borahae Hangul stickers to write your name, your favorite BTS member, or song — in Korean!</p>
+    </div>
+    <!-- 메인 소개 포스터 -->
+    <div class="poster-main fade-up" onclick="openLightbox(this.querySelector('img').src)">
+      <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-guide.jpg"
+           alt="Borahae Hangul Challenge Guide" loading="lazy">
+    </div>
+    <!-- 상세 포스터 3장 -->
+    <div class="poster-grid fade-up">
+      <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-1.jpg"
+             alt="Hangul Challenge Detail 1" loading="lazy">
+      </div>
+      <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-2.jpg"
+             alt="Hangul Challenge Detail 2" loading="lazy">
+      </div>
+      <div class="poster-item" onclick="openLightbox(this.querySelector('img').src)">
+        <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-3.jpg"
+             alt="Hangul Challenge Detail 3" loading="lazy">
+      </div>
+    </div>
+    <p class="poster-scroll-hint">← swipe to see more →</p>
+  </div>
+</section>
+
+<!-- 라이트박스 -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <img id="lightboxImg" src="" alt="Poster">
+</div>
+
+<!-- HOW TO -->
+<section class="how-section">
+  <div class="how-inner">
+    <div class="how-title fade-up">How to Join</div>
+    <div class="how-steps">
+      <div class="how-step fade-up">
+        <div class="step-num">1</div>
+        <h3>Capture Your Moment</h3>
+        <p>Use the Hangul stickers to write your name, your favorite BTS member, a song title — anything in Korean! Take a photo of your creation, your stay, or Busan with your host.</p>
+      </div>
+      <div class="how-step fade-up">
+        <div class="step-num">2</div>
+        <h3>Post on Instagram</h3>
+        <p>Share your photo or video on Instagram. Tag <strong>#보라해챌린지</strong> and <strong>#KPOPSTAYBusan</strong> so everyone can find your post.</p>
+      </div>
+      <div class="how-step fade-up">
+        <div class="step-num">3</div>
+        <h3>Submit Your Link</h3>
+        <p>Paste your Instagram post URL below. After a quick review it'll appear in the gallery for ARMY around the world to see!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBMIT MODAL -->
+<div class="modal-overlay" id="submitModal" onclick="handleModalOverlayClick(event)">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div class="modal-header-text">
+        <div class="eyebrow2">Share Your Story</div>
+        <h2 id="modalTitle">Submit Your Post</h2>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p class="sub">Paste your Instagram post link — Welcome Letter, stay photos, Busan moments, anything from your K-POPSTAY experience. After a quick review it'll appear in the gallery!</p>
+      <form id="submitForm" onsubmit="submitPost(event)">
+        <div class="form-group">
+          <label for="instaUrl">Instagram Post URL <span style="color:#dc2626">*</span></label>
+          <input type="url" id="instaUrl" name="instagram_url" required
+            placeholder="https://www.instagram.com/p/XXXXXXXXXX/"
+            autocomplete="off">
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="subName">Your Name (optional)</label>
+            <input type="text" id="subName" name="submitter_name" placeholder="e.g. ARMY_USA">
+          </div>
+          <div class="form-group">
+            <label for="subEmail">Email (optional)</label>
+            <input type="email" id="subEmail" name="submitter_email" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subNote">Message to your host (optional)</label>
+          <textarea id="subNote" name="submitter_note" placeholder="보라해! Thank you for opening your home..."></textarea>
+        </div>
+        <button type="submit" class="btn-submit" id="submitBtn">Submit My Post &rsaquo;</button>
+      </form>
+      <div class="submit-msg" id="submitMsg"></div>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section class="gallery-section">
+  <div class="gallery-inner">
+    <div class="gallery-header fade-up">
+      <div class="eyebrow">Community Gallery</div>
+      <h2>Busan Stay Gallery</h2>
+      <p>ARMY from around the world sharing their K-POPSTAY Busan moments &mdash; Welcome Letters, stay memories, and Busan adventures with their hosts.</p>
+      <button class="btn-share-gallery" onclick="openModal()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+        Share My Post
+      </button>
+    </div>
+    <div style="text-align:center;margin-bottom:28px">
+      <span class="post-count" id="postCount" style="display:none">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        <span id="postCountNum">0</span> posts shared
+      </span>
+    </div>
+    <div id="galleryLoading" class="gallery-loading">
+      <span></span><span></span><span></span>
+    </div>
+    <div id="galleryEmpty" class="gallery-empty" style="display:none">
+      <div class="gallery-empty-grid">
+        <div class="gallery-empty-card">
+          <div class="gallery-empty-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+          </div>
+          <h4>Your Hangul Art</h4>
+          <p>Write any Korean word with the stickers and snap a photo</p>
+        </div>
+        <div class="gallery-empty-card">
+          <div class="gallery-empty-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
+          <h4>Post &amp; Tag</h4>
+          <p>Share on Instagram with <strong style="color:var(--purple)">#보라해챌린지</strong></p>
+        </div>
+        <div class="gallery-empty-card">
+          <div class="gallery-empty-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+          </div>
+          <h4>Join the Gallery</h4>
+          <p>Submit your link — your post appears here for ARMY worldwide</p>
+        </div>
+      </div>
+      <div class="gallery-empty-cta">
+        <p>Be the <strong>first ARMY</strong> to leave a memory here.<br>Your post will be the one everyone sees first.</p>
+        <button class="btn-share-gallery" onclick="openModal()">
+          Share My Moment First &rsaquo;
+        </button>
+      </div>
+    </div>
+    <div class="insta-grid" id="instaGrid"></div>
+  </div>
+</section>
+
+<!-- WEHOME BANNER -->
+<div class="wehome-banner">
+  <a href="https://www.wehome.me" target="_blank" rel="noopener" class="wehome-banner-link">
+    <span class="wehome-banner-logo">Wehome.me</span>
+    <span class="wehome-banner-divider"></span>
+    <span class="wehome-banner-text">Korea's Only Government-Authorized Home Sharing</span>
+    <span style="font-size:.85rem;color:var(--text-300)">&#8599;</span>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div><span class="footer-logo-text">K-POPSTAY BUSAN</span><span class="footer-badge">2026</span></div>
+        <div class="footer-tagline">Powered by Wehome.me &middot; 위홈이 만드는 새로운 공유숙박</div>
+      </div>
+      <div class="footer-links">
+        <a href="/" class="footer-link">Home</a>
+        <a href="/guest-guidebook" class="footer-link">Guidebook</a>
+        <a href="/apply" class="footer-link">Apply Now</a>
+        <a href="/challenge" class="footer-link">Borahae Challenge</a>
+        <a href="mailto:cs@wehome.me" class="footer-link">Customer Support</a>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-company">
+      (주)위홈 | 대표이사: 조산구 | 개인정보 보호책임자: 김석진 | 사업자등록번호: 467-81-01292 / 서울 마포구 양화로 136 SVCS 507 | 고객센터: 1544-5665 | 평일 10:00&ndash;12:00, 13:00&ndash;18:00<br>
+      &copy; 2026 Wehome Inc. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script src="/kpop-i18n.js?v=20260605"></script>
+<script>
+// 언어 드롭다운 렌더링
+(function(){
+  function render(){
+    var labels = window.KPOP_LANG_LABELS || {};
+    var supported = window.KPOP_SUPPORTED || [];
+    var cur = window.KPOP_LANG || 'en';
+    var dd = document.getElementById('kpopLangDropdown');
+    if(dd){
+      dd.innerHTML='';
+      supported.forEach(function(code){
+        var btn=document.createElement('button');
+        btn.className='kpop-lang-item'+(code===cur?' active':'');
+        btn.textContent=labels[code]||code;
+        btn.onclick=function(e){e.stopPropagation();window.kpopSetLang(code)};
+        dd.appendChild(btn);
+      });
+    }
+    var lbl=document.getElementById('kpopLangCurLabel');
+    if(lbl) lbl.textContent=labels[cur]||'EN';
+    var ml=document.getElementById('mobileLangList');
+    if(ml){
+      ml.innerHTML='';
+      supported.forEach(function(code){
+        var a=document.createElement('a');
+        a.href='#';a.className='mobile-link'+(code===cur?' active':'');
+        if(code===cur) a.style.cssText='color:var(--purple);font-weight:700';
+        a.textContent=labels[code]||code;
+        a.onclick=function(e){e.preventDefault();window.kpopSetLang(code)};
+        ml.appendChild(a);
+      });
+    }
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded',render);}
+  else{render();}
+})();
+
+// Channel IO
+(function(){var w=window;if(w.ChannelIO)return;var ch=function(){ch.c(arguments)};
+ch.q=[];ch.c=function(args){ch.q.push(args)};w.ChannelIO=ch;
+function l(){if(w.ChannelIOInitialized)return;w.ChannelIOInitialized=true;
+var s=document.createElement('script');s.type='text/javascript';s.async=true;
+s.src='https://cdn.channel.io/plugin/ch-plugin-web.js';
+var x=document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x)}
+if(document.readyState==='complete'){l()}else{w.addEventListener('DOMContentLoaded',l);w.addEventListener('load',l)}})();
+ChannelIO('boot',{pluginKey:'5d85db83-13e7-44dd-a0e1-3036e03e3e25',hideChannelButtonOnBoot:true});
+
+// 모바일 메뉴
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+
+// 라이트박스
+function openLightbox(src){
+  document.getElementById('lightboxImg').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLightbox(){
+  document.getElementById('lightbox').classList.remove('open');
+  if(!document.getElementById('submitModal').classList.contains('open')){
+    document.body.style.overflow='';
+  }
+}
+
+// 모달
+function openModal(){
+  var m=document.getElementById('submitModal');
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+  // 잠깐 후 URL 인풋에 포커스
+  setTimeout(function(){
+    var el=document.getElementById('instaUrl');
+    if(el) el.focus();
+  },260);
+}
+function closeModal(){
+  var m=document.getElementById('submitModal');
+  m.classList.remove('open');
+  document.body.style.overflow='';
+}
+function handleModalOverlayClick(e){
+  if(e.target===document.getElementById('submitModal')) closeModal();
+}
+// ESC 키로 닫기 (모달 + 라이트박스 통합)
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){ closeModal(); closeLightbox(); }
+});
+
+// 언어 드롭다운
+function toggleKpopLang(e){
+  e.stopPropagation();
+  var dd=document.getElementById('kpopLangDropdown');
+  dd.classList.toggle('open');
+  var btn=document.querySelector('.kpop-lang-btn');
+  btn.setAttribute('aria-expanded',dd.classList.contains('open'));
+}
+document.addEventListener('click',function(){
+  var dd=document.getElementById('kpopLangDropdown');
+  if(dd) dd.classList.remove('open');
+});
+
+// fade up
+var fades=document.querySelectorAll('.fade-up');
+var obs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+},{threshold:.1});
+fades.forEach(function(el){obs.observe(el)});
+
+// XSS 방지용 이스케이프
+function escHtml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// 갤러리 로드
+function loadGallery(){
+  fetch('/challenge-posts.php')
+    .then(function(r){return r.json()})
+    .then(function(data){
+      document.getElementById('galleryLoading').style.display='none';
+      var posts=data.posts||[];
+      if(!posts.length){
+        document.getElementById('galleryEmpty').style.display='block';
+        return;
+      }
+      var countEl=document.getElementById('postCount');
+      document.getElementById('postCountNum').textContent=posts.length;
+      countEl.style.display='inline-flex';
+
+      var grid=document.getElementById('instaGrid');
+      // 게시물 수에 따라 컬럼 수 조정
+      var cnt=posts.length;
+      grid.setAttribute('data-count', cnt<=3 ? String(cnt) : '');
+      posts.forEach(function(p){
+        var item=document.createElement('div');
+        item.className='insta-item';
+        var captionHtml='';
+        if(p.submitter_name||p.submitter_note){
+          captionHtml='<div class="insta-caption">';
+          if(p.submitter_name) captionHtml+='<div class="insta-caption-name">'+escHtml(p.submitter_name)+'</div>';
+          if(p.submitter_note) captionHtml+='<div class="insta-caption-note">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
+          captionHtml+='</div>';
+        }
+        // iframe을 비율 고정 래퍼로 감쌈
+        item.innerHTML='<div class="insta-item-frame"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/captioned/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe></div>'+captionHtml;
+        grid.appendChild(item);
+      });
+
+      // instagram embed 스크립트 트리거
+      if(window.instgrm && window.instgrm.Embeds){
+        window.instgrm.Embeds.process();
+      } else {
+        var s=document.createElement('script');
+        s.async=true;s.src='//www.instagram.com/embed.js';
+        document.body.appendChild(s);
+      }
+    })
+    .catch(function(){
+      document.getElementById('galleryLoading').style.display='none';
+      document.getElementById('galleryEmpty').style.display='block';
+    });
+}
+
+// 제출 폼
+function submitPost(e){
+  e.preventDefault();
+  var btn=document.getElementById('submitBtn');
+  var msg=document.getElementById('submitMsg');
+  msg.style.display='none';
+  btn.disabled=true;
+  btn.textContent='Submitting...';
+
+  var payload={
+    instagram_url:document.getElementById('instaUrl').value.trim(),
+    submitter_name:document.getElementById('subName').value.trim(),
+    submitter_email:document.getElementById('subEmail').value.trim(),
+    submitter_note:document.getElementById('subNote').value.trim()
+  };
+
+  fetch('/challenge-submit.php',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(payload)
+  })
+  .then(function(r){return r.json()})
+  .then(function(d){
+    msg.style.display='block';
+    if(d.ok){
+      msg.className='submit-msg ok';
+      msg.textContent=d.msg||'Submitted! Your post will appear after review.';
+      document.getElementById('submitForm').reset();
+      // 2초 후 모달 자동 닫기
+      setTimeout(closeModal, 2000);
+    } else {
+      msg.className='submit-msg err';
+      msg.textContent=d.msg||'Submission failed. Please try again.';
+    }
+  })
+  .catch(function(){
+    msg.style.display='block';
+    msg.className='submit-msg err';
+    msg.textContent='Network error. Please try again.';
+  })
+  .finally(function(){
+    btn.disabled=false;
+    btn.textContent='Submit My Post ›';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', loadGallery);
+</script>
+</body>
+</html>

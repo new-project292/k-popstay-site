@@ -276,6 +276,47 @@ section{padding:96px 0}
 .contact-card p{font-size:0.85rem;color:var(--text-500);line-height:1.6}
 .contact-card a{color:var(--purple);font-weight:600}
 
+/* COMMUNITY GALLERY PREVIEW */
+#community{background:var(--bg);border-top:1px solid var(--border);padding:80px 0}
+.community-header{text-align:center;margin-bottom:40px}
+.community-header .section-eyebrow{margin-bottom:12px}
+.gallery-preview-grid{
+  display:grid;grid-template-columns:repeat(6,1fr);gap:10px;
+  max-width:1200px;margin:0 auto 32px;padding:0 24px;
+}
+.gallery-preview-item{
+  aspect-ratio:1;border-radius:10px;overflow:hidden;
+  background:var(--purple-xlight);border:1.5px solid var(--border);
+  cursor:pointer;transition:transform .2s,box-shadow .2s;position:relative;
+}
+.gallery-preview-item:hover{transform:scale(1.04);box-shadow:var(--shadow-lg);z-index:1}
+.gallery-preview-item iframe{
+  width:100%;height:100%;border:none;display:block;
+  pointer-events:none;/* 클릭은 부모가 처리 */
+}
+.gallery-preview-item .preview-overlay{
+  position:absolute;inset:0;background:rgba(118,17,131,0);
+  transition:background .2s;display:flex;align-items:center;justify-content:center;
+}
+.gallery-preview-item:hover .preview-overlay{background:rgba(118,17,131,.18)}
+.gallery-preview-empty{
+  aspect-ratio:1;border-radius:10px;
+  background:var(--purple-xlight);border:1.5px dashed var(--purple-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:var(--purple);font-weight:600;opacity:.5;
+}
+.gallery-preview-cta{text-align:center}
+.btn-view-gallery{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;color:var(--purple);
+  font-size:.9rem;font-weight:700;padding:11px 24px;
+  border-radius:10px;border:1.5px solid var(--purple);
+  transition:all .2s;
+}
+.btn-view-gallery:hover{background:var(--purple);color:#fff}
+@media(max-width:900px){.gallery-preview-grid{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:560px){.gallery-preview-grid{grid-template-columns:repeat(3,1fr);gap:8px}}
+
 /* FOOTER */
 .wehome-banner{background:#fff;border-top:1px solid var(--border)}
 .wehome-banner-link{display:flex;align-items:center;justify-content:center;gap:16px;padding:18px 24px;max-width:1200px;margin:0 auto;transition:opacity .2s;flex-wrap:wrap}
@@ -367,6 +408,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       <a href="/about" class="nav-link">K-POPSTAY</a>
       <a href="#guidebook" class="nav-link">Guest Guidebook</a>
       <a href="/travel-guide" class="nav-link">Travel Guide</a>
+      <a href="/challenge" class="nav-link">Borahae Challenge</a>
       <a href="apply.html" class="btn-apply-nav">Apply Now &rsaquo;</a>
       <!-- k-popstay 전용 언어 선택기 — wehome.me 세션/쿠키 불개입 -->
       <div class="kpop-lang-wrap" id="kpopLangWrap">
@@ -389,6 +431,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   <a href="/about" class="mobile-link" onclick="toggleMenu()">K-POPSTAY</a>
   <a href="#guidebook" class="mobile-link" onclick="toggleMenu()">Guest Guidebook</a>
   <a href="/travel-guide" class="mobile-link" onclick="toggleMenu()">Travel Guide</a>
+  <a href="/challenge" class="mobile-link" onclick="toggleMenu()">Borahae Challenge</a>
   <a href="apply.html" class="mobile-link" style="color:var(--purple);font-weight:700">Apply Now &rsaquo;</a>
   <div id="mobileLangList"></div>
   <a href="/host" class="mobile-link">Host Apply KR</a>
@@ -454,7 +497,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       <div class="whatis-card fade-up">
         <div class="card-num">02</div>
         <h3 class="card-title">100% Refundable Security Deposit</h3>
-        <p class="card-desc">Selected ARMY guests are required to pay a security deposit of KRW 50,000 per person. Upon check-in, the full deposit amount will be refunded in the form of a Busan Tourism Gift Card. The Busan Tourism Gift Card can be used like cash at participating businesses throughout Busan.</p>
+        <p class="card-desc">Selected ARMY guests are required to pay a security deposit of KRW 50,000 per person. Upon check-in, the full deposit amount will be refunded in the form of a Busan Tourism Gift Card. The Busan Tourism Gift Card can be used like cash at participating businesses throughout Busan.<br><br>If we are unable to provide the Busan Tourism Gift Card, your deposit will be automatically refunded to your original payment method after your stay.</p>
       </div>
     </div>
   </div>
@@ -630,6 +673,26 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   </div>
 </section>
 
+<!-- COMMUNITY GALLERY PREVIEW -->
+<section id="community">
+  <div class="container">
+    <div class="community-header fade-up">
+      <div class="section-eyebrow">Community</div>
+      <h2 class="section-title">ARMY Stories from Busan</h2>
+      <p class="section-desc" style="margin:0 auto">Real moments shared by K-POPSTAY guests — Hangul art, stay memories, and Busan adventures.</p>
+    </div>
+  </div>
+  <div class="gallery-preview-grid fade-up" id="galleryPreviewGrid">
+    <!-- JS로 채움 -->
+  </div>
+  <div class="gallery-preview-cta fade-up">
+    <a href="/challenge" class="btn-view-gallery">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      View Full Gallery &amp; Share Your Post
+    </a>
+  </div>
+</section>
+
 <!-- WEHOME BANNER -->
 <div class="wehome-banner">
   <a href="https://www.wehome.me" target="_blank" rel="noopener" class="wehome-banner-link">
@@ -773,6 +836,47 @@ var observer=new IntersectionObserver(function(entries){
   });
 },{threshold:0.12});
 fadeEls.forEach(function(el){observer.observe(el);});
+
+// Community Gallery Preview — 승인된 게시물 최대 6개 미리보기
+(function(){
+  var MAX = 6;
+  var grid = document.getElementById('galleryPreviewGrid');
+  if(!grid) return;
+
+  fetch('/challenge-posts.php')
+    .then(function(r){return r.json()})
+    .then(function(data){
+      var posts = (data.posts||[]).slice(0, MAX);
+      // 빈 슬롯 포함해서 항상 MAX개 채우기
+      for(var i=0; i<MAX; i++){
+        var cell = document.createElement('div');
+        if(posts[i]){
+          cell.className='gallery-preview-item';
+          var sc = posts[i].shortcode;
+          cell.innerHTML =
+            '<iframe src="https://www.instagram.com/p/'+encodeURIComponent(sc)+'/embed/" '+
+            'frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>'+
+            '<div class="preview-overlay"></div>';
+          (function(shortcode){
+            cell.onclick = function(){ window.location.href='/challenge'; };
+          })(sc);
+        } else {
+          cell.className='gallery-preview-empty';
+          cell.innerHTML='<span>💜</span>';
+        }
+        grid.appendChild(cell);
+      }
+    })
+    .catch(function(){
+      // 로드 실패 시 빈 슬롯만
+      for(var i=0;i<MAX;i++){
+        var cell=document.createElement('div');
+        cell.className='gallery-preview-empty';
+        cell.innerHTML='<span>💜</span>';
+        grid.appendChild(cell);
+      }
+    });
+})();
 </script>
 </body>
 </html>

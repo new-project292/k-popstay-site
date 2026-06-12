@@ -72,6 +72,10 @@ section{padding:96px 24px}
 .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:36px}
 .badge-open{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:var(--purple);background:rgba(255,255,255,0.85);border:1.5px solid var(--purple-light);padding:6px 14px;border-radius:100px}
 .badge-open::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e;animation:pulse 1.4s ease-in-out infinite}
+.badge-closed{display:inline-flex;align-items:center;gap:7px;font-size:.78rem;font-weight:700;color:var(--text-500);background:rgba(255,255,255,0.9);border:1.5px solid var(--border);padding:6px 14px;border-radius:100px}
+.badge-closed::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--text-300)}
+.btn-disabled{display:inline-flex;align-items:center;justify-content:center;background:#E5E8EB;color:var(--text-500);font-size:.92rem;font-weight:700;padding:13px 28px;border-radius:100px;border:none;cursor:default;pointer-events:none}
+#fabHost.fab-closed{background:rgba(78,89,104,0.88);box-shadow:0 8px 24px rgba(0,0,0,0.12);cursor:default;pointer-events:none}
 .hero-btns{display:flex;gap:12px;flex-wrap:wrap}
 .scroll-indicator{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:4px;opacity:.5}
 .scroll-indicator span{width:1.5px;height:32px;background:linear-gradient(to bottom,var(--purple),transparent);animation:scrollAnim 2s ease-in-out infinite}
@@ -113,6 +117,8 @@ section{padding:96px 24px}
 .location-card{background:var(--bg-card);border:1px solid var(--border);border-radius:20px;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:1fr 1fr;gap:32px;padding:36px}
 .location-tag{display:inline-flex;align-items:center;gap:6px;font-size:.75rem;font-weight:700;color:#16a34a;background:#f0fdf4;border:1px solid #bbf7d0;padding:4px 12px;border-radius:100px;margin-bottom:14px}
 .location-tag::before{content:'';width:7px;height:7px;border-radius:50%;background:#22c55e}
+.location-tag-closed{color:var(--text-500);background:#F2F4F6;border-color:var(--border)}
+.location-tag-closed::before{background:var(--text-300)}
 .location-city{font-size:1.5rem;font-weight:800;color:var(--text-900);margin-bottom:8px}
 .location-date{font-size:1rem;font-weight:700;color:var(--purple);margin-bottom:12px}
 .location-desc{font-size:.9rem;color:var(--text-500);line-height:1.7;margin-bottom:16px}
@@ -223,7 +229,7 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
 </div>
 
 <!-- FAB -->
-<a href="/host-apply" id="fabHost">호스트 신청하기</a>
+<span id="fabHost" class="fab-closed">호스트 모집 마감</span>
 
 <!-- HERO -->
 <section id="hero">
@@ -233,10 +239,10 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
     <h1 class="hero-title">K-POPSTAY BUSAN<br><span class="grad" style="color:var(--purple)">호스트가 되어보세요</span></h1>
     <p class="hero-sub">전 세계 아미에게 <strong>무료 숙박</strong>을 제공하는 부산 시민 호스트. 부산시, 시민단체, 위홈이 함께합니다.</p>
     <div class="hero-badges">
-      <span class="badge-open">6월 11일까지 모집 중</span>
+      <span class="badge-closed">호스트 모집 마감 (6월 9일 종료)</span>
     </div>
     <div class="hero-btns">
-      <a href="/host-apply" class="btn-primary">호스트 신청하기</a>
+      <span class="btn-disabled">호스트 모집 마감</span>
       <a href="/" class="btn-outline">게스트 페이지로</a>
     </div>
   </div>
@@ -385,7 +391,7 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
     </div>
     <div class="location-card fade-up">
       <div>
-        <span class="location-tag">현재 모집 중</span>
+        <span class="location-tag location-tag-closed">호스트 모집 마감</span>
         <div class="location-city">부산광역시</div>
         <div class="location-date">2026년 6월 12일 ~ 14일</div>
         <p class="location-desc">BTS 부산 콘서트 기간 동안 전 세계 아미를 위한 특별 공유숙박 프로그램입니다. 부산 시내 전역에서 참여 가능합니다.</p>
@@ -414,7 +420,7 @@ footer{background:var(--text-900);color:rgba(255,255,255,0.7);padding:56px 24px 
             <div class="tl-node"></div>
             <div class="tl-content">
               <div class="tl-title">숙소 매칭 완료 및 예약 진행</div>
-              <div class="tl-desc">게스트·호스트 매칭 완료 후 예약 개시 / 추가 호스트 등록 시 추가 매칭 계속 진행</div>
+              <div class="tl-desc">게스트·호스트 매칭 완료 후 예약 개시 (호스트 모집은 6월 9일 종료)</div>
             </div>
           </div>
           <div class="host-tl-item">

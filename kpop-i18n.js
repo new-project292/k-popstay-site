@@ -81,7 +81,7 @@
       guide_label:'자격 및 숙박 정책', guide_h3:'예약 및 보증금',
       guide_cost:'게스트 비용: 0원',
       guide_p:'무료 숙박은 BTS 글로벌 아미에 우선 제공됩니다. 아미 확인이 불가한 경우 확약 후에도 취소될 수 있습니다. 보다 많은 아미에게 편의를 제공하기 위해 거실도 방으로 제공될 수 있으며, 시설 설명란에 명기됩니다.',
-      guide_highlight:'<strong>보증금 — 1인당 5만원</strong><br>상호 신뢰를 위해 신용카드로 결제됩니다. 체크인 시 <strong>부산관광카드(5만원 충전)</strong>로 전액 환급됩니다. 부산 내 가맹점에서 현금처럼 사용 가능(백화점·대형 쇼핑몰 제외).<br><br>확약 후 노쇼의 경우 보증금은 환불되지 않습니다.',
+      guide_highlight:'<strong>보증금 — 1인당 5만원</strong><br>상호 신뢰를 위해 신용카드로 결제됩니다. 체크인 시 <strong>부산관광카드(5만원 충전)</strong>로 전액 환급됩니다. 부산 내 가맹점에서 현금처럼 사용 가능(백화점·대형 쇼핑몰 제외).<br><br>확약 후 노쇼의 경우 보증금은 환불되지 않습니다.<br><br>부산관광상품권 전달이 안되는 경우 숙박 후 보증금은 지불 취소로 자동 환급해드립니다.',
       guide_highlight2:'<strong>웰컴홈 기프트백</strong><br>선착순 100명 게스트에게 무료 제공. 부산시 및 제나벨(Genabelle) 후원.',
       guide2_h3:'이용 규칙 및 에티켓',
       guide_rule1:'<strong>금연</strong><br>숙소 내부 및 건물 내에서는 항상 흡연이 엄격히 금지됩니다.',
@@ -236,7 +236,7 @@
       apply_referral_friend:'지인 추천', apply_referral_baovanhoa:'Báo Văn Hóa (베트남)',
       apply_referral_kmmbox:'Korea.kr / KMMBOX',
       apply_deposit_title:'보증금 정책',
-      apply_deposit_body:'선정된 아미게스트는 <strong>1인당 5만원</strong>의 보증금을 납부해야 합니다. 체크인 시 동일한 금액의 <strong>부산관광상품카드</strong>로 환급됩니다. 부산관광상품카드는 부산 전역 가맹점에서 현금처럼 사용 가능합니다.',
+      apply_deposit_body:'선정된 아미게스트는 <strong>1인당 5만원</strong>의 보증금을 납부해야 합니다. 체크인 시 동일한 금액의 <strong>부산관광상품카드</strong>로 환급됩니다. 부산관광상품카드는 부산 전역 가맹점에서 현금처럼 사용 가능합니다.<br><br>부산관광상품권 전달이 안되는 경우 숙박 후 보증금은 지불 취소로 자동 환급해드립니다.',
       apply_agree_project:'본 신청서는 <strong>K-POPSTAY BUSAN 2026 부산 갈매기 둥지 프로젝트</strong>의 무료 숙박 신청서임을 확인하며, 선발 시 관련 안내 사항에 동의합니다.',
       apply_err_project:'위 내용에 동의해 주세요.',
       apply_agree_deposit:'<strong>5만원 보증금 정책</strong>을 이해하고 동의합니다. 체크인 시 부산관광상품카드로 전액 환급됨을 확인합니다.',
@@ -284,7 +284,7 @@
       guide_label:'K-POPSTAY Busan Policy', guide_h3:'Stay Costs &amp; Deposit Policy',
       guide_cost:'Guest Cost: KRW 0',
       guide_p:'Your stay is completely free of charge. K-POPSTAY BUSAN is a civic initiative — Busan citizen hosts voluntarily open their homes to global ARMY at no cost.',
-      guide_highlight:'Refundable Security Deposit: A small deposit is collected at booking to ensure mutual commitment. It is 100% refunded upon checkout with no conditions.',
+      guide_highlight:'Refundable Security Deposit: A small deposit is collected at booking to ensure mutual commitment. It is 100% refunded upon checkout with no conditions.<br><br>If we are unable to provide the Busan Tourism Gift Card, your deposit will be automatically refunded to your original payment method after your stay.',
       guide2_h3:'House Rules',
       perk1_title:'No Smoking — 금연', perk1_desc:'Smoking is strictly prohibited inside the home and on the premises at all times.',
       perk2_title:'No Cooking — 취사 금지', perk2_desc:'Cooking and use of kitchen appliances are not permitted during your stay.',
@@ -422,7 +422,7 @@
       apply_referral_friend:'Friend / Word of Mouth', apply_referral_baovanhoa:'Báo Văn Hóa (Vietnam)',
       apply_referral_kmmbox:'Korea.kr / KMMBOX',
       apply_deposit_title:'Security Deposit Policy',
-      apply_deposit_body:'Selected ARMY guests are required to pay a security deposit of <strong>KRW 50,000 per person</strong>. Upon check-in, the full deposit amount will be refunded in the form of a <strong>Busan Tourism Gift Card</strong>. The Busan Tourism Gift Card can be used like cash at participating businesses throughout Busan.',
+      apply_deposit_body:'Selected ARMY guests are required to pay a security deposit of <strong>KRW 50,000 per person</strong>. Upon check-in, the full deposit amount will be refunded in the form of a <strong>Busan Tourism Gift Card</strong>. The Busan Tourism Gift Card can be used like cash at participating businesses throughout Busan.<br><br>If we are unable to provide the Busan Tourism Gift Card, your deposit will be automatically refunded to your original payment method after your stay.',
       apply_agree_project:'I hereby confirm that this is an application form for free accommodation provided through the <strong>Busan Seagull Nest Project of K-POPSTAY BUSAN 2026</strong>. Should my application be accepted, I understand and agree to the following.',
       apply_err_project:'Please confirm the above statement.',
       apply_agree_deposit:'I understand and agree to the <strong>KRW 50,000 security deposit policy</strong>. I acknowledge that the deposit will be fully refunded as a Busan Tourism Gift Card upon check-in.',
@@ -470,7 +470,7 @@
       guide_label:'K-POPSTAY 釜山ポリシー', guide_h3:'宿泊費用とデポジットポリシー',
       guide_cost:'ゲスト費用：0ウォン',
       guide_p:'宿泊は完全無料です。K-POPSTAY BUSANは市民イニシアチブです — 釜山市民ホストが世界のARMYに無償で自宅を開放します。',
-      guide_highlight:'返金可能なセキュリティデポジット：予約時に相互コミットメントを確保するため、少額のデポジットを収集します。チェックアウト時に条件なしで100%返金されます。',
+      guide_highlight:'返金可能なセキュリティデポジット：予約時に相互コミットメントを確保するため、少額のデポジットを収集します。チェックアウト時に条件なしで100%返金されます。<br><br>釜山観光ギフトカードのご提供ができない場合、ご宿泊後に保証金は元のお支払い方法に自動的に返金されます。',
       guide2_h3:'ハウスルール',
       perk1_title:'禁煙 — 금연', perk1_desc:'室内および敷地内での喫煙は一切禁止されています。',
       perk2_title:'調理禁止 — 취사 금지', perk2_desc:'滞在中の調理および調理器具の使用は禁止されています。',
@@ -608,7 +608,7 @@
       apply_referral_friend:'知人の紹介', apply_referral_baovanhoa:'Báo Văn Hóa（ベトナム）',
       apply_referral_kmmbox:'Korea.kr / KMMBOX',
       apply_deposit_title:'保証金ポリシー',
-      apply_deposit_body:'選ばれたARMYゲストは<strong>1人あたり50,000ウォン</strong>の保証金をお支払いいただきます。チェックイン時に<strong>釜山観光ギフトカード</strong>の形で全額返金されます。',
+      apply_deposit_body:'選ばれたARMYゲストは<strong>1人あたり50,000ウォン</strong>の保証金をお支払いいただきます。チェックイン時に<strong>釜山観光ギフトカード</strong>の形で全額返金されます。<br><br>釜山観光ギフトカードのご提供ができない場合、ご宿泊後に保証金は元のお支払い方法に自動的に返金されます。',
       apply_agree_project:'本申し込みは<strong>K-POPSTAY BUSAN 2026 釜山シーガルネストプロジェクト</strong>の無料宿泊申し込みであることを確認し、選考された場合の案内事項に同意します。',
       apply_err_project:'上記内容に同意してください。',
       apply_agree_deposit:'<strong>50,000ウォンの保証金ポリシー</strong>を理解し同意します。チェックイン時に釜山観光ギフトカードとして全額返金されることを確認します。',
@@ -656,7 +656,7 @@
       guide_label:'K-POPSTAY 釜山政策', guide_h3:'住宿費用及保證金政策',
       guide_cost:'訪客費用：0韓元',
       guide_p:'您的住宿完全免費。K-POPSTAY BUSAN是一項公民倡議 — 釜山市民房東自願向全球ARMY免費開放自己的家。',
-      guide_highlight:'可退還保證金：預訂時收取少額保證金以確保雙方承諾。結帳時無條件100%退還。',
+      guide_highlight:'可退還保證金：預訂時收取少額保證金以確保雙方承諾。結帳時無條件100%退還。<br><br>如果我們無法提供釜山旅遊禮品卡，您的保證金將在入住後自動退還至原支付方式。',
       guide2_h3:'住宿規則',
       perk1_title:'禁止吸煙 — 금연', perk1_desc:'嚴格禁止在室內及場所內任何地方吸煙。',
       perk2_title:'禁止烹飪 — 취사 금지', perk2_desc:'住宿期間不允許烹飪及使用廚房電器。',
@@ -779,7 +779,7 @@
       apply_referral_friend:'朋友介紹', apply_referral_baovanhoa:'Báo Văn Hóa（越南）',
       apply_referral_kmmbox:'Korea.kr / KMMBOX',
       apply_deposit_title:'保證金政策',
-      apply_deposit_body:'被選中的ARMY訪客每人需繳納<strong>50,000韓元</strong>保證金。入住時將以<strong>釜山旅遊禮品卡</strong>形式全額退還。',
+      apply_deposit_body:'被選中的ARMY訪客每人需繳納<strong>50,000韓元</strong>保證金。入住時將以<strong>釜山旅遊禮品卡</strong>形式全額退還。<br><br>如果我們無法提供釜山旅遊禮品卡，您的保證金將在入住後自動退還至原支付方式。',
       apply_agree_project:'本申請為<strong>K-POPSTAY BUSAN 2026 釜山海鷗巢穴計劃</strong>的免費住宿申請，若申請獲批，我同意相關安排。',
       apply_err_project:'請確認上述內容。',
       apply_agree_deposit:'我了解並同意<strong>50,000韓元保證金政策</strong>，確認入住時將以釜山旅遊禮品卡全額退還。',
@@ -827,7 +827,7 @@
       guide_label:'K-POPSTAY 釜山政策', guide_h3:'住宿费用及保证金政策',
       guide_cost:'访客费用：0韩元',
       guide_p:'您的住宿完全免费。K-POPSTAY BUSAN是一项公民倡议 — 釜山市民房东自愿向全球ARMY免费开放自己的家。',
-      guide_highlight:'可退还保证金：预订时收取少额保证金以确保双方承诺。退房时无条件100%退还。',
+      guide_highlight:'可退还保证金：预订时收取少额保证金以确保双方承诺。退房时无条件100%退还。<br><br>如果我们无法提供釜山旅游礼品卡，您的押金将在入住后自动退还至原支付方式。',
       guide2_h3:'住宿规则',
       perk1_title:'禁止吸烟 — 금연', perk1_desc:'严格禁止在室内及场所内任何地方吸烟。',
       perk2_title:'禁止烹饪 — 취사 금지', perk2_desc:'住宿期间不允许烹饪及使用厨房电器。',
@@ -950,7 +950,7 @@
       apply_referral_friend:'朋友介绍', apply_referral_baovanhoa:'Báo Văn Hóa（越南）',
       apply_referral_kmmbox:'Korea.kr / KMMBOX',
       apply_deposit_title:'保证金政策',
-      apply_deposit_body:'被选中的ARMY访客每人需缴纳<strong>50,000韩元</strong>保证金。入住时将以<strong>釜山旅游礼品卡</strong>形式全额退还。',
+      apply_deposit_body:'被选中的ARMY访客每人需缴纳<strong>50,000韩元</strong>保证金。入住时将以<strong>釜山旅游礼品卡</strong>形式全额退还。<br><br>如果我们无法提供釜山旅游礼品卡，您的押金将在入住后自动退还至原支付方式。',
       apply_agree_project:'本申请为<strong>K-POPSTAY BUSAN 2026 釜山海鸥巢穴计划</strong>的免费住宿申请，若申请获批，我同意相关安排。',
       apply_err_project:'请确认上述内容。',
       apply_agree_deposit:'我了解并同意<strong>50,000韩元保证金政策</strong>，确认入住时将以釜山旅游礼品卡全额退还。',
@@ -998,7 +998,7 @@
       guide_label:'Kebijakan K-POPSTAY Busan', guide_h3:'Biaya Menginap &amp; Kebijakan Deposit',
       guide_cost:'Biaya Tamu: KRW 0',
       guide_p:'Menginap Anda sepenuhnya gratis. K-POPSTAY BUSAN adalah inisiatif sipil — tuan rumah warga Busan secara sukarela membuka rumah mereka untuk ARMY global tanpa biaya.',
-      guide_highlight:'Deposit Keamanan yang Dapat Dikembalikan: Deposit kecil dikumpulkan saat pemesanan untuk memastikan komitmen bersama. 100% dikembalikan saat checkout tanpa syarat.',
+      guide_highlight:'Deposit Keamanan yang Dapat Dikembalikan: Deposit kecil dikumpulkan saat pemesanan untuk memastikan komitmen bersama. 100% dikembalikan saat checkout tanpa syarat.<br><br>Jika kami tidak dapat menyediakan Kartu Hadiah Wisata Busan, deposit Anda akan dikembalikan secara otomatis ke metode pembayaran asli Anda setelah menginap.',
       guide2_h3:'Aturan Hunian',
       perk1_title:'Dilarang Merokok — 금연', perk1_desc:'Merokok di dalam rumah dan di sekitar area hunian dilarang keras setiap saat.',
       perk2_title:'Dilarang Memasak — 취사 금지', perk2_desc:'Memasak dan menggunakan peralatan dapur tidak diperbolehkan selama menginap.',
@@ -1121,7 +1121,7 @@
       apply_referral_friend:'Teman / Rekomendasi', apply_referral_baovanhoa:'Báo Văn Hóa (Vietnam)',
       apply_referral_kmmbox:'Korea.kr / KMMBOX',
       apply_deposit_title:'Kebijakan Deposit Keamanan',
-      apply_deposit_body:'Tamu ARMY terpilih diwajibkan membayar deposit <strong>KRW 50.000 per orang</strong>. Saat check-in, deposit dikembalikan dalam bentuk <strong>Kartu Hadiah Wisata Busan</strong>.',
+      apply_deposit_body:'Tamu ARMY terpilih diwajibkan membayar deposit <strong>KRW 50.000 per orang</strong>. Saat check-in, deposit dikembalikan dalam bentuk <strong>Kartu Hadiah Wisata Busan</strong>.<br><br>Jika kami tidak dapat menyediakan Kartu Hadiah Wisata Busan, deposit Anda akan dikembalikan secara otomatis ke metode pembayaran asli Anda setelah menginap.',
       apply_agree_project:'Saya mengonfirmasi bahwa ini adalah formulir pendaftaran untuk akomodasi gratis melalui <strong>Proyek Sarang Camar Busan K-POPSTAY BUSAN 2026</strong>. Jika diterima, saya memahami dan menyetujui ketentuan berikut.',
       apply_err_project:'Silakan konfirmasi pernyataan di atas.',
       apply_agree_deposit:'Saya memahami dan menyetujui <strong>kebijakan deposit KRW 50.000</strong>. Saya mengakui bahwa deposit akan dikembalikan penuh sebagai Kartu Hadiah Wisata Busan saat check-in.',
@@ -1285,6 +1285,496 @@
     // FOOTER
     q('a[href="/host"].footer-link', t('footer_host'));
     q('a[href="mailto:cs@wehome.me"].footer-link', t('footer_cs'));
+  }
+
+  // guest-guidebook.html 전용 번역 딕셔너리
+  var GGB = {
+    ko: {
+      title: '게스트 가이드북 — K-POPSTAY BUSAN 2026',
+      eyebrow: 'Guest Guidebook',
+      page_title: '알아야 할 모든 것',
+      page_sub: 'K-POPSTAY BUSAN 2026 · 게스트 약관 & 이용 규칙',
+      notice_title: '전제 사항 / Notice',
+      notice_body: '본 가이드는 위홈 공유숙박 사용자 약관에 우선적으로 적용됩니다. 여기에서 언급되지 않은 사항은 위홈의 사용자 약관을 따릅니다.',
+      notice_body_en: 'This guide takes precedence over Wehome\'s general Terms of Service. Any matters not addressed here are governed by Wehome\'s standard Terms of Service.',
+      intro_label: '인사말 및 소개',
+      intro_title: 'K-POPSTAY BUSAN 2026 소개',
+      intro_p1: 'K-POPSTAY BUSAN 2026은 부산 아미와 시민들의 참여를 바탕으로 부산시와 위홈 공유숙박 플랫폼이 진행합니다. 글로벌 아미와 부산의 아미 및 시민을 연결해서 글로벌 아미의 숙박 문제를 다소라도 해결해 드리고 상호 교류를 돕기 위한 프로젝트입니다.',
+      intro_p2: '부산시도, 위홈도, 시민들도 모두 자발적인 참여로 진행됩니다. 특히 이번 K-POPSTAY BUSAN 2026은 부산의 아미와 시민이 자발적으로 나서서 BTS 글로벌 아미를 위해 아무런 대가 없이 기꺼이 숙소를 내어주는 것입니다.',
+      intro_p3: '촉박한 상황에서 적극적인 협조로 진행되는 만큼 아미 여러분의 협조와 호스트에 대한 감사, 그리고 존중의 자세가 필요합니다. 시간적 제약으로 다소 부족한 점이 있을 수 있으니 너그러이 이해해 주시기 바랍니다.',
+      intro_p4: '위홈은 앞으로도 K-POPSTAY를 보완해서 글로벌 K-POP 팬들의 숙소 문제를 해결할 수 있도록 더욱 노력하겠습니다.',
+      sched_label: '주요일정',
+      sched_title: 'Key Schedule',
+      sched_date1: '6/7',
+      sched_item1: '<strong>2026년 6월 7일까지</strong><br>글로벌 아미 게스트 신청 (자정에 신청 마감) / 게스트 및 호스트 매칭 개시',
+      sched_date2: '6/8',
+      sched_item2: '<strong>2026년 6월 8일까지</strong><br>게스트 및 호스트 숙소 매칭 완료, 예약 진행 개시<br><span style="color:var(--text-300);font-size:0.82rem">(추가 호스트 등록 시 추가 매칭 및 예약 진행)</span>',
+      sched_date3: '6/10',
+      sched_item3: '<strong>2026년 6월 10일</strong><br>호스트 대상 설명회 (부산시청) 진행 — 위홈 참석, 아미 배포할 웰컴홈위홈 백 전달 예정',
+      sched_date4: '6/12',
+      sched_item4: '<strong>2026년 6월 12일부터</strong><br>아미 체크인 (일부 호스트와 협의 하에 6월 11일부터 진행)<br>체크인 시 아미 개인별 <strong>5만원 부산관광상품권</strong> 및 웰컴홈 기프트백 제공<br>아미 게스트 챌린지 참여: <strong>#보라해한글</strong> 및 호스트와 사진 촬영 & SNS 공유',
+      sched_date5: '6/14',
+      sched_item5: '<strong>2026년 6월 14일</strong><br>글로벌 아미 체크아웃 / 전체 사업 평가',
+      b1_label: '자격 · 숙소형태 · 예약 · 혜택',
+      b1_title: 'Eligibility, Booking & Benefits',
+      b1_cost: '게스트 비용: 0원',
+      b1_r1: '무료 숙박은 BTS 글로벌 아미에 우선 제공됩니다. 아미 확인이 불가한 경우 확약 후에도 취소될 수 있습니다.',
+      b1_r2: '보다 많은 아미에게 편의를 제공하기 위해 거실도 방으로 구분해 제공될 수 있습니다. 시설 설명란에 거실임을 명기합니다.',
+      b1_r3: '<strong>체크인·체크아웃 시간</strong> — 지정된 시간을 지켜주세요. 호스트가 조정 가능한 경우 유연하게 진행할 수 있습니다.',
+      b1_r4: '<strong>보증금 1인당 5만원 (신용카드 결제)</strong> — 체크인 후 5만원 충전 부산관광카드로 전액 환불. 부산 내 가맹점에서 현금처럼 사용 가능 (백화점·대형 쇼핑몰 제외). 확약 후 노쇼 시 환불 불가.',
+      b1_r5: '<strong>Welcome Home Wehome 선물 백</strong> — 선착순 100명 무료 제공. 부산시·제나벨(Genabelle) 후원.',
+      b1_r6: '<strong>개인 준비물 및 이동</strong> — 세안 도구는 직접 챙겨오셔야 하며, 공연 후 숙소까지의 이동은 직접 하셔야 합니다.',
+      b1_r7: '<strong>출입 제한 및 비밀번호 공유 불가</strong> — 사전 매칭된 게스트만 입장 가능. 현관 비밀번호 등 출입 정보는 타인에게 절대 공유 불가.',
+      b1_r8: '<strong>관광상품권 전달 불가 시 자동 환급</strong> — 관광상품권 전달이 안되는 경우 숙박 후 보증금은 지불 취소로 자동 환급해드립니다.',
+      b2_label: 'House Rules',
+      b2_title: '숙소 이용 규칙 및 에티켓',
+      b2_r1: '<strong>홈스테이 주의사항</strong> — 부산 시민이 실제 거주하는 공간입니다. 발화 물질 반입 금지. 주인의 사적인 공간이나 물건을 함부로 열거나 사용 금지. 동숙 아미들과 서로 배려해 주세요.',
+      b2_r2: '<strong>절대 금연</strong> — 숙소 내부 및 건물 내 항상 금지.',
+      b2_r3: '<strong>취사 금지</strong> — 주방 이용 및 조리 기구 사용 불가. (호스트가 문자로 허락한 경우에 한해 예외 가능)',
+      b2_r4: '<strong>음주 금지 및 소음 주의</strong> — 숙소 내 음주 엄격 금지. 이웃에게 피해를 주는 소음·가무 절대 삼가.',
+      b2_r5: '<strong>시설 훼손 및 배상 책임</strong> — 침구·시설물 훼손 시 복구 및 배상 책임은 게스트에게 있습니다.',
+      b2_r6: '<strong>개인정보 보호</strong> — 호스트 연락처 및 상세 숙소 정보는 외부 유출·SNS 공유 절대 금지.',
+      b2_r7: '<strong>규칙 위반 시 즉시 퇴실 조치될 수 있습니다.</strong>',
+      b3_label: '체크아웃',
+      b3_title: '체크아웃 및 쓰레기 분리수거',
+      b3_r1: '체크아웃 전, 사용한 모든 물건을 제자리에 놓고 깨끗하게 청소·정리해 주세요.',
+      b3_r2: '<strong>쓰레기 분리수거는 필수입니다.</strong>',
+      b3_dot3: '일반', b3_r3: '<strong>일반 쓰레기</strong> — 재활용이 되지 않는 쓰레기는 일반 쓰레기로 분류.',
+      b3_dot4: '재활', b3_r4: '<strong>재활용품</strong> — 플라스틱류, 캔/고철류, 유리병, 종이류, 비닐류로 종류별로 나누어 지정된 장소·분리수거함에 배출.',
+      b3_dot5: '음식', b3_r5: '<strong>음식물 쓰레기</strong> — 물기를 제거한 후 음식물 전용 쓰레기통이나 봉투에 따로 모아주세요.',
+      b3_r6: '※ 숙소마다 버리는 방식이 다를 수 있으니, 호스트가 별도로 안내한 방법이 있다면 우선적으로 따라주세요.',
+      b3_r7: '<strong>ARMY Challenge</strong> — 호스트와 사진 촬영 후 <strong>#보라해한글</strong> 해시태그로 SNS에 공유해 주세요.',
+      sup1: '<strong>안전 관리</strong>이벤트 책임 보험 가입 및 안전 관리 시스템 구축 운영',
+      sup2: '<strong>채널톡 (가장 빠름)</strong>위홈 홈페이지 우측 하단 채팅 버튼',
+      sup3: '<strong>이메일 · 전화</strong>cs@wehome.me<br>1544-5665 (평일 10–18시)<br><span style="font-size:0.8rem;color:var(--text-300)">부산시민단체협의회: 051-809-2629<br>시청 경제정책과: 051-888-4751</span>',
+      emerg_title: '긴급 상황 발생 시',
+      emerg_desc: '호스트와 연락이 닿지 않거나 현장에서 긴급 상황이 발생한 경우,<br>아래 버튼을 눌러 위홈 대표 및 부산시 담당자에게 즉시 지원 요청하세요.',
+      emerg_btn: '⚠ 긴급 지원 요청하기',
+      back: '← 뒤로',
+      footer: '(주)위홈 | 대표이사: 조산구 | 개인정보 보호책임자: 김석진 | 사업자등록번호: 467-81-01292 / 서울 마포구 양화로 136 SVCS 507 | 고객센터: 1544-5665 | 평일 10:00&ndash;12:00, 13:00&ndash;18:00<br>© 2026 Wehome Inc. All rights reserved.'
+    },
+    en: {
+      title: 'Guest Guidebook — K-POPSTAY BUSAN 2026',
+      eyebrow: 'Guest Guidebook',
+      page_title: 'Everything You Need to Know',
+      page_sub: 'K-POPSTAY BUSAN 2026 · Guest Terms & House Rules',
+      notice_title: 'Notice',
+      notice_body: 'This guide takes precedence over Wehome\'s general Terms of Service. Any matters not addressed here are governed by Wehome\'s standard Terms of Service.',
+      notice_body_en: 'This guide takes precedence over Wehome\'s general Terms of Service. Any matters not addressed here are governed by Wehome\'s standard Terms of Service.',
+      intro_label: 'Introduction & Greetings',
+      intro_title: 'About K-POPSTAY BUSAN 2026',
+      intro_p1: 'K-POPSTAY BUSAN 2026 is co-hosted by Busan City and Wehome, powered by the voluntary participation of Busan citizens and local K-POP fans. This community program connects global fans with residents to help solve accommodation challenges and foster mutual cultural exchange.',
+      intro_p2: 'The program runs entirely on the voluntary efforts of Busan City, Wehome, and our hosts. In particular, hosts are opening their homes free of charge out of pure hospitality for global ARMY fans.',
+      intro_p3: 'Since this program relies heavily on goodwill and was organized under tight timelines, we ask for your respect, gratitude, and active cooperation. Please understand if some aspects are not as polished as commercial hotels.',
+      intro_p4: 'Wehome will continue to improve K-POPSTAY to help solve accommodation issues for global K-POP fans in the future.',
+      sched_label: 'Key Schedule',
+      sched_title: 'Key Schedule',
+      sched_date1: '6/7',
+      sched_item1: '<strong>Until June 7, 2026</strong><br>Global ARMY Guest Applications (Closes at midnight) / Matching begins',
+      sched_date2: '6/8',
+      sched_item2: '<strong>Until June 8, 2026</strong><br>Guest-Host matching completed & booking begins<br><span style="color:var(--text-300);font-size:0.82rem">(Additional matches will proceed as new hosts register)</span>',
+      sched_date3: '6/10',
+      sched_item3: '<strong>June 10, 2026</strong><br>Host briefing session at Busan City Hall — Wehome attending; Welcome Home bags will be delivered to hosts',
+      sched_date4: '6/12',
+      sched_item4: '<strong>From June 12, 2026</strong><br>Guest check-in (some may check in from June 11 upon agreement).<br>Each guest receives a <strong>KRW 50,000 Busan Tourism Card</strong> and a Welcome Gift Bag at check-in.<br>Participate in the ARMY Challenge: SNS photo with host using hashtag <strong>#BorahaeHangeul</strong>.',
+      sched_date5: '6/14',
+      sched_item5: '<strong>June 14, 2026</strong><br>Global ARMY check-out / Final program evaluation',
+      b1_label: 'Eligibility, Booking & Benefits',
+      b1_title: 'Eligibility, Booking & Benefits',
+      b1_cost: 'Guest Cost: KRW 0',
+      b1_r1: 'Free stays are prioritized for global BTS ARMY. Booking may be canceled even after confirmation if ARMY status cannot be verified.',
+      b1_r2: 'To accommodate as many fans as possible, living rooms might be offered as sleeping spaces. This will be specified in the listing details.',
+      b1_r3: '<strong>Check-in & Check-out</strong> — Please respect the designated times. Host may offer flexibility if negotiated in advance.',
+      b1_r4: '<strong>KRW 50,000 security deposit per person (via credit card)</strong> — Fully refunded as a pre-loaded Busan Tourism Card upon check-in. The card can be used like cash in Busan (excluding department stores/large malls). Non-refundable for no-shows.',
+      b1_r5: '<strong>Welcome Home Wehome Gift Bag</strong> — Provided free of charge (first 100 guests). Sponsored by Busan City and Genabelle.',
+      b1_r6: '<strong>Personal items & Transit</strong> — Please bring your own toiletries (toothbrush/toothpaste). You must arrange your own transport to the concert venue and stay.',
+      b1_r7: '<strong>Access Restriction</strong> — Only matched guests are allowed entry. Sharing door codes or entry info with anyone else is strictly prohibited.',
+      b1_r8: '<strong>Automatic Refund if Gift Card Unavailable</strong> — If we are unable to provide the Busan Tourism Gift Card, your deposit will be automatically refunded to your original payment method after your stay.',
+      b2_label: 'House Rules',
+      b2_title: 'House Rules & Etiquette',
+      b2_r1: '<strong>Homestay Notice</strong> — These are private homes where Busan citizens reside. No flammable materials. Do not open private cabinets or use host\'s private items. Be considerate of roommates.',
+      b2_r2: '<strong>Strictly No Smoking</strong> — Prohibited inside the home and anywhere on the premises.',
+      b2_r3: '<strong>No Cooking</strong> — Kitchen use is not permitted. (Exceptions allowed only if explicitly approved by host via text)',
+      b2_r4: '<strong>No Alcohol & Quiet Hours</strong> — Alcohol consumption is strictly prohibited in the home. Refrain from loud noise, singing, or dancing.',
+      b2_r5: '<strong>Damage Liability</strong> — Guests are fully responsible and liable for any damage to bedding, furniture, or facilities.',
+      b2_r6: '<strong>Privacy Protection</strong> — Do not post host\'s phone number, address, or detailed accommodation photos on SNS or public channels.',
+      b2_r7: '<strong>Violation of rules may result in immediate eviction.</strong>',
+      b3_label: 'Check-out',
+      b3_title: 'Check-out & Recycling',
+      b3_r1: 'Before checking out, return all used items to their places, clean and tidy up the space.',
+      b3_r2: '<strong>Recycling is mandatory.</strong>',
+      b3_dot3: 'Gen', b3_r3: '<strong>General Waste</strong> — Put non-recyclable items in the general trash bin.',
+      b3_dot4: 'Rec', b3_r4: '<strong>Recyclables</strong> — Sort plastics, cans/metals, glass bottles, paper, and vinyl, and dispose of them in designated recycling areas.',
+      b3_dot5: 'Food', b3_r5: '<strong>Food Waste</strong> — Drain moisture thoroughly and collect in the designated food waste bin or bag.',
+      b3_r6: '※ Disposal methods may vary by home. Always follow specific instructions provided by your host.',
+      b3_r7: '<strong>ARMY Challenge</strong> — Take a photo with your host and share it on SNS with the hashtag <strong>#BorahaeHangeul</strong>.',
+      sup1: '<strong>Safety Support</strong>Liability insurance and event safety support system are in operation.',
+      sup2: '<strong>Channel Talk (Fastest)</strong>Click the chat bubble icon on the bottom right of Wehome page.',
+      sup3: '<strong>Email & Phone</strong>cs@wehome.me<br>1544-5665 (Weekdays 10:00–18:00 KST)<br><span style="font-size:0.8rem;color:var(--text-300)">Civic Council: 051-809-2629<br>Busan Econ Policy: 051-888-4751</span>',
+      emerg_title: 'In Case of Emergency',
+      emerg_desc: 'If you cannot reach the host or face an urgent safety issue,<br>click the button below to request immediate help from Wehome and Busan coordinators.',
+      emerg_btn: '⚠ Request Emergency Support',
+      back: '← Back',
+      footer: 'Wehome Inc. | CEO: San-ku Cho | Privacy Manager: Suk-jin Kim | Biz Registration: 467-81-01292 / #507 SVCS, 136 Yanghwa-ro, Mapo-gu, Seoul | Customer Center: 1544-5665 | Weekdays 10:00–12:00, 13:00–18:00<br>© 2026 Wehome Inc. All rights reserved.'
+    },
+    ja: {
+      title: 'ゲストガイドブック — K-POPSTAY BUSAN 2026',
+      eyebrow: 'Guest Guidebook',
+      page_title: '知っておくべきすべてのこと',
+      page_sub: 'K-POPSTAY BUSAN 2026 · ゲスト利用規約 & ハウスルール',
+      notice_title: '前提事項 / Notice',
+      notice_body: '本ガイドは、Wehome의の共有宿泊利用規約に優先して適用されます。ここに記載のない事項については、Wehomeの一般利用規約に従います。',
+      notice_body_en: 'This guide takes precedence over Wehome\'s general Terms of Service. Any matters not addressed here are governed by Wehome\'s standard Terms of Service.',
+      intro_label: 'ご挨拶および紹介',
+      intro_title: 'K-POPSTAY BUSAN 2026のご紹介',
+      intro_p1: 'K-POPSTAY BUSAN 2026は、釜山のARMYと市民の自発的な参加のもと、釜山広域市とWehomeが共同で推進するプロジェクトです。グローバルARMYと釜山のARMYおよび市民をつなぐことで、宿泊問題を少しでも解消し、相互交流を深めることを目的としています。',
+      intro_p2: '釜山市、Wehome、そして市民の皆様全員が自発的なボランティア精神で参加しています。特に今回のK-POPSTAY BUSAN 2026では、釜山のARMYや市民が自ら手を挙げ、グローバルARMYのために無償で自宅を開放しています。',
+      intro_p3: '限られた時間の中で迅速に準備が進められたため、ARMYの皆様の主体的なご協力、ホストへの感謝と敬意の念が非常に重要です。不十分な点があるかもしれませんが、温かいご理解をお願いいたします。',
+      intro_p4: 'Wehomeは今後もK-POPSTAYを改善し、世界のK-POPファンの宿泊問題の解決に向けてより一層努めてまいります。',
+      sched_label: '主要日程',
+      sched_title: 'Key Schedule',
+      sched_date1: '6/7',
+      sched_item1: '<strong>2026년 6월 7일까지</strong><br>グローバルARMYゲスト申請（深夜締め切り） / ゲストおよびホストのマッチング開始',
+      sched_date2: '6/8',
+      sched_item2: '<strong>2026년 6월 8일까지</strong><br>ゲスト・ホストのマッチング完了、予約手続き開始<br><span style="color:var(--text-300);font-size:0.82rem">（追加のホスト登録があり次第、随時マッチングおよび予約を進めます）</span>',
+      sched_date3: '6/10',
+      sched_item3: '<strong>2026년 6월 10일</strong><br>ホスト対象説明会（釜山市庁）の開催 — Wehome出席、ARMYに配布するウェルカムバッグを受け渡し予定',
+      sched_date4: '6/12',
+      sched_item4: '<strong>2026년 6월 12일부터</strong><br>ARMYチェックイン（一部ホストとの合意により6月11日からの入室も可能）。<br>チェックイン時にゲスト一人あたり<strong>5万ウォン分の釜山観光商品券</strong>とウェルカムギフトバッグを提供。<br>ARMYゲストチャレンジへの参加：ホストと写真を撮影し、ハッシュタグ <strong>#BorahaeHangeul</strong> でSNSに共有。',
+      sched_date5: '6/14',
+      sched_item5: '<strong>2026년 6월 14일</strong><br>グローバルARMYチェックアウト / 事業全体の評価',
+      b1_label: '資格 · 宿泊形態 · 予約 · 特典',
+      b1_title: 'Eligibility, Booking & Benefits',
+      b1_cost: 'ゲスト費用：0ウォン',
+      b1_r1: '無料宿泊はBTSグローバルARMYに優先提供されます。ARMYの確認が取れない場合、予約確定後でもキャンセルされることがあります。',
+      b1_r2: 'より多くのARMYを歓迎するため、リビングルームも客室として区切って提供される場合があります。その場合はリスティングに明記されます。',
+      b1_r3: '<strong>チェックイン・チェックアウト時間</strong> — 指定された時間を厳守してください。ホストと事前に合意がある場合は、柔軟に対応可能です。',
+      b1_r4: '<strong>お一人様5万ウォンの保証金（クレジットカード決済）</strong> — チェックイン時に、同額がチャージされた釜山観光カードで全額返金されます。釜山市内の加盟店で現金同様に使用可能（デパートや大型モールを除く）。確定後のノーショー（無断キャンセル）は返金不可。',
+      b1_r5: '<strong>Welcome Home Wehomeギフトバッグ</strong> — 先着100名のゲストに無料提供。釜山市およびジェナベル（Genabelle）後援。',
+      b1_r6: '<strong>個人の持ち物・移動</strong> — アメニティ類（歯ブラシ等）は各自でご持参ください。コンサート会場や宿泊先までの移動はご自身で手配してください。',
+      b1_r7: '<strong>立ち入り制限</strong> — 事前にマッチングされたゲストのみ入室可能です。玄関の暗証番号などの鍵情報は、他人に絶対に共有しないでください。',
+      b1_r8: '<strong>ギフトカード提供不可時の自動返金</strong> — 釜山観光ギフトカードのお渡しができない場合は、ご宿泊後に保証金をお支払い元へ自動的に返金いたします。',
+      b2_label: 'House Rules',
+      b2_title: '宿泊ルールとエチケット',
+      b2_r1: '<strong>ホームステイの注意点</strong> — 釜山市民が実際に生活しているプライベートな空間です。発火物の持ち込み禁止。ホストの私的なスペースや私物に勝手に触れたり使用したりしないでください。同居するARMY同士でお互い配慮しましょう。',
+      b2_r2: '<strong>完全禁煙</strong> — 室内および建物内は終日禁煙です。',
+      b2_r3: '<strong>調理禁止</strong> — キッチンおよび調理器具の使用はできません。（ホストのメッセージによる許可がある場合を除く）',
+      b2_r4: '<strong>飲酒禁止・騒音注意</strong> — 自宅内での飲酒は厳禁です。近隣の迷惑となるような大声での会話や歌舞は絶対にお控えください。',
+      b2_r5: '<strong>破損時の賠償責任</strong> — 寝具や設備などを破損した場合、修復・弁償の責任はゲストが負います。',
+      b2_r6: '<strong>個人情報の保護</strong> — ホストの連絡先や詳細な住所情報は、SNSや外部に決して公開・流出させないでください。',
+      b2_r7: '<strong>ルール違反が発覚した場合、直ちに退去を求める場合があります。</strong>',
+      b3_label: 'チェックアウト',
+      b3_title: 'チェックアウトおよびゴミの分別',
+      b3_r1: 'チェックアウト前に、使用したすべての物を元の位置に戻し、きれいに掃除・整理整頓を行ってください。',
+      b3_r2: '<strong>ゴミの分別回収は必須です。</strong>',
+      b3_dot3: '一般', b3_r3: '<strong>一般ゴミ</strong> — リサイクルできないゴミは一般ゴミとして廃棄。',
+      b3_dot4: '資源', b3_r4: '<strong>資源ゴミ</strong> — プラスチック、缶・金属、瓶、紙、ビニールに細かく分別し、指定の排出場所または回収ボックスへ。',
+      b3_dot5: '生ゴミ', b3_r5: '<strong>生ゴミ</strong> — 水分をしっかりと切り、生ゴミ専用の容器または袋に分けてください。',
+      b3_r6: '※ ゴミの排出方法は家庭ごとに異なる場合があります。ホストから別途案内があれば、それに従ってください。',
+      b3_r7: '<strong>ARMYチャレンジ</strong> — ホストと一緒に写真を撮影し、ハッシュタグ <strong>#BorahaeHangeul</strong> でSNSに投稿してください。',
+      sup1: '<strong>安全管理</strong>イベント賠償責任保険への加入および安全管理支援体制を構築・運営しています。',
+      sup2: '<strong>チャネルトーク（最速）</strong>Wehomeサイトの右下にあるチャットアイコンから直接お問い合わせください。',
+      sup3: '<strong>メール・電話</strong>cs@wehome.me<br>1544-5665（平日 10:00–18:00 KST）<br><span style="font-size:0.8rem;color:var(--text-300)">釜山市民団体協議会: 051-809-2629<br>釜山市庁 経済政策課: 051-888-4751</span>',
+      emerg_title: '緊急事態が発生した場合',
+      emerg_desc: 'ホストと連絡がつかない場合や現場で緊急の安全問題が発生した場合は、<br>以下のボタンをクリックして直ちにWehomeおよび釜山市の担当者へ支援を要請してください。',
+      emerg_btn: '⚠ 緊急支援を要請する',
+      back: '← 戻る',
+      footer: 'Wehome Inc. | 代表取締役: 趙山九 | 個人情報保護責任者: 金碩珍 | 事業者登録番号: 467-81-01292 / ソウル特別市麻浦区楊花路136 SVCS 507 | カスタマーサポート: 1544-5665 | 平日 10:00–12:00, 13:00–18:00<br>© 2026 Wehome Inc. All rights reserved.'
+    },
+    zh_t: {
+      title: '嘉賓指南 — K-POPSTAY BUSAN 2026',
+      eyebrow: 'Guest Guidebook',
+      page_title: '你需要知道的一切',
+      page_sub: 'K-POPSTAY BUSAN 2026 · 嘉賓服務條款與住宿規則',
+      notice_title: '前提條件 / Notice',
+      notice_body: '本指南優先於Wehome共享住宿用戶服務條款。此處未提及的事項將遵循Wehome的一般服務條款。',
+      notice_body_en: 'This guide takes precedence over Wehome\'s general Terms of Service. Any matters not addressed here are governed by Wehome\'s standard Terms of Service.',
+      intro_label: '致詞與介紹',
+      intro_title: 'K-POPSTAY BUSAN 2026 介紹',
+      intro_p1: 'K-POPSTAY BUSAN 2026在釜山ARMY和市民的共同參與下，由釜山市與Wehome共享住宿平台共同推進。該項目旨在將全球ARMY與釜山當地的ARMY及市民連接起來，幫助緩解住宿短缺並促進相互的文化交流。',
+      intro_p2: '釜山市、Wehome以及所有市民均本著志願服務的精神積極參與。特别是本次K-POPSTAY BUSAN 2026，釜山的ARMY和市民是完全自發無償為全球ARMY提供住宿的。',
+      intro_p3: '由於是在緊張的準備時間內快速推進的，需要各位ARMY的積極配合，並對房東心懷感激與尊重。可能在細節上存在不夠完善的地方，敬請諒解。',
+      intro_p4: 'Wehome今後將繼續完善K-POPSTAY，為解決全球K-POP歌迷的住宿問題而繼續努力。',
+      sched_label: '主要日程',
+      sched_title: 'Key Schedule',
+      sched_date1: '6/7',
+      sched_item1: '<strong>截至2026年6月7日</strong><br>全球ARMY嘉賓申請（午夜截止）/ 嘉賓與房東匹配開始',
+      sched_date2: '6/8',
+      sched_item2: '<strong>截至2026年6月8日</strong><br>嘉賓與房東匹配完成，開始預訂流程<br><span style="color:var(--text-300);font-size:0.82rem">（如有新房東註冊，將隨時進行追加匹配與預訂）</span>',
+      sched_date3: '6/10',
+      sched_item3: '<strong>2026年6月10日</strong><br>房東說明會（釜山市廳）召開 — Wehome出席，並計劃向房東交付ARMY迎賓禮包',
+      sched_date4: '6/12',
+      sched_item4: '<strong>自2026年6月12日起</strong><br>ARMY辦理入住（經部分房東同意後可自6月11日起提前入住）。<br>入住時，每位嘉賓將獲得一張面值<strong>5萬韓元的釜山觀光商品券</strong>以及迎賓禮包。<br>參與ARMY挑戰：與房東合影並帶上話題 <strong>#BorahaeHangeul</strong> 分享至社交平台。',
+      sched_date5: '6/14',
+      sched_item5: '<strong>2026年6月14日</strong><br>全球ARMY退房辦理 / 整個項目評估',
+      b1_label: '資格 · 房源類型 · 預訂 · 福利',
+      b1_title: 'Eligibility, Booking & Benefits',
+      b1_cost: '嘉賓費用：0韓元',
+      b1_r1: '免費住宿將優先提供給BTS全球ARMY。如果無法核實ARMY身份，即使確認後也可能被取消預訂。',
+      b1_r2: '為了接待更多ARMY，客廳也可能被用作臥室提供。如有此情況，將在設施說明中註明。',
+      b1_r3: '<strong>入住和退房時間</strong> — 請遵守約定時間。如果房東同意，可以靈活調整。',
+      b1_r4: '<strong>每人5萬韓元保證金（信用卡支付）</strong> — 辦理入住時，保證金將全額退還為充值的釜山觀光卡。可在釜山市內的加盟店像現金一樣使用（百貨店、大型商場除外）。預訂確認後未入住（No-show）的保證金不予退還。',
+      b1_r5: '<strong>Welcome Home Wehome 迎賓禮包</strong> — 免費提供給前100名嘉賓。由釜山市和Genabelle贊助。',
+      b1_r6: '<strong>個人用品和交通</strong> — 個人洗漱用品（牙刷牙膏等）請自備。您必須自行安排前往演唱會場館和住宿的交通。',
+      b1_r7: '<strong>出入限制和密碼禁傳</strong> — 僅限匹配成功的嘉賓入住。門鎖密碼等出入信息嚴禁洩露給他人。',
+      b1_r8: '<strong>禮品卡無法提供時自動退款</strong> — 若無法提供釜山旅遊禮品卡，您的保證金將在退房後自動退還至原付款方式。',
+      b2_label: 'House Rules',
+      b2_title: '住宿規則與禮儀',
+      b2_r1: '<strong>民宿注意事項</strong> — 這是釜山市民實際居住的私人空間。禁止攜帶易燃物品。請勿翻閱或使用房東的私人空間及物品。請與同住的ARMY互相關心和照顧。',
+      b2_r2: '<strong>嚴禁吸煙</strong> — 室內以及樓宇內全天候禁止吸煙。',
+      b2_r3: '<strong>禁止炊事</strong> — 原則上禁止使用廚房及烹飪工具。（房東以短信許可的情況除外）',
+      b2_r4: '<strong>禁止飲酒並注意噪音</strong> — 嚴禁在民宿內飲酒。請勿大聲喧嘩、唱歌或跳舞，以免打擾鄰居。',
+      b2_r5: '<strong>設施損壞及賠償責任</strong> — 損壞床上用品或設施時，嘉賓需承擔修復和賠償責任。',
+      b2_r6: '<strong>隱私保護</strong> — 嚴禁將房東的聯絡方式及詳細的房源信息洩露給外部或分享到SNS等公開平台。',
+      b2_r7: '<strong>違反規則時可能會被要求立即退房。</strong>',
+      b3_label: '退房辦理',
+      b3_title: '退房與垃圾分類',
+      b3_r1: '退房前，請將所有使用過物品歸位，並清掃整理乾淨。',
+      b3_r2: '<strong>垃圾分類是強制性的。</strong>',
+      b3_dot3: '一般', b3_r3: '<strong>一般垃圾</strong> — 無法回收利用的垃圾分類為一般垃圾。',
+      b3_dot4: '回收', b3_r4: '<strong>可回收物</strong> — 將塑料、金屬罐、玻璃瓶、紙張、塑料袋進行細緻分類，投放至指定區域或回收箱。',
+      b3_dot5: '廚餘', b3_r5: '<strong>廚餘垃圾</strong> — 瀝乾水分後單獨收集到廚餘垃圾專用的容器或垃圾袋中。',
+      b3_r6: '※ 垃圾投放方式因家庭而異。如果房東有單獨說明，請以房東的指導為準。',
+      b3_r7: '<strong>ARMY挑戰</strong> — 與您的房東合影，並帶上 <strong>#BorahaeHangeul</strong> 話題分享到SNS社交平台上。',
+      sup1: '<strong>安全管理</strong>已投保活動責任險，並建立和運行安全管理支持體系。',
+      sup2: '<strong>Channel Talk (最快)</strong>請通過Wehome網頁右下角的線上客服圖示直接諮詢。',
+      sup3: '<strong>電子郵件 · 電話</strong>cs@wehome.me<br>1544-5665 (工作日 10:00–18:00 KST)<br><span style="font-size:0.8rem;color:var(--text-300)">釜山市民團體協議會: 051-809-2629<br>釜山市廳 經濟政策科: 051-888-4751</span>',
+      emerg_title: '發生緊急情況時',
+      emerg_desc: '如果聯絡不到房東或現場發生緊急安全問題，<br>請點擊下方按鈕，立即向Wehome及釜山市相關負責人請求支持。',
+      emerg_btn: '⚠ 請求緊急支援',
+      back: '← 返回',
+      footer: 'Wehome Inc. | 代表董事: 趙山九 | 個人資訊保護責任人: 金碩珍 | 商業註冊號: 467-81-01292 / 首爾特別市麻浦區楊話路136 SVCS 507 | 客戶服務: 1544-5665 | 工作日 10:00–12:00, 13:00–18:00<br>© 2026 Wehome Inc. All rights reserved.'
+    },
+    zh_s: {
+      title: '嘉宾指南 — K-POPSTAY BUSAN 2026',
+      eyebrow: 'Guest Guidebook',
+      page_title: '你需要知道的一切',
+      page_sub: 'K-POPSTAY BUSAN 2026 · 嘉宾服务条款与住宿规则',
+      notice_title: '前提条件 / Notice',
+      notice_body: '本指南优先于Wehome共享住宿用户服务条款。此处未提及的事项将遵循Wehome的一般服务条款。',
+      notice_body_en: 'This guide takes precedence over Wehome\'s general Terms of Service. Any matters not addressed here are governed by Wehome\'s standard Terms of Service.',
+      intro_label: '致辞与介绍',
+      intro_title: 'K-POPSTAY BUSAN 2026 介绍',
+      intro_p1: 'K-POPSTAY BUSAN 2026在釜山ARMY和市民的共同参与下，由釜山市与Wehome共享住宿平台共同推进。该项目旨在将全球ARMY与釜山当地的ARMY及市民连接起来，帮助缓解住宿短缺并促进相互的文化交流。',
+      intro_p2: '釜山市、Wehome以及所有市民均本着志愿服务的精神积极参与。特别是本次K-POPSTAY BUSAN 2026，釜山的ARMY和市民是完全自发无偿为全球ARMY提供住宿的。',
+      intro_p3: '由于是在紧张的准备时间内快速推进的，需要各位ARMY的积极配合，并对房东心怀感激与尊重。可能在细节上存在不够完善的地方，敬请谅解。',
+      intro_p4: 'Wehome今后将继续完善K-POPSTAY，为解决全球K-POP歌迷的住宿问题而继续努力。',
+      sched_label: '主要日程',
+      sched_title: 'Key Schedule',
+      sched_date1: '6/7',
+      sched_item1: '<strong>截至2026年6月7日</strong><br>全球ARMY嘉宾申请（午夜截止）/ 嘉宾与房东匹配开始',
+      sched_date2: '6/8',
+      sched_item2: '<strong>截至2026年6月8日</strong><br>嘉宾与房东匹配完成，开始预订流程<br><span style="color:var(--text-300);font-size:0.82rem">(如有新房东注册，将随时进行追加匹配与预订)</span>',
+      sched_date3: '6/10',
+      sched_item3: '<strong>2026年6月10日</strong><br>房东说明会（釜山市厅）召开 — Wehome出席，并计划向房东交付ARMY迎宾礼包',
+      sched_date4: '6/12',
+      sched_item4: '<strong>自2026年6月12日起</strong><br>ARMY办理入住（经部分房东同意后可自6月11日起提前入住）。<br>入住时，每位嘉宾将获得一张面值<strong>5万韩元的釜山观光商品券</strong>以及迎宾礼包。<br>参与ARMY挑战：与房东合影并带上话题 <strong>#BorahaeHangeul</strong> 分享至社交平台。',
+      sched_date5: '6/14',
+      sched_item5: '<strong>2026年6月14日</strong><br>全球ARMY退房办理 / 整个项目评估',
+      b1_label: '资格 · 房源类型 · 预订 · 福利',
+      b1_title: 'Eligibility, Booking & Benefits',
+      b1_cost: '嘉宾费用：0韩元',
+      b1_r1: '免费住宿将优先提供给BTS全球ARMY。如果无法核实ARMY身份，即使确认后也可能被取消预订。',
+      b1_r2: '为了接待更多ARMY，客厅也可能被用作卧室提供。如有此情况，将在设施说明中注明。',
+      b1_r3: '<strong>入住和退房时间</strong> — 请遵守约定时间。如果房东同意，可以灵活调整。',
+      b1_r4: '<strong>每人5万韩元保证金（信用卡支付）</strong> — 办理入住时，保证金将全额退还为充值的釜山观光卡。可在釜山市内的加盟店像现金一样使用（百货店、大型商场除外）。预订确认后未入住（No-show）的保证金不予退还。',
+      b1_r5: '<strong>Welcome Home Wehome 迎宾礼包</strong> — 免费提供给前100名嘉宾。由釜山市和Genabelle赞助。',
+      b1_r6: '<strong>个人用品和交通</strong> — 个人洗漱用品（牙刷牙膏等）请自备。您必须自行安排前往演唱会场馆和住宿的交通。',
+      b1_r7: '<strong>出入限制和密码禁传</strong> — 仅限匹配成功的嘉宾入住。门锁密码等出入信息严禁泄露给他人。',
+      b1_r8: '<strong>礼品卡无法提供时自动退款</strong> — 若无法提供釜山旅游礼品卡，您的保证金将在退房后自动退还至原付款方式。',
+      b2_label: 'House Rules',
+      b2_title: '住宿规则与礼仪',
+      b2_r1: '<strong>民宿注意事项</strong> — 这是釜山市民实际居住的私人空间。禁止携带易燃物品。请勿翻阅或使用房东的私人空间及物品。请与同住的ARMY互相关心和照顾。',
+      b2_r2: '<strong>严禁吸烟</strong> — 室内以及楼宇内全天候禁止吸烟。',
+      b2_r3: '<strong>禁止炊事</strong> — 原则上禁止使用厨房及烹饪工具。（房东以短信许可的情况除外）',
+      b2_r4: '<strong>禁止饮酒并注意噪音</strong> — 严禁在民宿内饮酒。请勿大声喧哗、唱歌或跳舞，以免打扰邻居。',
+      b2_r5: '<strong>设施损坏及赔偿责任</strong> — 损坏床上用品或设施时，嘉宾需承担修复和赔偿责任。',
+      b2_r6: '<strong>隐私保护</strong> — 严禁将房东的联系方式及详细的房源信息泄露给外部或分享到SNS等公开平台。',
+      b2_r7: '<strong>违反规则时可能会被要求立即退房。</strong>',
+      b3_label: '退房办理',
+      b3_title: '退房与垃圾分类',
+      b3_r1: '退房前，请将所有使用过的物品归位，并清扫整理干净。',
+      b3_r2: '<strong>垃圾分类是强制性的。</strong>',
+      b3_dot3: '一般', b3_r3: '<strong>一般垃圾</strong> — 无法回收利用的垃圾分类为一般垃圾。',
+      b3_dot4: '回收', b3_r4: '<strong>可回收物</strong> — 将塑料、金属罐、玻璃瓶、纸张、塑料袋进行细致分类，投放至指定区域或回收箱。',
+      b3_dot5: '厨余', b3_r5: '<strong>厨余垃圾</strong> — 沥干水分后单独收集到厨余垃圾专用的容器或垃圾袋中。',
+      b3_r6: '※ 垃圾投放方式因家庭而异。如果房东有单独说明，请以房东的指导为准。',
+      b3_r7: '<strong>ARMY挑战</strong> — 与您的房东合影，并带上 <strong>#BorahaeHangeul</strong> 话题分享到SNS社交平台上。',
+      sup1: '<strong>安全管理</strong>已投保活动责任险，并建立和运行安全管理支持体系。',
+      sup2: '<strong>Channel Talk (最快)</strong>请通过Wehome网页右下角的在线客服图标直接咨询。',
+      sup3: '<strong>电子邮件 · 电话</strong>cs@wehome.me<br>1544-5665 (工作日 10:00–18:00 KST)<br><span style="font-size:0.8rem;color:var(--text-300)">釜山市民团体协议会: 051-809-2629<br>釜山市厅 经济政策科: 051-888-4751</span>',
+      emerg_title: '发生紧急情况时',
+      emerg_desc: '如果联系不到房东或现场发生紧急安全问题，<br>请点击下方按钮，立即向Wehome及釜山市相关负责人请求支持。',
+      emerg_btn: '⚠ 请求紧急支援',
+      back: '← 返回',
+      footer: 'Wehome Inc. | 代表董事: 赵山九 | 个人信息保护责任人: 金硕珍 | 商业注册号: 467-81-01292 / 首尔特别市麻浦区杨花路136 SVCS 507 | 客户服务: 1544-5665 | 工作日 10:00–12:00, 13:00–18:00<br>© 2026 Wehome Inc. All rights reserved.'
+    },
+    id: {
+      title: 'Buku Panduan Tamu — K-POPSTAY BUSAN 2026',
+      eyebrow: 'Guest Guidebook',
+      page_title: 'Semua yang Perlu Anda Ketahui',
+      page_sub: 'K-POPSTAY BUSAN 2026 · Ketentuan Tamu & Peraturan Rumah',
+      notice_title: 'Notice',
+      notice_body: 'Panduan ini diutamakan di atas Ketentuan Layanan umum Wehome. Hal-hal yang tidak diatur di sini tunduk pada Ketentuan Layanan standar Wehome.',
+      notice_body_en: 'This guide takes precedence over Wehome\'s general Terms of Service. Any matters not addressed here are governed by Wehome\'s standard Terms of Service.',
+      intro_label: 'Salam & Pengantar',
+      intro_title: 'Tentang K-POPSTAY BUSAN 2026',
+      intro_p1: 'K-POPSTAY BUSAN 2026 diselenggarakan bersama oleh Kota Busan dan Wehome, didukung oleh partisipasi sukarela warga Busan dan penggemar K-POP lokal. Program komunitas ini menghubungkan penggemar global dengan warga lokal untuk membantu mengatasi masalah akomodasi dan mendorong pertukaran budaya timbal balik.',
+      intro_p2: 'Program ini berjalan sepenuhnya berkat upaya sukarela Kota Busan, Wehome, dan para host kami. Secara khusus, host membuka rumah mereka secara gratis murni karena keramahtamahan bagi para penggemar ARMY global.',
+      intro_p3: 'Karena program ini sangat bergantung pada itikad baik dan diatur dalam jangka waktu yang ketat, kami meminta rasa hormat, rasa terima kasih, dan kerja sama aktif Anda. Harap maklum jika beberapa aspek tidak sehalus hotel komersial.',
+      intro_p4: 'Wehome akan terus meningkatkan K-POPSTAY untuk membantu mengatasi masalah akomodasi bagi penggemar K-POP global di masa depan.',
+      sched_label: 'Jadwal Utama',
+      sched_title: 'Key Schedule',
+      sched_date1: '6/7',
+      sched_item1: '<strong>Hingga 7 Juni 2026</strong><br>Pendaftaran Tamu ARMY Global (Tutup tengah malam) / Pencocokan dimulai',
+      sched_date2: '6/8',
+      sched_item2: '<strong>Hingga 8 Juni 2026</strong><br>Pencocokan tamu-host selesai & pemesanan dimulai<br><span style="color:var(--text-300);font-size:0.82rem">(Pencocokan tambahan akan berlanjut saat host baru mendaftar)</span>',
+      sched_date3: '6/10',
+      sched_item3: '<strong>10 Juni 2026</strong><br>Sesi pengarahan host di Balai Kota Busan — Wehome hadir; tas Welcome Home akan dikirimkan ke host',
+      sched_date4: '6/12',
+      sched_item4: '<strong>Mulai 12 Juni 2026</strong><br>Check-in tamu (beberapa dapat check-in dari 11 Juni atas kesepakatan).<br>Setiap tamu menerima <strong>Kartu Wisata Busan senilai KRW 50.000</strong> dan Tas Hadiah Selamat Datang saat check-in.<br>Ikut serta dalam ARMY Challenge: foto bersama host di media sosial menggunakan tagar <strong>#BorahaeHangeul</strong>.',
+      sched_date5: '6/14',
+      sched_item5: '<strong>14 Juni 2026</strong><br>Check-out ARMY global / Evaluasi program akhir',
+      b1_label: 'Kelayakan, Pemesanan & Manfaat',
+      b1_title: 'Eligibility, Booking & Benefits',
+      b1_cost: 'Biaya Tamu: KRW 0',
+      b1_r1: 'Menginap gratis diprioritaskan untuk ARMY BTS global. Pemesanan dapat dibatalkan bahkan setelah konfirmasi jika status ARMY tidak dapat diverifikasi.',
+      b1_r2: 'Untuk menampung sebanyak mungkin penggemar, ruang tamu mungkin ditawarkan sebagai ruang tidur. Hal ini akan ditentukan dalam detail listing.',
+      b1_r3: '<strong>Check-in & Check-out</strong> — Harap hormati waktu yang ditentukan. Host dapat menawarkan fleksibilitas jika dinegosiasikan sebelumnya.',
+      b1_r4: '<strong>Deposit keamanan KRW 50.000 per orang (via kartu kredit)</strong> — Dikembalikan sepenuhnya sebagai Kartu Wisata Busan yang telah diisi saat check-in. Kartu ini dapat digunakan seperti uang tunai di Busan (tidak termasuk toserba/mall besar). Tidak dapat dikembalikan untuk ketidakhadiran (no-show).',
+      b1_r5: '<strong>Tas Hadiah Welcome Home Wehome</strong> — Disediakan gratis (100 tamu pertama). Disponsori oleh Kota Busan dan Genabelle.',
+      b1_r6: '<strong>Barang pribadi & Transit</strong> — Harap bawa perlengkapan mandi Anda sendiri (sikat gigi/pasta gigi). Anda harus mengatur transportasi Anda sendiri ke lokasi konser dan tempat menginap.',
+      b1_r7: '<strong>Batasan Akses</strong> — Hanya tamu yang cocok yang diizinkan masuk. Membagikan kode pintu atau info masuk dengan orang lain sangat dilarang.',
+      b1_r8: '<strong>Pengembalian Otomatis jika Kartu Hadiah Tidak Tersedia</strong> — Jika kami tidak dapat menyediakan Kartu Hadiah Wisata Busan, deposit Anda akan dikembalikan secara otomatis ke metode pembayaran asal setelah menginap.',
+      b2_label: 'Peraturan Rumah',
+      b2_title: 'Peraturan Rumah & Etika',
+      b2_r1: '<strong>Pemberitahuan Homestay</strong> — Ini adalah rumah pribadi tempat warga Busan tinggal. Tidak ada bahan yang mudah terbakar. Jangan membuka lemari pribadi atau menggunakan barang pribadi host. Bersikaplah tenggang rasa dengan teman sekamar.',
+      b2_r2: '<strong>Dilarang Merokok</strong> — Dilarang keras merokok di dalam rumah dan di mana saja di area sekitar rumah.',
+      b2_r3: '<strong>Dilarang Memasak</strong> — Penggunaan dapur tidak diizinkan. (Pengecualian diizinkan hanya jika disetujui secara eksplisit oleh host via SMS)',
+      b2_r4: '<strong>Dilarang Minum Alkohol & Jam Tenang</strong> — Konsumsi alkohol sangat dilarang di rumah. Hindari kebisingan, bernyanyi, atau menari.',
+      b2_r5: '<strong>Tanggung Jawab Kerusakan</strong> — Tamu bertanggung jawab penuh atas segala kerusakan pada tempat tidur, perabotan, atau fasilitas.',
+      b2_r6: '<strong>Perlindungan Privasi</strong> — Jangan memposting nomor telepon host, alamat, atau foto akomodasi terperinci di media sosial atau saluran publik.',
+      b2_r7: '<strong>Pelanggaran aturan dapat mengakibatkan pengusiran segera.</strong>',
+      b3_label: 'Check-out',
+      b3_title: 'Check-out & Daur Ulang',
+      b3_r1: 'Sebelum check-out, kembalikan semua barang yang digunakan ke tempatnya, bersihkan dan rapikan ruangan.',
+      b3_r2: '<strong>Daur ulang adalah wajib.</strong>',
+      b3_dot3: 'Umum', b3_r3: '<strong>Sampah Umum</strong> — Buang barang yang tidak dapat didaur ulang di tempat sampah umum.',
+      b3_dot4: 'Daur', b3_r4: '<strong>Barang Daur Ulang</strong> — Sortir plastik, kaleng/logam, botol kaca, kertas, dan plastik kresek, lalu buang di area daur ulang yang ditentukan.',
+      b3_dot5: 'Makan', b3_r5: '<strong>Sampah Makanan</strong> — Tiriskan air secara menyeluruh dan kumpulkan di tempat sampah atau kantong sampah makanan yang ditentukan.',
+      b3_r6: '※ Metode pembuangan dapat bervariasi tergantung rumah. Selalu ikuti petunjuk spesifik yang diberikan oleh host Anda.',
+      b3_r7: '<strong>ARMY Challenge</strong> — Ambil foto bersama host Anda dan bagikan di media sosial dengan tagar <strong>#BorahaeHangeul</strong>.',
+      sup1: '<strong>Dukungan Keselamatan</strong>Asuransi tanggung jawab hukum dan sistem dukungan keselamatan acara beroperasi.',
+      sup2: '<strong>Channel Talk (Tercepat)</strong>Klik ikon gelembung obrolan di kanan bawah halaman Wehome.',
+      sup3: '<strong>Email & Telepon</strong>cs@wehome.me<br>1544-5665 (Hari kerja 10:00–18:00 KST)<br><span style="font-size:0.8rem;color:var(--text-300)">Dewan Warga: 051-809-2629<br>Kebijakan Ekon Busan: 051-888-4751</span>',
+      emerg_title: 'Jika Terjadi Darurat',
+      emerg_desc: 'Jika Anda tidak dapat menghubungi host atau menghadapi masalah keselamatan yang mendesak,<br>klik tombol di bawah untuk meminta bantuan segera dari Wehome dan koordinator Busan.',
+      emerg_btn: '⚠ Minta Dukungan Darurat',
+      back: '← Kembali',
+      footer: 'Wehome Inc. | CEO: San-ku Cho | Manajer Privasi: Suk-jin Kim | Registrasi Bisnis: 467-81-01292 / #507 SVCS, 136 Yanghwa-ro, Mapo-gu, Seoul | Layanan Pelanggan: 1544-5665 | Hari kerja 10:00–12:00, 13:00–18:00<br>© 2026 Wehome Inc. All rights reserved.'
+    }
+  };
+
+  // guest-guidebook.html 전용 번역 함수
+  function applyTranslationsGuestGuidebook(){
+    var lg = lang;
+    var d = GGB[lg] || GGB['en'];
+    function q(sel,v){ var el=document.querySelector(sel); if(el) el.innerHTML=v; }
+    function qa(sel,v){ document.querySelectorAll(sel).forEach(function(el){el.textContent=v;}); }
+
+    document.documentElement.lang = lg==='zh_t'?'zh-TW':lg==='zh_s'?'zh-CN':lg==='ja'?'ja':lg==='id'?'id':lg==='ko'?'ko':'en';
+
+    // NAV
+    var lbl=document.getElementById('kpopLangCurLabel'); if(lbl) lbl.textContent=window.KPOP_LANG_LABEL||'EN';
+    q('#ggb-btn-back', d.back);
+
+    // HEADER
+    document.title = d.title;
+    var ogTitle = document.querySelector('meta[property="og:title"]'); if(ogTitle) ogTitle.setAttribute('content', d.title);
+    q('#ggb-eyebrow', d.eyebrow);
+    q('#ggb-page-title', d.page_title);
+    q('#ggb-page-sub', d.page_sub);
+
+    // NOTICE
+    q('#ggb-notice-title', d.notice_title);
+    q('#ggb-notice-body', d.notice_body);
+    q('#ggb-notice-body-en', d.notice_body_en);
+    var bodyEn = document.getElementById('ggb-notice-body-en');
+    if(bodyEn) {
+      if(lg === 'en') {
+        bodyEn.style.display = 'none';
+      } else {
+        bodyEn.style.display = 'inline';
+      }
+    }
+
+    // INTRO
+    q('#ggb-intro-label', d.intro_label);
+    q('#ggb-intro-title', d.intro_title);
+    q('#ggb-intro-p1', d.intro_p1);
+    q('#ggb-intro-p2', d.intro_p2);
+    q('#ggb-intro-p3', d.intro_p3);
+    q('#ggb-intro-p4', d.intro_p4);
+
+    // SCHEDULE
+    q('#ggb-sched-label', d.sched_label);
+    q('#ggb-sched-title', d.sched_title);
+    q('#ggb-sched-date1', d.sched_date1);
+    q('#ggb-sched-item1', d.sched_item1);
+    q('#ggb-sched-date2', d.sched_date2);
+    q('#ggb-sched-item2', d.sched_item2);
+    q('#ggb-sched-date3', d.sched_date3);
+    q('#ggb-sched-item3', d.sched_item3);
+    q('#ggb-sched-date4', d.sched_date4);
+    q('#ggb-sched-item4', d.sched_item4);
+    q('#ggb-sched-date5', d.sched_date5);
+    q('#ggb-sched-item5', d.sched_item5);
+
+    // BLOCK 1 (Eligibility, Booking & Benefits)
+    q('#ggb-b1-label', d.b1_label);
+    q('#ggb-b1-title', d.b1_title);
+    q('#ggb-b1-cost', d.b1_cost);
+    q('#ggb-b1-r1', d.b1_r1);
+    q('#ggb-b1-r2', d.b1_r2);
+    q('#ggb-b1-r3', d.b1_r3);
+    q('#ggb-b1-r4', d.b1_r4);
+    q('#ggb-b1-r5', d.b1_r5);
+    q('#ggb-b1-r6', d.b1_r6);
+    q('#ggb-b1-r7', d.b1_r7);
+    q('#ggb-b1-r8', d.b1_r8);
+
+    // BLOCK 2 (House Rules)
+    q('#ggb-b2-label', d.b2_label);
+    q('#ggb-b2-title', d.b2_title);
+    q('#ggb-b2-r1', d.b2_r1);
+    q('#ggb-b2-r2', d.b2_r2);
+    q('#ggb-b2-r3', d.b2_r3);
+    q('#ggb-b2-r4', d.b2_r4);
+    q('#ggb-b2-r5', d.b2_r5);
+    q('#ggb-b2-r6', d.b2_r6);
+    q('#ggb-b2-r7', d.b2_r7);
+
+    // BLOCK 3 (Check-out)
+    q('#ggb-b3-label', d.b3_label);
+    q('#ggb-b3-title', d.b3_title);
+    q('#ggb-b3-r1', d.b3_r1);
+    q('#ggb-b3-r2', d.b3_r2);
+    q('#ggb-b3-dot3', d.b3_dot3); q('#ggb-b3-r3', d.b3_r3);
+    q('#ggb-b3-dot4', d.b3_dot4); q('#ggb-b3-r4', d.b3_r4);
+    q('#ggb-b3-dot5', d.b3_dot5); q('#ggb-b3-r5', d.b3_r5);
+    q('#ggb-b3-r6', d.b3_r6);
+    q('#ggb-b3-r7', d.b3_r7);
+
+    // SUPPORT
+    q('#ggb-sup1', d.sup1);
+    q('#ggb-sup2', d.sup2);
+    q('#ggb-sup3', d.sup3);
+    q('#ggb-sup-emerg-title', d.emerg_title);
+    q('#ggb-sup-emerg-desc', d.emerg_desc);
+    q('#ggb-sup-emerg-btn', d.emerg_btn);
+
+    // FOOTER
+    q('#ggb-footer-text', d.footer);
   }
 
   // travel-guide.html 전용 번역 딕셔너리
@@ -2199,11 +2689,13 @@
   var IS_APPLY_PAGE  = (_path.indexOf('apply') !== -1);
   var IS_ABOUT_PAGE  = (_path === '/about' || _path === '/about.html');
   var IS_TGUIDE_PAGE = (_path === '/travel-guide' || _path === '/travel-guide.html');
+  var IS_GGB_PAGE    = (_path === '/guest-guidebook' || _path === '/guest-guidebook.html');
 
   function _runTranslation(){
     if(IS_APPLY_PAGE)  applyTranslationsApply();
     else if(IS_ABOUT_PAGE)  applyTranslationsAbout();
     else if(IS_TGUIDE_PAGE) applyTranslationsTravelGuide();
+    else if(IS_GGB_PAGE)    applyTranslationsGuestGuidebook();
     else applyTranslations();
   }
 
