@@ -317,6 +317,46 @@ section{padding:96px 0}
 @media(max-width:900px){.gallery-preview-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:560px){.gallery-preview-grid{grid-template-columns:repeat(3,1fr);gap:8px}}
 
+/* GALLERY PREVIEW MODAL */
+.gp-modal-overlay{
+  display:none;position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.gp-modal-overlay.open{display:flex}
+.gp-modal-box{
+  background:#fff;border-radius:20px;
+  width:100%;max-width:480px;max-height:88vh;overflow-y:auto;
+  box-shadow:0 24px 64px rgba(0,0,0,.2);
+  animation:gpIn .22s cubic-bezier(.34,1.4,.64,1);
+  position:relative;
+}
+@keyframes gpIn{from{opacity:0;transform:scale(.95) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.gp-modal-media{width:100%;display:block;max-height:360px;object-fit:cover;border-radius:20px 20px 0 0;background:#000}
+.gp-modal-media-video{width:100%;max-height:360px;display:block;border-radius:20px 20px 0 0;background:#000}
+.gp-modal-body{padding:20px 24px 24px}
+.gp-modal-close{
+  position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;
+  background:rgba(0,0,0,.45);border:none;color:#fff;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;z-index:1;
+}
+.gp-modal-close:hover{background:rgba(0,0,0,.7)}
+.gp-modal-name{font-size:.9rem;font-weight:700;color:var(--purple);margin-bottom:6px;
+  display:flex;align-items:center;gap:6px}
+.gp-modal-name::before{content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--purple);flex-shrink:0}
+.gp-modal-caption{font-size:.9rem;color:var(--text-700);line-height:1.7;margin-bottom:12px}
+.gp-modal-note{font-size:.82rem;color:var(--text-500);line-height:1.65;
+  background:var(--purple-xlight);border-radius:8px;padding:10px 14px;margin-bottom:16px}
+.gp-modal-link{
+  display:flex;align-items:center;justify-content:center;gap:6px;
+  background:var(--purple);color:#fff;font-size:.85rem;font-weight:700;
+  padding:11px;border-radius:10px;text-decoration:none;transition:background .2s;
+}
+.gp-modal-link:hover{background:var(--purple-dark)}
+.gp-modal-insta{border-radius:0 0 20px 20px;overflow:hidden}
+.gp-modal-insta iframe{width:100%;min-height:480px;border:none;display:block}
+
 /* FOOTER */
 .wehome-banner{background:#fff;border-top:1px solid var(--border)}
 .wehome-banner-link{display:flex;align-items:center;justify-content:center;gap:16px;padding:18px 24px;max-width:1200px;margin:0 auto;transition:opacity .2s;flex-wrap:wrap}
@@ -691,6 +731,16 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   </div>
 </section>
 
+<!-- GALLERY PREVIEW MODAL -->
+<div class="gp-modal-overlay" id="gpModal" onclick="gpModalOverlayClick(event)">
+  <div class="gp-modal-box">
+    <button class="gp-modal-close" onclick="gpModalClose()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="gpModalContent"></div>
+  </div>
+</div>
+
 <!-- WEHOME BANNER -->
 <div class="wehome-banner">
   <a href="https://www.wehome.me" target="_blank" rel="noopener" class="wehome-banner-link">
@@ -835,6 +885,53 @@ var observer=new IntersectionObserver(function(entries){
 },{threshold:0.12});
 fadeEls.forEach(function(el){observer.observe(el);});
 
+// Gallery Preview Modal
+function gpModalOpen(p){
+  var content = document.getElementById('gpModalContent');
+  var html = '';
+
+  // 미디어
+  if(p.post_type==='upload' && p.photo_path){
+    if(p.media_type==='video'){
+      html += '<video class="gp-modal-media-video" src="https://k-popstay.wehome.me'+gpEsc(p.photo_path)+'" controls playsinline></video>';
+    } else {
+      html += '<img class="gp-modal-media" src="https://k-popstay.wehome.me'+gpEsc(p.photo_path)+'" alt="post">';
+    }
+  } else if(p.post_type==='instagram' && p.shortcode){
+    html += '<div class="gp-modal-insta"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/captioned/" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>';
+  }
+
+  // 텍스트
+  if(p.submitter_name || p.caption || p.submitter_note){
+    html += '<div class="gp-modal-body">';
+    if(p.submitter_name) html += '<div class="gp-modal-name">'+gpEsc(p.submitter_name)+'</div>';
+    if(p.caption)        html += '<div class="gp-modal-caption">'+gpEsc(p.caption)+'</div>';
+    if(p.submitter_note) html += '<div class="gp-modal-note">&ldquo;'+gpEsc(p.submitter_note)+'&rdquo;</div>';
+    html += '<a href="/challenge" class="gp-modal-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>View Full Gallery</a>';
+    html += '</div>';
+  } else {
+    html += '<div class="gp-modal-body"><a href="/challenge" class="gp-modal-link">View Full Gallery</a></div>';
+  }
+
+  content.innerHTML = html;
+  document.getElementById('gpModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function gpModalClose(){
+  document.getElementById('gpModal').classList.remove('open');
+  document.body.style.overflow = '';
+  // 동영상 정지
+  var vid = document.querySelector('#gpModalContent video');
+  if(vid) vid.pause();
+}
+function gpModalOverlayClick(e){
+  if(e.target === document.getElementById('gpModal')) gpModalClose();
+}
+function gpEsc(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+document.addEventListener('keydown', function(e){ if(e.key==='Escape') gpModalClose(); });
+
 // Community Gallery Preview — 승인된 게시물 있을 때만 섹션 표시
 (function(){
   var MAX = 6;
@@ -854,7 +951,7 @@ fadeEls.forEach(function(el){observer.observe(el);});
       posts.forEach(function(p){
         var cell = document.createElement('div');
         cell.className = 'gallery-preview-item';
-        cell.onclick = function(){ window.location.href='/challenge'; };
+        (function(post){ cell.onclick = function(){ gpModalOpen(post); }; })(p);
 
         if(p.post_type === 'upload' && p.photo_path){
           // 사진/동영상 직접 업로드
