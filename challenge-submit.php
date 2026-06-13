@@ -7,7 +7,8 @@ define('DB_PASS', 'P*uj&6uDofO*l&T5w_as');
 define('DB_NAME', 'kozaza');
 define('UPLOAD_DIR', __DIR__ . '/uploads/challenge/');
 define('UPLOAD_URL', '/uploads/challenge/');
-define('MAX_FILE_SIZE', 10 * 1024 * 1024); // 10MB
+define('MAX_PHOTO_SIZE', 10 * 1024 * 1024);   // 10MB
+define('MAX_VIDEO_SIZE', 500 * 1024 * 1024);  // 500MB
 
 function json_err($msg, $code = 400) {
     http_response_code($code);
@@ -87,62 +88,89 @@ if ($type === 'instagram') {
     exit;
 }
 
-// ── 사진 직접 업로드 (다중) ──────────────────────────────
+// ── 사진/동영상 직접 업로드 ──────────────────────────────
 if ($type === 'upload') {
-    $caption = clean($_POST['caption'] ?? '');
-    $allowed_mimes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'image/heic'];
+    $caption    = clean($_POST['caption'] ?? '');
+    $media_kind = $_POST['media_type'] ?? 'photo'; // 'photo' or 'video'
 
-    // 다중 파일 배열 재구성
-    $raw = $_FILES['photos'] ?? null;
-    if (empty($raw) || !is_array($raw['name'])) {
-        json_err('사진 파일을 선택해주세요.');
+    $allowed_photo = ['image/jpeg','image/png','image/webp','image/gif','image/heic'];
+    $allowed_video = ['video/mp4','video/quicktime','video/x-m4v','video/mov',
+                      'video/mpeg','video/webm','video/x-msvideo','video/3gpp'];
+
+    if ($media_kind === 'video') {
+        // ── 동영상 단일 업로드 ────────────────────────────
+        $raw = $_FILES['video'] ?? null;
+        if (empty($raw) || $raw['error'] !== UPLOAD_ERR_OK) {
+            json_err('동영상 파일을 선택해주세요.');
+        }
+        $mime = mime_content_type($raw['tmp_name']);
+        // quicktime/mov 브라우저 mime 차이 보정
+        if ($mime === 'video/quicktime') $mime = 'video/mp4';
+        if (!in_array($mime, $allowed_video)) {
+            json_err('지원 형식: MP4, MOV, M4V, WEBM');
+        }
+        if ($raw['size'] > MAX_VIDEO_SIZE) {
+            json_err('동영상은 500MB 이하만 가능합니다.');
+        }
+        $ext      = strtolower(pathinfo($raw['name'], PATHINFO_EXTENSION) ?: 'mp4');
+        $safeName = date('Ymd_His') . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
+        $destPath = UPLOAD_DIR . $safeName;
+        if (!move_uploaded_file($raw['tmp_name'], $destPath)) json_err('파일 저장 실패');
+
+        $video_url   = UPLOAD_URL . $safeName;
+        $photos_json = json_encode([$video_url], JSON_UNESCAPED_UNICODE);
+
+        try {
+            $stmt = $pdo->prepare("
+                INSERT INTO kpopstay_challenge_posts
+                    (post_type, media_type, photo_path, photos, caption, submitter_name, submitter_email, submitter_note, ip)
+                VALUES ('upload', 'video', ?, ?, ?, ?, ?, ?, ?)
+            ");
+            $stmt->execute([$video_url, $photos_json, $caption ?: null, $name ?: null, $email ?: null, $note ?: null, $ip]);
+        } catch (PDOException $e) {
+            error_log('[challenge-submit] ' . $e->getMessage());
+            json_err('저장 실패. 잠시 후 다시 시도해주세요.');
+        }
+        echo json_encode(['ok' => true, 'msg' => '동영상 제출 완료! 검토 후 갤러리에 표시됩니다.'], JSON_UNESCAPED_UNICODE);
+        exit;
     }
+
+    // ── 사진 다중 업로드 ──────────────────────────────────
+    $raw = $_FILES['photos'] ?? null;
+    if (empty($raw) || !is_array($raw['name'])) json_err('사진 파일을 선택해주세요.');
 
     $files = [];
     for ($i = 0; $i < count($raw['name']); $i++) {
         if ($raw['error'][$i] === UPLOAD_ERR_OK) {
-            $files[] = [
-                'tmp'  => $raw['tmp_name'][$i],
-                'name' => $raw['name'][$i],
-                'size' => $raw['size'][$i],
-            ];
+            $files[] = ['tmp' => $raw['tmp_name'][$i], 'name' => $raw['name'][$i], 'size' => $raw['size'][$i]];
         }
     }
     if (!$files) json_err('사진 파일을 선택해주세요.');
-    if (count($files) > 5) $files = array_slice($files, 0, 5); // 최대 5장
+    if (count($files) > 5) $files = array_slice($files, 0, 5);
 
     $photo_urls = [];
     foreach ($files as $file) {
         $mime = mime_content_type($file['tmp']);
-        if (!in_array($mime, $allowed_mimes)) continue;
-        if ($file['size'] > MAX_FILE_SIZE) continue;
-
+        if (!in_array($mime, $allowed_photo)) continue;
+        if ($file['size'] > MAX_PHOTO_SIZE) continue;
         $ext      = strtolower(pathinfo($file['name'], PATHINFO_EXTENSION) ?: 'jpg');
         $safeName = date('Ymd_His') . '_' . bin2hex(random_bytes(6)) . '.' . $ext;
         $destPath = UPLOAD_DIR . $safeName;
-
         if (move_uploaded_file($file['tmp'], $destPath)) {
-            // EXIF 회전 보정 (아이폰 등 세로 사진 뒤집힘 방지)
             fix_image_orientation($destPath, $mime);
             $photo_urls[] = UPLOAD_URL . $safeName;
         }
     }
-
     if (!$photo_urls) json_err('파일 저장 실패. 지원 형식: JPG, PNG, WEBP, GIF');
 
-    // 첫 번째 사진을 photo_path(대표), 전체를 photos JSON으로 저장
     $photos_json = json_encode($photo_urls, JSON_UNESCAPED_UNICODE);
-
     try {
         $stmt = $pdo->prepare("
             INSERT INTO kpopstay_challenge_posts
-                (post_type, photo_path, photos, caption, submitter_name, submitter_email, submitter_note, ip)
-            VALUES ('upload', ?, ?, ?, ?, ?, ?, ?)
+                (post_type, media_type, photo_path, photos, caption, submitter_name, submitter_email, submitter_note, ip)
+            VALUES ('upload', 'photo', ?, ?, ?, ?, ?, ?, ?)
         ");
-        $stmt->execute([
-            $photo_urls[0], $photos_json,
-            $caption ?: null, $name ?: null, $email ?: null, $note ?: null, $ip
-        ]);
+        $stmt->execute([$photo_urls[0], $photos_json, $caption ?: null, $name ?: null, $email ?: null, $note ?: null, $ip]);
     } catch (PDOException $e) {
         error_log('[challenge-submit] ' . $e->getMessage());
         json_err('저장 실패. 잠시 후 다시 시도해주세요.');

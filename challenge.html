@@ -319,6 +319,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 .submit-msg.ok{background:#f0fdf4;color:#16a34a;border:1.5px solid #86efac}
 .submit-msg.err{background:#fef2f2;color:#dc2626;border:1.5px solid #fca5a5}
 
+/* 동영상 업로드 카드 */
+.video-item{
+  border-radius:16px;overflow:hidden;
+  background:#000;box-shadow:var(--shadow-sm);
+  border:1.5px solid var(--border);
+  transition:box-shadow .25s,transform .25s;
+}
+.video-item:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.video-item video{
+  width:100%;aspect-ratio:9/16;display:block;object-fit:cover;max-height:480px;
+}
+.video-item-body{padding:14px 16px 16px;background:#fff}
+.video-item-name{font-size:.8rem;font-weight:700;color:var(--purple);margin-bottom:4px;
+  display:flex;align-items:center;gap:6px}
+.video-item-name::before{content:'';display:inline-block;width:6px;height:6px;
+  border-radius:50%;background:var(--purple);flex-shrink:0}
+.video-item-caption{font-size:.82rem;color:var(--text-500);line-height:1.6;
+  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+
 /* 갤러리 섹션 Share 버튼 */
 .btn-share-gallery{
   display:inline-flex;align-items:center;gap:8px;
@@ -787,23 +806,56 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
 
       <!-- 업로드 탭 -->
       <div class="modal-tab-panel" id="tabUpload">
-        <p class="sub">No Instagram? Upload your photo directly — Hangul art, stay memories, Busan moments, anything!</p>
+        <p class="sub">No Instagram? Upload photos or a video directly — Hangul art, stay memories, Busan moments, anything!</p>
+        <!-- Photo / Video 미니 탭 -->
+        <div style="display:flex;gap:6px;margin-bottom:18px">
+          <button type="button" class="modal-tab active" id="subTabPhotoBtn" onclick="switchMediaTab('photo')" style="flex:1;font-size:.8rem;padding:7px">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;margin-right:4px;vertical-align:-2px"><path d="M14.5 4h-5L7 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+            Photo
+          </button>
+          <button type="button" class="modal-tab" id="subTabVideoBtn" onclick="switchMediaTab('video')" style="flex:1;font-size:.8rem;padding:7px">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline;margin-right:4px;vertical-align:-2px"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+            Video
+          </button>
+        </div>
         <form id="submitFormUpload" onsubmit="submitPost(event,'upload')">
-          <!-- 사진 드롭존 (다중) -->
-          <div class="form-group">
-            <label>Photos <span style="color:#dc2626">*</span> <span style="font-weight:400;color:var(--text-300);font-size:.78rem">up to 5 photos</span></label>
-            <!-- 미리보기 그리드 (JS로 채움) -->
-            <div class="photo-preview-grid" id="photoPreviewGrid" style="display:none"></div>
-            <!-- 초기 드롭존 -->
-            <div class="photo-dropzone" id="photoDropzone">
-              <input type="file" id="photoFile" name="photos[]" accept="image/*" multiple onchange="onPhotosSelect(this)">
-              <div class="photo-dropzone-icon">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+          <input type="hidden" id="mediaTypeField" name="media_type" value="photo">
+          <!-- 사진 섹션 -->
+          <div id="photoSection">
+            <div class="form-group">
+              <label>Photos <span style="color:#dc2626">*</span> <span style="font-weight:400;color:var(--text-300);font-size:.78rem">up to 5 photos</span></label>
+              <div class="photo-preview-grid" id="photoPreviewGrid" style="display:none"></div>
+              <div class="photo-dropzone" id="photoDropzone">
+                <input type="file" id="photoFile" name="photos[]" accept="image/*" multiple onchange="onPhotosSelect(this)">
+                <div class="photo-dropzone-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a2 2 0 00-2 2v9a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>
+                </div>
+                <p><strong>Tap to choose photos</strong></p>
+                <small>Up to 5 photos &middot; JPG, PNG, WEBP, GIF &middot; max 10MB each</small>
               </div>
-              <p><strong>Tap to choose photos</strong></p>
-              <small>Up to 5 photos &middot; JPG, PNG, WEBP, GIF &middot; max 10MB each</small>
             </div>
           </div>
+          <!-- 동영상 섹션 -->
+          <div id="videoSection" style="display:none">
+            <div class="form-group">
+              <label>Video <span style="color:#dc2626">*</span></label>
+              <div id="videoPreviewWrap" style="display:none;margin-bottom:10px;border-radius:12px;overflow:hidden;border:1.5px solid var(--border);position:relative">
+                <video id="videoPreviewEl" controls style="width:100%;max-height:300px;display:block;background:#000"></video>
+                <button type="button" onclick="removeVideo()" style="position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,.55);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+              </div>
+              <div class="photo-dropzone" id="videoDropzone">
+                <input type="file" id="videoFile" name="video" accept="video/*" onchange="onVideoSelect(this)">
+                <div class="photo-dropzone-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--purple)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                </div>
+                <p><strong>Tap to choose a video</strong></p>
+                <small>MP4, MOV, WEBM &middot; max 500MB</small>
+              </div>
+            </div>
+          </div>
+          <!-- 공통 필드 -->
           <div class="form-group">
             <label for="uploadCaption">Caption (optional)</label>
             <textarea id="uploadCaption" name="caption" placeholder="보라해! Here's my Hangul art from Busan..."></textarea>
@@ -1023,6 +1075,36 @@ function switchTab(tab){
   document.getElementById('submitMsg').style.display='none';
 }
 
+// Photo / Video 미니 탭 전환
+function switchMediaTab(type){
+  var isVideo = type === 'video';
+  document.getElementById('photoSection').style.display = isVideo ? 'none' : 'block';
+  document.getElementById('videoSection').style.display = isVideo ? 'block' : 'none';
+  document.getElementById('mediaTypeField').value = type;
+  document.getElementById('subTabPhotoBtn').classList.toggle('active', !isVideo);
+  document.getElementById('subTabVideoBtn').classList.toggle('active', isVideo);
+}
+
+// 동영상 선택 미리보기
+function onVideoSelect(input){
+  if(!input.files||!input.files[0]) return;
+  var file = input.files[0];
+  var url = URL.createObjectURL(file);
+  var preview = document.getElementById('videoPreviewEl');
+  preview.src = url;
+  document.getElementById('videoPreviewWrap').style.display = 'block';
+  document.getElementById('videoDropzone').style.display = 'none';
+}
+function removeVideo(){
+  var input = document.getElementById('videoFile');
+  input.value = '';
+  var preview = document.getElementById('videoPreviewEl');
+  URL.revokeObjectURL(preview.src);
+  preview.src = '';
+  document.getElementById('videoPreviewWrap').style.display = 'none';
+  document.getElementById('videoDropzone').style.display = 'block';
+}
+
 // 다중 사진 관리
 var selectedFiles=[];
 var MAX_PHOTOS=5;
@@ -1184,21 +1266,6 @@ function buildCard(p){
   item.setAttribute('data-type', p.post_type);
 
   if(p.post_type==='upload'){
-    item.className='upload-item';
-    var photos=[];
-    try{ if(p.photos) photos=JSON.parse(p.photos); } catch(e){}
-    if(!photos.length && p.photo_path) photos=[p.photo_path];
-    var sliderHtml='<div class="upload-slider" data-idx="0"><div class="upload-slider-track">';
-    photos.forEach(function(src){ sliderHtml+='<img src="'+escHtml(src)+'" alt="photo" loading="lazy">'; });
-    sliderHtml+='</div>';
-    if(photos.length>1){
-      sliderHtml+='<button type="button" class="upload-slider-prev" onclick="sliderMove(this,-1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
-      sliderHtml+='<button type="button" class="upload-slider-next" onclick="sliderMove(this,1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>';
-      sliderHtml+='<div class="upload-slider-dots">';
-      photos.forEach(function(_,i){ sliderHtml+='<div class="upload-slider-dot'+(i===0?' active':'')+'"></div>'; });
-      sliderHtml+='</div>';
-    }
-    sliderHtml+='</div>';
     var bodyHtml='';
     if(p.submitter_name||p.caption||p.submitter_note){
       bodyHtml='<div class="upload-item-body">';
@@ -1207,7 +1274,30 @@ function buildCard(p){
       else if(p.submitter_note) bodyHtml+='<div class="upload-item-caption">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
       bodyHtml+='</div>';
     }
-    item.innerHTML=sliderHtml+bodyHtml;
+
+    if(p.media_type==='video'){
+      // 동영상 카드
+      item.className='video-item';
+      item.innerHTML='<video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;display:block;object-fit:cover;max-height:480px;background:#000"><source src="'+escHtml(p.photo_path)+'">Your browser does not support video.</video>'+bodyHtml;
+    } else {
+      // 사진 슬라이더 카드
+      item.className='upload-item';
+      var photos=[];
+      try{ if(p.photos) photos=JSON.parse(p.photos); } catch(e){}
+      if(!photos.length && p.photo_path) photos=[p.photo_path];
+      var sliderHtml='<div class="upload-slider" data-idx="0"><div class="upload-slider-track">';
+      photos.forEach(function(src){ sliderHtml+='<img src="'+escHtml(src)+'" alt="photo" loading="lazy">'; });
+      sliderHtml+='</div>';
+      if(photos.length>1){
+        sliderHtml+='<button type="button" class="upload-slider-prev" onclick="sliderMove(this,-1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
+        sliderHtml+='<button type="button" class="upload-slider-next" onclick="sliderMove(this,1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>';
+        sliderHtml+='<div class="upload-slider-dots">';
+        photos.forEach(function(_,i){ sliderHtml+='<div class="upload-slider-dot'+(i===0?' active':'')+'"></div>'; });
+        sliderHtml+='</div>';
+      }
+      sliderHtml+='</div>';
+      item.innerHTML=sliderHtml+bodyHtml;
+    }
   } else {
     item.className='insta-item';
     var captionHtml='';
@@ -1330,8 +1420,15 @@ function submitPost(e, type){
     fd.append('submitter_email', document.getElementById('subEmail').value.trim());
     fd.append('submitter_note', document.getElementById('subNote').value.trim());
   } else {
-    if(!selectedFiles.length){ showMsg('err','Please select at least one photo.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
-    selectedFiles.forEach(function(f){ fd.append('photos[]', f); });
+    var mediaType = document.getElementById('mediaTypeField').value;
+    if(mediaType === 'video'){
+      var vFile = document.getElementById('videoFile').files[0];
+      if(!vFile){ showMsg('err','Please select a video.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
+      fd.append('video', vFile);
+    } else {
+      if(!selectedFiles.length){ showMsg('err','Please select at least one photo.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
+      selectedFiles.forEach(function(f){ fd.append('photos[]', f); });
+    }
     fd.append('caption', document.getElementById('uploadCaption').value.trim());
     fd.append('submitter_name', document.getElementById('uploadName').value.trim());
     fd.append('submitter_email', document.getElementById('uploadEmail').value.trim());
@@ -1344,7 +1441,7 @@ function submitPost(e, type){
       showMsg(d.ok?'ok':'err', d.msg||(d.ok?'Submitted!':'Submission failed.'));
       if(d.ok){
         if(type==='instagram') document.getElementById('submitFormInsta').reset();
-        else { document.getElementById('submitFormUpload').reset(); selectedFiles=[]; renderPhotoPreview(); }
+        else { document.getElementById('submitFormUpload').reset(); selectedFiles=[]; renderPhotoPreview(); removeVideo(); }
         setTimeout(closeModal, 2000);
       }
     })
