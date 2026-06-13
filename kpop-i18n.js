@@ -45,7 +45,7 @@
   // 언어별 번역 데이터
   var T = {
     ko: {
-      nav_home:'홈', nav_about:'K-POPSTAY', nav_guide:'게스트 가이드북', nav_apply:'신청하기',
+      nav_home:'홈', nav_about:'K-POPSTAY', nav_guide:'게스트 가이드북', nav_apply:'보라해 챌린지 ›',
       hero_eyebrow:'K-POPSTAY BUSAN 2026',
       hero_title:'부산 갈매기<br><span class="brand">둥지</span>',
       hero_subtitle:'글로벌 팬들을 위한 부산 시민의 환대',
@@ -305,7 +305,7 @@
       ch_modal_btn_upload:'업로드 &amp; 제출 ›'
     },
     en: {
-      nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Guest Guidebook', nav_apply:'Apply Now ›',
+      nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Guest Guidebook', nav_apply:'Borahae Challenge ›',
       hero_eyebrow:'K-POPSTAY BUSAN 2026',
       hero_title:'<span class="brand">Busan Seagull</span><br>Nest',
       hero_subtitle:'A Purple Welcome for Global Fans,<br>Hosted by Busan Citizens.',
@@ -545,7 +545,7 @@
       ch_modal_btn_upload:'Upload &amp; Submit ›'
     },
     ja: {
-      nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'ゲストガイドブック', nav_apply:'今すぐ申し込む ›',
+      nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'ゲストガイドブック', nav_apply:'ボラヘチャレンジ ›',
       hero_eyebrow:'K-POPSTAY BUSAN 2026',
       hero_title:'<span class="brand">釜山シーガル</span><br>ネスト',
       hero_subtitle:'世界中のファンへ、紫のおもてなし。<br>釜山市民がホストとして歓迎します。',
@@ -785,7 +785,7 @@
       ch_modal_btn_upload:'アップロード＆提出 ›'
     },
     zh_t: {
-      nav_home:'首頁', nav_about:'K-POPSTAY', nav_guide:'訪客指南', nav_apply:'立即申請 ›',
+      nav_home:'首頁', nav_about:'K-POPSTAY', nav_guide:'訪客指南', nav_apply:'보라해挑戰 ›',
       hero_eyebrow:'K-POPSTAY BUSAN 2026',
       hero_title:'<span class="brand">釜山海鷗</span><br>巢穴',
       hero_subtitle:'以紫色歡迎全球粉絲，<br>由釜山市民傾情款待。',
@@ -1010,7 +1010,7 @@
       ch_modal_btn_upload:'上傳 &amp; 提交 ›'
     },
     zh_s: {
-      nav_home:'首页', nav_about:'K-POPSTAY', nav_guide:'访客指南', nav_apply:'立即申请 ›',
+      nav_home:'首页', nav_about:'K-POPSTAY', nav_guide:'访客指南', nav_apply:'보라해挑战 ›',
       hero_eyebrow:'K-POPSTAY BUSAN 2026',
       hero_title:'<span class="brand">釜山海鸥</span><br>巢穴',
       hero_subtitle:'以紫色欢迎全球粉丝，<br>由釜山市民倾情款待。',
@@ -1235,7 +1235,7 @@
       ch_modal_btn_upload:'上传 &amp; 提交 ›'
     },
     id: {
-      nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Panduan Tamu', nav_apply:'Daftar Sekarang ›',
+      nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Panduan Tamu', nav_apply:'Tantangan Borahae ›',
       hero_eyebrow:'K-POPSTAY BUSAN 2026',
       hero_title:'<span class="brand">Sarang Camar</span><br>Busan',
       hero_subtitle:'Sambutan Ungu untuk Penggemar Global,<br>Dipersembahkan oleh Warga Busan.',
