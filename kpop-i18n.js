@@ -3034,6 +3034,7 @@
   }
 
   function applyTranslationsChallenge(){
+    function q(sel, html){ var el=document.querySelector(sel); if(el) el.innerHTML=html; }
     // nav
     var chNavLink = document.querySelector('.nav-link[href="/challenge"]');
     if(chNavLink) chNavLink.textContent = t('ch_nav');
