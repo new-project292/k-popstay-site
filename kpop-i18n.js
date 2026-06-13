@@ -302,7 +302,11 @@
       ch_modal_caption_label:'캡션 (선택)',
       ch_modal_caption_ph:'보라해! 부산에서 만든 한글 아트예요...',
       ch_modal_upload_note_label:'호스트에게 메시지 (선택)',
-      ch_modal_btn_upload:'업로드 &amp; 제출 ›'
+      ch_modal_btn_upload:'업로드 &amp; 제출 ›',
+      ch_reward_label:'스페셜 리워드',
+      ch_reward_title:'우수 포스팅에 <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 8px">위홈 무료 숙박권</span> 증정',
+      ch_reward_sub:'마음을 담은 한글 챌린지 사진/영상을 올려주세요!',
+      ch_reward_btn:'지금 제출하기'
     },
     en: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Guest Guidebook', nav_apply:'Borahae Challenge ›',
@@ -542,7 +546,11 @@
       ch_modal_caption_label:'Caption (optional)',
       ch_modal_caption_ph:'보라해! Here\'s my Hangul art from Busan...',
       ch_modal_upload_note_label:'Message to your host (optional)',
-      ch_modal_btn_upload:'Upload &amp; Submit ›'
+      ch_modal_btn_upload:'Upload &amp; Submit ›',
+      ch_reward_label:'Special Reward',
+      ch_reward_title:'Best posts win a <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 8px">FREE Wehome stay</span>',
+      ch_reward_sub:'우수 포스팅에 위홈 무료 숙박권 증정 — Share your moment!',
+      ch_reward_btn:'Submit Now'
     },
     ja: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'ゲストガイドブック', nav_apply:'ボラヘチャレンジ ›',
@@ -782,7 +790,11 @@
       ch_modal_caption_label:'キャプション（任意）',
       ch_modal_caption_ph:'보라해！釜山で作ったハングルアートです...',
       ch_modal_upload_note_label:'ホストへのメッセージ（任意）',
-      ch_modal_btn_upload:'アップロード＆提出 ›'
+      ch_modal_btn_upload:'アップロード＆提出 ›',
+      ch_reward_label:'スペシャルリワード',
+      ch_reward_title:'優秀投稿に<span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 8px">Wehome無料宿泊券</span>プレゼント',
+      ch_reward_sub:'ハングルチャレンジの写真・動画を投稿してください！',
+      ch_reward_btn:'今すぐ投稿'
     },
     zh_t: {
       nav_home:'首頁', nav_about:'K-POPSTAY', nav_guide:'訪客指南', nav_apply:'보라해挑戰 ›',
@@ -1007,7 +1019,11 @@
       ch_modal_caption_label:'說明文字（選填）',
       ch_modal_caption_ph:'보라해！這是我在釜山創作的韓文藝術...',
       ch_modal_upload_note_label:'給房東的訊息（選填）',
-      ch_modal_btn_upload:'上傳 &amp; 提交 ›'
+      ch_modal_btn_upload:'上傳 &amp; 提交 ›',
+      ch_reward_label:'特別獎勵',
+      ch_reward_title:'優秀貼文贏得<span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 8px">Wehome免費住宿</span>',
+      ch_reward_sub:'上傳你的韓文挑戰照片或影片吧！',
+      ch_reward_btn:'立即提交'
     },
     zh_s: {
       nav_home:'首页', nav_about:'K-POPSTAY', nav_guide:'访客指南', nav_apply:'보라해挑战 ›',
@@ -1232,7 +1248,11 @@
       ch_modal_caption_label:'说明文字（选填）',
       ch_modal_caption_ph:'보라해！这是我在釜山创作的韩文艺术...',
       ch_modal_upload_note_label:'给房东的留言（选填）',
-      ch_modal_btn_upload:'上传 &amp; 提交 ›'
+      ch_modal_btn_upload:'上传 &amp; 提交 ›',
+      ch_reward_label:'奖励特典',
+      ch_reward_title:'优秀帖子赢得<span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 8px">Wehome免费住宿</span>',
+      ch_reward_sub:'上传你的韩文挑战照片或视频吧！',
+      ch_reward_btn:'立即提交'
     },
     id: {
       nav_home:'HOME', nav_about:'K-POPSTAY', nav_guide:'Panduan Tamu', nav_apply:'Tantangan Borahae ›',
@@ -1457,7 +1477,11 @@
       ch_modal_caption_label:'Keterangan (opsional)',
       ch_modal_caption_ph:'보라해！Ini seni Hangul yang kubuat di Busan...',
       ch_modal_upload_note_label:'Pesan untuk hostmu (opsional)',
-      ch_modal_btn_upload:'Unggah &amp; Kirim ›'
+      ch_modal_btn_upload:'Unggah &amp; Kirim ›',
+      ch_reward_label:'Hadiah Spesial',
+      ch_reward_title:'Posting terbaik menangkan <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 8px">menginap GRATIS di Wehome</span>',
+      ch_reward_sub:'Unggah foto atau video tantangan Hangul-mu!',
+      ch_reward_btn:'Kirim Sekarang'
     }
   };
 
@@ -3092,6 +3116,12 @@
     var uploadEmailLabel = document.querySelector('label[for="uploadEmail"]'); if(uploadEmailLabel) uploadEmailLabel.textContent = t('ch_modal_email_label');
     var uploadNoteLabel = document.querySelector('label[for="uploadNote"]'); if(uploadNoteLabel) uploadNoteLabel.textContent = t('ch_modal_upload_note_label');
     var btnUpload = document.getElementById('submitBtnUpload'); if(btnUpload) btnUpload.innerHTML = t('ch_modal_btn_upload');
+
+    // reward banner
+    var rLabel = document.getElementById('rewardLabel'); if(rLabel) rLabel.textContent = t('ch_reward_label');
+    var rTitle = document.getElementById('rewardTitle'); if(rTitle) rTitle.innerHTML = t('ch_reward_title');
+    var rSub   = document.getElementById('rewardSub');   if(rSub)   rSub.textContent  = t('ch_reward_sub');
+    var rBtn   = document.getElementById('rewardBtnText'); if(rBtn) rBtn.textContent  = t('ch_reward_btn');
   }
 
   var _path = location.pathname;
