@@ -461,6 +461,26 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
 <!-- FAB -->
 <button id="fabApply" onclick="location.href='/challenge'">Go to Borahae Challenge &amp; Reviews &rsaquo;</button>
 
+<!-- COMMUNITY GALLERY PREVIEW -->
+<section id="community" style="display:none">
+  <div class="container">
+    <div class="community-header fade-up">
+      <div class="section-eyebrow">Community</div>
+      <h2 class="section-title">ARMY Stories from Busan</h2>
+      <p class="section-desc" style="margin:0 auto">Real moments shared by K-POPSTAY guests — Hangul art, stay memories, and Busan adventures.</p>
+    </div>
+  </div>
+  <div class="gallery-preview-grid fade-up" id="galleryPreviewGrid">
+    <!-- JS로 채움 -->
+  </div>
+  <div class="gallery-preview-cta fade-up">
+    <a href="/challenge" class="btn-view-gallery">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      View Full Gallery &amp; Share Your Post
+    </a>
+  </div>
+</section>
+
 <!-- INTRODUCE -->
 <section id="introduce">
   <div class="container">
@@ -671,26 +691,6 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   </div>
 </section>
 
-<!-- COMMUNITY GALLERY PREVIEW -->
-<section id="community">
-  <div class="container">
-    <div class="community-header fade-up">
-      <div class="section-eyebrow">Community</div>
-      <h2 class="section-title">ARMY Stories from Busan</h2>
-      <p class="section-desc" style="margin:0 auto">Real moments shared by K-POPSTAY guests — Hangul art, stay memories, and Busan adventures.</p>
-    </div>
-  </div>
-  <div class="gallery-preview-grid fade-up" id="galleryPreviewGrid">
-    <!-- JS로 채움 -->
-  </div>
-  <div class="gallery-preview-cta fade-up">
-    <a href="/challenge" class="btn-view-gallery">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
-      View Full Gallery &amp; Share Your Post
-    </a>
-  </div>
-</section>
-
 <!-- WEHOME BANNER -->
 <div class="wehome-banner">
   <a href="https://www.wehome.me" target="_blank" rel="noopener" class="wehome-banner-link">
@@ -835,45 +835,58 @@ var observer=new IntersectionObserver(function(entries){
 },{threshold:0.12});
 fadeEls.forEach(function(el){observer.observe(el);});
 
-// Community Gallery Preview — 승인된 게시물 최대 6개 미리보기
+// Community Gallery Preview — 승인된 게시물 있을 때만 섹션 표시
 (function(){
   var MAX = 6;
   var grid = document.getElementById('galleryPreviewGrid');
-  if(!grid) return;
+  var section = document.getElementById('community');
+  if(!grid || !section) return;
 
   fetch('/challenge-posts.php')
     .then(function(r){return r.json()})
     .then(function(data){
       var posts = (data.posts||[]).slice(0, MAX);
-      // 빈 슬롯 포함해서 항상 MAX개 채우기
-      for(var i=0; i<MAX; i++){
+      if(!posts.length) return; // 게시물 없으면 섹션 숨김 유지
+
+      // 게시물 있으면 섹션 표시
+      section.style.display = '';
+
+      posts.forEach(function(p){
         var cell = document.createElement('div');
-        if(posts[i]){
-          cell.className='gallery-preview-item';
-          var sc = posts[i].shortcode;
+        cell.className = 'gallery-preview-item';
+        cell.onclick = function(){ window.location.href='/challenge'; };
+
+        if(p.post_type === 'upload' && p.photo_path){
+          // 사진/동영상 직접 업로드
+          if(p.media_type === 'video'){
+            cell.innerHTML =
+              '<video src="https://k-popstay.wehome.me'+p.photo_path+'" muted playsinline preload="metadata" '+
+              'style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none"></video>'+
+              '<div class="preview-overlay"></div>';
+          } else {
+            cell.innerHTML =
+              '<img src="https://k-popstay.wehome.me'+p.photo_path+'" alt="post" loading="lazy" '+
+              'style="width:100%;height:100%;object-fit:cover;display:block;">'+
+              '<div class="preview-overlay"></div>';
+          }
+        } else if(p.post_type === 'instagram' && p.shortcode){
           cell.innerHTML =
-            '<iframe src="https://www.instagram.com/p/'+encodeURIComponent(sc)+'/embed/" '+
-            'frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>'+
+            '<iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" '+
+            'frameborder="0" scrolling="no" allowtransparency="true" loading="lazy" style="pointer-events:none"></iframe>'+
             '<div class="preview-overlay"></div>';
-          (function(shortcode){
-            cell.onclick = function(){ window.location.href='/challenge'; };
-          })(sc);
-        } else {
-          cell.className='gallery-preview-empty';
-          cell.innerHTML='<span>💜</span>';
         }
         grid.appendChild(cell);
+      });
+
+      // MAX보다 적으면 나머지는 빈 슬롯
+      for(var i=posts.length; i<MAX; i++){
+        var empty = document.createElement('div');
+        empty.className = 'gallery-preview-empty';
+        empty.innerHTML = '<span>💜</span>';
+        grid.appendChild(empty);
       }
     })
-    .catch(function(){
-      // 로드 실패 시 빈 슬롯만
-      for(var i=0;i<MAX;i++){
-        var cell=document.createElement('div');
-        cell.className='gallery-preview-empty';
-        cell.innerHTML='<span>💜</span>';
-        grid.appendChild(cell);
-      }
-    });
+    .catch(function(){ /* 실패 시 섹션 숨김 유지 */ });
 })();
 </script>
 </body>
