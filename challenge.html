@@ -322,7 +322,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 /* 동영상 업로드 카드 */
 .video-item{
   border-radius:16px;overflow:hidden;
-  background:#000;box-shadow:var(--shadow-sm);
+  background:#fff;box-shadow:var(--shadow-sm);
   border:1.5px solid var(--border);
   transition:box-shadow .25s,transform .25s;
 }
@@ -1266,16 +1266,20 @@ function buildCard(p){
   item.setAttribute('data-type', p.post_type);
 
   if(p.post_type==='upload'){
+    var isVideo = p.media_type==='video';
+    var bodyClass = isVideo ? 'video-item-body' : 'upload-item-body';
+    var nameClass = isVideo ? 'video-item-name' : 'upload-item-name';
+    var captionClass = isVideo ? 'video-item-caption' : 'upload-item-caption';
     var bodyHtml='';
     if(p.submitter_name||p.caption||p.submitter_note){
-      bodyHtml='<div class="upload-item-body">';
-      if(p.submitter_name) bodyHtml+='<div class="upload-item-name">'+escHtml(p.submitter_name)+'</div>';
-      if(p.caption) bodyHtml+='<div class="upload-item-caption">'+escHtml(p.caption)+'</div>';
-      else if(p.submitter_note) bodyHtml+='<div class="upload-item-caption">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
+      bodyHtml='<div class="'+bodyClass+'">';
+      if(p.submitter_name) bodyHtml+='<div class="'+nameClass+'">'+escHtml(p.submitter_name)+'</div>';
+      if(p.caption) bodyHtml+='<div class="'+captionClass+'">'+escHtml(p.caption)+'</div>';
+      else if(p.submitter_note) bodyHtml+='<div class="'+captionClass+'">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
       bodyHtml+='</div>';
     }
 
-    if(p.media_type==='video'){
+    if(isVideo){
       // 동영상 카드
       item.className='video-item';
       item.innerHTML='<video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;display:block;object-fit:cover;max-height:480px;background:#000"><source src="'+escHtml(p.photo_path)+'">Your browser does not support video.</video>'+bodyHtml;
