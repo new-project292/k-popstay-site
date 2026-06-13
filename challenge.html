@@ -72,6 +72,34 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 .challenge-hero h1 .brand{color:var(--purple)}
 .challenge-hero p{font-size:1rem;color:var(--text-500);line-height:1.75;max-width:580px;margin:0 auto 32px}
 
+/* 모바일 포스터 슬라이더 */
+.poster-mobile-slider{display:none}
+@media(max-width:640px){
+  .poster-layout{display:none!important}     /* PC 레이아웃 숨김 */
+  .poster-mobile-slider{
+    display:block;margin:0 -24px;           /* 섹션 패딩 상쇄 */
+  }
+  .poster-mobile-track-wrap{
+    overflow-x:auto;scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+    display:flex;gap:12px;
+    padding:0 24px 12px;
+    scrollbar-width:none;
+  }
+  .poster-mobile-track-wrap::-webkit-scrollbar{display:none}
+  .poster-mobile-slide{
+    flex:0 0 78vw;max-width:320px;
+    scroll-snap-align:start;
+    border-radius:14px;overflow:hidden;
+    box-shadow:var(--shadow-md);border:1.5px solid var(--border);
+    cursor:zoom-in;
+  }
+  .poster-mobile-slide img{width:100%;display:block}
+  .poster-mobile-slide:last-child{margin-right:24px}
+  .poster-swipe-hint{text-align:center;font-size:.75rem;color:var(--text-300);
+    font-weight:500;margin-top:8px;letter-spacing:.02em}
+}
+
 /* POSTER SECTION */
 .poster-section{background:var(--bg);padding:64px 24px}
 .poster-inner{max-width:1100px;margin:0 auto}
@@ -695,6 +723,25 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
       <h2>Make Your Own Hangul Art</h2>
       <p>Your host will give you the <strong>Wehome Borahae Hangul sticker sheet</strong> when you arrive — use it to write your name, your favorite BTS member, or any Korean word you love. No Korean skills needed!</p>
     </div>
+    <!-- 모바일 전용 슬라이더 (4장 가로 스와이프) -->
+    <div class="poster-mobile-slider fade-up">
+      <div class="poster-mobile-track-wrap">
+        <div class="poster-mobile-slide" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-guide.jpg" alt="Challenge Guide" loading="lazy">
+        </div>
+        <div class="poster-mobile-slide" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-1.jpg" alt="Challenge Detail 1" loading="lazy">
+        </div>
+        <div class="poster-mobile-slide" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-2.jpg" alt="Challenge Detail 2" loading="lazy">
+        </div>
+        <div class="poster-mobile-slide" onclick="openLightbox(this.querySelector('img').src)">
+          <img src="https://www.wehome.me/assets/images/kpopstay/challenge/challenge-poster-3.jpg" alt="Challenge Detail 3" loading="lazy">
+        </div>
+      </div>
+      <p class="poster-swipe-hint">← swipe to see all 4 posters →</p>
+    </div>
+
     <div class="poster-layout fade-up">
       <!-- 메인 포스터 (좌) -->
       <div class="poster-main" onclick="openLightbox(this.querySelector('img').src)">
