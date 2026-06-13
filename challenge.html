@@ -1068,7 +1068,7 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   </div>
 </footer>
 
-<script src="/kpop-i18n.js?v=20260613"></script>
+<script src="/kpop-i18n.js?v=20260613b"></script>
 <script>
 // 언어 드롭다운 렌더링
 (function(){
@@ -1493,10 +1493,10 @@ function submitPost(e, type){
     var mediaType = document.getElementById('mediaTypeField').value;
     if(mediaType === 'video'){
       var vFile = document.getElementById('videoFile').files[0];
-      if(!vFile){ showMsg('err','Please select a video.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
+      if(!vFile){ showMsg('err', window.kpopT ? window.kpopT('ch_msg_err_no_video') : 'Please select a video.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
       fd.append('video', vFile);
     } else {
-      if(!selectedFiles.length){ showMsg('err','Please select at least one photo.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
+      if(!selectedFiles.length){ showMsg('err', window.kpopT ? window.kpopT('ch_msg_err_no_photo') : 'Please select at least one photo.'); btn.disabled=false; btn.textContent='Upload & Submit ›'; return; }
       selectedFiles.forEach(function(f){ fd.append('photos[]', f); });
     }
     fd.append('caption', document.getElementById('uploadCaption').value.trim());
@@ -1508,14 +1508,25 @@ function submitPost(e, type){
   fetch('/challenge-submit.php',{method:'POST',body:fd})
     .then(function(r){return r.json()})
     .then(function(d){
-      showMsg(d.ok?'ok':'err', d.msg||(d.ok?'Submitted!':'Submission failed.'));
+      var tt = window.kpopT || function(k){ return k; };
       if(d.ok){
+        var okKey = type==='instagram' ? 'ch_msg_ok_insta'
+          : (mediaType==='video' ? 'ch_msg_ok_upload_video' : 'ch_msg_ok_upload_photo');
+        showMsg('ok', tt(okKey));
         if(type==='instagram') document.getElementById('submitFormInsta').reset();
         else { document.getElementById('submitFormUpload').reset(); selectedFiles=[]; renderPhotoPreview(); removeVideo(); }
-        setTimeout(closeModal, 2000);
+        setTimeout(closeModal, 2500);
+      } else {
+        // 서버 에러 메시지를 번역 키로 매핑
+        var errMsg = d.msg || '';
+        var errKey = 'ch_msg_err_fail';
+        if(errMsg.indexOf('이미 등록')>=0 || errMsg.indexOf('already')>=0) errKey='ch_msg_err_dup';
+        else if(errMsg.indexOf('한도')>=0 || errMsg.indexOf('limit')>=0) errKey='ch_msg_err_limit';
+        else if(errMsg.indexOf('URL')>=0 || errMsg.indexOf('인스타그램')>=0) errKey='ch_msg_err_url';
+        showMsg('err', tt(errKey));
       }
     })
-    .catch(function(){ showMsg('err','Network error. Please try again.'); })
+    .catch(function(){ var tt=window.kpopT||function(k){return k;}; showMsg('err', tt('ch_msg_err_network')); })
     .finally(function(){
       btn.disabled=false;
       btn.textContent=type==='upload'?'Upload & Submit ›':'Submit My Post ›';
