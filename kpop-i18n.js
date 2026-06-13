@@ -575,7 +575,7 @@
       ch_msg_err_fail:'Submission failed. Please try again.',
       ch_reward_label:'Special Reward',
       ch_reward_title:'Best posts win a <span style="background:rgba(255,255,255,.2);border-radius:6px;padding:1px 8px">FREE Wehome stay</span>',
-      ch_reward_sub:'우수 포스팅에 위홈 무료 숙박권 증정 — Share your moment!',
+      ch_reward_sub:'Share your K-POPSTAY memory — best posts win a free Wehome night!',
       ch_reward_btn:'Submit Now'
     },
     ja: {
