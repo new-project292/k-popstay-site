@@ -1423,6 +1423,56 @@ function previewInstaUrl(val){
 }
 
 // 갤러리 포스트 상세 모달 (인스타)
+// 업로드 카드 모달 (사진/동영상)
+function uploadPostModal(p){
+  var content = document.getElementById('cpModalContent');
+  var html = '';
+  var photos = [];
+  try{ if(p.photos) photos = JSON.parse(p.photos); } catch(e){}
+  if(!photos.length && p.photo_path) photos = [p.photo_path];
+
+  if(p.media_type === 'video'){
+    html += '<video controls playsinline style="width:100%;max-height:420px;display:block;border-radius:20px 20px 0 0;background:#000"><source src="'+escHtml(p.photo_path)+'"></video>';
+  } else if(photos.length === 1){
+    html += '<img src="'+escHtml(photos[0])+'" alt="post" style="width:100%;max-height:420px;object-fit:contain;display:block;border-radius:20px 20px 0 0;background:#f9f9f9">';
+  } else {
+    // 여러 장 — 간단 슬라이더
+    html += '<div style="position:relative;overflow:hidden;border-radius:20px 20px 0 0">'
+      + '<div id="cpSliderTrack" style="display:flex;transition:transform .3s ease">';
+    photos.forEach(function(src){
+      html += '<img src="'+escHtml(src)+'" alt="post" style="flex:0 0 100%;width:100%;max-height:420px;object-fit:contain;background:#f9f9f9">';
+    });
+    html += '</div>';
+    if(photos.length > 1){
+      html += '<button onclick="cpSlide(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.45);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
+      html += '<button onclick="cpSlide(1)"  style="position:absolute;right:8px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;background:rgba(0,0,0,.45);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>';
+    }
+    html += '</div>';
+  }
+
+  html += '<div class="cp-modal-body">';
+  if(p.submitter_name) html += '<div class="cp-modal-name">'+escHtml(p.submitter_name)+'</div>';
+  if(p.caption)        html += '<div style="font-size:.875rem;color:var(--text-700);line-height:1.7;margin-bottom:12px">'+escHtml(p.caption)+'</div>';
+  if(p.submitter_note) html += '<div class="cp-modal-note">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
+  html += '</div>';
+
+  content.innerHTML = html;
+  content._cpSlideIdx = 0;
+  content._cpSlideMax = photos.length;
+  document.getElementById('cpModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function cpSlide(dir){
+  var content = document.getElementById('cpModalContent');
+  var track = document.getElementById('cpSliderTrack');
+  if(!track) return;
+  var max = content._cpSlideMax || 1;
+  var idx = ((content._cpSlideIdx || 0) + dir + max) % max;
+  content._cpSlideIdx = idx;
+  track.style.transform = 'translateX(-'+idx+'00%)';
+}
+
 function challengePostModal(p){
   var content = document.getElementById('cpModalContent');
   var html = '';
@@ -1507,10 +1557,12 @@ function buildCard(p){
     if(isVideo){
       // 동영상 카드
       item.className='video-item';
+      item.style.cursor='pointer';
       item.innerHTML='<video controls playsinline preload="metadata" style="width:100%;aspect-ratio:9/16;display:block;object-fit:cover;max-height:480px;background:#000"><source src="'+escHtml(p.photo_path)+'">Your browser does not support video.</video>'+bodyHtml;
     } else {
       // 사진 슬라이더 카드
       item.className='upload-item';
+      item.style.cursor='pointer';
       var photos=[];
       try{ if(p.photos) photos=JSON.parse(p.photos); } catch(e){}
       if(!photos.length && p.photo_path) photos=[p.photo_path];
@@ -1518,8 +1570,8 @@ function buildCard(p){
       photos.forEach(function(src){ sliderHtml+='<img src="'+escHtml(src)+'" alt="photo" loading="lazy">'; });
       sliderHtml+='</div>';
       if(photos.length>1){
-        sliderHtml+='<button type="button" class="upload-slider-prev" onclick="sliderMove(this,-1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
-        sliderHtml+='<button type="button" class="upload-slider-next" onclick="sliderMove(this,1)"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>';
+        sliderHtml+='<button type="button" class="upload-slider-prev" onclick="sliderMove(this,-1);event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></button>';
+        sliderHtml+='<button type="button" class="upload-slider-next" onclick="sliderMove(this,1);event.stopPropagation()"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>';
         sliderHtml+='<div class="upload-slider-dots">';
         photos.forEach(function(_,i){ sliderHtml+='<div class="upload-slider-dot'+(i===0?' active':'')+'"></div>'; });
         sliderHtml+='</div>';
@@ -1527,6 +1579,7 @@ function buildCard(p){
       sliderHtml+='</div>';
       item.innerHTML=sliderHtml+bodyHtml;
     }
+    (function(post){ item.onclick = function(){ uploadPostModal(post); }; })(p);
   } else {
     item.style.cursor='pointer';
     var captionHtml='';
