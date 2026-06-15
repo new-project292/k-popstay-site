@@ -499,8 +499,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
   display:grid;
   grid-template-columns:repeat(4,1fr);
   gap:20px;
-  /* 게시물이 적을 때 중앙 정렬 */
   justify-content:center;
+  align-items:start; /* 각 카드가 내용 높이만큼만 차지 */
 }
 /* 게시물 수에 따른 동적 컬럼 (JS에서 data-count 설정) */
 .insta-grid[data-count="1"]{grid-template-columns:minmax(0,480px);max-width:520px;margin:0 auto}
