@@ -977,8 +977,8 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') gpModalCl
       // 게시물 있으면 섹션 표시
       section.style.display = '';
 
-      // 1개면 가운데 정렬, 여러 개면 좌→우 슬라이드
-      if(posts.length === 1){
+      // MAX(6)보다 적으면 가운데 정렬
+      if(posts.length < MAX){
         grid.style.justifyContent = 'center';
       }
 
