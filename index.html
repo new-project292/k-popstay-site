@@ -1034,15 +1034,7 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') gpModalCl
         grid.appendChild(cell);
       });
 
-      // 2개 이상일 때만 빈 슬롯 채움
-      if(posts.length > 1){
-        for(var i=posts.length; i<MAX; i++){
-          var empty = document.createElement('div');
-          empty.className = 'gallery-preview-empty';
-          empty.innerHTML = '<span>💜</span>';
-          grid.appendChild(empty);
-        }
-      }
+      // 빈 슬롯 없음 — 실제 게시물만 표시
     })
     .catch(function(){ /* 실패 시 섹션 숨김 유지 */ });
 })();

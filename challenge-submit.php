@@ -96,7 +96,10 @@ if ($type === 'instagram') {
         json_err('저장 실패. 잠시 후 다시 시도해주세요.');
     }
 
-    echo json_encode(['ok' => true, 'msg' => '제출 완료! 검토 후 갤러리에 표시됩니다.'], JSON_UNESCAPED_UNICODE);
+    // 자동 승인
+    $pdo->prepare("UPDATE kpopstay_challenge_posts SET status='approved', approved_at=NOW() WHERE id=?")->execute([$pdo->lastInsertId()]);
+
+    echo json_encode(['ok' => true, 'msg' => '제출 완료! 갤러리에 표시됩니다.'], JSON_UNESCAPED_UNICODE);
     exit;
 }
 
@@ -139,11 +142,12 @@ if ($type === 'upload') {
                 VALUES ('upload', 'video', ?, ?, ?, ?, ?, ?, ?)
             ");
             $stmt->execute([$video_url, $photos_json, $caption ?: null, $name ?: null, $email ?: null, $note ?: null, $ip]);
+            $pdo->prepare("UPDATE kpopstay_challenge_posts SET status='approved', approved_at=NOW() WHERE id=?")->execute([$pdo->lastInsertId()]);
         } catch (PDOException $e) {
             error_log('[challenge-submit] ' . $e->getMessage());
             json_err('저장 실패. 잠시 후 다시 시도해주세요.');
         }
-        echo json_encode(['ok' => true, 'msg' => '동영상 제출 완료! 검토 후 갤러리에 표시됩니다.'], JSON_UNESCAPED_UNICODE);
+        echo json_encode(['ok' => true, 'msg' => '동영상 제출 완료! 갤러리에 표시됩니다.'], JSON_UNESCAPED_UNICODE);
         exit;
     }
 
@@ -183,12 +187,13 @@ if ($type === 'upload') {
             VALUES ('upload', 'photo', ?, ?, ?, ?, ?, ?, ?)
         ");
         $stmt->execute([$photo_urls[0], $photos_json, $caption ?: null, $name ?: null, $email ?: null, $note ?: null, $ip]);
+        $pdo->prepare("UPDATE kpopstay_challenge_posts SET status='approved', approved_at=NOW() WHERE id=?")->execute([$pdo->lastInsertId()]);
     } catch (PDOException $e) {
         error_log('[challenge-submit] ' . $e->getMessage());
         json_err('저장 실패. 잠시 후 다시 시도해주세요.');
     }
 
     $cnt = count($photo_urls);
-    echo json_encode(['ok' => true, 'msg' => $cnt . '장 제출 완료! 검토 후 갤러리에 표시됩니다.'], JSON_UNESCAPED_UNICODE);
+    echo json_encode(['ok' => true, 'msg' => $cnt . '장 제출 완료! 갤러리에 표시됩니다.'], JSON_UNESCAPED_UNICODE);
     exit;
 }
