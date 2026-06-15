@@ -280,42 +280,73 @@ section{padding:96px 0}
 #community{background:var(--bg);border-top:1px solid var(--border);padding:80px 0}
 .community-header{text-align:center;margin-bottom:40px}
 .community-header .section-eyebrow{margin-bottom:12px}
+/* 한 줄 가로 스크롤 슬라이더 */
 .gallery-preview-grid{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;
-  max-width:1100px;margin:0 auto 36px;padding:0 24px;
+  display:flex;
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  gap:14px;padding:4px 24px 16px;
+  max-width:1200px;margin:0 auto 32px;
+  scrollbar-width:none;
 }
+.gallery-preview-grid::-webkit-scrollbar{display:none}
 .gallery-preview-item{
-  aspect-ratio:1;border-radius:14px;overflow:hidden;
-  background:var(--purple-xlight);border:1.5px solid var(--border);
+  flex:0 0 260px;          /* 카드 너비 고정 */
+  display:flex;flex-direction:column;
+  border-radius:14px;overflow:hidden;
+  background:#fff;border:1.5px solid var(--border);
   cursor:pointer;transition:transform .22s,box-shadow .22s;position:relative;
+  box-shadow:var(--shadow-sm);scroll-snap-align:start;
 }
-.gallery-preview-item:hover{transform:scale(1.03);box-shadow:var(--shadow-lg);z-index:1}
-.gallery-preview-item iframe{
-  width:100%;height:100%;border:none;display:block;
-  pointer-events:none;
+.gallery-preview-item:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+/* 미디어 영역 - 4:3 비율 */
+.gallery-preview-media{
+  width:100%;aspect-ratio:4/3;overflow:hidden;position:relative;flex-shrink:0;
 }
-.gallery-preview-item .preview-overlay{
-  position:absolute;inset:0;background:rgba(118,17,131,0);
-  transition:background .2s;display:flex;align-items:center;justify-content:center;
+.gallery-preview-media img,
+.gallery-preview-media video{
+  width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;
 }
-.gallery-preview-item:hover .preview-overlay{background:rgba(118,17,131,.18)}
+.gallery-preview-media iframe{
+  width:100%;height:100%;border:none;display:block;pointer-events:none;
+}
+.gallery-preview-media .preview-overlay{
+  position:absolute;inset:0;background:rgba(118,17,131,0);transition:background .2s;
+}
+.gallery-preview-item:hover .preview-overlay{background:rgba(118,17,131,.15)}
+/* 텍스트 영역 */
+.gallery-preview-body{
+  padding:12px 14px 14px;flex:1;
+}
+.gallery-preview-name{
+  font-size:.78rem;font-weight:700;color:var(--purple);
+  margin-bottom:4px;display:flex;align-items:center;gap:5px;
+}
+.gallery-preview-name::before{
+  content:'';width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0;
+}
+.gallery-preview-caption{
+  font-size:.78rem;color:var(--text-500);line-height:1.55;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;
+}
 .gallery-preview-empty{
-  aspect-ratio:1;border-radius:14px;
+  flex:0 0 260px;aspect-ratio:4/3;border-radius:14px;
   background:var(--purple-xlight);border:1.5px dashed var(--purple-light);
   display:flex;align-items:center;justify-content:center;
   font-size:.7rem;color:var(--purple);font-weight:600;opacity:.5;
+  scroll-snap-align:start;
 }
 .gallery-preview-cta{text-align:center}
 .btn-view-gallery{
   display:inline-flex;align-items:center;gap:8px;
   background:#fff;color:var(--purple);
   font-size:.9rem;font-weight:700;padding:11px 24px;
-  border-radius:10px;border:1.5px solid var(--purple);
-  transition:all .2s;
+  border-radius:10px;border:1.5px solid var(--purple);transition:all .2s;
 }
 .btn-view-gallery:hover{background:var(--purple);color:#fff}
-@media(max-width:900px){.gallery-preview-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){.gallery-preview-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+@media(max-width:560px){
+  .gallery-preview-item,.gallery-preview-empty{flex:0 0 200px}
+}
 
 /* GALLERY PREVIEW MODAL */
 .gp-modal-overlay{
@@ -951,40 +982,54 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') gpModalCl
         cell.className = 'gallery-preview-item';
         (function(post){ cell.onclick = function(){ gpModalOpen(post); }; })(p);
 
+        // 미디어 영역
+        var mediaHtml = '';
         if(p.post_type === 'upload' && p.photo_path){
-          // 사진/동영상 직접 업로드
           if(p.media_type === 'video'){
-            cell.innerHTML =
-              '<video src="https://k-popstay.wehome.me'+p.photo_path+'" muted loop playsinline preload="metadata" '+
-              'style="width:100%;height:100%;object-fit:cover;display:block;pointer-events:none"></video>'+
-              '<div class="preview-overlay"></div>';
-            // 뷰포트 진입 시 자동재생, 이탈 시 정지
-            (function(cellEl){
-              var vid = cellEl.querySelector('video');
-              var io = new IntersectionObserver(function(entries){
-                entries.forEach(function(e){
-                  if(e.isIntersecting){ vid.play().catch(function(){}); }
-                  else { vid.pause(); }
-                });
-              },{threshold:0.3});
-              io.observe(cellEl);
-            })(cell);
+            mediaHtml = '<div class="gallery-preview-media">'
+              + '<video src="https://k-popstay.wehome.me'+gpEsc(p.photo_path)+'" muted loop playsinline preload="metadata"></video>'
+              + '<div class="preview-overlay"></div></div>';
           } else {
-            cell.innerHTML =
-              '<img src="https://k-popstay.wehome.me'+p.photo_path+'" alt="post" loading="lazy" '+
-              'style="width:100%;height:100%;object-fit:cover;display:block;">'+
-              '<div class="preview-overlay"></div>';
+            mediaHtml = '<div class="gallery-preview-media">'
+              + '<img src="https://k-popstay.wehome.me'+gpEsc(p.photo_path)+'" alt="post" loading="lazy">'
+              + '<div class="preview-overlay"></div></div>';
           }
         } else if(p.post_type === 'instagram' && p.shortcode){
-          cell.innerHTML =
-            '<iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" '+
-            'frameborder="0" scrolling="no" allowtransparency="true" loading="lazy" style="pointer-events:none"></iframe>'+
-            '<div class="preview-overlay"></div>';
+          mediaHtml = '<div class="gallery-preview-media">'
+            + '<iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>'
+            + '<div class="preview-overlay"></div></div>';
+        }
+
+        // 텍스트 영역
+        var textContent = p.caption || p.submitter_note || '';
+        var bodyHtml = '';
+        if(p.submitter_name || textContent){
+          bodyHtml = '<div class="gallery-preview-body">';
+          if(p.submitter_name) bodyHtml += '<div class="gallery-preview-name">'+gpEsc(p.submitter_name)+'</div>';
+          if(textContent) bodyHtml += '<div class="gallery-preview-caption">'+gpEsc(textContent)+'</div>';
+          bodyHtml += '</div>';
+        }
+
+        cell.innerHTML = mediaHtml + bodyHtml;
+
+        // 동영상 자동재생
+        if(p.media_type === 'video'){
+          (function(cellEl){
+            var vid = cellEl.querySelector('video');
+            if(!vid) return;
+            var io = new IntersectionObserver(function(entries){
+              entries.forEach(function(e){
+                if(e.isIntersecting){ vid.play().catch(function(){}); }
+                else { vid.pause(); }
+              });
+            },{threshold:0.3});
+            io.observe(cellEl);
+          })(cell);
         }
         grid.appendChild(cell);
       });
 
-      // MAX보다 적으면 나머지는 빈 슬롯
+      // MAX보다 적으면 빈 슬롯
       for(var i=posts.length; i<MAX; i++){
         var empty = document.createElement('div');
         empty.className = 'gallery-preview-empty';
