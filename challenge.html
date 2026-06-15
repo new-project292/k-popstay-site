@@ -389,6 +389,38 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;
 .video-item-caption{font-size:.82rem;color:var(--text-500);line-height:1.6;
   display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
+/* 갤러리 포스트 상세 모달 */
+.cp-modal-overlay{
+  display:none;position:fixed;inset:0;z-index:2000;
+  background:rgba(0,0,0,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.cp-modal-overlay.open{display:flex}
+.cp-modal-box{
+  background:#fff;border-radius:20px;width:100%;max-width:480px;
+  max-height:90vh;overflow-y:auto;
+  box-shadow:0 24px 64px rgba(0,0,0,.2);
+  animation:cpIn .22s cubic-bezier(.34,1.4,.64,1);position:relative;
+}
+@keyframes cpIn{from{opacity:0;transform:scale(.95) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.cp-modal-close{
+  position:absolute;top:12px;right:12px;width:32px;height:32px;border-radius:50%;
+  background:rgba(0,0,0,.45);border:none;color:#fff;cursor:pointer;z-index:1;
+  display:flex;align-items:center;justify-content:center;
+}
+.cp-modal-close:hover{background:rgba(0,0,0,.7)}
+.cp-modal-insta iframe{width:100%;height:680px;border:none;display:block}
+.cp-modal-body{padding:18px 22px 22px}
+.cp-modal-name{font-size:.88rem;font-weight:700;color:var(--purple);margin-bottom:6px;
+  display:flex;align-items:center;gap:6px}
+.cp-modal-name::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--purple);flex-shrink:0}
+.cp-modal-note{font-size:.83rem;color:var(--text-500);line-height:1.65;
+  background:var(--purple-xlight);border-radius:8px;padding:10px 14px;margin-bottom:14px}
+.cp-modal-link{display:flex;align-items:center;justify-content:center;gap:6px;
+  background:var(--purple);color:#fff;font-size:.875rem;font-weight:700;
+  padding:11px;border-radius:10px;text-decoration:none;transition:background .2s}
+.cp-modal-link:hover{background:var(--purple-dark)}
+
 /* 갤러리 섹션 Share 버튼 */
 .btn-share-gallery{
   display:inline-flex;align-items:center;gap:8px;
@@ -1041,6 +1073,16 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
   </div>
 </section>
 
+<!-- 갤러리 포스트 상세 모달 -->
+<div class="cp-modal-overlay" id="cpModal" onclick="cpModalOverlayClick(event)">
+  <div class="cp-modal-box">
+    <button class="cp-modal-close" onclick="cpModalClose()">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <div id="cpModalContent"></div>
+  </div>
+</div>
+
 <!-- 토스트 -->
 <div class="toast" id="toast"></div>
 
@@ -1283,7 +1325,7 @@ function handleModalOverlayClick(e){
   if(e.target===document.getElementById('submitModal')) closeModal();
 }
 document.addEventListener('keydown',function(e){
-  if(e.key==='Escape'){ closeModal(); closeLightbox(); }
+  if(e.key==='Escape'){ closeModal(); closeLightbox(); cpModalClose(); }
 });
 
 // 언어 드롭다운
@@ -1335,6 +1377,30 @@ function previewInstaUrl(val){
     frame.src='https://www.instagram.com/p/'+encodeURIComponent(m[1])+'/embed/';
     preview.classList.add('show');
   },600);
+}
+
+// 갤러리 포스트 상세 모달 (인스타)
+function challengePostModal(p){
+  var content = document.getElementById('cpModalContent');
+  var html = '';
+  if(p.shortcode){
+    html += '<div class="cp-modal-insta"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>';
+  }
+  html += '<div class="cp-modal-body">';
+  if(p.submitter_name) html += '<div class="cp-modal-name">'+escHtml(p.submitter_name)+'</div>';
+  if(p.submitter_note) html += '<div class="cp-modal-note">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
+  html += '<a href="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/" target="_blank" rel="noopener" class="cp-modal-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram</a>';
+  html += '</div>';
+  content.innerHTML = html;
+  document.getElementById('cpModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function cpModalClose(){
+  document.getElementById('cpModal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function cpModalOverlayClick(e){
+  if(e.target === document.getElementById('cpModal')) cpModalClose();
 }
 
 // 업로드 슬라이더
@@ -1403,6 +1469,7 @@ function buildCard(p){
     }
   } else {
     item.className='insta-item';
+    item.style.cursor='pointer';
     var captionHtml='';
     if(p.submitter_name||p.submitter_note){
       captionHtml='<div class="insta-caption">';
@@ -1410,7 +1477,9 @@ function buildCard(p){
       if(p.submitter_note) captionHtml+='<div class="insta-caption-note">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
       captionHtml+='</div>';
     }
-    item.innerHTML='<div class="insta-item-frame"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/captioned/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe></div>'+captionHtml;
+    // iframe 위에 투명 오버레이로 클릭 가로채기
+    item.innerHTML='<div class="insta-item-frame" style="position:relative"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/captioned/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><div style="position:absolute;inset:0;cursor:pointer;"></div></div>'+captionHtml;
+    (function(post){ item.onclick = function(){ challengePostModal(post); }; })(p);
   }
   return item;
 }
