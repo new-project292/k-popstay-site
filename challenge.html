@@ -904,12 +904,26 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
         </button>
       </div>
 
-      <!-- 인스타그램 탭 -->
+      <!-- 인스타그램/X 탭 -->
       <div class="modal-tab-panel active" id="tabInstagram">
-        <p class="sub">Paste your Instagram post link — after a quick review it'll appear in the gallery!</p>
+        <p class="sub">Paste your Instagram or X(Twitter) post link — after a quick review it'll appear in the gallery!</p>
+        <!-- 플랫폼 선택 -->
+        <div style="display:flex;gap:8px;margin-bottom:16px">
+          <button type="button" id="platformInstaBtn" onclick="switchPlatform('instagram')"
+            style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:10px;border:1.5px solid var(--purple);background:var(--purple);color:#fff;font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .18s">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </button>
+          <button type="button" id="platformXBtn" onclick="switchPlatform('x')"
+            style="flex:1;display:flex;align-items:center;justify-content:center;gap:6px;padding:9px;border-radius:10px;border:1.5px solid var(--border);background:#fff;color:var(--text-500);font-size:.82rem;font-weight:700;cursor:pointer;font-family:inherit;transition:all .18s">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </button>
+        </div>
+        <input type="hidden" id="socialPlatform" name="platform" value="instagram">
         <form id="submitFormInsta" onsubmit="submitPost(event,'instagram')">
           <div class="form-group">
-            <label for="instaUrl">Instagram Post URL <span style="color:#dc2626">*</span></label>
+            <label for="instaUrl" id="socialUrlLabel">Instagram Post URL <span style="color:#dc2626">*</span></label>
             <input type="url" id="instaUrl" name="instagram_url" required
               placeholder="https://www.instagram.com/p/XXXXXXXXXX/"
               autocomplete="off" oninput="previewInstaUrl(this.value)">
@@ -1207,6 +1221,35 @@ function closeLightbox(){
   }
 }
 
+// 플랫폼 전환 (instagram / x)
+function switchPlatform(platform){
+  var isX = platform === 'x';
+  document.getElementById('socialPlatform').value = platform;
+  var instaBtn = document.getElementById('platformInstaBtn');
+  var xBtn = document.getElementById('platformXBtn');
+  var urlLabel = document.getElementById('socialUrlLabel');
+  var urlInput = document.getElementById('instaUrl');
+  var preview = document.getElementById('instaUrlPreview');
+
+  if(isX){
+    instaBtn.style.cssText = instaBtn.style.cssText.replace('background:var(--purple);color:#fff;border:1.5px solid var(--purple)','background:#fff;color:var(--text-500);border:1.5px solid var(--border)');
+    instaBtn.style.background='#fff'; instaBtn.style.color='var(--text-500)'; instaBtn.style.borderColor='var(--border)';
+    xBtn.style.background='#000'; xBtn.style.color='#fff'; xBtn.style.borderColor='#000';
+    urlLabel.innerHTML='X Post URL <span style="color:#dc2626">*</span>';
+    urlInput.placeholder='https://x.com/username/status/1234567890';
+    preview.classList.remove('show');
+    urlInput.oninput = null;
+  } else {
+    instaBtn.style.background='var(--purple)'; instaBtn.style.color='#fff'; instaBtn.style.borderColor='var(--purple)';
+    xBtn.style.background='#fff'; xBtn.style.color='var(--text-500)'; xBtn.style.borderColor='var(--border)';
+    urlLabel.innerHTML='Instagram Post URL <span style="color:#dc2626">*</span>';
+    urlInput.placeholder='https://www.instagram.com/p/XXXXXXXXXX/';
+    urlInput.oninput = function(){ previewInstaUrl(this.value); };
+  }
+  urlInput.value='';
+  preview.classList.remove('show');
+}
+
 // 탭 전환
 function switchTab(tab){
   document.querySelectorAll('.modal-tab').forEach(function(b){b.classList.remove('active')});
@@ -1383,13 +1426,30 @@ function previewInstaUrl(val){
 function challengePostModal(p){
   var content = document.getElementById('cpModalContent');
   var html = '';
-  if(p.shortcode){
+  var isX = p.platform === 'x';
+
+  if(isX){
+    // X 포스트 — 직접 링크 버튼
+    html += '<div style="background:#000;padding:48px 24px;text-align:center;border-radius:20px 20px 0 0">'
+      +'<svg width="48" height="48" viewBox="0 0 24 24" fill="#fff" style="margin-bottom:16px"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
+      +(p.submitter_name ? '<div style="font-size:.95rem;font-weight:700;color:#fff">'+escHtml(p.submitter_name)+'</div>' : '')
+      +'</div>';
+  } else {
     html += '<div class="cp-modal-insta"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>';
   }
+
   html += '<div class="cp-modal-body">';
-  if(p.submitter_name) html += '<div class="cp-modal-name">'+escHtml(p.submitter_name)+'</div>';
+  if(!isX && p.submitter_name) html += '<div class="cp-modal-name">'+escHtml(p.submitter_name)+'</div>';
   if(p.submitter_note) html += '<div class="cp-modal-note">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
-  html += '<a href="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/" target="_blank" rel="noopener" class="cp-modal-link"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram</a>';
+
+  var linkUrl = isX
+    ? (p.instagram_url || 'https://x.com')
+    : 'https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/';
+  var linkLabel = isX
+    ? '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>View on X'
+    : '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram';
+
+  html += '<a href="'+linkUrl+'" target="_blank" rel="noopener" class="cp-modal-link">'+linkLabel+'</a>';
   html += '</div>';
   content.innerHTML = html;
   document.getElementById('cpModal').classList.add('open');
@@ -1468,7 +1528,6 @@ function buildCard(p){
       item.innerHTML=sliderHtml+bodyHtml;
     }
   } else {
-    item.className='insta-item';
     item.style.cursor='pointer';
     var captionHtml='';
     if(p.submitter_name||p.submitter_note){
@@ -1477,8 +1536,20 @@ function buildCard(p){
       if(p.submitter_note) captionHtml+='<div class="insta-caption-note">&ldquo;'+escHtml(p.submitter_note)+'&rdquo;</div>';
       captionHtml+='</div>';
     }
-    // iframe 위에 투명 오버레이로 클릭 가로채기
-    item.innerHTML='<div class="insta-item-frame" style="position:relative"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/captioned/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><div style="position:absolute;inset:0;cursor:pointer;"></div></div>'+captionHtml;
+
+    if(p.platform === 'x'){
+      // X 포스트 — 링크 카드 형태
+      item.className='insta-item';
+      item.innerHTML='<div class="insta-item-frame" style="background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:32px 20px">'
+        +'<svg width="36" height="36" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
+        +'<div style="font-size:.85rem;font-weight:700;color:#fff;text-align:center;line-height:1.5">'+(p.submitter_name ? escHtml(p.submitter_name)+'\'s X Post' : 'X Post')+'</div>'
+        +'<div style="position:absolute;inset:0;cursor:pointer;"></div></div>'
+        +captionHtml;
+    } else {
+      // 인스타 embed
+      item.className='insta-item';
+      item.innerHTML='<div class="insta-item-frame" style="position:relative"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/captioned/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe><div style="position:absolute;inset:0;cursor:pointer;"></div></div>'+captionHtml;
+    }
     (function(post){ item.onclick = function(){ challengePostModal(post); }; })(p);
   }
   return item;
@@ -1588,6 +1659,7 @@ function submitPost(e, type){
 
   if(type==='instagram'){
     fd.append('instagram_url', document.getElementById('instaUrl').value.trim());
+    fd.append('platform', document.getElementById('socialPlatform').value || 'instagram');
     fd.append('submitter_name', document.getElementById('subName').value.trim());
     fd.append('submitter_email', document.getElementById('subEmail').value.trim());
     fd.append('submitter_note', document.getElementById('subNote').value.trim());

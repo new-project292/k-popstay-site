@@ -61,23 +61,35 @@ if ($email) {
     if ($cnt->fetchColumn() >= 5) json_err('하루 제출 한도(5개)를 초과했습니다.');
 }
 
-// ── 인스타그램 링크 ──────────────────────────────────────
+// ── 소셜 링크 (instagram / x) ────────────────────────────
 if ($type === 'instagram') {
-    $raw_url = trim($_POST['instagram_url'] ?? '');
-    if (!$raw_url) json_err('인스타그램 링크를 입력해주세요.');
+    $raw_url  = trim($_POST['instagram_url'] ?? '');
+    $platform = trim($_POST['platform'] ?? 'instagram');
+    if (!in_array($platform, ['instagram', 'x'])) $platform = 'instagram';
+    if (!$raw_url) json_err('링크를 입력해주세요.');
 
-    if (!preg_match('#instagram\.com/(?:p|reel|reels|tv)/([A-Za-z0-9_\-]+)#', $raw_url, $m)) {
-        json_err('올바른 인스타그램 게시글 URL이 아닙니다.');
+    $shortcode = null;
+    if ($platform === 'instagram') {
+        if (!preg_match('#instagram\.com/(?:p|reel|reels|tv)/([A-Za-z0-9_\-]+)#', $raw_url, $m)) {
+            json_err('올바른 인스타그램 게시글 URL이 아닙니다. 예: https://www.instagram.com/p/XXXXX/');
+        }
+        $shortcode = $m[1];
+    } else {
+        // x.com 또는 twitter.com 링크 검증
+        if (!preg_match('#(?:x\.com|twitter\.com)/[^/]+/status/(\d+)#', $raw_url, $m)) {
+            json_err('올바른 X(Twitter) 게시글 URL이 아닙니다. 예: https://x.com/username/status/12345');
+        }
+        // x.com 링크는 shortcode 대신 tweet_id를 shortcode 컬럼에 저장
+        $shortcode = $m[1];
     }
-    $shortcode = $m[1];
 
     try {
         $stmt = $pdo->prepare("
             INSERT INTO kpopstay_challenge_posts
-                (post_type, instagram_url, shortcode, submitter_name, submitter_email, submitter_note, ip)
-            VALUES ('instagram', ?, ?, ?, ?, ?, ?)
+                (post_type, platform, instagram_url, shortcode, submitter_name, submitter_email, submitter_note, ip)
+            VALUES ('instagram', ?, ?, ?, ?, ?, ?, ?)
         ");
-        $stmt->execute([$raw_url, $shortcode, $name ?: null, $email ?: null, $note ?: null, $ip]);
+        $stmt->execute([$platform, $raw_url, $shortcode, $name ?: null, $email ?: null, $note ?: null, $ip]);
     } catch (PDOException $e) {
         if ($e->getCode() === '23000') json_err('이미 등록된 게시글입니다.');
         error_log('[challenge-submit] ' . $e->getMessage());

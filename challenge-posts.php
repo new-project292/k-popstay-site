@@ -14,7 +14,7 @@ $pdo = new PDO(
 );
 
 $rows = $pdo->query("
-    SELECT id, post_type, media_type, shortcode, photo_path, photos, caption,
+    SELECT id, post_type, platform, media_type, shortcode, instagram_url, photo_path, photos, caption,
            submitter_name, submitter_note, display_order, approved_at
     FROM kpopstay_challenge_posts
     WHERE status = 'approved'
