@@ -977,6 +977,11 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') gpModalCl
       // 게시물 있으면 섹션 표시
       section.style.display = '';
 
+      // 1개면 가운데 정렬, 여러 개면 좌→우 슬라이드
+      if(posts.length === 1){
+        grid.style.justifyContent = 'center';
+      }
+
       posts.forEach(function(p){
         var cell = document.createElement('div');
         cell.className = 'gallery-preview-item';
@@ -1029,12 +1034,14 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') gpModalCl
         grid.appendChild(cell);
       });
 
-      // MAX보다 적으면 빈 슬롯
-      for(var i=posts.length; i<MAX; i++){
-        var empty = document.createElement('div');
-        empty.className = 'gallery-preview-empty';
-        empty.innerHTML = '<span>💜</span>';
-        grid.appendChild(empty);
+      // 2개 이상일 때만 빈 슬롯 채움
+      if(posts.length > 1){
+        for(var i=posts.length; i<MAX; i++){
+          var empty = document.createElement('div');
+          empty.className = 'gallery-preview-empty';
+          empty.innerHTML = '<span>💜</span>';
+          grid.appendChild(empty);
+        }
       }
     })
     .catch(function(){ /* 실패 시 섹션 숨김 유지 */ });
