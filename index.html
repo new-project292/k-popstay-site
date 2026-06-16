@@ -1000,9 +1000,17 @@ document.addEventListener('keydown', function(e){ if(e.key==='Escape') gpModalCl
               + '<div class="preview-overlay"></div></div>';
           }
         } else if(p.post_type === 'instagram' && p.shortcode){
-          mediaHtml = '<div class="gallery-preview-media">'
-            + '<iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>'
-            + '<div class="preview-overlay"></div></div>';
+          if(p.platform === 'x'){
+            // X 게시물 — 로고 카드
+            mediaHtml = '<div class="gallery-preview-media" style="background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">'
+              + '<svg width="40" height="40" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
+              + (p.submitter_name ? '<div style="font-size:.8rem;font-weight:700;color:#fff">'+gpEsc(p.submitter_name)+'</div>' : '')
+              + '<div class="preview-overlay"></div></div>';
+          } else {
+            mediaHtml = '<div class="gallery-preview-media">'
+              + '<iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" frameborder="0" scrolling="no" allowtransparency="true" loading="lazy"></iframe>'
+              + '<div class="preview-overlay"></div></div>';
+          }
         }
 
         // 텍스트 영역
