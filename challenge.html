@@ -1479,11 +1479,19 @@ function challengePostModal(p){
   var isX = p.platform === 'x';
 
   if(isX){
-    // X 포스트 — 직접 링크 버튼
-    html += '<div style="background:#000;padding:48px 24px;text-align:center;border-radius:20px 20px 0 0">'
-      +'<svg width="48" height="48" viewBox="0 0 24 24" fill="#fff" style="margin-bottom:16px"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
-      +(p.submitter_name ? '<div style="font-size:.95rem;font-weight:700;color:#fff">'+escHtml(p.submitter_name)+'</div>' : '')
-      +'</div>';
+    if(p.photo_path){
+      // 이미지 있으면 표시 + X 로고 뱃지
+      html += '<div style="position:relative;border-radius:20px 20px 0 0;overflow:hidden">'
+        +'<img src="'+escHtml(p.photo_path)+'" alt="X post" style="width:100%;display:block;max-height:420px;object-fit:cover">'
+        +'<div style="position:absolute;top:10px;right:10px;background:rgba(0,0,0,.6);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center">'
+        +'<svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
+        +'</div></div>';
+    } else {
+      html += '<div style="background:#000;padding:48px 24px;text-align:center;border-radius:20px 20px 0 0">'
+        +'<svg width="48" height="48" viewBox="0 0 24 24" fill="#fff" style="margin-bottom:16px"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
+        +(p.submitter_name ? '<div style="font-size:.95rem;font-weight:700;color:#fff">'+escHtml(p.submitter_name)+'</div>' : '')
+        +'</div>';
+    }
   } else {
     html += '<div class="cp-modal-insta"><iframe src="https://www.instagram.com/p/'+encodeURIComponent(p.shortcode)+'/embed/" frameborder="0" scrolling="no" allowtransparency="true"></iframe></div>';
   }
@@ -1593,9 +1601,9 @@ function buildCard(p){
     if(p.platform === 'x'){
       item.className='insta-item';
       if(p.photo_path){
-        // 썸네일 이미지 있으면 표시
-        item.innerHTML='<div class="insta-item-frame" style="position:relative">'
-          +'<img src="'+escHtml(p.photo_path)+'" alt="X post" style="width:100%;height:100%;object-fit:cover;display:block" loading="lazy">'
+        // 썸네일 이미지 — iframe 없이 img로 처리 (여백 없음)
+        item.innerHTML='<div style="position:relative;overflow:hidden;border-radius:16px 16px 0 0">'
+          +'<img src="'+escHtml(p.photo_path)+'" alt="X post" style="width:100%;display:block;object-fit:cover" loading="lazy">'
           +'<div style="position:absolute;top:8px;right:8px;background:rgba(0,0,0,.6);border-radius:50%;width:28px;height:28px;display:flex;align-items:center;justify-content:center">'
           +'<svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>'
           +'</div>'
