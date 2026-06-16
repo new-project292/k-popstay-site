@@ -76,20 +76,44 @@ if ($type === 'instagram') {
         $shortcode = $m[1];
     } else {
         // x.com 또는 twitter.com 링크 검증
-        if (!preg_match('#(?:x\.com|twitter\.com)/[^/]+/status/(\d+)#', $raw_url, $m)) {
+        if (!preg_match('#(?:x\.com|twitter\.com)/([^/]+)/status/(\d+)#', $raw_url, $m)) {
             json_err('올바른 X(Twitter) 게시글 URL이 아닙니다. 예: https://x.com/username/status/12345');
         }
-        // x.com 링크는 shortcode 대신 tweet_id를 shortcode 컬럼에 저장
-        $shortcode = $m[1];
+        $shortcode = $m[2];
+        $username  = $m[1];
+    }
+
+    // X 게시물이면 fxtwitter로 OG 이미지 미리 가져오기
+    $x_thumb_path = null;
+    if ($platform === 'x') {
+        $fx_url = "https://fxtwitter.com/{$username}/status/{$shortcode}";
+        $html = @file_get_contents($fx_url, false, stream_context_create([
+            'http' => ['timeout' => 8, 'user_agent' => 'Mozilla/5.0 (compatible; Twitterbot/1.0)']
+        ]));
+        if ($html && preg_match('#og:image[^>]*content="([^"]+)"#', $html, $img)) {
+            $img_url = $img[1];
+            // 이미지 다운로드해서 저장
+            $img_data = @file_get_contents($img_url, false, stream_context_create([
+                'http' => ['timeout' => 10]
+            ]));
+            if ($img_data && strlen($img_data) > 1000) {
+                $ext = 'jpg';
+                $safeName = date('Ymd_His') . '_x_' . bin2hex(random_bytes(4)) . '.' . $ext;
+                $destPath = UPLOAD_DIR . $safeName;
+                if (file_put_contents($destPath, $img_data)) {
+                    $x_thumb_path = UPLOAD_URL . $safeName;
+                }
+            }
+        }
     }
 
     try {
         $stmt = $pdo->prepare("
             INSERT INTO kpopstay_challenge_posts
-                (post_type, platform, instagram_url, shortcode, submitter_name, submitter_email, submitter_note, ip)
-            VALUES ('instagram', ?, ?, ?, ?, ?, ?, ?)
+                (post_type, platform, instagram_url, shortcode, photo_path, submitter_name, submitter_email, submitter_note, ip)
+            VALUES ('instagram', ?, ?, ?, ?, ?, ?, ?, ?)
         ");
-        $stmt->execute([$platform, $raw_url, $shortcode, $name ?: null, $email ?: null, $note ?: null, $ip]);
+        $stmt->execute([$platform, $raw_url, $shortcode, $x_thumb_path, $name ?: null, $email ?: null, $note ?: null, $ip]);
     } catch (PDOException $e) {
         if ($e->getCode() === '23000') json_err('이미 등록된 게시글입니다.');
         error_log('[challenge-submit] ' . $e->getMessage());
