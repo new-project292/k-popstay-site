@@ -1040,13 +1040,9 @@ footer{background:var(--text-900);color:#9CA3AF;padding:48px 0 40px}
         Share My Post
       </button>
     </div>
-    <!-- 참여 카운터 -->
-    <div class="gallery-counter" id="galleryCounter" style="display:none">
-      <span class="gallery-counter-num" id="galleryCounterNum">0</span>
-      <span class="gallery-counter-label">memories shared from Busan</span>
-    </div>
-    <!-- 필터 탭 -->
-    <div class="gallery-filter" id="galleryFilter" style="display:none">
+    <!-- 참여 카운터 / 필터 탭 숨김 -->
+    <div id="galleryCounter" style="display:none"><span id="galleryCounterNum">0</span><span class="gallery-counter-label"></span></div>
+    <div id="galleryFilter" style="display:none">
       <button class="gallery-filter-btn active" onclick="filterGallery('all',this)">All <span class="cnt" id="cntAll">0</span></button>
       <button class="gallery-filter-btn" onclick="filterGallery('instagram',this)">SNS <span class="cnt" id="cntInsta">0</span></button>
       <button class="gallery-filter-btn" onclick="filterGallery('upload',this)">Photo Upload <span class="cnt" id="cntUpload">0</span></button>
@@ -1695,18 +1691,12 @@ function loadGallery(){
         document.getElementById('galleryEmpty').style.display='block';
         return;
       }
-      // 카운터
-      var counter=document.getElementById('galleryCounter');
-      document.getElementById('galleryCounterNum').textContent=allPosts.length;
-      counter.style.display='block';
-      // 필터 탭 카운트
+      // 카운터/필터 숨김 유지 (내부 집계만)
       var nInsta=allPosts.filter(function(p){return p.post_type==='instagram';}).length;
       var nUpload=allPosts.filter(function(p){return p.post_type==='upload';}).length;
       document.getElementById('cntAll').textContent=allPosts.length;
       document.getElementById('cntInsta').textContent=nInsta;
       document.getElementById('cntUpload').textContent=nUpload;
-      // 두 타입 모두 있을 때만 필터 표시
-      if(nInsta>0&&nUpload>0) document.getElementById('galleryFilter').style.display='flex';
       renderGallery();
     })
     .catch(function(){
