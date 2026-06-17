@@ -262,7 +262,7 @@
       ch_event_s2_title:'한글 벽면 챌린지',
       ch_event_s2_desc:'스티커로 지정된 벽면에 이름이나 메시지를 붙여보세요.',
       ch_event_s3_title:'공유 &amp; 업로드',
-      ch_event_s3_desc:'<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>으로 인스타에 올리고 갤러리에 등록해요!',
+      ch_event_s3_desc:'<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button> <button onclick="copyHashtag('#wehome')" class="poster-hashtag-btn">#wehome</button>으로 인스타에 올리고 갤러리에 등록해요!',
       ch_event_prizes_label:'상품:',
       ch_event_prize1:'보라해 한글 킷 × 8–9개',
       ch_event_prize2:'위홈 선물 보따리 × 2개',
@@ -519,7 +519,7 @@
       ch_event_s2_title:'Hangul Wall Challenge',
       ch_event_s2_desc:'Use the stickers to spell your name or a message on the designated wall in the aqua land.',
       ch_event_s3_title:'Share &amp; Upload',
-      ch_event_s3_desc:'Post your creation on Instagram with <button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>, then submit it to this gallery!',
+      ch_event_s3_desc:'Post your creation on Instagram with <button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button> <button onclick="copyHashtag('#wehome')" class="poster-hashtag-btn">#wehome</button>, then submit it to this gallery!',
       ch_event_prizes_label:'Prizes:',
       ch_event_prize1:'Borahae Hangul Kit × 8–9',
       ch_event_prize2:'Wehome Gift Botari × 2',
@@ -776,7 +776,7 @@
       ch_event_s2_title:'ハングル壁チャレンジ',
       ch_event_s2_desc:'ステッカーで指定された壁に名前やメッセージを貼ってみよう。',
       ch_event_s3_title:'シェア &amp; アップロード',
-      ch_event_s3_desc:'<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>でインスタに投稿して、ギャラリーに登録しよう！',
+      ch_event_s3_desc:'<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button> <button onclick="copyHashtag('#wehome')" class="poster-hashtag-btn">#wehome</button>でインスタに投稿して、ギャラリーに登録しよう！',
       ch_event_prizes_label:'賞品：',
       ch_event_prize1:'ボラヘハングルキット × 8–9個',
       ch_event_prize2:'Wehomeギフトボタリ × 2個',
@@ -1018,7 +1018,7 @@
       ch_event_s2_title:'韓文牆面挑戰',
       ch_event_s2_desc:'用貼紙在指定牆面拼出你的名字或訊息。',
       ch_event_s3_title:'分享 &amp; 上傳',
-      ch_event_s3_desc:'在Instagram上傳，標記<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>，再提交到相簿！',
+      ch_event_s3_desc:'在Instagram上傳，標記<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button> <button onclick="copyHashtag('#wehome')" class="poster-hashtag-btn">#wehome</button>，再提交到相簿！',
       ch_event_prizes_label:'獎品：',
       ch_event_prize1:'보라해韓文組合 × 8–9個',
       ch_event_prize2:'Wehome禮物보따리 × 2個',
@@ -1260,7 +1260,7 @@
       ch_event_s2_title:'韩文墙面挑战',
       ch_event_s2_desc:'用贴纸在指定墙面拼出你的名字或留言。',
       ch_event_s3_title:'分享 &amp; 上传',
-      ch_event_s3_desc:'在Instagram上传，标记<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>，再提交到相册！',
+      ch_event_s3_desc:'在Instagram上传，标记<button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button> <button onclick="copyHashtag('#wehome')" class="poster-hashtag-btn">#wehome</button>，再提交到相册！',
       ch_event_prizes_label:'奖品：',
       ch_event_prize1:'보라해韩文套装 × 8–9个',
       ch_event_prize2:'Wehome礼物보따리 × 2个',
@@ -1502,7 +1502,7 @@
       ch_event_s2_title:'Tantangan Dinding Hangul',
       ch_event_s2_desc:'Gunakan stiker untuk menempel namamu atau pesan di dinding yang ditentukan.',
       ch_event_s3_title:'Bagikan &amp; Unggah',
-      ch_event_s3_desc:'Posting di Instagram dengan <button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button>, lalu kirimkan ke galeri!',
+      ch_event_s3_desc:'Posting di Instagram dengan <button onclick="copyHashtag(\'#KPOPSTAYBusan\')" class="poster-hashtag-btn">#KPOPSTAYBusan</button> <button onclick="copyHashtag('#wehome')" class="poster-hashtag-btn">#wehome</button>, lalu kirimkan ke galeri!',
       ch_event_prizes_label:'Hadiah:',
       ch_event_prize1:'Kit Hangul Borahae × 8–9',
       ch_event_prize2:'Hadiah Botari Wehome × 2',
@@ -3135,7 +3135,7 @@
     var evtSteps = document.querySelectorAll('.poster-event-step');
     if(evtSteps[0]){ evtSteps[0].querySelector('strong').textContent=t('ch_event_s1_title'); var p=evtSteps[0].querySelector('p'); if(p) p.innerHTML=t('ch_event_s1_desc'); }
     if(evtSteps[1]){ evtSteps[1].querySelector('strong').textContent=t('ch_event_s2_title'); var p=evtSteps[1].querySelector('p'); if(p) p.innerHTML=t('ch_event_s2_desc'); }
-    if(evtSteps[2]){ evtSteps[2].querySelector('strong').textContent=t('ch_event_s3_title'); var p=evtSteps[2].querySelector('p'); if(p) p.innerHTML=t('ch_event_s3_desc'); }
+    if(evtSteps[2]){ evtSteps[2].querySelector('strong').innerHTML=t('ch_event_s3_title'); var p=evtSteps[2].querySelector('p'); if(p) p.innerHTML=t('ch_event_s3_desc'); }
     var prizeEls = document.querySelectorAll('.poster-prize-tag');
     if(prizeEls[0]) prizeEls[0].textContent = t('ch_event_prize1');
     if(prizeEls[1]) prizeEls[1].textContent = t('ch_event_prize2');
